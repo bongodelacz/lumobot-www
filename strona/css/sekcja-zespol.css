@@ -1,0 +1,39 @@
+/* Sekcja 7: Twój zespół już czeka (tc-). */
+.tc{padding:var(--s7) var(--s5) var(--s9)}
+.tc-box{position:relative;max-width:1320px;height:min(680px,84vh);min-height:560px;margin:0 auto;border-radius:36px;overflow:hidden;isolation:isolate;background:#151517;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.06)}
+.tc-crowd{position:absolute;inset:0;z-index:1}
+.tc-f{position:absolute;opacity:0}
+.tc-box.seen .tc-f{animation:tcIn .9s var(--ease) forwards;animation-delay:calc(var(--i) * 10ms)}
+@keyframes tcIn{from{opacity:0;transform:translateY(20px) scale(.82)}to{opacity:var(--o,1);transform:none}}
+.tc-b{display:block;animation:tcFloat var(--fd,5s) ease-in-out infinite alternate;animation-delay:calc(var(--i) * -.37s)}
+@keyframes tcFloat{from{transform:translateY(-3px)}to{transform:translateY(4px)}}
+.tc-f .eyes{transition:transform .7s cubic-bezier(.32,.72,0,1)}
+.tc .tc-b>.face{transition:transform .45s cubic-bezier(.32,.72,0,1)!important}
+.tc .tc-b:hover>.face{transform:none!important}
+.tc-box.paused *{animation-play-state:paused!important}
+.tc-copy{position:absolute;left:50%;top:50%;z-index:2;width:min(620px,calc(100% - 32px));transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:var(--s4);text-align:center}
+.tc-lede{max-width:520px;font-size:18px;line-height:1.5;color:#c9c9cf}
+.tc-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3);margin-top:var(--s3)}
+.tc-ctas .btn{height:48px;padding:0 24px;font-size:16px}
+html.static .tc-f{opacity:var(--o,1)}
+@media (prefers-reduced-motion:reduce){
+  .tc-f{opacity:var(--o,1);animation:none!important}
+  .tc-b{animation:none}
+}
+@media (max-width:700px){
+  .tc{padding:var(--s6) var(--s3) var(--s8)}
+  .tc-box{height:640px;border-radius:24px}
+}
+
+/* oprawa w stylu wysuwanych paneli: szklana krawędź karty i plakietki agentów jak lista w panelu Agenci */
+.tc-box{background:#161618;border-radius:32px;box-shadow:inset 0 1px .5px rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,255,255,.07),0 30px 80px -40px rgba(0,0,0,.7)}
+.tc-copy{width:min(940px,calc(100% - 32px))}
+.tc-copy .tc-lede{max-width:560px}
+.tc-team{display:flex;flex-wrap:wrap;max-width:100%;justify-content:center;gap:6px;margin-top:var(--s4);padding:6px;border-radius:22px;background:rgba(255,255,255,.05);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);box-shadow:inset 0 1px .5px rgba(255,255,255,.2),0 0 0 .5px rgba(255,255,255,.1)}
+.tc-chip{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 7px;border-radius:999px;font-size:13.5px;color:#c7c7cc;transition:background .2s,color .2s,transform .35s cubic-bezier(.32,.72,0,1)}
+.tc-chip b{font-weight:600;color:#f5f5f7}
+.tc-chip em{font-style:normal;font-size:12px;color:#8e8e93}
+.tc-chip:hover{background:rgba(255,255,255,.08);transform:translateY(-1px)}
+.tc-chip:focus-visible{outline:2px solid #f5f5f7;outline-offset:2px}
+.tc-chip [data-face]>.face{transform:none!important;animation:none!important}
+@media (max-width:700px){.tc-box{height:760px}.tc-team{gap:2px}.tc-chip em{display:none}}

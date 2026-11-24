@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LumoBot</title>
+<link rel="icon" href="app.png">
+<script>if(location.protocol==="file:")document.write('<script src="../js/maski.js"><\/script>')</script>
+<script src="prefs.js"></script>
+<script src="dane.js"></script>
+<script src="mock.js"></script>
+<script>try{ const q = new URLSearchParams(location.search); if(q.get('theme')) localStorage.setItem('lumobot-theme', q.get('theme')); if(q.get('lang')) localStorage.setItem('lumobot-lang', q.get('lang')); document.documentElement.dataset.theme = localStorage.getItem('lumobot-theme') || 'dark'; }catch(e){}</script>
+<link rel="stylesheet" href="style.css?v=177">
+</head>
+<body>
+
+<div class="grips" id="grips" hidden><i data-e="12" class="n"></i><i data-e="15" class="s"></i><i data-e="10" class="w"></i><i data-e="11" class="e"></i><i data-e="13" class="nw"></i><i data-e="14" class="ne"></i><i data-e="16" class="sw"></i><i data-e="17" class="se"></i></div>
+
+<header class="bar" id="bar">
+  <div class="brand"><img src="logo.png" width="27" height="27" alt=""><span>LumoBot</span></div>
+  <i class="brandsep"></i><button type="button" class="packbtn barpack" id="packBtn" data-more title="Paczki agentów: osobny zestaw na każdy projekt"><span id="packName">Agenci</span><svg viewBox="0 0 12 12" width="10" height="10"><path d="M3 4.500 6 7.500 9 4.500" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button type="button" class="barbtn" id="sideBtn" title="Zwiń albo rozwiń panel boczny (Ctrl+B)"><svg viewBox="0 0 16 16" width="15" height="15"><rect x="2" y="3" width="12" height="10" rx="2.2"/><path d="M6.200 3v10"/></svg></button>
+  <div class="grow"></div>
+  <div class="updpill" id="updCard" hidden></div>
+  <nav id="nav" class="topnav">
+    <a href="#plan" data-tab="plan" title="Plan"><svg viewBox="0 0 16 16"><rect x="2.500" y="3.500" width="11" height="10" rx="2"/><path d="M2.500 6.500h11M5.500 2v3M10.500 2v3M5.300 9.200h2.400M5.300 11.200h4.800"/></svg><span>Plan</span></a>
+    <a href="#zlecenia" data-tab="zlecenia" title="Zlecenia"><svg viewBox="0 0 16 16"><path d="M2.500 9.500 4.300 4a1 1 0 0 1 1-.700h5.400a1 1 0 0 1 1 .700l1.800 5.500v2.300a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1zM2.500 9.500h3.300l.800 1.500h2.800l.800-1.500h3.300"/></svg><span>Zlecenia</span><em id="inboxCount" data-keep></em></a>
+    <a href="#kolejka" data-tab="kolejka" title="Harmonogram" hidden><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.6"/><path d="M8 4.9V8l2.1 1.4"/></svg><span>Harmonogram</span><i class="navdot" id="reportDot" hidden></i><em id="queueCount" data-keep></em></a>
+    <a href="#neuro" data-tab="neuro" title="Neuro"><svg viewBox="0 0 16 16"><circle cx="3.4" cy="4" r="1.5"/><circle cx="3.4" cy="12" r="1.5"/><circle cx="8" cy="8" r="1.7"/><circle cx="12.6" cy="4" r="1.5"/><circle cx="12.6" cy="12" r="1.5"/><path d="M4.6 5 6.7 7M4.6 11l2.1-2M11.4 5 9.3 7M11.4 11 9.3 9"/></svg><span>Neuro</span></a>
+    <a href="#logowania" data-tab="logowania" title="Logowania"><svg viewBox="0 0 16 16"><rect x="3.300" y="7.100" width="9.400" height="6.400" rx="1.700"/><path d="M5.500 7.100V5.200a2.500 2.500 0 0 1 5 0v1.900"/></svg><span>Logowania</span></a>
+    <a href="#ustawienia" data-tab="ustawienia" title="Ustawienia"><svg viewBox="0 0 16 16"><path d="M2.5 4.6h6.2M11.8 4.6h1.7M2.5 11.4h1.7M7.3 11.4h6.2"/><circle cx="10.2" cy="4.6" r="1.6"/><circle cx="5.8" cy="11.4" r="1.6"/></svg><span>Ustawienia</span></a>
+    </nav>
+  <button type="button" class="barbtn" id="tabsBtn" title="Zakładki"><svg viewBox="0 0 16 16" width="15" height="15"><path d="M8 3.500v9M3.500 8h9"/></svg></button>
+  <button type="button" class="barbtn" id="voiceBtn" title="Rozmowa głosowa"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.400" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.200a2 2 0 0 1 2 2v3.600a2 2 0 0 1-4 0V4.200a2 2 0 0 1 2-2zM4.200 7.600a3.800 3.800 0 0 0 7.600 0M8 11.400v2.400"/></svg></button>
+  <div class="lang" id="langBox"><button type="button" class="barbtn text" id="langBtn" title="Język / Language">PL</button></div>
+  <button type="button" class="barbtn" id="themeBtn" title="Jasny lub ciemny motyw"><svg viewBox="0 0 16 16" width="15" height="15"><path class="sun" d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6z"/><path class="moon" d="M13.2 9.6A5.6 5.6 0 0 1 6.4 2.8a5.6 5.6 0 1 0 6.8 6.8z"/></svg></button>
+  <div class="win" id="winBtns" hidden>
+    <button type="button" data-w="min" aria-label="Minimalizuj"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2 6h8" stroke="currentColor" stroke-width="1"/></svg></button>
+    <button type="button" data-w="max" aria-label="Maksymalizuj"><svg viewBox="0 0 12 12" width="12" height="12"><rect x="2.5" y="2.5" width="7" height="7" rx=".8" fill="none" stroke="currentColor" stroke-width="1"/></svg></button>
+    <button type="button" data-w="close" class="x" aria-label="Zamknij"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="side">
+    <div class="sidehead"><button type="button" id="addAgent" title="Nowy agent"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></div>
+    <div class="agents" id="agents"></div>
+    <div class="upd" id="updBox" hidden></div>
+    <div class="usage" id="usageBox"></div>
+    <button type="button" class="usemini" id="usageMini" title="Użycie"></button>
+  </aside>
+
+  <main class="main">
+    <aside class="codepane" id="codePane" aria-hidden="true"></aside>
+    <section class="view chatview" id="tab-agent">
+      <div class="agenthead" id="agentHead"></div>
+      <div class="chat" id="chat"></div>
+      <form class="livebar" id="liveBar" hidden><div class="livetext" id="liveText"></div></form>
+      <form class="composer" id="composer">
+        <div class="attach" id="attach"></div>
+        <textarea name="goal" rows="1" placeholder="Opisz, co ma być zrobione"></textarea>
+        <textarea name="note" form="liveBar" class="lbnote" rows="1" placeholder="Dopisz wskazówkę: Enter wysyła, Shift+Enter nowa linia"></textarea>
+        <div class="fold" id="adv"><div class="opts">
+          <div class="opt"><div><b>Folder projektu</b><small id="optFolder" data-keep></small></div><button type="button" id="optPick">Wybierz</button></div>
+          <div class="opt"><div><b>Uprawnienia</b><small>Co agent może robić w tym folderze</small></div><div class="seg"><label><input type="radio" name="mode" value="careful"><span>Tylko pliki</span></label><label><input type="radio" name="mode" value="full" checked><span>Pliki i polecenia</span></label></div></div>
+          <div class="opt"><div><b>Limit rund</b><small>Po tylu rundach bez celu agent kończy</small></div><div class="stepper"><button type="button" data-step="-5" aria-label="Mniej"><svg viewBox="0 0 12 12" width="11" height="11"><path d="M2.500 6h7" stroke="currentColor" stroke-width="1.400" stroke-linecap="round"/></svg></button><input type="number" name="max_rounds" value="30" min="1" max="500"><button type="button" data-step="5" aria-label="Więcej"><svg viewBox="0 0 12 12" width="11" height="11"><path d="M6 2.500v7M2.500 6h7" stroke="currentColor" stroke-width="1.400" stroke-linecap="round"/></svg></button></div></div>
+          <div class="opt"><div><b>Punkty powrotu w git</b><small>Osobna gałąź i zapis po każdej rundzie</small></div><label class="switch"><input type="checkbox" name="checkpoints" checked><i></i></label></div>
+          <button type="button" class="more" id="moreOpts" aria-expanded="false"><svg viewBox="0 0 12 12" width="11" height="11"><path d="M3 4.500 6 7.500 9 4.500" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ścieżka i własne sprawdzenie</span></button>
+          <div class="fold" id="adv2"><div>
+            <label class="field"><span>Ścieżka folderu</span><input type="text" name="folder" placeholder="C:\Users\ty\projekt" spellcheck="false"></label>
+            <label class="field"><span>Własne polecenie sprawdzające</span><input type="text" name="check" placeholder="puste: LumoBot dobiera sam" spellcheck="false"></label>
+          </div></div>
+        </div></div>
+        <div class="tools">
+          <button type="button" class="icon plus" id="plusBtn" title="Dodaj: pliki, rozmowa głosowa, dyktowanie, zrzut ekranu"><svg viewBox="0 0 16 16" width="17" height="17"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><input type="file" id="fileIn" multiple hidden>
+          <button type="button" class="chip" id="pickBtn"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M1.8 4.2a1 1 0 0 1 1-1h3.1l1.4 1.5h5.9a1 1 0 0 1 1 1v6.1a1 1 0 0 1-1 1H2.8a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg><span id="folderName">Folder</span></button>
+          <span class="checknote" id="checkNote"></span>
+          <button type="button" class="ctxbtn" id="ctxBtn"></button>
+          <div class="dd up" id="modelPick"></div>
+          <button type="button" class="icon" id="optBtn" aria-expanded="false" title="Zasady i limity"><svg viewBox="0 0 16 16" width="15" height="15"><path d="M2.5 4.6h6.2M11.8 4.6h1.7M2.5 11.4h1.7M7.3 11.4h6.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="10.2" cy="4.6" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5.8" cy="11.4" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+          <button type="button" class="icon micb" id="micBtn" title="Dyktuj do pola"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.900" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a3 3 0 0 0-3 3v6.500a3 3 0 0 0 6 0V5.500a3 3 0 0 0-3-3Z"/><path d="M18.500 10.500V12a6.500 6.500 0 0 1-13 0v-1.500M12 18.500v3"/></svg></button>
+          <button class="send" id="sendBtn" title="Uruchom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4v7a4 4 0 0 1-4 4H4"/><path d="m9 10-5 5 5 5"/></svg></button>
+          <button class="send" id="liveBtn" form="liveBar" title="Zatrzymaj"><svg class="sq" viewBox="0 0 13 13" width="12" height="12"><rect width="13" height="13" rx="2.600" fill="currentColor"/></svg><svg class="up" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4v7a4 4 0 0 1-4 4H4"/><path d="m9 10-5 5 5 5"/></svg></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="view page" id="tab-nowy" hidden>
+      <form class="wrap maker" id="makerForm">
+        <h1 id="makerTitle">Nowy agent</h1><p class="lead">Nadaj mu imię, rolę i wygląd. Rolę dostaje na początku każdego zadania.</p>
+        <div class="makergrid">
+          <div class="makerform">
+            <label class="field"><span>Nazwa</span><input type="text" name="name" maxlength="40" placeholder="Nowy agent" autocomplete="off"></label>
+            <label class="field"><span>Rola</span><textarea name="purpose" rows="4" placeholder="Na przykład: pilnuje testów i naprawia to, co się zepsuło, bez zmieniania samych testów."></textarea></label>
+            <div class="rolechips" id="roleChips"></div>
+            <div class="field"><span>Model</span><div class="dd wide" id="makerModel"></div></div>
+            <div class="fieldpair"><div class="field"><span>Gdy inny agent zleci mu pracę na plikach</span><div class="seg"><label><input type="radio" name="access" value="ask" checked><span>Pyta mnie o zgodę</span></label><label><input type="radio" name="access" value="full"><span>Pełny dostęp</span></label></div></div>
+              <div class="field"><span>Typ agenta</span><div class="seg"><label><input type="radio" name="kind" value="regular" checked><span>Zwykły</span></label><label><input type="radio" name="kind" value="image"><span>Od obrazów</span></label><label><input type="radio" name="kind" value="design"><span>Projektant</span></label></div></div></div>
+          </div>
+          <div class="look">
+            <div class="pcard" id="pCard"></div>
+            <input type="file" id="photoIn" accept="image/*" hidden>
+            <div class="looklabel">Kształt</div><div class="faces shapes" id="shapes"></div>
+            <div class="looklabel">Kolor</div><div class="swatches" id="swatches"></div>
+            <div class="looklabel">Oczy</div><div class="faces" id="faces"></div>
+          </div>
+        </div>
+        <div class="makerfoot"><button type="button" class="quiet danger" id="delAgent" hidden>Usuń agenta</button><span class="grow"></span><button type="button" class="quiet" id="cancelMaker">Anuluj</button><button class="primary" id="saveAgent">Utwórz agenta</button></div>
+      </form>
+    </section>
+
+    <section class="view chatview ordview" id="tab-zlecenia" hidden>
+      <div class="agenthead teamhead ordhead2"><div><b>Zlecenia</b><small>Zlecasz tu, a agenci robią to obok głównej pracy</small></div></div>
+      <div id="serversBox" class="ordservers"></div>
+      <div class="chat" id="ordFeed"></div>
+      <form class="composer ordcomp" id="orderForm">
+        <textarea name="text" rows="1" placeholder="Co ma być zrobione? Napisz i wciśnij Enter" id="orderText"></textarea>
+        <div class="tools"><button type="button" class="icon plus" id="orderPlus" title="Dodaj: dyktowanie"><svg viewBox="0 0 16 16" width="17" height="17"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+          <button type="button" class="chip" id="orderWho" title="Który agent ma to zrobić"></button>
+          <div class="seg mini"><label><input type="radio" name="kind" value="do" checked><span>Zrób</span></label><label><input type="radio" name="kind" value="ask"><span>Zapytaj</span></label></div>
+          <span class="checknote" id="orderNote"></span>
+          <button class="send type" id="orderSend" title="Zleć (Enter)" aria-label="Zleć"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4v7a4 4 0 0 1-4 4H4"/><path d="m9 10-5 5 5 5"/></svg></button></div>
+      </form>
+      <div id="inboxBox" hidden></div><div id="ordPills" hidden></div>
+    </section>
+
+    <section class="view boardview" id="tab-plan" hidden>
+      <div class="board" id="board"><div class="boardin" id="boardIn"></div></div>
+      <div class="hotbar" id="hotbar"></div>
+      <div class="boardzoom" id="boardZoom"></div>
+      <div class="bswitch" id="boardSwitch"><button type="button" data-bview="plan" class="on">Plan</button><button type="button" data-bview="report">Raport</button></div>
+      <div class="breport" id="boardReport" hidden></div>
+    </section>
+    <section class="view page" id="tab-logowania" hidden>
+      <div class="wrap lgwrap">
+        <div class="lghero" id="lgHero"></div>
+        <div id="lgBody" hidden>
+          <div class="lgbar"><input type="text" id="lgSearch" placeholder="Szukaj usługi" autocomplete="off" spellcheck="false"></div>
+          <div id="lgList"></div>
+          <button type="button" class="lgquiet" id="lgClear" hidden>Usuń wszystkie zapisane dane</button>
+        </div>
+      </div>
+    </section>
+    <section class="view page" id="tab-kolejka" hidden>
+      <div class="wrap">
+        <h1>Harmonogram</h1><p class="lead">Zaplanuj zadania na konkretną godzinę albo cyklicznie. Ruszają same, gdy LumoBot jest włączony. Zaległe zadanie rusza zaraz po otwarciu programu.</p>
+        <div id="reportBox"></div>
+        <form class="sched" id="schedForm">
+          <div class="schedagents" id="schedAgents"></div>
+          <textarea name="goal" rows="3" placeholder="Na przykład: sprawdź, czy testy przechodzą, i napraw to, co się zepsuło."></textarea>
+          <div class="schedrow">
+            <div class="seg"><label><input type="radio" name="kind" value="daily" checked><span>Codziennie</span></label><label><input type="radio" name="kind" value="weekly"><span>Wybrane dni</span></label><label><input type="radio" name="kind" value="once"><span>Jeden raz</span></label><label><input type="radio" name="kind" value="every"><span>Co kilka godzin</span></label></div>
+            <input type="time" name="time" value="08:00">
+            <input type="datetime-local" name="at" hidden>
+            <label class="unitbox" id="schedHours" hidden><span>co</span><input type="number" name="hours" min="1" max="168" value="6"><span>godz.</span></label>
+            <span class="grow"></span><button class="primary">Dodaj do planu</button>
+          </div>
+          <div class="days" id="schedDays" hidden></div>
+        </form>
+        <div class="block"><h2>Zaplanowane</h2><div id="schedList"></div></div>
+        <div id="queueNow"></div>
+        <div class="block"><h2>Kolejka</h2><p class="sub">Gdy agent pracuje, każde kolejne zadanie czeka tutaj i rusza samo.</p><div id="queueList"></div></div>
+      </div>
+    </section>
+
+
+    <section class="view chatview teamview" id="tab-team" hidden>
+      <div class="agenthead teamhead" id="teamHead"></div>
+      <div class="chat" id="teamFeed"></div>
+      <form class="composer teamcomp" id="teamComp">
+        <textarea name="text" rows="1" placeholder="Napisz do zespołu" id="teamText"></textarea>
+        <div class="tools"><button type="button" class="icon plus" id="teamPlus" title="Dodaj: rozmowa głosowa z zespołem, dyktowanie"><svg viewBox="0 0 16 16" width="17" height="17"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><button type="button" class="chip" id="teamLeadBtn" title="Kto prowadzi zadanie zespołu"></button><button type="button" class="chip" id="teamFolder" title="Folder, w którym zespół pracuje"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M1.8 4.2a1 1 0 0 1 1-1h3.1l1.4 1.5h5.9a1 1 0 0 1 1 1v6.1a1 1 0 0 1-1 1H2.8a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg><span id="teamFolderName">Folder agenta</span></button><span class="checknote" id="teamNote"></span><i class="grow"></i><button class="send type" id="teamSend" title="Wyślij"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4v7a4 4 0 0 1-4 4H4"/><path d="m9 10-5 5 5 5"/></svg></button></div>
+      </form>
+    </section>
+    <section class="view page" id="tab-neuro" hidden>
+      <div class="wrap">
+        <div class="neurohead"><div><h1>Neuro</h1><p class="lead">Mała sieć neuronowa, która uczy się na twoich zadaniach. Po każdej rundzie ocenia, jaka jest szansa, że agent dojdzie do celu.</p></div></div>
+        <div class="tiles" id="neuroTiles"></div>
+        <div class="stage" id="neuroStage"><canvas id="neuroGl"></canvas><canvas id="neuroCv"></canvas><div class="tip" id="neuroTip" hidden></div><div class="cap" id="neuroCap"></div><div class="verdictbox" id="neuroOut"></div></div>
+        <div class="block"><h2>Nauka</h2><p class="sub" id="neuroLearn"></p><div class="learn"><i id="neuroBar"></i></div><p class="sub" id="neuroFile" data-keep></p></div>
+        <div class="block"><h2>Na co sieć patrzy</h2><p class="sub">Im dłuższy pasek, tym mocniej dana informacja wpływa na ocenę. Przed nauką wagi są losowe.</p><div class="imp" id="neuroImp"></div></div>
+      </div>
+    </section>
+
+    <section class="setbox" id="tab-ustawienia" hidden>
+      <div class="setcard" role="dialog" aria-label="Ustawienia">
+        <aside class="setside">
+          <b class="settitle">Ustawienia</b>
+          <label class="setsearch"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M7 11.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM10.3 10.3 13.5 13.5"/></svg><input type="search" id="setSearch" placeholder="Szukaj" autocomplete="off"></label>
+          <nav id="setNav"></nav>
+          <div class="setfoot"><img src="app.png" width="26" height="26" alt=""><div><b>LumoBot</b><small id="setVer" data-keep></small></div></div>
+        </aside>
+        <div class="setmain">
+          <div class="sethead"><div><h1 id="setTitle" data-keep></h1><p id="setLead" data-keep></p></div><button type="button" class="icon" id="setClose" title="Zamknij"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M2.5 2.5l7 7M9.500 2.5l-7 7" stroke="currentColor" stroke-width="1.300" stroke-linecap="round"/></svg></button></div>
+          <div class="setscroll" id="setScroll">
+          <form id="setForm">
+          <div class="block" data-lead="Wygląd programu, aktualizacje i miejsce, w którym leżą twoje dane."><h2>Ogólne</h2>
+            <h3 class="grp">Wygląd</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Motyw</b><p>Jasny albo ciemny. Przełączysz go też ikoną w górnym pasku.</p></div><div class="seg"><label><input type="radio" name="theme" value="light"><span>Jasny</span></label><label><input type="radio" name="theme" value="dark"><span>Ciemny</span></label></div></div>
+              <div class="row"><div><b>Język</b><p>Język aplikacji. Agent odpowiada w języku, w którym do niego piszesz.</p></div><div class="seg"><label><input type="radio" name="lang" value="pl"><span>Polski</span></label><label><input type="radio" name="lang" value="en"><span>English</span></label></div></div>
+              <div class="row"><div><b>Wyspa na pulpicie</b><p>Pasek z agentami przy krawędzi ekranu. Pokazuje pracę agentów, pytania i wynik. Możesz z niej zlecić zadanie, wysłać wskazówkę, zatrzymać agenta albo odpowiedzieć. Prawy przycisk na wyspie otwiera jej ustawienia.</p></div><label class="switch"><input type="checkbox" name="island"><i></i></label></div>
+              <div class="row"><div><b>Położenie wyspy</b><p>Przy której krawędzi ekranu ma się pokazywać.</p></div><div class="seg"><label><input type="radio" name="islandpos" value="left" checked><span>Lewo</span></label><label><input type="radio" name="islandpos" value="right"><span>Prawo</span></label></div></div>
+              <div class="row"><div><b>Chowaj wyspę, gdy LumoBot jest otwarty</b><p>Wyspa znika, kiedy okno LumoBota jest na wierzchu.</p></div><label class="switch"><input type="checkbox" name="islandhide"><i></i></label></div>
+              <div class="row"><div><b>Chowaj wyspę do krawędzi</b><p>Zostaje wąski uchwyt. Najedź na niego, a wyspa się wysunie.</p></div><label class="switch"><input type="checkbox" name="islandtuck"><i></i></label></div>
+              <div class="row"><div><b>Wyspa sama pokazuje pytania i wynik</b><p>Karta otwiera się, gdy agent pyta albo kończy.</p></div><label class="switch"><input type="checkbox" name="islandauto"><i></i></label></div>
+            </div>
+            <h3 class="grp">Aktualizacje</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Wersja <span id="verNo" data-keep></span></b><p id="verNote" data-keep></p></div><div class="btns"><button type="button" id="updateBtn">Sprawdź</button><button type="button" class="primary" id="updateGo" hidden>Zaktualizuj</button></div></div>
+              <div class="row"><div><b>Aktualizuj automatycznie</b><p>Gdy jest nowa wersja, LumoBot pobiera ją i instaluje sam przy uruchomieniu, tak jak programy do gier. Wyłączone: zobaczysz tylko kartę z przyciskiem i sam zdecydujesz.</p></div><label class="switch"><input type="checkbox" name="auto_update"><i></i></label></div>
+            </div>
+            <h3 class="grp">Dane</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Dane LumoBota</b><p>Agenci, historia, ustawienia, klucze, wtyczki i sieć Neuro leżą w jednym folderze twojego konta.</p><p class="pathline" id="dataPath" data-keep>&nbsp;</p></div><button type="button" id="openData" hidden>Otwórz</button></div>
+            </div>
+          </div>
+          <div class="block profblock" data-lead="Twoje użycie: tokeny ze wszystkich AI, aktywność dzień po dniu i limity subskrypcji."><h2>Profil</h2>
+            <div class="usetiles" id="useTiles"></div>
+            <h3 class="grp">Aktywność</h3>
+            <div class="heatwrap"><div class="heatmon" id="heatMon"></div><div class="heat" id="useHeat"></div><div class="heatleg" id="heatLeg"></div></div>
+            <div class="usecols"><div><h3 class="grp">Według AI</h3><div class="usebox" id="useProv"></div></div><div><h3 class="grp">Najaktywniejsi agenci</h3><div class="usebox" id="useAgents"></div></div></div>
+            <h3 class="grp">Podsumowanie</h3>
+            <div class="usestat" id="useStat"></div>
+            <h3 class="grp grprow">Limit subskrypcji<button type="button" class="quiet" id="usageRefresh">Odśwież</button></h3>
+            <div class="usagebig" id="usageBig"></div><p class="sub" id="usageNote"></p>
+          </div>
+          <div class="block" data-lead="Konta i klucze, z których korzystają agenci. Każdy agent wybiera model z podłączonych AI."><h2>Podłączone AI</h2>
+            <h3 class="grp">Konta</h3>
+            <div class="grpbox"><div id="providers"></div></div>
+            <h3 class="grp">Modele i zużycie</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Modele w twoim planie</b><p id="modelsNote" data-keep>&nbsp;</p></div><button type="button" id="modelsCheck">Sprawdź ponownie</button></div>
+              <div class="row"><div><b>Zużycie na bieżąco</b><p>Gdy okno jest otwarte, LumoBot co 5 minut pyta Claude o stan limitu. To jedno krótkie pytanie do najlżejszego modelu.</p></div><label class="switch"><input type="checkbox" name="usage_live"><i></i></label></div>
+            </div>
+          </div>
+          <div class="block" data-lead="Jak agenci zaczynają zadanie i ile mogą zrobić bez pytania ciebie o zgodę."><h2>Agenci i zadania</h2>
+            <h3 class="grp">Nowe zadania</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Uprawnienia agenta</b><p>„Pliki i polecenia": agent zmienia pliki i sam uruchamia polecenia oraz serwery, bez pytania o każde z nich. Trzyma się stałych zasad: nie kasuje danych nie do odtworzenia i niczego nie wysyła na zewnątrz. „Tylko pliki": zmienia pliki, ale niczego nie uruchamia.</p></div><div class="seg"><label><input type="radio" name="mode" value="careful"><span>Tylko pliki</span></label><label><input type="radio" name="mode" value="full"><span>Pliki i polecenia</span></label></div></div>
+              <div class="row"><div><b>Limit rund</b><p>Po tylu rundach bez osiągnięcia celu LumoBot kończy pracę.</p></div><input type="number" name="max_rounds" min="1" max="500"></div>
+              <div class="row"><div><b>Punkty powrotu w git</b><p>W repozytorium git praca idzie na osobnej gałęzi, z zapisem po każdej rundzie. Nic nie jest wysyłane na zewnątrz.</p></div><label class="switch"><input type="checkbox" name="checkpoints"><i></i></label></div>
+            </div>
+            <h3 class="grp">Samodzielność</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Unikaj pytań</b><p>Pełna samodzielność: agent o nic nie pyta i sam rozstrzyga każdą wątpliwość, zapisując decyzje w pamięci projektu. Zadanie nie zatrzymuje się na prośbie o decyzję ani o zgodę na pracę innego agenta.</p></div><label class="switch"><input type="checkbox" name="no_questions"><i></i></label></div>
+              <div class="row"><div><b>Recenzja przed oddaniem</b><p>Gdy cel jest osiągnięty, inny model czyta zmiany w plikach i szuka błędów. Jeśli coś znajdzie, agent poprawia. Zużywa dodatkowe tokeny.</p></div><label class="switch"><input type="checkbox" name="review"><i></i></label></div>
+              <div class="row"><div><b>Minimalny czas pracy</b><p>Gdy agent osiągnie cel szybciej, dostaje resztę czasu na testy i dopracowanie wyniku. 0 wyłącza.</p></div><div class="unit"><input type="number" name="min_minutes" min="0" max="600"><em>min</em></div></div>
+            </div>
+            <h3 class="grp">Gdy cię nie ma</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Sterowanie komputerem</b><p>Agent z pełnym dostępem może ruszać twoją myszą i klawiaturą, żeby obsłużyć dowolny program. Widzi wtedy cały ekran. Wsuń kursor w lewy górny róg ekranu, żeby od razu go zatrzymać.</p></div><label class="switch"><input type="checkbox" name="computer"><i></i></label></div>
+              <div class="row"><div><b>Nie usypiaj komputera podczas pracy</b><p>Gdy agent pracuje, komputer nie zaśnie sam. Po zakończeniu wraca do zwykłych ustawień.</p></div><label class="switch"><input type="checkbox" name="keep_awake"><i></i></label></div>
+              <div class="row"><div><b>Powiadomienia na telefon</b><p>Gdy agent skończy albo o coś zapyta, LumoBot wyśle wiadomość tam, gdzie wybierzesz. Do ntfy wystarczy darmowa aplikacja ntfy i własny, trudny do zgadnięcia temat.</p></div><select name="push_kind" class="idfield"><option value="">Wyłączone</option><option value="ntfy">ntfy (telefon)</option><option value="discord">Discord (webhook)</option><option value="slack">Slack (webhook)</option><option value="telegram">Telegram (bot)</option></select></div>
+              <div class="row" id="pushRow"><div><b>Dokąd wysyłać</b><p id="pushHint"></p></div><div class="pushbox"><input type="text" name="push_target" class="idfield" autocomplete="off" spellcheck="false"><button type="button" id="pushTest">Wyślij próbną</button></div></div>
+              <div class="row" id="pushRow2"><div><b>Kiedy powiadamiać</b><p>Po zakończeniu zadania i wtedy, gdy agent czeka na twoją odpowiedź.</p></div><div class="pushev"><label><input type="checkbox" name="push_done"><span>Koniec zadania</span></label><label><input type="checkbox" name="push_ask"><span>Pytanie agenta</span></label></div></div>
+              <div class="row"><div><b>Sygnał po zakończeniu</b><p>Krótki dźwięk i mruganie ikony na pasku zadań, gdy zadanie się skończy.</p></div><label class="switch"><input type="checkbox" name="notify"><i></i></label></div>
+            </div>
+          </div>
+          <div class="block" data-lead="Bezpieczniki, które pilnują limitu subskrypcji, tokenów i zadań bez szans na powodzenie."><h2>Limity i bezpieczniki</h2>
+            <h3 class="grp">Limit subskrypcji</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Pauza przy limicie</b><p>Gdy limit 5 godzin dojdzie do tej wartości, agent czeka na odnowienie i sam rusza dalej. 100 wyłącza pauzę.</p></div><div class="unit"><input type="number" name="limit_stop" min="50" max="100"><em>%</em></div></div>
+              <div class="row"><div><b>Przerwa po błędzie agenta</b><p>Najczęściej to wyczerpany limit subskrypcji. LumoBot czeka i próbuje ponownie, do sześciu razy z rzędu.</p></div><div class="unit"><input type="number" name="wait_minutes" min="1" max="120"><em>min</em></div></div>
+            </div>
+            <h3 class="grp">Pojedyncze zadanie</h3>
+            <div class="grpbox">
+              <div class="row"><div><b>Oszczędzanie tokenów</b><p>Gdy rozmowa z agentem urośnie ponad 60 tysięcy tokenów, następne zadanie zaczyna od krótkiego streszczenia zamiast od całej historii. Agent dalej pamięta ustalenia projektu i ostatnie zadania, a każda tura zużywa mniej limitu.</p></div><label class="switch"><input type="checkbox" name="saver"><i></i></label></div>
+              <div class="row"><div><b>Budżet tokenów na zadanie</b><p>Po przekroczeniu zadanie kończy się samo, żeby nie zjadło limitu. Liczone w tysiącach, 0 oznacza brak budżetu.</p></div><div class="unit"><input type="number" name="token_budget" min="0" max="100000"><em>tys.</em></div></div>
+              <div class="row"><div><b>Hamulec Neuro</b><p>Gdy sieć Neuro dwa razy z rzędu oceni szansę na cel poniżej 15%, zadanie staje i pyta cię, co dalej. Działa dopiero, gdy sieć ma co najmniej 60 przykładów.</p></div><label class="switch"><input type="checkbox" name="brake"><i></i></label></div>
+            </div>
+          </div>
+          <div hidden>
+              <div class="row"><div><b>Raport poranny</b><p>O tej godzinie w Harmonogramie pojawia się podsumowanie: co agenci zrobili, co się nie udało i co czeka na twoją decyzję. Nie zużywa tokenów.</p></div><div class="reportset"><input type="time" name="report_time" value="08:00"><label class="switch"><input type="checkbox" name="report_on"><i></i></label></div></div>
+          </div>
+          </form>
+          <div class="block plsec" data-lead="Gotowe zasady pracy. Włączone trafiają do każdego zadania, także do agentów z zespołu."><h2>Umiejętności</h2>
+            <div class="plhead"><span id="skillCount" data-keep></span><i class="grow"></i><button type="button" id="skillAdd">Dodaj własną</button></div>
+            <div id="skillList"></div>
+          </div>
+          <div class="block connectionssection"><h2>Połączenia</h2>
+            <div id="boardConn"></div>
+          </div>
+          <div class="setempty" id="setEmpty" hidden>Nic nie pasuje do tego, czego szukasz.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="ctx" id="ctx" hidden></div>
+<aside class="vpanel" id="voice" hidden></aside>
+<div class="vbar" id="vbar" hidden></div>
+<div class="dictpill" id="dictPill" hidden></div>
+<div class="cpop" id="colorPop" hidden></div>
+<div class="pop" id="pop" hidden></div>
+<div class="lightbox" id="lightbox" hidden></div>
+<div class="modal" id="modal" hidden></div>
+<div id="toast"></div>
+<script src="i18n.js?v=177"></script>
+<script src="app.js?v=177"></script>
+
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<style>
+.dk-body{display:grid;grid-template-columns:240px minmax(0,760px);column-gap:64px;align-items:start;padding-top:52px;padding-bottom:96px}
+.dk-side{position:sticky;top:calc(var(--nav-h,64px) + 24px);max-height:calc(100vh - var(--nav-h,64px) - 48px);overflow:auto;scrollbar-width:none}
+.dk-side::-webkit-scrollbar{display:none}
+.dk-gname{margin:0 0 8px;padding-left:12px;font-size:13px;font-weight:600;color:#a1a1a6}
+.dk-nav{display:flex;flex-direction:column;gap:2px}
+.dk-link{display:flex;align-items:center;min-height:36px;padding:0 12px;border-radius:10px;font-size:15px;line-height:1.3;color:#d1d1d6;text-decoration:none;transition:color .2s,background .2s}
+.dk-link:hover{color:#f5f5f7;background:rgba(255,255,255,.05)}
+.dk-link:active{opacity:.7}
+.dk-link.is-active{color:#f5f5f7;background:rgba(255,255,255,.1);font-weight:600}
+.dk-link:focus{outline:none}
+.dk-link:focus-visible{outline:2px solid #8fb0ff;outline-offset:2px}
+.dk-main h2[id]{scroll-margin-top:96px}
+.dk-main .wt-sec:first-child{margin-top:0}
+.dk-main .wt-sec h2{font-size:clamp(24px,2.6vw,30px)}
+.dk-main a{color:#8fb0ff;text-decoration:underline;text-decoration-color:rgba(143,176,255,.4);text-underline-offset:3px;transition:text-decoration-color .15s}
+.dk-main a:hover{text-decoration-color:#8fb0ff}
+.dk-main a:active{opacity:.7}
+.dk-main a:focus-visible{outline:2px solid #8fb0ff;outline-offset:3px;border-radius:4px}
+.dk-main pre{margin:16px 0 0;padding:16px 20px;border-radius:16px;background:#232325;color:#d1d1d6;font-size:14px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.dk-note{margin:24px 0 0;padding:24px;border-radius:20px;background:#232325;border:0}
+.dk-note-h{margin:0 0 8px;font-size:17px;font-weight:600;line-height:1.3;color:#f5f5f7}
+.dk-note p{margin:0;font-size:16px;line-height:1.6;color:#d1d1d6}
+.dk-table{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixed;font-size:16px;line-height:1.55}
+.dk-table th{padding:0 16px 12px 0;text-align:left;font-size:13px;font-weight:600;color:#8e8e93}
+.dk-table td{padding:14px 16px 14px 0;text-align:left;vertical-align:top;color:#d1d1d6;border-top:1px solid rgba(255,255,255,.08)}
+.dk-table td:first-child{color:#f5f5f7;font-weight:600}
+.dk-table th:nth-child(1),.dk-table td:nth-child(1){width:26%}
+.dk-table th:nth-child(2),.dk-table td:nth-child(2){width:28%}
+.dk-body .wt-faq{grid-column:2;margin-top:0}
+.dk-body .fq-grid{margin-top:0;grid-template-columns:minmax(0,1fr);gap:24px}
+@media (max-width:900px){
+  .dk-body{grid-template-columns:minmax(0,1fr);row-gap:24px;column-gap:0;padding-top:32px}
+  .dk-side{position:static;max-height:none;overflow:visible}
+  .dk-nav{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding-bottom:4px;scrollbar-width:none}
+  .dk-nav::-webkit-scrollbar{display:none}
+  .dk-gname{width:100%}
+  .dk-link{min-height:36px;white-space:nowrap;flex-shrink:0;background:rgba(255,255,255,.06)}
+  .dk-link.is-active{background:rgba(255,255,255,.16)}
+  .dk-body .wt-faq{grid-column:1}
+}
+@media (max-width:600px){
+  .dk-table thead{display:none}
+  .dk-table,.dk-table tbody,.dk-table tr,.dk-table td{display:block;width:100%}
+  .dk-table tr{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
+  .dk-table td{padding:2px 0;border:0}
+  .dk-table td::before{content:attr(data-l);display:block;margin-bottom:2px;font-size:13px;font-weight:600;color:#8e8e93}
+  .dk-table td:first-child::before{display:none}
+  .dk-note{padding:20px}
+}
+</style>
+
+<section class="dark spo-section vs-page wt-page dk-page">
+  <div class="wrap spo-wrap dk-body">
+
+    <aside class="dk-side" aria-label="Spis treści">
+      <p class="dk-gname">Spis treści</p>
+      <nav class="dk-nav" aria-label="Sekcje dokumentacji">
+        <a class="dk-link" href="#co-potrafi">Co potrafi LumoBot</a>
+        <a class="dk-link" href="#wymagania">Wymagania</a>
+        <a class="dk-link" href="#instalacja">Instalacja i aktualizacje</a>
+        <a class="dk-link" href="#pierwsze-zadanie">Pierwsze zadanie</a>
+        <a class="dk-link" href="#zespol">Zespół, Lider i role</a>
+        <a class="dk-link" href="#praca-do-skutku">Praca do skutku</a>
+        <a class="dk-link" href="#neuro">Neuro</a>
+        <a class="dk-link" href="#dostawcy-ai">Dostawcy AI i modele</a>
+        <a class="dk-link" href="#przegladarka">Własna przeglądarka</a>
+        <a class="dk-link" href="#wtyczki">Wtyczki i połączenia</a>
+        <a class="dk-link" href="#harmonogram">Harmonogram</a>
+        <a class="dk-link" href="#wyspa">Wyspa i rozmowa głosowa</a>
+        <a class="dk-link" href="#bezpieczenstwo">Bezpieczeństwo i dane</a>
+        <a class="dk-link" href="#punkty-powrotu">Punkty powrotu</a>
+        <a class="dk-link" href="#problemy">Rozwiązywanie problemów</a>
+        <a class="dk-link" href="#licencja">Licencja</a>
+        <a class="dk-link" href="#pytania">Pytania</a>
+      </nav>
+    </aside>
+
+    <article class="wt-doc dk-main">
+
+      <section class="wt-sec">
+        <h2 id="co-potrafi">Co potrafi LumoBot</h2>
+        <p>LumoBot to zespół agentów AI, który działa na twoim komputerze. Opisujesz cel zwykłym zdaniem, a zespół go wykonuje i sam sprawdza wynik.</p>
+        <ul class="wt-dash">
+          <li><strong>Praca do skutku.</strong> Niezależny sprawdzający ocenia wynik, a agent poprawia go, dopóki sprawdzenie nie przejdzie.</li>
+          <li><strong>Zespół z Liderem.</strong> Lider dzieli pracę i zleca ją właściwym agentom, a reszta pracuje równolegle.</li>
+          <li><strong>Neuro.</strong> Mała sieć szacuje, czy cel jest w zasięgu, zanim agent ruszy z pracą.</li>
+          <li><strong>Własna przeglądarka.</strong> Agent szuka, czyta strony i pobiera pliki do projektu. Twoja przeglądarka zostaje nietknięta.</li>
+          <li><strong>Wyspa i głos.</strong> Mały panel na pulpicie, a w nim rozmowa głosowa po polsku.</li>
+          <li><strong>Wtyczki.</strong> 64 połączenia z usługami, na przykład Gmail, Slack, Notion czy GitHub.</li>
+          <li><strong>Punkty powrotu.</strong> Każdą zmianę możesz cofnąć do wcześniejszego wyniku.</li>
+        </ul>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="wymagania">Wymagania</h2>
+        <p>LumoBot działa na Windows. Wersje dla innych systemów są w przygotowaniu.</p>
+        <table class="dk-table">
+          <thead><tr><th scope="col">System</th><th scope="col">Wersja</th><th scope="col">Stan</th></tr></thead>
+          <tbody>
+            <tr><td data-l="System">Windows</td><td data-l="Wersja">10 i 11, 64-bit</td><td data-l="Stan">Dostępny</td></tr>
+            <tr><td data-l="System">macOS</td><td data-l="Wersja">Apple Silicon i Intel</td><td data-l="Stan">Wkrótce</td></tr>
+            <tr><td data-l="System">Linux</td><td data-l="Wersja">.deb i AppImage</td><td data-l="Stan">Wkrótce</td></tr>
+            <tr><td data-l="System">iOS</td><td data-l="Wersja">iPhone i iPad</td><td data-l="Stan">Wkrótce</td></tr>
+            <tr><td data-l="System">Android</td><td data-l="Wersja">Telefony z Androidem</td><td data-l="Stan">Wkrótce</td></tr>
+          </tbody>
+        </table>
+        <p>Do chmurowego dostawcy AI potrzebujesz internetu. Model lokalny działa bez internetu.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="instalacja">Instalacja i aktualizacje</h2>
+        <ol class="wt-num">
+          <li>Pobierz najnowszą wersję LumoBota z <a href="/pobierz">GitHub Releases</a>.</li>
+          <li>Uruchom pobrany plik i postępuj według kroków na ekranie.</li>
+          <li>Przy pierwszym uruchomieniu przejdź kreator: wybierz język i wygląd, zaloguj się mailem z kodem, podłącz AI, utwórz pierwszego agenta i sprawdź ustawienia bezpieczeństwa.</li>
+        </ol>
+        <h3>Aktualizacje</h3>
+        <p>LumoBot pobiera nowe wersje z GitHub Releases. Gdy wersja jest gotowa, w górnym pasku pojawia się mała pigułka z numerem i przyciskiem Aktualizuj. Krzyżyk chowa ją do następnej wersji. Automatyczne aktualizacje włączasz lub wyłączasz w ustawieniach.</p>
+        <aside class="dk-note">
+          <p class="dk-note-h">Ważne</p>
+          <p>Gdy GitHub ma przerwę, LumoBot dalej działa. Nowa wersja po prostu przyjdzie później.</p>
+        </aside>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="pierwsze-zadanie">Pierwsze zadanie krok po kroku</h2>
+        <ol class="wt-num">
+          <li>Kliknij Zaczynamy na pierwszym ekranie.</li>
+          <li>Podłącz dostawcę AI i zaloguj się w kreatorze. Szczegóły są w sekcji o dostawcach AI.</li>
+          <li>Napisz zadanie w czacie zwykłym zdaniem, na przykład: „Przejrzyj pocztę z dzisiaj i zrób listę spraw”.</li>
+          <li>Obserwuj pracę. Lider rozdziela zadania, a agenci pracują równolegle.</li>
+          <li>Przeczytaj werdykt. Gdy cel jest osiągnięty, widzisz liczbę rund, na przykład „cel osiągnięty, 2 rundy”.</li>
+        </ol>
+        <p>Na pasku są zakładki: Plan, Zlecenia, Harmonogram, Neuro i Logowania. Możesz przypinać te, których używasz, a resztę schować.</p>
+        <aside class="dk-note">
+          <p class="dk-note-h">Ważne</p>
+          <p>Przed wysłaniem wiadomości albo publikacją agent pokazuje gotową treść i czeka na twoje „tak”.</p>
+        </aside>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="zespol">Zespół, Lider i role</h2>
+        <p>Jeden agent nie robi wszystkiego sam. Pracę dzieli zespół, w którym każdy ma swoją rolę:</p>
+        <ul class="wt-dash">
+          <li><strong>Lider</strong> dzieli pracę na mniejsze zadania, zleca je właściwym agentom i pilnuje kolejności oraz wyniku.</li>
+          <li><strong>Pióro</strong> układa tekst.</li>
+          <li><strong>Kreska</strong> buduje widok strony albo okna.</li>
+          <li><strong>Lupa</strong> sprawdza widok na telefonie.</li>
+          <li><strong>Paleta</strong> tworzy obrazy przez podłączone AI do generowania grafiki. Gotowy plik trafia do folderu obrazy.</li>
+        </ul>
+        <p>Ty czytasz jeden sprawdzony wynik, a nie kilka wersji w toku.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="praca-do-skutku">Praca do skutku i sprawdzanie</h2>
+        <p>Agent nie oddaje półproduktu. Po każdej rundzie niezależny sprawdzający ocenia wynik i pisze werdykt:</p>
+        <table class="dk-table">
+          <thead><tr><th scope="col">Werdykt</th><th scope="col">Co się dzieje dalej</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Werdykt">Sprawdzenie nie przeszło</td><td data-l="Co dalej">Kolejna runda zaczyna się sama, a agent poprawia wynik.</td></tr>
+            <tr><td data-l="Werdykt">Sprawdzenie przeszło</td><td data-l="Co dalej">Cel osiągnięty, a ty widzisz liczbę rund.</td></tr>
+          </tbody>
+        </table>
+        <p>Gdy zadanie zmienia kod, LumoBot sprawdza go też pod kątem luk, błędów i sensu zmian. Klucze API i hasła wpisane w kod blokują oddanie wyniku od razu. Zielone testy same nie kończą zadania.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="neuro">Neuro</h2>
+        <p>Neuro to mała sieć, która uczy się na zakończonych zadaniach. Zanim agent zacznie pracę, Neuro szacuje szansę na cel, na przykład „72%”, i pokazuje, na podstawie ilu zadań to wyliczył.</p>
+        <p>Im więcej zakończonych zadań, tym pewniejsza ocena. Neuro ma własną zakładkę, a ocena jest widoczna, więc wiesz, skąd się bierze.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="dostawcy-ai">Dostawcy AI i modele</h2>
+        <p>LumoBot nie ma własnego modelu AI. Agenci pracują u dostawcy, którego wybierzesz. Dostawca, który działa w chmurze, odpowiada przez internet. Model lokalny działa na twoim komputerze.</p>
+        <table class="dk-table">
+          <thead><tr><th scope="col">Dostawca</th><th scope="col">Gdzie działa</th><th scope="col">Jak go podłączasz</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Dostawca">Claude</td><td data-l="Gdzie działa">U dostawcy, w chmurze</td><td data-l="Jak">Logujesz się na swoje konto w Połączeniach. Przycisk Zmień konto wylogowuje stare konto i otwiera logowanie.</td></tr>
+            <tr><td data-l="Dostawca">ChatGPT i Codex</td><td data-l="Gdzie działa">U dostawcy, w chmurze</td><td data-l="Jak">Podłączasz w kroku podłączenia AI w kreatorze.</td></tr>
+            <tr><td data-l="Dostawca">Antigravity i Cursor</td><td data-l="Gdzie działa">U dostawcy, w chmurze</td><td data-l="Jak">Wybierasz je w kroku podłączenia AI.</td></tr>
+            <tr><td data-l="Dostawca">Ollama i LM Studio</td><td data-l="Gdzie działa">Na twoim komputerze</td><td data-l="Jak">Nic nie opuszcza komputera. Do modelu nie potrzebujesz internetu.</td></tr>
+          </tbody>
+        </table>
+        <aside class="dk-note">
+          <p class="dk-note-h">Ważne</p>
+          <p>Do dostawcy AI trafia tylko treść zadania, którego sam wybierzesz. Z modelem lokalnym nic nie opuszcza komputera.</p>
+        </aside>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="przegladarka">Własna przeglądarka agenta</h2>
+        <p>Agent ma własne karty, logowania i historię. Sam szuka w internecie, czyta strony, klika w elementy po numerach i pobiera pliki do projektu. Twoja przeglądarka zostaje nietknięta.</p>
+        <p>W dzienniku widzisz, co agent robi, na przykład:</p>
+        <pre>lumo web szukaj "cennik API"
+lumo web otwórz @2
+lumo web czytaj</pre>
+        <h3>Logowanie na stronach</h3>
+        <p>Gdy strona wymaga logowania, logujesz się sam w przeglądarce agenta. Agent nie zna twojego hasła i pracuje na gotowej sesji. Gdy strona sprawdza, czy to człowiek, agent nie omija tego. Otwiera ci okno i czeka.</p>
+        <p>Narzędzie Przeglądarka Playwright włączysz w Wtyczkach. Pełne sterowanie prawdziwą przeglądarką obejmuje logowanie, formularze i wiele kart naraz.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="wtyczki">Wtyczki i połączenia</h2>
+        <p>LumoBot ma 64 połączenia z usługami, pogrupowane w sześć grup. Łączysz je tak:</p>
+        <ol class="wt-num">
+          <li>Otwórz w LumoBocie Ustawienia, a potem Połączenia.</li>
+          <li>Kliknij Połącz przy wybranej usłudze.</li>
+          <li>Zaloguj się sam w przeglądarce agenta, tak jak w zwykłej przeglądarce.</li>
+        </ol>
+        <table class="dk-table">
+          <thead><tr><th scope="col">Grupa</th><th scope="col">Ile</th><th scope="col">Przykłady</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Grupa">Poczta i kalendarz</td><td data-l="Ile">6</td><td data-l="Przykłady">Gmail, Outlook, Kalendarz Google</td></tr>
+            <tr><td data-l="Grupa">Pliki i dokumenty</td><td data-l="Ile">15</td><td data-l="Przykłady">Dysk Google, Notion, GitHub, Figma</td></tr>
+            <tr><td data-l="Grupa">Społecznościowe</td><td data-l="Ile">15</td><td data-l="Przykłady">YouTube, LinkedIn, Reddit, Bluesky</td></tr>
+            <tr><td data-l="Grupa">Komunikatory</td><td data-l="Ile">6</td><td data-l="Przykłady">Discord, Slack, Telegram, WhatsApp</td></tr>
+            <tr><td data-l="Grupa">Zakupy i rozrywka</td><td data-l="Ile">12</td><td data-l="Przykłady">Allegro, Amazon, Spotify, Netflix</td></tr>
+            <tr><td data-l="Grupa">Praca zespołowa</td><td data-l="Ile">10</td><td data-l="Przykłady">Jira, Asana, GitLab, Vercel</td></tr>
+          </tbody>
+        </table>
+        <h3>Narzędzia MCP</h3>
+        <ul class="wt-dash">
+          <li><strong>Przeglądarka Playwright.</strong> Pełne sterowanie prawdziwą przeglądarką.</li>
+          <li><strong>Dokumentacja Context7.</strong> Aktualna dokumentacja bibliotek, żeby agent nie pisał z pamięci nieaktualnego kodu.</li>
+          <li><strong>GitHub.</strong> Zgłoszenia, pull requesty i repozytoria. Wymaga osobistego tokenu, który wpisujesz sam.</li>
+          <li><strong>Figma.</strong> Odczyt projektów: układ, kolory i komponenty.</li>
+          <li><strong>Higgsfield.</strong> Obrazy i filmy tworzone przez AI. Wymaga konta Higgsfield.</li>
+        </ul>
+        <h3>Linki</h3>
+        <ul class="wt-links">
+          <li><a href="wtyczka-google.html">Gmail i Kalendarz Google</a></li>
+          <li><a href="wtyczka-slack-discord.html">Slack i Discord</a></li>
+          <li><a href="wtyczka-github-figma.html">GitHub i Figma</a></li>
+          <li><a href="wtyczka-notion-dysk.html">Notion i Dysk Google</a></li>
+          <li><a href="wtyczka-przegladarka.html">Przeglądarka agenta</a></li>
+          <li><a href="wtyczka-wzory.html">Gotowe wzory planu</a></li>
+          <li><a href="wtyczki.html">Wszystkie 64 połączenia</a></li>
+        </ul>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="harmonogram">Harmonogram</h2>
+        <p>Harmonogram uruchamia gotowe wzory planu o wybranej godzinie. Ustawiasz godzinę i to, jak często wzór ma ruszać. Możesz też dopisać własne kroki.</p>
+        <ul class="wt-dash">
+          <li><strong>Poranny przegląd, 08:00.</strong> Skrzynka Gmail, dzisiejsze spotkania i plan dnia w pięciu punktach.</li>
+          <li><strong>Pilnowanie ceny, 09:00.</strong> Cena produktu zapisana z datą i porównanie z poprzednimi wpisami.</li>
+          <li><strong>Publikacja w mediach społecznościowych.</strong> Post w wersji na X, LinkedIn i Facebooka.</li>
+          <li><strong>Odpowiedzi na wiadomości.</strong> Gmail, Discord i Messenger.</li>
+          <li><strong>Tygodniowy porządek.</strong> Folder Pobrane, raport z projektu i zapis raportu na Dysku Google.</li>
+          <li><strong>Film na YouTube.</strong> Tytuł, opis, tagi i pomysł na miniaturę.</li>
+        </ul>
+        <p>Przy wzorach obowiązuje jedna zasada: przed wysłaniem, publikacją albo inną czynnością widoczną dla innych agent pokazuje gotową treść i czeka na wyraźną zgodę.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="wyspa">Wyspa i rozmowa głosowa</h2>
+        <p>Mały panel zostaje na pulpicie, gdy główne okno jest schowane. Widzisz w nim pytania agentów i możesz odpowiedzieć bez przerywania pracy. Panel możesz schować do krawędzi.</p>
+        <p>Rozmowa głosowa działa z wyspy. Mikrofon w górnym pasku okna i na wyspie zaczyna rozmowę jednym kliknięciem. Język rozmowy wybierasz w ustawieniach: jak w systemie, polski albo angielski. Domyślne głosy to Ava i Andrew, a Zofia i Marek są do wyboru w ustawieniach rozmowy.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="bezpieczenstwo">Bezpieczeństwo i dane</h2>
+        <h3>Dane zostają u ciebie</h3>
+        <p>LumoBot działa na twoim komputerze. Nie ma własnej chmury i nie przesyła nam twoich danych. Projekty, pliki i ustawienia zostają w folderach na twoim dysku.</p>
+        <h3>Hasła</h3>
+        <p>Hasła, które podajesz w LumoBocie, są zaszyfrowane na twoim komputerze. Nie trafiają do chmury ani do modelu AI. Kod jednorazowy zawsze podajesz ty, a agent pyta o niego w rozmowie.</p>
+        <h3>Zgoda przed wysłaniem</h3>
+        <p>Zanim agent wyśle wiadomość albo coś opublikuje, pokazuje gotową treść i czeka na twoje „tak”. Zgodę na samodzielne logowanie cofasz jednym przełącznikiem, a zapisane dane usuwasz jednym kliknięciem.</p>
+        <aside class="dk-note">
+          <p class="dk-note-h">Ważne</p>
+          <p>Sterowanie komputerem jest domyślnie wyłączone. Gdy je włączysz, kursor w lewym górnym rogu zatrzymuje pracę agenta.</p>
+        </aside>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="punkty-powrotu">Punkty powrotu</h2>
+        <p>Każda zmiana może trafić do git jako osobny punkt powrotu. Gdy kierunek ci nie pasuje, wracasz do wcześniejszego wyniku jednym ruchem.</p>
+        <ul class="wt-dash">
+          <li>Widzisz, co zmienił agent.</li>
+          <li>Nie tracisz poprzedniej wersji.</li>
+          <li>Historia pokazuje punkty powrotu, na przykład start projektu i wersję przed sprawdzeniem.</li>
+        </ul>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="problemy">Rozwiązywanie problemów</h2>
+        <h3>Dostawca AI nie odpowiada</h3>
+        <p>Sprawdź, czy dostawca ma przerwę. Status Claude jest na <a href="https://status.anthropic.com">status.anthropic.com</a>, a ChatGPT i Codex na <a href="https://status.openai.com">status.openai.com</a>. Gdy dostawca działa, a LumoBot nie, zajrzyj na <a href="status.html">stronę statusu LumoBota</a>.</p>
+        <h3>Skończył się limit</h3>
+        <p>Limit należy do planu u dostawcy AI. Sprawdź u niego, kiedy się odnowi.</p>
+        <h3>Strona wymaga logowania</h3>
+        <p>Zaloguj się sam w przeglądarce agenta. Gdy strona pyta o kod jednorazowy, podaj go w rozmowie. Gdy pojawi się sprawdzanie, czy to człowiek, otwórz okno, które agent pokazuje, i przejdź je sam.</p>
+        <h3>Coś nie działa, choć dostawca działa</h3>
+        <p>Napisz zgłoszenie na <a href="https://github.com/bongodelacz/lumobot/issues">GitHubie</a>. Podaj wersję LumoBota, co robiłeś i co się stało. Problemy z aktualizacjami sprawdzisz też na <a href="https://www.githubstatus.com">githubstatus.com</a>.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2 id="licencja">Licencja</h2>
+        <p>Prywatnie LumoBot kosztuje 0 zł, zawsze. Do 30 grudnia 2026 jest za darmo także w firmie i przy płatnych zleceniach. Od 31 grudnia 2026 praca komercyjna wymaga licencji. Cenę ogłosimy przed tą datą.</p>
+        <table class="dk-table">
+          <thead><tr><th scope="col">Kto</th><th scope="col">Co płaci</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Kto">Ty prywatnie, do nauki i w projektach open source</td><td data-l="Co płaci">Nic, zawsze 0 zł</td></tr>
+            <tr><td data-l="Kto">Firma, pracownik, freelancer lub agencja przy płatnej pracy</td><td data-l="Co płaci">Licencję, od 31 grudnia 2026</td></tr>
+            <tr><td data-l="Kto">Każdy do 30 grudnia 2026</td><td data-l="Co płaci">Nic, także w firmie</td></tr>
+          </tbody>
+        </table>
+        <p>Za plan AI płacisz dalej swojemu dostawcy. Licencja dotyczy samej aplikacji. Szczegóły są na <a href="firmy.html">stronie dla firm</a>.</p>
+      </section>
+
+    </article>
+
+    <section class="wt-faq" id="pytania">
+      <div class="fq-grid">
+        <div class="fq-head">
+          <h2 class="title fq-title" id="pytania-tytul">Pytania</h2>
+          <p class="fq-lead">Krótkie odpowiedzi na pytania, które wracają najczęściej.</p>
+          <a class="fq-all" href="wtyczki.html">Wszystkie połączenia ›</a>
+        </div>
+        <div class="fq-list">
+          <details class="fq-item">
+            <summary class="fq-q"><span>Na jakim systemie działa LumoBot?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Na Windows 10 i Windows 11, 64-bit. Wersje dla macOS, Linuksa, iOS i Androida są w przygotowaniu.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy muszę ręcznie aktualizować LumoBota?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie musisz. LumoBot pobiera nowe wersje z GitHub Releases, a automatyczne aktualizacje włączasz lub wyłączasz w ustawieniach.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy agent zna moje hasło?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie. Logujesz się sam w przeglądarce agenta, a agent pracuje na gotowej sesji. Hasło nie trafia do modelu AI.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy agent coś wyśle bez mojej zgody?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie. Przed wysłaniem albo publikacją pokazuje gotową treść i czeka na twoją zgodę.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy mogę użyć modelu na swoim komputerze?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak. Ollama i LM Studio działają lokalnie. Wtedy nic nie opuszcza komputera i nie potrzebujesz internetu.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Gdzie zostają moje pliki?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>W folderach projektu na twoim komputerze. LumoBot nie ma własnej chmury i nie przesyła twoich danych.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy mogę używać LumoBota w firmie?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak. Do 30 grudnia 2026 jest za darmo dla wszystkich. Od 31 grudnia 2026 praca komercyjna wymaga licencji.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy agent może kliknąć w moim komputerze?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tylko wtedy, gdy sam włączysz tę opcję. Domyślnie jest wyłączona, a każdy krok widzisz w dzienniku.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>

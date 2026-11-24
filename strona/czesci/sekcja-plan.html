@@ -1,0 +1,44 @@
+<!-- ================= PLAN: połączone zadania jak w aplikacji (sekcja-plan) ================= -->
+<section class="pl" id="plan" aria-labelledby="plTitle">
+  <div class="wrap">
+    <h2 class="display pl-h" id="plTitle">Ułóż pracę jak klocki</h2>
+    <p class="pl-lead">W zakładce Plan rysujesz zadania i łączysz je strzałkami. Agenci robią je po kolei, a każdy wynik trafia dalej.</p>
+    <div class="pl-board" aria-label="Przykładowy plan: trzy połączone zadania">
+      <div class="pl-flow">
+        <div class="pl-node" style="--i:0">
+          <div class="pl-top"><span class="pl-app"><svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path fill="#4285f4" d="M6 38h7V22L3 15v20c0 1.7 1.3 3 3 3z"/><path fill="#34a853" d="M35 38h7c1.7 0 3-1.3 3-3V15l-10 7z"/><path fill="#fbbc04" d="M35 10v12l10-7v-2c0-3.7-4.2-5.8-7.2-3.6z"/><path fill="#ea4335" d="M13 22V10l11 8.2L35 10v12l-11 8.2z"/><path fill="#c5221f" d="M3 13v2l10 7V10l-2.8-2.1C7.2 5.7 3 7.8 3 11.5z"/></svg></span><b class="pl-title">Skrzynka Gmail</b><span class="pl-time"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 5v3.2l2 1.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>08:00</span></div>
+          <p class="pl-txt">Wypisz maile, które czekają na odpowiedź.</p>
+          <div class="pl-foot">
+            <span class="pl-who"><span class="pl-face" data-n="Pióro" data-c="#f2b65e" data-s="kot" data-e="mrugniecie"></span><span class="pl-model"><img src="img/ai-openai.svg" width="14" height="14" alt="">GPT</span></span>
+            <span class="pl-st"><i></i><b class="pl-wait">Czeka</b><b class="pl-run">Pracuje</b><b class="pl-ok">Gotowe 94%</b></span>
+          </div>
+        </div>
+        <svg class="pl-arr" viewBox="0 0 60 16" aria-hidden="true"><path d="M2 8h50m0 0-6-5m6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="pl-node" style="--i:1">
+          <div class="pl-top"><span class="pl-app"><svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="6" fill="#fff"/><path d="M5 11a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v5H5z" fill="#1a73e8"/><text x="24" y="37" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="17" fill="#1a73e8">31</text></svg></span><b class="pl-title">Kalendarz Google</b></div>
+          <p class="pl-txt">Wypisz dzisiejsze spotkania z godzinami.</p>
+          <div class="pl-foot">
+            <span class="pl-who"><span class="pl-face" data-n="Lupa" data-c="#93b8ff" data-s="squircle" data-e="gwiazdki"></span><span class="pl-model"><img src="img/ai-claude.svg" width="14" height="14" alt="">Claude</span></span>
+            <span class="pl-st"><i></i><b class="pl-wait">Czeka</b><b class="pl-run">Pracuje</b><b class="pl-ok">Gotowe 93%</b></span>
+          </div>
+        </div>
+        <svg class="pl-arr" viewBox="0 0 60 16" aria-hidden="true"><path d="M2 8h50m0 0-6-5m6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="pl-node" style="--i:2">
+          <div class="pl-top"><span class="pl-app"><svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><rect x="9" y="4" width="30" height="40" rx="6" fill="#ffd166"/><path d="M16 16h16M16 23h16M16 30h10" stroke="#5a4300" stroke-width="3" stroke-linecap="round"/></svg></span><b class="pl-title">Plan dnia</b></div>
+          <p class="pl-txt">Z maili i kalendarza zrób plan w pięciu punktach.</p>
+          <div class="pl-foot">
+            <span class="pl-who"><span class="pl-face" data-n="Lider" data-c="#93ddb6" data-s="chmura" data-e="duze"></span><span class="pl-model"><img src="img/ai-openai.svg" width="14" height="14" alt="">GPT</span></span>
+            <span class="pl-st"><i></i><b class="pl-wait">Czeka</b><b class="pl-run">Pracuje</b><b class="pl-ok">Gotowe 92%</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="pl-tools" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <ul class="pl-notes">
+      <li><b>Box to zadanie.</b> Piszesz zwykłymi słowami, co ma być zrobione, i wybierasz agenta.</li>
+      <li><b>Strzałka przekazuje wynik.</b> Następny agent dostaje to, co zrobił poprzedni.</li>
+      <li><b>Godzina startu.</b> Plan rusza sam, na przykład codziennie o 8:00.</li>
+      <li><b>Zweryfikuj.</b> Każdy krok przechodzi sprawdzenie, zanim pójdzie dalej.</li>
+    </ul>
+  </div>
+</section>

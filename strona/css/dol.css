@@ -1,0 +1,220 @@
+/* Stopka LumoBota: duża lewa kolumna, cztery grupy linków i cienka linia statusu. */
+.dl{position:relative;overflow:visible;padding:var(--s9) 0 0;background:transparent}
+.dl-wrap{min-width:0}
+.dl-main{display:grid;grid-template-columns:minmax(300px,.92fr) minmax(0,1.58fr);gap:var(--s8);align-items:start}
+
+.dl-brand{min-width:0}
+.dl-logo{display:inline-flex;align-items:center;gap:var(--s3);color:var(--text);font-size:22px;font-weight:700;letter-spacing:-.03em;transition:color .15s,transform .15s}
+.dl-logo:hover{color:#fff}
+.dl-logo:active{transform:scale(.98)}
+.dl-logo-face{display:block;width:44px;height:44px;flex:none}
+.dl-logo-face .face{width:44px;height:44px;animation:dl-logo-float 5.4s ease-in-out infinite;will-change:transform}
+.dl-logo-face .face .eyes{animation:dl-logo-eyes 5.8s ease-in-out infinite!important;will-change:translate,scale}
+.dl-logo:hover .face{transform:scale(1.04)}
+.dl-logo:active .face{transform:scale(.97)}
+@keyframes dl-logo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes dl-logo-eyes{0%,12%{translate:0 0;scale:1 1}18%,30%{translate:6% -2%;scale:1 1}33%{translate:6% -2%;scale:1 .08}36%{translate:6% -2%;scale:1 1}44%,58%{translate:-6% 2%;scale:1 1}66%,82%{translate:0 0;scale:1 1}85%{translate:0 0;scale:1 .08}88%,100%{translate:0 0;scale:1 1}}
+
+.dl-claim{max-width:520px;margin-top:var(--s6);font-size:28px;line-height:1.2;font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.dl-claim-sub{max-width:520px;margin:12px 0 0;font-size:18px;line-height:1.45;font-weight:400;letter-spacing:-.01em;color:#a1a1a6}
+.dl-brand-links{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s5);margin-top:var(--s6)}
+.dl-download,.dl-github{display:inline-flex;align-items:center;gap:var(--s2);min-height:24px;font-size:15px;font-weight:600;color:var(--text);transition:color .15s,transform .15s}
+.dl-download span{font-size:20px;line-height:1;color:#f5f5f7;transition:transform .15s}
+.dl-download:hover,.dl-github:hover{color:#ffffff;text-decoration:underline;text-underline-offset:3px}
+.dl-download:hover span{transform:translateY(3px)}
+.dl-download:active,.dl-github:active{transform:scale(.98)}
+.dl-github{font-weight:500;color:var(--text-2)}
+.dl-github svg{width:18px;height:18px;flex:none}
+
+.dl-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s6) var(--s5);width:100%;min-width:0}
+.dl-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}
+.dl-col h2{margin:0 0 4px;font-size:15px;line-height:1.3;font-weight:600;letter-spacing:-.01em;text-transform:none;color:#ffffff}
+.dl-col a,.dl-col>span{display:block;max-width:100%;font-size:14px;line-height:1.45;color:#a1a1a6;overflow-wrap:break-word}
+.dl-col a{transition:color .15s,transform .15s}
+.dl-col a:hover,.dl-col a:focus-visible{color:#ffffff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.dl-col a:focus-visible{outline:2px solid #ffffff;outline-offset:3px;border-radius:4px}
+.dl-col a:active{color:#ffffff;transform:translateX(2px)}
+
+.dl-legal{margin-top:var(--s9);padding-top:var(--s4);border-top:1px solid var(--line)}
+.dl-row{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-width:0;font-size:12px;line-height:1.5;color:var(--text-3)}
+.dl-copy{white-space:nowrap}
+.dl-status{display:inline-flex;align-items:center;gap:var(--s2);text-align:right}
+.dl-status i{display:block;width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
+.dl-status b{font-weight:400;color:var(--text-3)}
+
+/* Koniec strony to stopka. Ludki czekają pod ekranem i wyskakują, gdy dociągniesz stronę w dół (js/stopka.js). */
+.dl{padding-bottom:var(--s6)}
+.dl-peek{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;align-items:flex-end;gap:var(--s6);height:0;margin:0;pointer-events:none}
+.dl-peek>span{transform:translateY(calc((1 - var(--reveal,0)) * 230px + 34px));transition:none}
+.dl-peek>span:nth-child(2),.dl-peek>span:nth-child(5){--lag:1}
+html.dl-anim .dl-peek>span{transition:transform .7s cubic-bezier(.34,1.56,.64,1) calc(var(--lag,0) * 60ms)}
+html.dl-open .dl-peek>span{pointer-events:auto}
+html.dl-open .dl-peek>span:hover{transform:translateY(14px) rotate(-3deg)}
+html.dl-act .dl-shift{transform:translateY(calc(var(--pull,0) * -42vh))}
+html.dl-anim .dl-shift{transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+html.dl-pulling .dl-pull-hint{opacity:1;transform:translate(-50%,0)}
+.dl-pull-hint{position:fixed;left:50%;bottom:12px;z-index:29;transform:translate(-50%,8px);opacity:0;font-size:12px;color:var(--text-3);pointer-events:none;transition:opacity .3s,transform .3s}
+html.static .dl-peek,html.static .dl-pull-hint{display:none}
+
+/* Lewa strona: logo, hasło i akcje w jednym rzędzie, bez karty */
+.dl-logo-face,.dl-logo-face .face{width:48px;height:48px}
+.dl-logo-text{display:flex;flex-direction:column;gap:4px}
+.dl-logo-name{line-height:1}
+.dl-logo-meta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;letter-spacing:0;color:var(--text-3)}
+.dl-logo-meta i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.dl-brand-links{gap:var(--s3) var(--s4);margin-top:var(--s6)}
+.dl-btn{height:40px;padding:0 18px;font-size:15px}
+.dl-brand-links .dl-github{margin-left:var(--s1)}
+.dl-btn:focus-visible,.dl-github:focus-visible{outline:2px solid #f5f5f7;outline-offset:3px}
+
+@media (max-width:900px){
+  .dl-main{grid-template-columns:1fr;gap:var(--s7)}
+  .dl-claim{max-width:620px}
+}
+
+@media (max-width:600px){
+  .dl{padding-top:var(--s8)}
+  .dl-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s6) var(--s5)}
+  .dl-col{gap:var(--s3)}
+  .dl-col a,.dl-col>span{font-size:13px}
+  .dl-legal{margin-top:var(--s7)}
+  .dl-row{align-items:flex-start;flex-direction:column;gap:var(--s2)}
+  .dl-status{text-align:left}
+  .dl-peek{gap:var(--s2)}
+  .dl-peek>span:nth-child(1),.dl-peek>span:nth-child(6){display:none}
+  .dl-peek .face{width:72px!important;height:72px!important}
+  .dl-peek>span:nth-child(3) .face{width:88px!important;height:88px!important}
+}
+
+/* Duży napis "Lumo Bot" nad stopką (Lider): biały, wtapia się w tło od dołu, niebieska poświata idzie za kursorem.
+   Bez buziek i mozaiki (każdy pas z buźkami przypominał OpenBota). */
+.dl-word{position:relative;display:flex;justify-content:center;padding:0 var(--s4);margin:0 0 var(--s7);overflow:hidden;user-select:none}
+.dl-word-t{display:block;font-size:clamp(64px,14vw,210px);line-height:.92;font-weight:800;letter-spacing:-.05em;padding-right:.04em;white-space:nowrap;padding-bottom:.06em;
+  color:transparent;-webkit-background-clip:text;background-clip:text;
+  background-image:radial-gradient(320px circle at var(--mx,50%) var(--my,40%),rgba(157,181,255,.95),rgba(58,107,252,.55) 40%,transparent 70%),linear-gradient(180deg,#f5f5f7 0%,rgba(245,245,247,.55) 45%,rgba(245,245,247,.04) 92%);
+  transition:filter .3s}
+.dl-word:hover .dl-word-t{filter:drop-shadow(0 0 28px rgba(58,107,252,.25))}
+@media (max-width:600px){.dl-word{margin-bottom:var(--s5)}}
+
+/* ===== sekcja nad stopką: ściana z buziek agentów i zaproszenie ===== */
+.dl-cta{position:relative;height:clamp(420px,46vw,560px);margin:0 0 var(--s7);overflow:hidden;isolation:isolate;display:grid;place-items:center}
+.dl-wall{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;z-index:0;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent)}
+.dl-row-w{overflow:hidden;width:100%}
+.dl-track{display:flex;gap:14px;width:max-content;animation:dl-flow var(--dur,80s) linear infinite;animation-play-state:paused}
+.dl-wall.on .dl-track{animation-play-state:running}
+.dl-row-w.rev .dl-track{animation-direction:reverse}
+.dl-row-w:nth-child(2) .dl-track{margin-left:-45px}.dl-row-w:nth-child(4) .dl-track{margin-left:-30px}
+.dl-cell{flex:none;width:96px;height:96px;border-radius:26px;display:grid;place-items:center;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06)}
+@keyframes dl-flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* środek przyciemniony i rozmyty, żeby hasło było czytelne */
+.dl-cta::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(46% 52% at 50% 50%,rgba(33,33,33,.97) 0,rgba(33,33,33,.88) 45%,rgba(33,33,33,.25) 78%,transparent 100%)}
+.dl-cta-in{position:relative;z-index:2;max-width:560px;padding:0 var(--s4);text-align:center}
+.dl-cta-in h2{margin:0 0 14px;font-size:clamp(32px,4.4vw,52px);line-height:1.04;font-weight:800;letter-spacing:-.035em;color:#fff}
+.dl-cta-in p{margin:0 auto 26px;max-width:460px;font-size:16px;line-height:1.55;color:rgba(255,255,255,.62)}
+.dl-cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.dl-btn{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:background .2s,transform .2s}
+.dl-btn:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
+.dl-btn-p{background:#3a6bfc;border-color:#3a6bfc}.dl-btn-p:hover{background:#2f5ef0}
+@media (prefers-reduced-motion:reduce){.dl-track{animation:none}}
+@media (max-width:600px){.dl-cell{width:72px;height:72px;border-radius:20px}.dl-cell .face{transform:scale(.78)}.dl-cta{height:440px}}
+
+
+/* ===== scena "praca do skutku" (zastępuje ścianę z buziek) ===== */
+.dl-cta{height:auto;display:flex;flex-direction:column;align-items:center;gap:44px;padding:40px 0 20px}
+.dl-cta::after{display:none}
+.dl-cta::before{content:"";position:absolute;left:50%;top:38%;width:min(900px,96vw);height:520px;transform:translate(-50%,-50%);z-index:0;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--glow,#3a6bfc) 30%,transparent),transparent);filter:blur(30px);opacity:.55;transition:background .8s}
+.dl-cta:has(.pd-card.pass)::before{--glow:#22c55e;opacity:.8}
+.dl-cta:has(.pd-card.fail)::before{--glow:#ef4444}
+.dl-wall{position:relative;inset:auto;display:block;-webkit-mask-image:none;mask-image:none;width:min(640px,calc(100vw - 32px));z-index:2}
+.pd-card{--ag:#3a6bfc;position:relative;border-radius:24px;padding:22px 24px 20px;background:linear-gradient(180deg,rgba(44,44,48,.92),rgba(30,30,33,.94));
+  border:1px solid rgba(255,255,255,.09);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);transition:border-color .4s,box-shadow .4s}
+.pd-card.fail{border-color:rgba(239,68,68,.55);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 4px rgba(239,68,68,.12);animation:pd-shake .4s}
+.pd-card.pass{border-color:rgba(34,197,94,.6);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 4px rgba(34,197,94,.14),0 0 60px rgba(34,197,94,.25)}
+@keyframes pd-shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+.pd-head{display:flex;flex-direction:column;gap:8px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.07)}
+.pd-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.pd-task{font-size:clamp(17px,2vw,21px);font-weight:600;color:#fff;min-height:1.4em;letter-spacing:-.01em}
+.pd-caret{display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-2px;background:var(--ag);animation:pd-blink 1s steps(1) infinite}
+@keyframes pd-blink{50%{opacity:0}}
+.pd-team{display:flex;justify-content:space-between;gap:6px;padding:20px 0 16px}
+.pd-ag{display:flex;flex-direction:column;align-items:center;gap:7px;opacity:.35;filter:grayscale(.7);transition:opacity .35s,filter .35s,transform .35s}
+.pd-ag.was{opacity:.75;filter:none}
+.pd-ag.on{opacity:1;filter:none;transform:translateY(-6px) scale(1.12)}
+.pd-face{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.04);transition:background .35s,box-shadow .35s}
+.pd-ag.on .pd-face{background:color-mix(in srgb,var(--ag) 22%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--ag) 55%,transparent),0 10px 30px color-mix(in srgb,var(--ag) 40%,transparent)}
+.pd-card.pass .pd-ag{opacity:1;filter:none}
+.pd-nm{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.7)}
+.pd-log{display:flex;align-items:center;gap:9px;min-height:22px;font-size:14px;color:rgba(255,255,255,.72)}
+.pd-dot{width:8px;height:8px;border-radius:50%;background:var(--ag);box-shadow:0 0 0 4px color-mix(in srgb,var(--ag) 22%,transparent);animation:pd-pulse 1.2s ease-in-out infinite}
+.pd-card.pass .pd-dot{background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.22);animation:none}
+@keyframes pd-pulse{50%{transform:scale(.7)}}
+.pd-check{display:flex;align-items:center;gap:14px;margin-top:14px}
+.pd-bar{flex:1;height:6px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden}
+.pd-bar i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--ag),color-mix(in srgb,var(--ag) 50%,#fff));transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.pd-card.fail .pd-bar i{background:#ef4444}.pd-card.pass .pd-bar i{background:linear-gradient(90deg,#16a34a,#4ade80)}
+.pd-res{min-width:150px;text-align:right;font-size:13px;font-weight:700;color:rgba(255,255,255,.5)}
+.pd-card.fail .pd-res{color:#f87171}.pd-card.pass .pd-res{color:#4ade80}
+.dl-cta-in{max-width:620px}
+@media (max-width:600px){.pd-face{width:42px;height:42px;border-radius:13px}.pd-face .face{transform:scale(.72)}.pd-nm{font-size:10px}.pd-res{min-width:0}}
+
+/* ===== nad stopką: fale z kształtów (Shape Waves) z wyciętym napisem LUMO ===== */
+.dl-waves{position:relative;height:clamp(240px,26vw,340px);margin:0 0 var(--s6);overflow:hidden}
+.dl-waves canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .6s cubic-bezier(.22,1,.36,1)}
+.dl-waves.ready canvas{opacity:1}
+.dl-waves.no-gl,.dl-waves.static{background:#1a1a1a url(../img/stopka-lumo.png) center/cover no-repeat}
+.dl-waves.no-gl canvas,.dl-waves.static canvas{display:none}
+@media (max-width:600px){.dl-waves{height:200px}}
+
+/* wiązka Laser Flow na stronie głównej: przyklejona do ekranu, nad tłem i pod klikalną treścią */
+.lz-page{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:2;mix-blend-mode:screen}
+@media (max-width:700px){.lz-page{opacity:.6}}
+
+/* wąż z wiązki Laser Flow na stronie głównej: płótno przyklejone do ekranu, nad treścią, nie blokuje klikania */
+.wz{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:2;will-change:transform}
+@media (max-width:700px){.wz{opacity:.6}}
+
+
+/* stopka: prawdziwe logo jak w hero, nagłówki kolumn w jednej linii z logo, większy tekst */
+.dl-lg{position:relative;display:block;width:48px;height:48px;flex:none}
+.dl-lg img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.dl-lg-e{transform-origin:50% 50%}
+.dl-logo:hover .dl-lg{animation:dlHop .9s cubic-bezier(.3,.7,.3,1)}
+.dl-logo:hover .dl-lg-e{animation:dlLook 1.5s ease-in-out}
+@keyframes dlHop{0%{transform:none}18%{transform:translateY(2px) scale(1.05,.94)}45%{transform:translateY(-9px) scale(.97,1.05)}70%{transform:translateY(0) scale(1.04,.96)}85%{transform:translateY(-2px)}100%{transform:none}}
+@keyframes dlLook{0%{transform:none}20%{transform:translate(-2px,0)}42%{transform:translate(2px,0)}60%{transform:none}68%{transform:scaleY(.08)}76%{transform:none}100%{transform:none}}
+.dl-logo{font-size:24px}
+.dl-col h2{min-height:48px;display:flex;align-items:center;margin:0;font-size:15px;font-weight:600;color:#ffffff}
+.dl-claim{font-size:34px;line-height:1.15}
+.dl-claim-sub{font-size:20px}
+.dl-col a,.dl-col>span{font-size:14px;color:#a1a1a6}
+.dl-copy{font-size:18px;color:var(--text-2)}
+@media (max-width:900px){.dl-claim{font-size:28px}.dl-claim-sub{font-size:18px}.dl-col h2{min-height:0;margin-bottom:4px}}
+@media (max-width:600px){.dl-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.dl-col{gap:10px}.dl-col a,.dl-col>span{font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){.dl-logo:hover .dl-lg,.dl-logo:hover .dl-lg-e{animation:none}}
+.dl-claim,.dl-claim-sub{font-size:28px;line-height:1.2;letter-spacing:-.015em}
+.dl-claim-sub{margin-top:6px}
+@media (max-width:900px){.dl-claim,.dl-claim-sub{font-size:24px}}
+.dl-claim-sub{color:var(--text);font-weight:600}
+.dl-claim,.dl-claim-sub{font-size:30px;line-height:1.22;font-weight:400;letter-spacing:-.02em;color:#f5f5f7;max-width:470px}.dl-claim-sub{margin-top:0}@media (max-width:900px){.dl-claim,.dl-claim-sub{font-size:25px}}
+/* opis w stopce: te same wartości co wzór (Inter 400, clamp 24-34px, interlinia 1.18, -0.04em) */
+.dl .dl-claim{max-width:560px;margin:32px 0 0;font-size:clamp(24px,3vw,34px);font-weight:400;line-height:1.18;letter-spacing:-.04em;color:#fff;text-wrap:balance}
+@media (max-width:640px){.dl .dl-claim{font-size:25px}}
+.dl .dl-claim{font-family:"Inter","Inter Variable",system-ui,sans-serif;font-optical-sizing:auto}
+/* LUMO: wyżej, a na dole miękkie rozmyte przejście w stopkę */
+.dl-waves{height:clamp(280px,30vw,420px);margin-bottom:0}
+.dl-waves::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;pointer-events:none;z-index:1;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 75%);mask-image:linear-gradient(to bottom,transparent,#000 75%);
+  background:linear-gradient(to bottom,transparent 0%,rgba(28,28,30,.55) 55%,var(--bg,#1c1c1e) 100%)}
+@media (max-width:700px){.dl-waves{height:220px}}
+.dl-waves::after{height:30%}
+
+/* adres e-mail w dolnym wierszu stopki */
+.dl-mail{font-size:18px;line-height:27px;color:#a1a1a6;text-decoration:none;white-space:nowrap;border-radius:4px;transition:color .15s}
+.dl-mail:hover{color:#f5f5f7;text-decoration:underline}
+.dl-mail:active{opacity:.7}
+.dl-mail:focus-visible{outline:2px solid #3a6bfc;outline-offset:2px}

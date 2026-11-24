@@ -1,0 +1,128 @@
+/* LumoBot: mikrointerakcje buziek agentów (tylko transform i opacity, 60 kl./s) */
+
+[data-face]{
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+
+[data-face] > .face{
+  will-change:transform;
+  transition:transform .34s var(--spring, cubic-bezier(.34,1.56,.64,1));
+}
+
+[data-face]:hover > .face{
+  transform:translateY(-5px) rotate(-4deg) scale(1.05);
+}
+
+[data-face]:nth-of-type(even):hover > .face{
+  transform:translateY(-5px) rotate(4deg) scale(1.05);
+}
+
+[data-face]:active > .face{
+  transform:translateY(1px) scale(.95);
+}
+
+[data-face].zb-hop > .face{
+  animation:zb-hop .54s var(--ease, cubic-bezier(.2,.7,.2,1)) 1;
+}
+
+[data-face].zb-spin > .face{
+  animation:zb-spin .68s var(--spring, cubic-bezier(.34,1.56,.64,1)) 1;
+}
+
+@keyframes zb-hop{
+  0%{transform:translateY(0) scale(1,1)}
+  18%{transform:translateY(2px) scale(1.08,.9)}
+  48%{transform:translateY(-14px) rotate(-3deg) scale(.95,1.08)}
+  74%{transform:translateY(1px) scale(1.04,.96)}
+  88%{transform:translateY(-3px) scale(.99,1.02)}
+  100%{transform:translateY(0) scale(1,1)}
+}
+
+@keyframes zb-spin{
+  0%{transform:translateY(0) rotate(0deg) scale(1)}
+  45%{transform:translateY(-12px) rotate(190deg) scale(1.08)}
+  100%{transform:translateY(0) rotate(360deg) scale(1)}
+}
+
+#orbit [data-face] .eyes{
+  transition:transform .16s ease-out;
+  will-change:transform;
+}
+
+/* Dymek z tekstem nad buźką */
+.zb-dymek{
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  width:max-content;
+  max-width:min(240px, calc(100vw - 24px));
+  padding:6px 12px;
+  border-radius:10px;
+  background:#222222;
+  color:#e8e8ed;
+  border:1px solid rgba(255,255,255,.22);
+  font-family:var(--font, "Inter", system-ui, sans-serif);
+  font-size:13px;
+  font-weight:500;
+  line-height:1.35;
+  text-align:center;
+  opacity:0;
+  transform:translate(-50%, calc(-100% + 6px)) scale(.94);
+  transition:opacity .2s var(--ease, ease), transform .24s var(--spring, cubic-bezier(.34,1.56,.64,1));
+  will-change:transform, opacity;
+}
+
+.zb-dymek.zb-below{
+  transform:translate(-50%, -6px) scale(.94);
+}
+
+.zb-dymek.zb-in{
+  opacity:1;
+  transform:translate(-50%, -100%) scale(1);
+}
+
+.zb-dymek.zb-below.zb-in{
+  transform:translate(-50%, 0) scale(1);
+}
+
+.zb-dymek.zb-out{
+  opacity:0;
+  transform:translate(-50%, calc(-100% - 6px)) scale(.96);
+}
+
+.zb-dymek.zb-below.zb-out{
+  transform:translate(-50%, 6px) scale(.96);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-face] > .face,
+  [data-face]:hover > .face,
+  [data-face]:nth-of-type(even):hover > .face,
+  [data-face]:active > .face{
+    transform:none !important;
+    transition:none !important;
+  }
+  [data-face].zb-hop > .face,
+  [data-face].zb-spin > .face{
+    animation:none !important;
+  }
+  #orbit [data-face] .eyes{
+    transform:none !important;
+    transition:none !important;
+  }
+  .zb-dymek,
+  .zb-dymek.zb-in,
+  .zb-dymek.zb-out,
+  .zb-dymek.zb-below,
+  .zb-dymek.zb-below.zb-in,
+  .zb-dymek.zb-below.zb-out{
+    transition:none !important;
+    transform:translate(-50%, -100%) !important;
+  }
+  .zb-dymek.zb-below,
+  .zb-dymek.zb-below.zb-in,
+  .zb-dymek.zb-below.zb-out{
+    transform:translate(-50%, 0) !important;
+  }
+}

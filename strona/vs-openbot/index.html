@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LumoBot vs OpenBot</title>
+<meta name="description" content="Lokalny zespół agentów kontra aplikacja i serwer dla firm. Ceny, platformy i fakty ze źródeł.">
+<meta property="og:title" content="LumoBot vs OpenBot">
+<meta property="og:description" content="Lokalny zespół agentów kontra aplikacja i serwer dla firm. Ceny, platformy i fakty ze źródeł.">
+<meta property="og:image" content="img/og.png">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="img/app.png">
+<script>if(location.protocol!=="file:")document.write('<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>')</script>
+<link rel="stylesheet" href="css/baza.css?v=1795096443">
+<link rel="stylesheet" href="css/tlo.css?v=1794866470">
+<link rel="stylesheet" href="css/aurora.css?v=1794869123">
+<link rel="stylesheet" href="css/pasek.css?v=1795274019">
+<link rel="stylesheet" href="css/dol.css?v=1795383163">
+<link rel="stylesheet" href="css/zorza.css?v=1794956394">
+<link rel="stylesheet" href="css/strony.css?v=1795096536">
+<link rel="stylesheet" href="css/tytul.css?v=1795127922">
+<link rel="stylesheet" href="css/rozmycie.css?v=1794955139">
+<link rel="stylesheet" href="css/zabawa.css?v=1794866811">
+<link rel="stylesheet" href="css/artykul.css?v=1795096480">
+<link rel="stylesheet" href="css/sekcja-pojedynki.css?v=1795122968">
+<link rel="stylesheet" href="css/pytania.css?v=1795107123">
+<link rel="stylesheet" href="faces.css">
+<script>if(location.protocol==="file:")document.write('<script src="js/maski.js?v=1795383163"><\/script><link rel="stylesheet" href="css/font-plik.css?v=1795383163">')</script>
+<script>if(/[?&]statycznie/.test(location.search)) document.documentElement.classList.add('static');</script>
+</head>
+<body class="sub sub-vs-openbot">
+<header class="landing-header" id="pk" data-enter="header">
+  <a class="landing-brand" href="./" aria-label="LumoBot, strona główna">
+    <span class="landing-brand-logo" aria-hidden="true">
+      <img src="img/logo-cialo.png" width="28" height="28" alt="">
+      <img class="landing-brand-eyes" src="img/logo-oczy.png" width="28" height="28" alt="">
+    </span>
+    <span>LumoBot</span>
+  </a>
+
+  <nav class="site-nav" id="siteNav" aria-label="Główne menu" data-state="closed">
+    <div class="site-nav-track">
+      <span class="site-nav-pill" aria-hidden="true"></span>
+      <ul class="site-nav-list">
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="ai/" data-page="ai" aria-expanded="false" aria-controls="panel-ai">Świat AI<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-ai" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="articles">
+              <div class="site-panel-intro" data-intro="articles">
+                <span class="site-panel-intro-art" data-grain-pal="violet" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">Świat AI</span>
+                <span class="site-panel-intro-title">Jak myślimy o&nbsp;AI</span>
+                <span class="site-panel-intro-text">Krótkie teksty o zasadach, na których stoi LumoBot.</span>
+                <a class="site-panel-intro-cta" href="ai/">Wszystkie teksty<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="nowosc-gotowe-znaczy-sprawdzone/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gotowe znaczy sprawdzone</span>
+                      <span class="site-panel-meta">18 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-haslo-zostaje-u-ciebie/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Agent nie musi znać twojego hasła</span>
+                      <span class="site-panel-meta">17 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-zespol-nie-solista/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 5.8"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Jeden agent to za mało</span>
+                      <span class="site-panel-meta">16 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-twoj-plan-nasz-program/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Płacisz za AI raz, nie dwa razy</span>
+                      <span class="site-panel-meta">15 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ai/#wierzymy" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">W co wierzymy</span>
+                      <span class="site-panel-meta">Zasady LumoBota</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ai/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Wszystkie teksty</span>
+                      <span class="site-panel-meta">Artykuły o pracy z AI</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">W co wierzymy i jak to wygląda w LumoBocie.</span>
+                <a href="ai/" class="site-panel-index">Wszystkie teksty<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="wtyczki/" data-page="wtyczki" aria-expanded="false" aria-controls="panel-wtyczki">Wtyczki<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-wtyczki" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="plugins">
+              <div class="site-panel-intro" data-intro="plugins">
+                <span class="site-panel-intro-art" data-grain-pal="ocean" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">Wtyczki</span>
+                <span class="site-panel-intro-title">64 połączenia z&nbsp;twoimi kontami</span>
+                <span class="site-panel-intro-text">Logujesz się sam, a agent nie zna hasła.</span>
+                <a class="site-panel-intro-cta" href="wtyczki/">Wszystkie wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="wtyczka-google/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/gmail.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gmail i Kalendarz Google</span>
+                      <span class="site-panel-meta">Poczta i plan dnia</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-slack-discord/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/slack.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Slack i Discord</span>
+                      <span class="site-panel-meta">Kanały i wiadomości</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-notion-dysk/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/notion.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Notion i Dysk Google</span>
+                      <span class="site-panel-meta">Notatki i wspólne pliki</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-github-figma/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/github.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">GitHub i Figma</span>
+                      <span class="site-panel-meta">Repozytoria i projekty</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-przegladarka/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/playwright.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Przeglądarka Playwright</span>
+                      <span class="site-panel-meta">Przeglądarka agenta</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-wzory/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/pasek/wzory.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gotowe wzory planu</span>
+                      <span class="site-panel-meta">Poranny przegląd za zgodą</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">64 połączenia. Logujesz się sam, agent nie zna hasła.</span>
+                <a href="wtyczki/" class="site-panel-index">Wszystkie wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="o-nas/" data-page="o-nas" aria-expanded="false" aria-controls="panel-o-nas">O nas<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-o-nas" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="resources">
+              <div class="site-panel-intro" data-intro="resources">
+                <span class="site-panel-intro-art" data-grain-pal="forest" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">O nas</span>
+                <span class="site-panel-intro-title">Wszystko o&nbsp;LumoBocie w&nbsp;jednym miejscu</span>
+                <span class="site-panel-intro-text">Co budujemy, jak działamy i gdzie nas sprawdzić.</span>
+                <a class="site-panel-intro-cta" href="o-nas/">Poznaj LumoBota<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="dokumentacja/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Dokumentacja</span>
+                      <span class="site-panel-meta">Instrukcje i opis funkcji</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosci/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Aktualizacje</span>
+                      <span class="site-panel-meta">Zmiany w każdej wersji</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="porownanie/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Porównania</span>
+                      <span class="site-panel-meta">LumoBot i inni agenci</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="status/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Status</span>
+                      <span class="site-panel-meta">Czy wszystko działa</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./#bezpieczenstwo" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.5v6c0 4.5-3.2 8-7 9.5-3.8-1.5-7-5-7-9.5v-6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Bezpieczeństwo</span>
+                      <span class="site-panel-meta">Hasła i praca lokalna</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/bongodelacz/lumobot/issues" target="_blank" rel="noopener noreferrer" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Zgłoś pomysł</span>
+                      <span class="site-panel-meta">Napisz na GitHubie</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">Co budujemy, jak działamy i gdzie nas sprawdzić.</span>
+                <a class="site-panel-index" href="https://github.com/bongodelacz/lumobot" target="_blank" rel="noopener noreferrer">Kod źródłowy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item"><a href="firmy/" data-page="firmy" class="site-nav-trigger site-nav-link">Firmy</a></li>
+        <li class="site-nav-item"><a href="cennik/" data-page="cennik" class="site-nav-trigger site-nav-link">Cennik</a></li>
+      </ul>
+    </div>
+    <div class="site-nav-surface" aria-hidden="true"></div>
+  </nav>
+
+  <div class="site-header-actions">
+    <button type="button" class="landing-button landing-button-secondary landing-button-sm landing-button-glass site-lang-btn" id="pkLang" aria-haspopup="true" aria-controls="wyPop" aria-expanded="false" aria-label="Wybierz język">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.35"/><ellipse cx="8" cy="8" rx="2.8" ry="6.25" stroke="currentColor" stroke-width="1.25"/><path d="M2.1 6H13.9M2.1 10H13.9" stroke="currentColor" stroke-width="1.25"/></svg>
+      <span data-jezyk-kod>PL</span>
+    </button>
+    <a class="landing-button landing-button-primary landing-button-sm" data-icon="download" href="./#pobierz">Pobierz</a>
+    <button class="site-menu-button" type="button" id="pkBurger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="pkMobile">
+      <span class="site-menu-button-line" aria-hidden="true"></span>
+      <span class="site-menu-button-line" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="wy-pop" id="wyPop" role="menu" aria-label="Język strony" hidden>
+    <div class="wy-chan">
+      <button type="button" role="menuitemradio" translate="no" data-lang="pl" class="is-active" aria-current="true"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="7" fill="#fff"/><rect y="7" width="20" height="7" fill="#dc143c"/></svg><span class="wy-nm">Polski</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="en"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.2"/></svg><span class="wy-nm">English</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="es"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="wy-nm">Español</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="ru"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg><span class="wy-nm">Русский</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+
+  <div id="pkMobile" class="site-sheet" data-state="closed" inert>
+    <button type="button" class="site-sheet-close" id="pkMobileClose" aria-label="Zamknij menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <nav class="site-sheet-content" aria-label="Menu mobilne">
+      <section class="site-sheet-section" style="--site-sheet-index:0">
+        <p class="site-sheet-heading">Nawigacja</p>
+        <div class="site-sheet-links">
+          <a class="site-sheet-link" href="./">Przegląd<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="ai/">Świat AI<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="wtyczki/">Wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="o-nas/">O nas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="dokumentacja/">Dokumentacja<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="firmy/">Firmy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="cennik/">Cennik<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </section>
+      <section class="site-sheet-section" style="--site-sheet-index:1">
+        <p class="site-sheet-heading">Język</p>
+        <div class="wy-chan wy-chan-m" role="group" aria-label="Język strony">
+          <button type="button" translate="no" data-lang="pl" class="is-active" aria-current="true"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="7" fill="#fff"/><rect y="7" width="20" height="7" fill="#dc143c"/></svg><span class="wy-nm">Polski</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" translate="no" data-lang="en"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.2"/></svg><span class="wy-nm">English</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" role="menuitemradio" translate="no" data-lang="es"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="wy-nm">Español</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" translate="no" data-lang="ru"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg><span class="wy-nm">Русский</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </section>
+      <div class="site-sheet-actions" style="--site-sheet-index:2">
+        <a class="landing-button landing-button-primary landing-button-md" data-icon="download" href="./#pobierz">Pobierz</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="tresc" class="st-main">
+<link rel="stylesheet" href="css/strona-porownanie.css?v=1795215674">
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.pj-art').forEach(box => {
+      if(box.querySelector('.kf-grain')) return;
+      let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      if(window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal)) box.classList.add('pj-grain');
+    });
+  };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>
+<section class="dark spo-section vs-page">
+  <div class="wrap spo-wrap">
+    <div class="vs-hero-art pj-art" data-pal="lagoon" data-seed="0">
+      <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openbot.svg" alt="OpenBot"></span>
+    </div>
+    <div class="vs-top">
+      <a class="vs-crumb" href="porownanie/"><span aria-hidden="true">‹ </span>Wszystkie porównania</a>
+      <div class="pg-head">
+        <h1 class="display vs-title">LumoBot vs OpenBot</h1>
+      </div>
+      <p class="vs-kicker">Lokalny zespół agentów i serwer dla firm</p>
+      <p class="vs-lead">OpenBot działa na twoim komputerze lub na zarządzanym serwerze. Ma agentów, przepływy pracy i wielu dostawców modeli. LumoBot pracuje w lokalnym folderze i kończy zadanie po sprawdzeniu.</p>
+      <p class="spo-meta">Sprawdzone 19 listopada 2026 na oficjalnych stronach i w kodzie LumoBota 0.27.42. <span aria-hidden="true">·</span> <a class="vs-src-link" href="vs-openbot/#zrodla">Źródła</a></p>
+    </div>
+    <section class="vs-glance" aria-labelledby="vs-glance-heading">
+      <h2 id="vs-glance-heading" class="title vs-glance-title">W skrócie</h2>
+      <div class="vs-glance-grid">
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Cena</h3><p><b>LumoBot:</b> 0 zł, bez licencji za program</p><p><b>OpenBot:</b> licencja 10 EUR miesięcznie za osobę</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Systemy</h3><p><b>LumoBot:</b> Windows</p><p><b>OpenBot:</b> Windows, macOS i Linux</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Modele AI</h3><p><b>LumoBot:</b> 14 dostawców, 158 modeli</p><p><b>OpenBot:</b> wielu dostawców, bez podanej liczby</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Gdzie są dane</h3><p><b>LumoBot:</b> w twoim folderze, także przy modelu lokalnym</p><p><b>OpenBot:</b> rozmowy i pliki na twoim komputerze</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Telefon</h3><p><b>LumoBot:</b> wyniki na wyspie na pulpicie</p><p><b>OpenBot:</b> aplikacje na iPhone i Androida</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Praca przy wyłączonym komputerze</h3><p><b>LumoBot:</b> komputer musi być włączony</p><p><b>OpenBot:</b> serwer zarządzany działa 24/7</p></article>
+      </div>
+    </section>
+    <section id="tabela" class="vs-tab2" aria-labelledby="vs-t2-heading">
+      <h2 id="vs-t2-heading" class="title vs-t2-title">Porównanie punkt po punkcie</h2>
+      <p class="vs-t2-lead">LumoBot i OpenBot działają na twoim komputerze i korzystają z planów AI, które już masz. OpenBot ma też aplikacje na telefon i serwer 24/7, a licencja do pracy jest płatna od 1 grudnia 2026.</p>
+      <div class="vs-t2-group">
+        <h3>Sprawdzony wynik</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Sprawdzenie przed „gotowe”</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Zadanie kończy test albo polecenie sprawdzające, a nie samo zdanie agenta „gotowe”.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot ma przepływy pracy, kroki zatwierdzania i sprawdzanie wyników. Od wydania 0.74.0 model sprawdza żądanie względem wykonanej pracy i odpowiedzi, a gdy część nie jest zrobiona, może kontynuować ją do trzech razy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Niezależny sprawdzający</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Autor i sprawdzający mogą być osobnymi agentami, a Neuro może ocenić drogę do celu.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Agenci OpenBot przekazują sobie pracę, udostępniają pliki i sprawdzają nawzajem wyniki, a każdy agent ma własną rolę. Dokumentacja nie opisuje stałego sprawdzającego w każdym zadaniu, ale to nie dowodzi, że go nie da się ustawić.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Praca do skutku po teście</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Jeśli test nie przejdzie, agent dostaje kolejną rundę i poprawia wynik.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot może kontynuować nieukończoną część żądania do trzech razy. Dokumentacja nie opisuje pętli aż do przejścia ustalonego testu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Neuro hamuje przed stratą tokenów</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Neuro uczy się na zakończonych zadaniach i szacuje szansę dojścia do celu. Po dwóch niskich ocenach, gdy ma co najmniej 60 przykładów, może zahamować agenta przed spaleniem tokenów.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Gdy plan osiągnie limit, agent OpenBot może przejść na model zapasowy innego dostawcy. Dokumentacja nie opisuje hamulca opartego na historii zadań.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Bezpieczny projekt</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Punkt powrotu git po każdej rundzie</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Każda runda może zapisać punkt powrotu na osobnej gałęzi git. Wracasz do wybranego stanu, a LumoBot nie publikuje zmian sam.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Dokumentacja OpenBot nie opisuje automatycznego punktu powrotu git. Jeden z poradników radzi poprosić agenta, żeby zachował poprzedni plik i zapisał nową wersję przed zmianami, które możesz chcieć cofnąć.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Hasła poza modelem</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Hasła są szyfrowane na komputerze i nie trafiają do modelu.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Sejf OpenBot (Vault) trzyma loginy, karty i dane kontaktowe na twoim komputerze, zaszyfrowane przez system. Agent loguje się za ciebie, ale widzi tylko nazwę karty i cztery ostatnie cyfry. Można też podłączyć 1Password i Bitwarden.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Praca zespołowa bez serwera producenta</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot pracuje w twoim folderze, także gdy zespół korzysta z lokalnych modeli.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Rozmowy, pliki i obszary robocze OpenBot zostają na twoim komputerze. Serwer zespołu możesz postawić sam albo wykupić serwer zarządzany, który działa 24/7.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">0 zł za pracę zawodową</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <span class="vs-t2-mark" data-v="przewaga">Przewaga</span>
+              <p>Aplikacja kosztuje 0 zł i nie dolicza licencji za sam program ani za zespół. Płacisz tylko za wybrany plan, klucz lub sprzęt modelu lokalnego.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot jest darmowy do użytku osobistego i niekomercyjnego. Do pracy potrzebna jest licencja: 10 EUR miesięcznie za jedną osobę albo 25 EUR za zespół dwóch osób, bezpłatnie do 1 grudnia 2026. Hostowany serwer kosztuje 30, 50 albo 100 EUR miesięcznie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Jawny wybór AI</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Liczba dostawców i modeli</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot pokazuje konkretny katalog: 14 dostawców i 158 modeli.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot obsługuje plany ChatGPT, Claude, Gemini, Grok, Cursor i Cline, darmowe modele OpenCode, agentów zgodnych z ACP i dowolny serwer zgodny z OpenAI, także lokalny. Nie podaje jednej liczby, więc nie da się uczciwie porównać zakresu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Model dla sprawdzającego</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Sprawdzający może mieć własny, tańszy albo lokalny model niezależny od autora.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>W OpenBot każdy agent ma własną rolę i własnego dostawcę, więc agent sprawdzający może pracować na innym modelu niż autor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Jawny model przy zadaniu</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Przy zadaniu wybierasz dostawcę i model, a nazwa jest jawna.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>W OpenBot wybierasz dostawcę dla każdego agenta i możesz go później zmienić, a agent zachowuje pracę. Przejście na model zapasowy pokazuje notatka w rozmowie.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Własny plan AI bez zamykania w ekosystemie</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Podłączasz plan, który już masz, klucz API albo lokalną Ollamę i LM Studio.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot korzysta z planów, które już płacisz, obsługuje wielu dostawców, Ollamę, LM Studio i dowolny serwer zgodny z OpenAI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Na co dzień</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Rozmowa głosowa</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Rozmawiasz po polsku z wyspy na pulpicie i wybierasz jeden z pięciu głosów. Wyspa pokazuje pytania, wyniki i postęp pracy.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot ma dyktowanie i panel Voice do rozmowy z agentem, którą przerywasz głosem. Lokalne modele zamieniają mowę na tekst i czytają odpowiedzi w 31 językach. Oficjalne strony nie mówią, czy jest wśród nich polski.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Agent od obrazów</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Osobny agent tworzy ikony, loga i plakaty, a gotowy plik trafia do folderu obrazów w projekcie.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Dokumentacja OpenBot nie opisuje gotowego agenta od obrazów. Agentowi można jednak nadać dowolną rolę i dostawcę, więc to nie dowodzi, że OpenBot tego nie zrobi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Stały Lider zespołu</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Lider dzieli cel na części, przydziela je specjalistom i pilnuje sprawdzenia.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot opisuje lead agenta, który rozdziela części zadania innym agentom w jednym kanale, a agenci przekazują sobie pracę i pliki.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Telefon i komunikatory</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot działa na Windows, a wyniki i pytania pokazuje na wyspie na pulpicie.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <span class="vs-t2-mark" data-v="przewaga">Przewaga</span>
+              <p>OpenBot działa na Windows, macOS i Linuksie, ma aplikacje na iPhone i Androida oraz aplikację w przeglądarce. Agenci odpowiadają też w Slacku, Discordzie i Telegramie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="spo-profile-grid vs-facts">
+<div class="spo-fact"><h4>Cena w szczegółach</h4><p>Użytek osobisty na własnym komputerze kosztuje 0 EUR. Serwer zarządzany kosztuje 30, 50 albo 100 EUR miesięcznie, a licencja do pracy 10 albo 25 EUR.</p></div>
+<div class="spo-fact"><h4>Licencja kodu</h4><p>OpenBot jest darmowy do użytku osobistego na własnym komputerze. Dla zespołów producent oferuje licencję do pracy i zarządzane serwery.</p></div>
+<div class="spo-fact"><h4>Gdzie OpenBot jest lepszy</h4><p>Aplikacje na macOS, Windows, Linux, iPhone i Android, serwer zarządzany dla zespołów, wspólne kanały oraz publiczna lista wydań.</p></div>
+    </div>
+    <p class="spo-src" id="zrodla">Źródła <a href="https://openbot.run" target="_blank" rel="noopener noreferrer">openbot.run</a><a href="https://openbot.run/pricing" target="_blank" rel="noopener noreferrer">Cennik</a><a href="https://openbot.run/changelog" target="_blank" rel="noopener noreferrer">Lista zmian</a><a href="https://openbot.run/pl" target="_blank" rel="noopener noreferrer">openbot.run/pl</a><a href="https://openbot.run/llms.txt" target="_blank" rel="noopener noreferrer">openbot.run/llms.txt</a><a href="https://openbot.run/llms-full.txt" target="_blank" rel="noopener noreferrer">openbot.run/llms-full.txt</a><a href="https://openbot.run/pl/teams" target="_blank" rel="noopener noreferrer">openbot.run/pl/teams</a><a href="https://openbot.run/pl/pricing" target="_blank" rel="noopener noreferrer">openbot.run/pl/pricing</a><a href="https://openbot.run/providers/local-models" target="_blank" rel="noopener noreferrer">openbot.run/providers/local-models</a></p>
+
+    <section class="vs-faq" id="pytania-vs">
+      <div class="fq-grid">
+        <div class="fq-head">
+          <h2 class="title fq-title">Pytania</h2>
+          <p class="fq-lead">OpenBot, tak jak LumoBot, działa na twoim komputerze, korzysta z planów AI, które już masz, i sprawdza pracę agentów. Ma też aplikacje na telefon i serwer 24/7. LumoBot nie pobiera opłaty za pracę zawodową.</p>
+        </div>
+        <div class="fq-list">
+          <details class="fq-item">
+            <summary class="fq-q"><span>Jak LumoBot pilnuje, żeby nie oddać niedokończonej pracy?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>W LumoBocie zadanie kończy polecenie sprawdzające, na przykład test, albo niezależny sprawdzający. OpenBot też sprawdza pracę: od wydania 0.74.0 porównuje żądanie z wykonaną pracą i odpowiedzią, a nieukończoną część może kontynuować do trzech razy. Jego dokumentacja nie opisuje stałego testu celu w każdym zadaniu.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Ile zapłacę w LumoBocie, a ile w OpenBocie?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Aplikacja LumoBot kosztuje 0 zł, bez serwera i bez licencji. OpenBot jest darmowy do użytku osobistego i niekomercyjnego. Do pracy potrzebna jest licencja: 10 EUR miesięcznie za jedną osobę albo 25 EUR za zespół dwóch osób, bezpłatnie do 1 grudnia 2026. Hostowany serwer kosztuje 30, 50 albo 100 EUR miesięcznie.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Co się stanie, gdy agent coś zepsuje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>W LumoBocie zadanie pracuje na osobnej gałęzi git z punktami powrotu. Dokumentacja OpenBot nie opisuje automatycznego punktu powrotu git. Jeden z jej poradników radzi poprosić agenta, żeby zachował poprzedni plik i zapisał nową wersję przed zmianami, które możesz chcieć cofnąć.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy w LumoBocie praca zostaje na moim komputerze?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak. Projekt leży w twoim folderze, a przy modelu lokalnym treść zadania nie opuszcza komputera. W OpenBocie też: rozmowy, pliki i obszary robocze zostają na twoim komputerze, a loginy trzyma zaszyfrowany sejf (Vault). Zespoły mogą wybrać serwer zarządzany.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Z jakimi modelami zadziała LumoBot, jeśli nie chcę nic dopłacać?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Z 14 dostawcami i 158 modelami, a także lokalnie przez Ollamę i LM Studio, bez klucza i bez opłat. OpenBot także korzysta z planów, które już płacisz, ma darmowe modele OpenCode i obsługuje Ollamę, LM Studio oraz dowolny serwer zgodny z OpenAI.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy LumoBot mówi po polsku?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak, rozmawiasz z nim głosem po polsku, z wyspy na pulpicie, i wybierasz jeden z pięciu głosów. OpenBot ma dyktowanie i panel Voice do rozmowy z agentem, a lokalne modele mowy obsługują 31 języków. Oficjalne strony nie mówią, czy jest wśród nich polski.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+</section>
+<section class="pj vs-more" id="inne-porownania" aria-labelledby="vsMoreTitle">
+  <div class="wrap">
+    <h2 class="display pj-h" id="vsMoreTitle">Inne porównania</h2>
+    <p class="pj-lead">Porównaj LumoBota z innymi narzędziami i wybierz sposób pracy, który pasuje do twojego projektu.</p>
+    <div class="pj-grid">
+<a class="pj-card" href="vs-grok-bot/">
+        <span class="pj-art" data-pal="rose" data-seed="5">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/grok.svg" alt="Grok Bot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Grok Bot</b><small>Lokalny folder LumoBota, komputer w chmurze Grok Bota</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-claude-cowork/">
+        <span class="pj-art" data-pal="forest" data-seed="10">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/claude.svg" alt="Claude"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Claude Cowork</b><small>LumoBot łączy dostawców, Cowork działa w ekosystemie Claude</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-manus/">
+        <span class="pj-art" data-pal="ember" data-seed="15">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/manus.svg" alt="Manus"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Manus</b><small>Lokalny model bez klucza, Manus planuje w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-openclaw/">
+        <span class="pj-art" data-pal="ocean" data-seed="20">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openclaw.svg" alt="OpenClaw"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenClaw</b><small>Oba bez abonamentu, OpenClaw ma ponad 20 komunikatorów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-devin/">
+        <span class="pj-art" data-pal="violet" data-seed="25">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/devin.svg" alt="Devin"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Devin</b><small>Lokalny model bez klucza, Devin ma Quick Review i testy</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="pj-all" href="porownanie/">Gdzie inni są lepsi</a>
+  </div>
+</section>
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.spo-duel,.pj-art').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>
+</main>
+<footer class="dl" id="stopka">
+  <section class="dl-waves dl-shift" data-text="LUMO" aria-label="LumoBot"><canvas aria-hidden="true"></canvas></section>
+
+  <div class="wrap dl-wrap dl-shift">
+    <div class="dl-main">
+      <div class="dl-brand">
+        <a class="dl-logo" href="./" aria-label="LumoBot, strona główna">
+          <span class="dl-lg" aria-hidden="true"><img class="dl-lg-b" src="img/logo-cialo.png" alt="" width="48" height="48"><img class="dl-lg-e" src="img/logo-oczy.png" alt="" width="48" height="48"></span>
+          <span class="dl-logo-text"><span class="dl-logo-name">LumoBot</span></span>
+        </a>
+
+        <p class="dl-claim">Zespół agentów AI na twoim komputerze. Podłącz plan, za który już płacisz, i pozwól im pracować, aż sprawdzenie przejdzie.</p>
+      </div>
+
+      <nav class="dl-cols" aria-label="Linki w stopce">
+        <div class="dl-col">
+          <h2>Zacznij</h2>
+          <a href="./">Pobierz LumoBota</a>
+          <a href="wtyczki/">Wtyczki</a>
+          <a href="cennik/">Cennik</a>
+          <a href="./#pytania">Pytania</a>
+          <a href="nowosci/">Co nowego</a>
+        </div>
+        <div class="dl-col">
+          <h2>Możliwości</h2>
+          <a href="funkcje/">Wszystkie funkcje</a>
+          <a href="funkcje/#praca-do-skutku">Praca do skutku</a>
+          <a href="funkcje/#neuro">Neuro</a>
+          <a href="funkcje/#wyspa">Wyspa i głos</a>
+          <a href="funkcje/#przegladarka">Własna przeglądarka</a>
+          <a href="funkcje/#punkty-powrotu">Punkty powrotu</a>
+        </div>
+        <div class="dl-col">
+          <h2>Porównaj</h2>
+           <a href="porownanie/">Gdzie inni są lepsi</a>
+          <a href="vs-openbot/">z OpenBotem</a>
+          <a href="vs-grok-bot/">z Grok Botem</a>
+          <a href="vs-claude-cowork/">z Claude Cowork</a>
+          <a href="vs-manus/">z Manusem</a>
+          <a href="vs-openclaw/">z OpenClawem</a>
+          <a href="vs-devin/">z Devinem</a>
+        </div>
+        <div class="dl-col">
+          <h2>Poczytaj</h2>
+          <a href="ai/">Świat AI</a>
+          <a href="nowosc-gotowe-znaczy-sprawdzone/">Gotowe znaczy sprawdzone</a>
+          <a href="nowosc-haslo-zostaje-u-ciebie/">Agent nie zna twojego hasła</a>
+          <a href="nowosc-zespol-nie-solista/">Jeden agent to za mało</a>
+          <a href="nowosc-twoj-plan-nasz-program/">Płacisz za AI raz</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="dl-legal">
+      <div class="dl-row">
+        <span class="dl-copy">© 2026 LumoBot</span>
+        <a class="dl-mail" href="mailto:kontakt@lumobot.eu">kontakt@lumobot.eu</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/agenci.js?v=1795208622"></script>
+<script src="js/jezyki.js?v=1794873919" defer></script>
+<script src="js/ruch.js?v=1794859973" defer></script>
+<script src="js/grain.js?v=1795214312" defer></script>
+<script src="js/pasek.js?v=1795273694" defer></script>
+<script src="js/wspolne.js?v=1794858668" defer></script>
+<script src="js/zabawa-teksty.js?v=1794866427" defer></script>
+<script src="js/zabawa.js?v=1794874818" defer></script>
+<script src="js/rozmycie.js?v=1795213082" defer></script>
+<script src="js/fale.js?v=1795201770" defer></script>
+<script src="js/waz.js?v=1795203449" defer></script>
+
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body>
+</html>

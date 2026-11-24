@@ -1,0 +1,345 @@
+<section class="dark spo-section vs-page">
+  <div class="wrap spo-wrap">
+    <div class="vs-hero-art pj-art" data-pal="lagoon" data-seed="0">
+      <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openbot.svg" alt="OpenBot"></span>
+    </div>
+    <div class="vs-top">
+      <a class="vs-crumb" href="porownanie.html"><span aria-hidden="true">‹ </span>Wszystkie porównania</a>
+      <div class="pg-head">
+        <h1 class="display vs-title">LumoBot vs OpenBot</h1>
+      </div>
+      <p class="vs-kicker">Lokalny zespół agentów i serwer dla firm</p>
+      <p class="vs-lead">OpenBot działa na twoim komputerze lub na zarządzanym serwerze. Ma agentów, przepływy pracy i wielu dostawców modeli. LumoBot pracuje w lokalnym folderze i kończy zadanie po sprawdzeniu.</p>
+      <p class="spo-meta">Sprawdzone 19 listopada 2026 na oficjalnych stronach i w kodzie LumoBota {{WERSJA}}. <span aria-hidden="true">·</span> <a class="vs-src-link" href="#zrodla">Źródła</a></p>
+    </div>
+    <section class="vs-glance" aria-labelledby="vs-glance-heading">
+      <h2 id="vs-glance-heading" class="title vs-glance-title">W skrócie</h2>
+      <div class="vs-glance-grid">
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Cena</h3><p><b>LumoBot:</b> 0 zł, bez licencji za program</p><p><b>OpenBot:</b> licencja 10 EUR miesięcznie za osobę</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Systemy</h3><p><b>LumoBot:</b> Windows</p><p><b>OpenBot:</b> Windows, macOS i Linux</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Modele AI</h3><p><b>LumoBot:</b> 14 dostawców, 158 modeli</p><p><b>OpenBot:</b> wielu dostawców, bez podanej liczby</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Gdzie są dane</h3><p><b>LumoBot:</b> w twoim folderze, także przy modelu lokalnym</p><p><b>OpenBot:</b> rozmowy i pliki na twoim komputerze</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Telefon</h3><p><b>LumoBot:</b> wyniki na wyspie na pulpicie</p><p><b>OpenBot:</b> aplikacje na iPhone i Androida</p></article>
+        <article class="vs-glance-card"><h3 class="vs-glance-label">Praca przy wyłączonym komputerze</h3><p><b>LumoBot:</b> komputer musi być włączony</p><p><b>OpenBot:</b> serwer zarządzany działa 24/7</p></article>
+      </div>
+    </section>
+    <section id="tabela" class="vs-tab2" aria-labelledby="vs-t2-heading">
+      <h2 id="vs-t2-heading" class="title vs-t2-title">Porównanie punkt po punkcie</h2>
+      <p class="vs-t2-lead">LumoBot i OpenBot działają na twoim komputerze i korzystają z planów AI, które już masz. OpenBot ma też aplikacje na telefon i serwer 24/7, a licencja do pracy jest płatna od 1 grudnia 2026.</p>
+      <div class="vs-t2-group">
+        <h3>Sprawdzony wynik</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Sprawdzenie przed „gotowe”</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Zadanie kończy test albo polecenie sprawdzające, a nie samo zdanie agenta „gotowe”.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot ma przepływy pracy, kroki zatwierdzania i sprawdzanie wyników. Od wydania 0.74.0 model sprawdza żądanie względem wykonanej pracy i odpowiedzi, a gdy część nie jest zrobiona, może kontynuować ją do trzech razy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Niezależny sprawdzający</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Autor i sprawdzający mogą być osobnymi agentami, a Neuro może ocenić drogę do celu.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Agenci OpenBot przekazują sobie pracę, udostępniają pliki i sprawdzają nawzajem wyniki, a każdy agent ma własną rolę. Dokumentacja nie opisuje stałego sprawdzającego w każdym zadaniu, ale to nie dowodzi, że go nie da się ustawić.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Praca do skutku po teście</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Jeśli test nie przejdzie, agent dostaje kolejną rundę i poprawia wynik.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot może kontynuować nieukończoną część żądania do trzech razy. Dokumentacja nie opisuje pętli aż do przejścia ustalonego testu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Neuro hamuje przed stratą tokenów</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Neuro uczy się na zakończonych zadaniach i szacuje szansę dojścia do celu. Po dwóch niskich ocenach, gdy ma co najmniej 60 przykładów, może zahamować agenta przed spaleniem tokenów.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Gdy plan osiągnie limit, agent OpenBot może przejść na model zapasowy innego dostawcy. Dokumentacja nie opisuje hamulca opartego na historii zadań.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Bezpieczny projekt</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Punkt powrotu git po każdej rundzie</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Każda runda może zapisać punkt powrotu na osobnej gałęzi git. Wracasz do wybranego stanu, a LumoBot nie publikuje zmian sam.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Dokumentacja OpenBot nie opisuje automatycznego punktu powrotu git. Jeden z poradników radzi poprosić agenta, żeby zachował poprzedni plik i zapisał nową wersję przed zmianami, które możesz chcieć cofnąć.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Hasła poza modelem</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Hasła są szyfrowane na komputerze i nie trafiają do modelu.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Sejf OpenBot (Vault) trzyma loginy, karty i dane kontaktowe na twoim komputerze, zaszyfrowane przez system. Agent loguje się za ciebie, ale widzi tylko nazwę karty i cztery ostatnie cyfry. Można też podłączyć 1Password i Bitwarden.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Praca zespołowa bez serwera producenta</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot pracuje w twoim folderze, także gdy zespół korzysta z lokalnych modeli.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Rozmowy, pliki i obszary robocze OpenBot zostają na twoim komputerze. Serwer zespołu możesz postawić sam albo wykupić serwer zarządzany, który działa 24/7.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">0 zł za pracę zawodową</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <span class="vs-t2-mark" data-v="przewaga">Przewaga</span>
+              <p>Aplikacja kosztuje 0 zł i nie dolicza licencji za sam program ani za zespół. Płacisz tylko za wybrany plan, klucz lub sprzęt modelu lokalnego.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot jest darmowy do użytku osobistego i niekomercyjnego. Do pracy potrzebna jest licencja: 10 EUR miesięcznie za jedną osobę albo 25 EUR za zespół dwóch osób, bezpłatnie do 1 grudnia 2026. Hostowany serwer kosztuje 30, 50 albo 100 EUR miesięcznie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Jawny wybór AI</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Liczba dostawców i modeli</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot pokazuje konkretny katalog: 14 dostawców i 158 modeli.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot obsługuje plany ChatGPT, Claude, Gemini, Grok, Cursor i Cline, darmowe modele OpenCode, agentów zgodnych z ACP i dowolny serwer zgodny z OpenAI, także lokalny. Nie podaje jednej liczby, więc nie da się uczciwie porównać zakresu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Model dla sprawdzającego</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Sprawdzający może mieć własny, tańszy albo lokalny model niezależny od autora.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>W OpenBot każdy agent ma własną rolę i własnego dostawcę, więc agent sprawdzający może pracować na innym modelu niż autor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Jawny model przy zadaniu</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Przy zadaniu wybierasz dostawcę i model, a nazwa jest jawna.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>W OpenBot wybierasz dostawcę dla każdego agenta i możesz go później zmienić, a agent zachowuje pracę. Przejście na model zapasowy pokazuje notatka w rozmowie.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Własny plan AI bez zamykania w ekosystemie</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Podłączasz plan, który już masz, klucz API albo lokalną Ollamę i LM Studio.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot korzysta z planów, które już płacisz, obsługuje wielu dostawców, Ollamę, LM Studio i dowolny serwer zgodny z OpenAI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vs-t2-group">
+        <h3>Na co dzień</h3>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Rozmowa głosowa</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Rozmawiasz po polsku z wyspy na pulpicie i wybierasz jeden z pięciu głosów. Wyspa pokazuje pytania, wyniki i postęp pracy.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot ma dyktowanie i panel Voice do rozmowy z agentem, którą przerywasz głosem. Lokalne modele zamieniają mowę na tekst i czytają odpowiedzi w 31 językach. Oficjalne strony nie mówią, czy jest wśród nich polski.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Agent od obrazów</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Osobny agent tworzy ikony, loga i plakaty, a gotowy plik trafia do folderu obrazów w projekcie.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>Dokumentacja OpenBot nie opisuje gotowego agenta od obrazów. Agentowi można jednak nadać dowolną rolę i dostawcę, więc to nie dowodzi, że OpenBot tego nie zrobi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Stały Lider zespołu</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>Lider dzieli cel na części, przydziela je specjalistom i pilnuje sprawdzenia.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <p>OpenBot opisuje lead agenta, który rozdziela części zadania innym agentom w jednym kanale, a agenci przekazują sobie pracę i pliki.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vs-t2-row">
+          <div class="vs-t2-cat">Telefon i komunikatory</div>
+          <div class="vs-t2-lines">
+            <div class="vs-t2-line is-me">
+              <span class="vs-t2-who"><img src="img/logo.png" alt="LumoBot">LumoBot</span>
+              <p>LumoBot działa na Windows, a wyniki i pytania pokazuje na wyspie na pulpicie.</p>
+            </div>
+            <div class="vs-t2-line is-rv">
+              <span class="vs-t2-who"><img src="img/rywale/openbot.svg" alt="OpenBot">OpenBot</span>
+              <span class="vs-t2-mark" data-v="przewaga">Przewaga</span>
+              <p>OpenBot działa na Windows, macOS i Linuksie, ma aplikacje na iPhone i Androida oraz aplikację w przeglądarce. Agenci odpowiadają też w Slacku, Discordzie i Telegramie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="spo-profile-grid vs-facts">
+<div class="spo-fact"><h4>Cena w szczegółach</h4><p>Użytek osobisty na własnym komputerze kosztuje 0 EUR. Serwer zarządzany kosztuje 30, 50 albo 100 EUR miesięcznie, a licencja do pracy 10 albo 25 EUR.</p></div>
+<div class="spo-fact"><h4>Licencja kodu</h4><p>OpenBot jest darmowy do użytku osobistego na własnym komputerze. Dla zespołów producent oferuje licencję do pracy i zarządzane serwery.</p></div>
+<div class="spo-fact"><h4>Gdzie OpenBot jest lepszy</h4><p>Aplikacje na macOS, Windows, Linux, iPhone i Android, serwer zarządzany dla zespołów, wspólne kanały oraz publiczna lista wydań.</p></div>
+    </div>
+    <p class="spo-src" id="zrodla">Źródła <a href="https://openbot.run" target="_blank" rel="noopener noreferrer">openbot.run</a><a href="https://openbot.run/pricing" target="_blank" rel="noopener noreferrer">Cennik</a><a href="https://openbot.run/changelog" target="_blank" rel="noopener noreferrer">Lista zmian</a><a href="https://openbot.run/pl" target="_blank" rel="noopener noreferrer">openbot.run/pl</a><a href="https://openbot.run/llms.txt" target="_blank" rel="noopener noreferrer">openbot.run/llms.txt</a><a href="https://openbot.run/llms-full.txt" target="_blank" rel="noopener noreferrer">openbot.run/llms-full.txt</a><a href="https://openbot.run/pl/teams" target="_blank" rel="noopener noreferrer">openbot.run/pl/teams</a><a href="https://openbot.run/pl/pricing" target="_blank" rel="noopener noreferrer">openbot.run/pl/pricing</a><a href="https://openbot.run/providers/local-models" target="_blank" rel="noopener noreferrer">openbot.run/providers/local-models</a></p>
+
+    <section class="vs-faq" id="pytania-vs">
+      <div class="fq-grid">
+        <div class="fq-head">
+          <h2 class="title fq-title">Pytania</h2>
+          <p class="fq-lead">OpenBot, tak jak LumoBot, działa na twoim komputerze, korzysta z planów AI, które już masz, i sprawdza pracę agentów. Ma też aplikacje na telefon i serwer 24/7. LumoBot nie pobiera opłaty za pracę zawodową.</p>
+        </div>
+        <div class="fq-list">
+          <details class="fq-item">
+            <summary class="fq-q"><span>Jak LumoBot pilnuje, żeby nie oddać niedokończonej pracy?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>W LumoBocie zadanie kończy polecenie sprawdzające, na przykład test, albo niezależny sprawdzający. OpenBot też sprawdza pracę: od wydania 0.74.0 porównuje żądanie z wykonaną pracą i odpowiedzią, a nieukończoną część może kontynuować do trzech razy. Jego dokumentacja nie opisuje stałego testu celu w każdym zadaniu.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Ile zapłacę w LumoBocie, a ile w OpenBocie?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Aplikacja LumoBot kosztuje 0 zł, bez serwera i bez licencji. OpenBot jest darmowy do użytku osobistego i niekomercyjnego. Do pracy potrzebna jest licencja: 10 EUR miesięcznie za jedną osobę albo 25 EUR za zespół dwóch osób, bezpłatnie do 1 grudnia 2026. Hostowany serwer kosztuje 30, 50 albo 100 EUR miesięcznie.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Co się stanie, gdy agent coś zepsuje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>W LumoBocie zadanie pracuje na osobnej gałęzi git z punktami powrotu. Dokumentacja OpenBot nie opisuje automatycznego punktu powrotu git. Jeden z jej poradników radzi poprosić agenta, żeby zachował poprzedni plik i zapisał nową wersję przed zmianami, które możesz chcieć cofnąć.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy w LumoBocie praca zostaje na moim komputerze?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak. Projekt leży w twoim folderze, a przy modelu lokalnym treść zadania nie opuszcza komputera. W OpenBocie też: rozmowy, pliki i obszary robocze zostają na twoim komputerze, a loginy trzyma zaszyfrowany sejf (Vault). Zespoły mogą wybrać serwer zarządzany.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Z jakimi modelami zadziała LumoBot, jeśli nie chcę nic dopłacać?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Z 14 dostawcami i 158 modelami, a także lokalnie przez Ollamę i LM Studio, bez klucza i bez opłat. OpenBot także korzysta z planów, które już płacisz, ma darmowe modele OpenCode i obsługuje Ollamę, LM Studio oraz dowolny serwer zgodny z OpenAI.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy LumoBot mówi po polsku?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Tak, rozmawiasz z nim głosem po polsku, z wyspy na pulpicie, i wybierasz jeden z pięciu głosów. OpenBot ma dyktowanie i panel Voice do rozmowy z agentem, a lokalne modele mowy obsługują 31 języków. Oficjalne strony nie mówią, czy jest wśród nich polski.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+</section>
+<section class="pj vs-more" id="inne-porownania" aria-labelledby="vsMoreTitle">
+  <div class="wrap">
+    <h2 class="display pj-h" id="vsMoreTitle">Inne porównania</h2>
+    <p class="pj-lead">Porównaj LumoBota z innymi narzędziami i wybierz sposób pracy, który pasuje do twojego projektu.</p>
+    <div class="pj-grid">
+<a class="pj-card" href="vs-grok-bot.html">
+        <span class="pj-art" data-pal="rose" data-seed="5">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/grok.svg" alt="Grok Bot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Grok Bot</b><small>Lokalny folder LumoBota, komputer w chmurze Grok Bota</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-claude-cowork.html">
+        <span class="pj-art" data-pal="forest" data-seed="10">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/claude.svg" alt="Claude"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Claude Cowork</b><small>LumoBot łączy dostawców, Cowork działa w ekosystemie Claude</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-manus.html">
+        <span class="pj-art" data-pal="ember" data-seed="15">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/manus.svg" alt="Manus"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Manus</b><small>Lokalny model bez klucza, Manus planuje w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-openclaw.html">
+        <span class="pj-art" data-pal="ocean" data-seed="20">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openclaw.svg" alt="OpenClaw"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenClaw</b><small>Oba bez abonamentu, OpenClaw ma ponad 20 komunikatorów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+<a class="pj-card" href="vs-devin.html">
+        <span class="pj-art" data-pal="violet" data-seed="25">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/devin.svg" alt="Devin"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Devin</b><small>Lokalny model bez klucza, Devin ma Quick Review i testy</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="pj-all" href="porownanie.html">Gdzie inni są lepsi</a>
+  </div>
+</section>
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.spo-duel,.pj-art').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

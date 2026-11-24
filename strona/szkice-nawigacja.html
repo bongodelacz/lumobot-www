@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Szkice nawigacji</title>
+<link rel="stylesheet" href="css/baza.css"><link rel="stylesheet" href="css/font-plik.css"><link rel="stylesheet" href="faces.css">
+<script src="js/agenci.js"></script>
+<style>
+:root{--bg:#1a1a1a;--card:#232326;--line:rgba(255,255,255,.1);--mut:#a1a1a6;--p1:#f3c78a;--p2:#a8c8ff;--p3:#c9b6ff;--p4:#9fe0c4;--p5:#ffb3c1;--p6:#8fdcea}
+body{background:var(--bg);font-family:Inter,system-ui,sans-serif;color:#fff}
+.sz{min-height:100vh;padding:90px 0;border-bottom:1px solid var(--line);display:flex;align-items:center}
+.w{width:min(1120px,calc(100% - 48px));margin:0 auto}
+.tag{display:inline-block;padding:6px 12px;border-radius:99px;background:var(--card);font-size:13px;color:var(--mut);margin-bottom:16px}
+h2{margin:0 0 12px;font-size:clamp(44px,5vw,68px);font-weight:700;letter-spacing:-.045em;line-height:1.02}
+.lead{margin:0 0 40px;max-width:620px;font-size:22px;line-height:1.3;letter-spacing:-.02em;color:var(--mut)}
+.ar{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);transition:transform .3s}
+.ar svg{width:16px;height:16px}
+/* 1 bento z podglądem */
+.b1{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.b1 a{position:relative;border-radius:22px;padding:22px;color:#111;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.b1 a b{font-size:24px;letter-spacing:-.03em}.b1 a small{font-size:14px;opacity:.7;margin-top:4px}
+.b1 .mini{position:absolute;left:22px;right:22px;top:22px;height:55%;border-radius:10px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.b1 .mini::before{content:"";position:absolute;left:12px;top:12px;width:40%;height:10px;border-radius:5px;background:rgba(0,0,0,.18);box-shadow:0 20px 0 -2px rgba(0,0,0,.1),0 38px 0 -2px rgba(0,0,0,.1)}
+.b1 a:first-child{grid-row:span 2}
+/* 2 agenci */
+.b2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.b2 a{display:flex;flex-direction:column;gap:14px;justify-content:flex-start;padding:26px;border-radius:22px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:#fff}
+.b2 a b{font-size:24px;letter-spacing:-.03em}.b2 a small{font-size:15px;color:var(--mut);line-height:1.4}
+.b2 .row{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.b2 .who{font-size:13px;color:var(--mut);display:flex;align-items:center;gap:8px}
+/* 3 wachlarz */
+.b3{position:relative;height:420px}
+.b3 a{position:absolute;top:30px;width:300px;height:360px;border-radius:24px;padding:24px;color:#111;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.b3 a b{font-size:26px;letter-spacing:-.03em}
+/* 4 wiersze */
+.b4 a{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:24px;padding:30px 8px;border-top:1px solid rgba(255,255,255,.07);color:#fff}
+.b4 a:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.b4 a b{font-size:clamp(34px,4vw,52px);letter-spacing:-.045em;font-weight:700}
+.b4 a small{font-size:17px;color:var(--mut);line-height:1.4}
+.b4 a.on{background:rgba(255,255,255,.035);border-radius:18px;padding-left:24px;padding-right:24px;border-color:transparent}
+.b4 a.on .ar{background:#fff;color:#111;transform:translateX(6px)}
+/* 5 paleta */
+.b5{width:620px;margin:0 auto;border-radius:20px;background:#232326;box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.b5 .in{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line);font-size:20px}
+.b5 .in i{width:2px;height:22px;background:#5482ff}
+.b5 .in kbd{margin-left:auto;font:500 12px Inter;color:var(--mut);padding:4px 8px;border-radius:6px;box-shadow:inset 0 0 0 1px var(--line)}
+.b5 a{display:flex;align-items:center;gap:14px;padding:14px 20px;color:#e8e8ed;font-size:16px}
+.b5 a span.ic{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.07)}
+.b5 a small{margin-left:auto;color:var(--mut);font-size:13px}
+.b5 a.on{background:rgba(84,130,255,.16)}
+/* 6 wyspa */
+.b6{display:flex;flex-direction:column;align-items:center;gap:18px}
+.b6 .isl{display:flex;gap:6px;padding:8px;border-radius:999px;background:#0f0f10;box-shadow:0 0 0 1px var(--line)}
+.b6 .isl a{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;color:#c7c7cc;font-size:15px}
+.b6 .isl a.on{background:#fff;color:#111}
+.b6 .pv{width:760px;height:300px;border-radius:28px;background:#0f0f10;box-shadow:0 0 0 1px var(--line);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.b6 .pv b{font-size:34px;letter-spacing:-.04em}.b6 .pv p{color:var(--mut);font-size:17px}
+.b6 .pv .sk{border-radius:16px;background:var(--p2)}
+/* 7 kursory */
+.b7{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.b7 a{position:relative;height:220px;border-radius:22px;padding:20px;color:#111;display:flex;flex-direction:column;justify-content:flex-end}
+.b7 a b{font-size:22px;letter-spacing:-.03em}
+.b7 .cu{position:absolute;display:flex;align-items:flex-start}
+.b7 .cu svg{width:18px;height:18px}
+.b7 .cu em{margin:14px 0 0 -2px;padding:3px 8px;border-radius:99px;color:#fff;font:600 12px Inter;font-style:normal}
+/* 8 zakładki przeglądarki */
+.b8{border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line);background:#232326}
+.b8 .tabs{display:flex;gap:2px;padding:10px 10px 0;background:#18181a}
+.b8 .tabs a{padding:10px 18px;border-radius:10px 10px 0 0;color:#a1a1a6;font-size:14px}
+.b8 .tabs a.on{background:#232326;color:#fff}
+.b8 .body{height:360px;padding:30px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:center}
+.b8 .body b{font-size:40px;letter-spacing:-.04em;line-height:1.05}
+.b8 .body p{color:var(--mut);font-size:17px}
+.b8 .btn{display:inline-flex;margin-top:14px;padding:12px 20px;border-radius:99px;background:#fff;color:#111;font-weight:600;font-size:15px}
+.b8 .shot{height:100%;border-radius:14px;background:var(--p3)}
+/* 9 okno aplikacji */
+.b9{border-radius:16px;overflow:hidden;background:#141414;box-shadow:0 0 0 1px var(--line)}
+.b9 .top{display:flex;align-items:center;gap:18px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:14px;color:#c7c7cc}
+.b9 .top b{color:#fff;margin-right:auto}
+.b9 .top span.on{color:#fff;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.08)}
+.b9 .main{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px;height:330px}
+.b9 .main div{border-radius:14px;background:#1f1f22;box-shadow:inset 0 0 0 1px var(--line);padding:18px}
+.b9 .main b{font-size:18px}.b9 .main small{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+/* 10 wielkie słowa */
+.b10{display:grid;grid-template-columns:1.3fr 1fr;align-items:center}
+.b10 ul{list-style:none;margin:0;padding:0}
+.b10 li{font-size:clamp(56px,7vw,104px);font-weight:700;letter-spacing:-.055em;line-height:1.02;color:#3a3a3e}
+.b10 li.on{color:#fff}
+.b10 .pv{height:340px;border-radius:24px;background:var(--p4)}
+/* 11 pas */
+.b11{display:flex;gap:14px;overflow:hidden;margin-right:-200px}
+.b11 a{flex:none;width:300px;height:340px;border-radius:24px;padding:24px;color:#111;display:flex;flex-direction:column;justify-content:space-between}
+.b11 a strong{font-size:64px;letter-spacing:-.05em;line-height:1}
+.b11 a b{font-size:22px}
+/* 12 pytanie na start */
+.b12{display:flex;flex-direction:column;gap:12px;max-width:760px}
+.b12 a{display:flex;align-items:center;justify-content:space-between;padding:26px 28px;border-radius:22px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:26px;letter-spacing:-.03em;color:#fff}
+.b12 a small{display:block;font-size:14px;color:var(--mut);letter-spacing:0;margin-top:4px}
+.b12 a.on{background:#fff;color:#111}.b12 a.on small{color:#555}.b12 a.on .ar{background:#111;color:#fff}
+/* 13 ścieżka */
+.b13{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:40px}
+.b13::before{content:"";position:absolute;left:12px;right:12px;top:52px;height:2px;background:linear-gradient(90deg,#5482ff 55%,rgba(255,255,255,.12) 55%)}
+.b13 a{position:relative;color:#fff}
+.b13 a i{display:block;width:26px;height:26px;border-radius:50%;background:#1a1a1a;box-shadow:inset 0 0 0 2px #5482ff;margin-bottom:28px;position:relative}
+.b13 a.dn i{background:#5482ff}
+.b13 a b{display:block;font-size:30px;letter-spacing:-.04em}
+.b13 a small{display:block;margin-top:8px;font-size:15px;color:var(--mut);line-height:1.4}
+.b13 a span{display:inline-block;margin-top:14px;font-size:15px;color:#86a6ff}
+/* 14 plan */
+.b14{position:relative;height:440px;border-radius:24px;background:#141414 radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1.5px) 0 0/22px 22px;box-shadow:inset 0 0 0 1px var(--line)}
+.b14 a{position:absolute;width:210px;padding:16px;border-radius:16px;background:#232326;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);color:#fff}
+.b14 a b{display:block;font-size:17px;margin-top:10px}.b14 a small{color:var(--mut);font-size:13px}
+.b14 svg.ln{position:absolute;inset:0;width:100%;height:100%}
+/* 15 rozszerzona stopka */
+.b15{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.b15 .big{border-radius:24px;background:var(--p2);color:#111;padding:30px;height:420px;display:flex;flex-direction:column;justify-content:space-between}
+.b15 .big b{font-size:44px;letter-spacing:-.045em;line-height:1.02}
+.b15 .big .sh{flex:1;margin:20px 0;border-radius:14px;background:rgba(255,255,255,.5)}
+.b15 ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.b15 li{display:flex;justify-content:space-between;align-items:center;padding:22px 4px;border-top:1px solid rgba(255,255,255,.07)}
+.b15 li b{font-size:22px;letter-spacing:-.03em}.b15 li small{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+
+/* gradient z paska: rozmyte plamy, które wolno pływają */
+.gz{position:relative;overflow:hidden;isolation:isolate;background:var(--z0)}
+.gz .zb{position:absolute;width:85%;height:130%;border-radius:50%;filter:blur(38px);animation:gzm 11s ease-in-out infinite alternate;z-index:-1}
+.gz .zb1{left:-20%;top:-50%;background:var(--z1)}.gz .zb2{right:-25%;top:-30%;background:var(--z2);animation-duration:13s;animation-direction:alternate-reverse}.gz .zb3{left:25%;bottom:-75%;background:var(--z3);animation-duration:9s}
+@keyframes gzm{to{transform:translate(8%,10%) scale(1.15)}}
+.g-teal{--z0:#06302f;--z1:#0f7f78;--z2:#bff6f0;--z3:#2fd0b8}
+.g-pink{--z0:#3a0a22;--z1:#a3135d;--z2:#ffc4ea;--z3:#e2479e}
+.g-blue{--z0:#0a1640;--z1:#2f62e8;--z2:#c9d8ff;--z3:#5f8dff}
+.g-amber{--z0:#3a1a05;--z1:#b85a12;--z2:#ffe0b8;--z3:#f29a3c}
+.g-violet{--z0:#1c0b3d;--z1:#6a3bd6;--z2:#e3d4ff;--z3:#9b6cff}
+.gpill{display:inline-block;padding:5px 10px;border-radius:99px;background:rgba(0,0,0,.35);font-size:11.5px;font-weight:700;letter-spacing:.02em;color:#fff}
+/* 16 siatka banerów */
+.b16{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:250px 250px;gap:14px}
+.b16 a{border-radius:24px;padding:24px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.b16 a:first-child{grid-row:span 2}
+.b16 a b{display:block;font-size:34px;letter-spacing:-.04em;line-height:1.02;margin-top:auto}
+.b16 a:first-child b{font-size:52px}
+.b16 a small{display:block;margin-top:8px;font-size:15px;color:rgba(255,255,255,.82)}
+.b16 .row{display:flex;justify-content:space-between;align-items:flex-end}
+.b16 .ar{background:rgba(255,255,255,.22);color:#fff}
+/* 17 lista z gradientowymi kwadratami */
+.b17{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 40px}
+.b17 a{display:flex;align-items:center;gap:18px;padding:16px;border-radius:20px;color:#fff;transition:background .25s}
+.b17 a:hover,.b17 a.on{background:rgba(255,255,255,.04)}
+.sq .zb{filter:blur(9px)!important;width:90%!important;height:110%!important}
+.b17 .sq{flex:none;width:72px;height:72px;border-radius:18px}
+.b17 b{display:block;font-size:22px;letter-spacing:-.03em}.b17 small{display:block;margin-top:4px;font-size:15px;color:var(--mut)}
+.b17 .ar{margin-left:auto}
+/* 18 duży baner i wiersze */
+.b18 .hero{display:flex;align-items:flex-end;justify-content:space-between;height:300px;border-radius:28px;padding:32px;color:#fff;margin-bottom:10px}
+.b18 .hero b{display:block;font-size:56px;letter-spacing:-.045em;line-height:1}.b18 .hero small{display:block;margin-top:10px;font-size:17px;color:rgba(255,255,255,.85)}
+.b18 .hero .ar{width:52px;height:52px;background:#fff;color:#111}
+.b18 .rows{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.b18 .rows a{display:flex;align-items:center;gap:14px;padding:14px;border-radius:20px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:#fff}
+.b18 .rows .sq{flex:none;width:52px;height:52px;border-radius:14px}
+.b18 .rows b{font-size:18px}.b18 .rows small{display:block;font-size:13px;color:var(--mut);margin-top:2px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+
+<section class="sz" id="s1"><div class="w"><span class="tag">1 · Bento z podglądem</span><h2>Zobacz więcej</h2><p class="lead">Każda podstrona to kafelek z miniaturą tego, co jest w środku.</p>
+<div class="b1">
+<a style="background:var(--p2)"><i class="mini"></i><b>Funkcje</b><small>Wszystko, co LumoBot robi za ciebie</small></a>
+<a style="background:var(--p3)"><i class="mini"></i><b>Agenci</b><small>Sześć ról w zespole</small></a>
+<a style="background:var(--p1)"><i class="mini"></i><b>Porównanie</b><small>LumoBot obok innych</small></a>
+<a style="background:var(--p4)"><i class="mini"></i><b>Nowości</b><small>Co zmieniło się ostatnio</small></a>
+<a style="background:var(--p5)"><i class="mini"></i><b>Wypróbuj</b><small>Okno w przeglądarce</small></a>
+</div></div></section>
+
+<section class="sz" id="s2"><div class="w"><span class="tag">2 · Agenci prowadzą</span><h2>Wybierz przewodnika</h2><p class="lead">Każdy agent opowiada o swojej części LumoBota.</p>
+<div class="b2">
+<a><span data-f="Lider,#493093,chmura,duze" data-px="56"></span><b>Funkcje</b><small>Lider pokazuje, jak zespół dzieli pracę i dowozi wynik.</small><div class="row"><span class="who">prowadzi Lider</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a><span data-f="Lupa,#24289b,squircle,gwiazdki" data-px="56"></span><b>Porównanie</b><small>Lupa sprawdziła, czym LumoBot różni się od innych agentów.</small><div class="row"><span class="who">prowadzi Lupa</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a><span data-f="Pióro,#d6409f,szesciokat,mrugniecie" data-px="56"></span><b>Nowości</b><small>Pióro spisuje każdą zmianę w nowej wersji.</small><div class="row"><span class="who">prowadzi Pióro</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a><span data-f="Kreska,#64748b,pigula,kreski" data-px="56"></span><b>Wypróbuj</b><small>Kreska otwiera prawdziwe okno aplikacji w przeglądarce.</small><div class="row"><span class="who">prowadzi Kreska</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a><span data-f="Radar,#06b6d4,kwiat,plusy" data-px="56"></span><b>Świat AI</b><small>Radar wyjaśnia, jak myślimy o agentach.</small><div class="row"><span class="who">prowadzi Radar</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a><span data-f="Paleta,#890017,trojkat,kropki" data-px="56"></span><b>Agenci</b><small>Paleta przedstawia cały zespół i kreator agenta.</small><div class="row"><span class="who">prowadzi Paleta</span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+</div></div></section>
+
+<section class="sz" id="s3"><div class="w"><span class="tag">3 · Karty w wachlarzu</span><h2>Przejrzyj podstrony</h2><p class="lead">Karta pod kursorem wysuwa się do przodu.</p>
+<div class="b3">
+<a style="left:4%;background:var(--p4);transform:rotate(-7deg)"><b>Nowości</b><span class="ar" style="background:rgba(0,0,0,.08)"><svg><use href="#ar"/></svg></span></a>
+<a style="left:22%;background:var(--p1);transform:rotate(-3deg)"><b>Porównanie</b><span class="ar" style="background:rgba(0,0,0,.08)"><svg><use href="#ar"/></svg></span></a>
+<a style="left:40%;background:var(--p2);transform:translateY(-24px);z-index:3"><b>Funkcje</b><span class="ar" style="background:#111;color:#fff"><svg><use href="#ar"/></svg></span></a>
+<a style="left:58%;background:var(--p3);transform:rotate(3deg)"><b>Agenci</b><span class="ar" style="background:rgba(0,0,0,.08)"><svg><use href="#ar"/></svg></span></a>
+<a style="left:74%;background:var(--p5);transform:rotate(7deg)"><b>Wypróbuj</b><span class="ar" style="background:rgba(0,0,0,.08)"><svg><use href="#ar"/></svg></span></a>
+</div></div></section>
+
+<section class="sz" id="s4"><div class="w"><span class="tag">4 · Duże wiersze</span><h2>Dowiedz się więcej</h2><p class="lead">Spis treści na całą szerokość, jak na stronach Apple.</p>
+<div class="b4">
+<a><b>Funkcje</b><small>Praca do skutku, Neuro, wyspa, głos i przeglądarka.</small><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a class="on"><b>Agenci</b><small>Lider, Pióro, Kreska, Lupa, Radar i Paleta.</small><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><b>Porównanie</b><small>LumoBot obok innych agentów, ze źródłami.</small><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><b>Nowości</b><small>Wszystkie zmiany, od najnowszych.</small><span class="ar"><svg><use href="#ar"/></svg></span></a>
+</div></div></section>
+
+<section class="sz" id="s5"><div class="w"><span class="tag">5 · Paleta poleceń</span><h2 style="text-align:center">Dokąd chcesz iść?</h2><p class="lead" style="margin-left:auto;margin-right:auto;text-align:center">Wpisz albo kliknij, jak w aplikacji.</p>
+<div class="b5"><div class="in">Porów<i></i><kbd>Ctrl K</kbd></div>
+<a class="on"><span class="ic">⇄</span>Porównanie<small>LumoBot i reszta</small></a>
+<a><span class="ic">✦</span>Funkcje<small>Co umie</small></a>
+<a><span class="ic">☺</span>Agenci<small>Sześć ról</small></a>
+<a><span class="ic">↻</span>Nowości<small>Wersja 0.24.4</small></a>
+<a><span class="ic">▢</span>Wypróbuj w przeglądarce<small>Okno aplikacji</small></a>
+</div></div></section>
+
+<section class="sz" id="s6"><div class="w"><span class="tag">6 · Wyspa jako menu</span><h2 style="text-align:center">Wszystko w jednej wyspie</h2><p class="lead" style="margin-left:auto;margin-right:auto;text-align:center">Wyspa z aplikacji rozsuwa się w podgląd podstrony.</p>
+<div class="b6"><div class="isl"><a class="on">Funkcje</a><a>Agenci</a><a>Porównanie</a><a>Nowości</a><a>Wypróbuj</a></div>
+<div class="pv"><div><b>Funkcje</b><p>Praca do skutku, Neuro, zespół z Liderem, wyspa i głos.</p><span class="ar" style="background:#fff;color:#111"><svg><use href="#ar"/></svg></span></div><div class="sk"></div></div></div></div></section>
+
+<section class="sz" id="s7"><div class="w"><span class="tag">7 · Kursory prowadzą</span><h2>Agenci już tam są</h2><p class="lead">Nad każdym kafelkiem pracuje kursor jego agenta.</p>
+<div class="b7">
+<a style="background:var(--p2)"><span class="cu" style="left:60%;top:30%"><svg viewBox="0 0 24 24"><path d="M4 2.5l15.5 9.2-6.6 1.6-3.3 6.2z" fill="#493093" stroke="#fff" stroke-width="1.6"/></svg><em style="background:#493093">Lider</em></span><b>Funkcje</b></a>
+<a style="background:var(--p3)"><span class="cu" style="left:30%;top:22%"><svg viewBox="0 0 24 24"><path d="M4 2.5l15.5 9.2-6.6 1.6-3.3 6.2z" fill="#890017" stroke="#fff" stroke-width="1.6"/></svg><em style="background:#890017">Paleta</em></span><b>Agenci</b></a>
+<a style="background:var(--p1)"><span class="cu" style="left:52%;top:40%"><svg viewBox="0 0 24 24"><path d="M4 2.5l15.5 9.2-6.6 1.6-3.3 6.2z" fill="#24289b" stroke="#fff" stroke-width="1.6"/></svg><em style="background:#24289b">Lupa</em></span><b>Porównanie</b></a>
+<a style="background:var(--p4)"><span class="cu" style="left:20%;top:30%"><svg viewBox="0 0 24 24"><path d="M4 2.5l15.5 9.2-6.6 1.6-3.3 6.2z" fill="#d6409f" stroke="#fff" stroke-width="1.6"/></svg><em style="background:#d6409f">Pióro</em></span><b>Nowości</b></a>
+</div></div></section>
+
+<section class="sz" id="s8"><div class="w"><span class="tag">8 · Zakładki przeglądarki</span><h2>Otwórz kartę</h2><p class="lead">Klikasz kartę, w środku zmienia się podgląd.</p>
+<div class="b8"><div class="tabs"><a>Funkcje</a><a class="on">Agenci</a><a>Porównanie</a><a>Nowości</a><a>Pytania</a></div>
+<div class="body"><div><b>Sześć ról, jeden dobry wynik</b><p>Poznaj Lidera i specjalistów, a potem zrób własnego agenta.</p><span class="btn">Otwórz Agentów</span></div><div class="shot"></div></div></div></div></section>
+
+<section class="sz" id="s9"><div class="w"><span class="tag">9 · Okno aplikacji</span><h2>Nawigacja jak w LumoBocie</h2><p class="lead">Pasek zakładek z aplikacji, tylko z podstronami.</p>
+<div class="b9"><div class="top"><b>LumoBot</b><span>Funkcje</span><span>Agenci</span><span class="on">Porównanie</span><span>Nowości</span><span>Pytania</span></div>
+<div class="main"><div><b>LumoBot</b><small>Praca do skutku, zespół, Neuro</small></div><div><b>OpenBot</b><small>Jeden agent, bez sprawdzania</small></div><div><b>Manus</b><small>W chmurze, płatny</small></div></div></div></div></section>
+
+<section class="sz" id="s10"><div class="w"><span class="tag">10 · Wielkie słowa</span>
+<div class="b10"><ul><li>Funkcje</li><li class="on">Agenci</li><li>Porównanie</li><li>Nowości</li><li>Pytania</li></ul><div class="pv"></div></div></div></section>
+
+<section class="sz" id="s11"><div class="w"><span class="tag">11 · Przewijany pas</span><h2>W liczbach</h2><p class="lead">Pas kart, który jedzie w bok przy przewijaniu.</p>
+<div class="b11">
+<a style="background:var(--p3)"><strong>6</strong><b>agentów w zespole</b></a>
+<a style="background:var(--p2)"><strong>8</strong><b>funkcji do poznania</b></a>
+<a style="background:var(--p1)"><strong>4</strong><b>agentów w porównaniu</b></a>
+<a style="background:var(--p4)"><strong>18</strong><b>pytań i odpowiedzi</b></a>
+<a style="background:var(--p5)"><strong>0,24</strong><b>najnowsza wersja</b></a>
+</div></div></section>
+
+<section class="sz" id="s12"><div class="w"><span class="tag">12 · Pytanie na start</span><h2>Od czego chcesz zacząć?</h2><p class="lead">Odpowiedź prowadzi na właściwą podstronę.</p>
+<div class="b12">
+<a><span>Chcę zobaczyć, co umie<small>Funkcje</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a class="on"><span>Chcę porównać z innymi<small>Porównanie</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span>Chcę od razu spróbować<small>Okno w przeglądarce</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+</div></div></section>
+
+<section class="sz" id="s13"><div class="w"><span class="tag">13 · Ścieżka</span><h2>Twoja droga do LumoBota</h2><p class="lead">Linia rysuje się przy przewijaniu.</p>
+<div class="b13">
+<a class="dn"><i></i><b>Poznaj</b><small>Co robi i jak pracuje zespół</small><span>Funkcje</span></a>
+<a class="dn"><i></i><b>Porównaj</b><small>Czym różni się od innych</small><span>Porównanie</span></a>
+<a><i></i><b>Wypróbuj</b><small>Okno aplikacji w przeglądarce</small><span>Wypróbuj</span></a>
+<a><i></i><b>Pobierz</b><small>Windows 10 i 11, za darmo</small><span>Pobierz</span></a>
+</div></div></section>
+
+<section class="sz" id="s14"><div class="w"><span class="tag">14 · Mapa jak Plan</span><h2>Mapa strony</h2><p class="lead">Wygląda jak zakładka Plan w aplikacji.</p>
+<div class="b14"><svg class="ln" viewBox="0 0 1120 440" preserveAspectRatio="none"><g fill="none" stroke="#5482ff" stroke-width="1.6" stroke-dasharray="4 6"><path d="M250 110 C 330 110 330 90 410 90"/><path d="M250 110 C 330 110 330 300 410 300"/><path d="M620 90 C 700 90 700 200 780 200"/><path d="M620 300 C 700 300 700 200 780 200"/></g></svg>
+<a style="left:40px;top:60px"><span data-f="Lider,#493093,chmura,duze" data-px="28"></span><b>Funkcje</b><small>Start</small></a>
+<a style="left:410px;top:40px"><span data-f="Paleta,#890017,trojkat,kropki" data-px="28"></span><b>Agenci</b><small>Zespół</small></a>
+<a style="left:410px;top:250px"><span data-f="Lupa,#24289b,squircle,gwiazdki" data-px="28"></span><b>Porównanie</b><small>Na tle innych</small></a>
+<a style="left:780px;top:150px;box-shadow:inset 0 0 0 1.5px #5482ff"><span data-f="Kreska,#64748b,pigula,kreski" data-px="28"></span><b>Pobierz</b><small>Koniec planu</small></a>
+</div></div></section>
+
+<section class="sz" id="s15"><div class="w"><span class="tag">15 · Rozszerzona stopka</span><h2>Zanim pobierzesz</h2><p class="lead">Jedna główna podstrona z podglądem, reszta w liście.</p>
+<div class="b15"><div class="big"><b>Wypróbuj w przeglądarce</b><div class="sh"></div><span class="ar" style="background:#111;color:#fff"><svg><use href="#ar"/></svg></span></div>
+<ul><li><span><b>Funkcje</b><small>Co LumoBot robi za ciebie</small></span><span class="ar"><svg><use href="#ar"/></svg></span></li><li><span><b>Agenci</b><small>Sześć ról w zespole</small></span><span class="ar"><svg><use href="#ar"/></svg></span></li><li><span><b>Porównanie</b><small>LumoBot obok innych</small></span><span class="ar"><svg><use href="#ar"/></svg></span></li><li><span><b>Nowości</b><small>Ostatnie zmiany</small></span><span class="ar"><svg><use href="#ar"/></svg></span></li></ul></div></div></section>
+
+<section class="sz" id="s16"><div class="w"><span class="tag">16 · Banery z gradientem paska</span><h2>Zajrzyj dalej</h2><p class="lead">Te same żywe gradienty co w menu na górze strony.</p>
+<div class="b16">
+<a class="gz g-teal"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i><span><span class="gpill">NAJNOWSZE</span></span><div class="row"><span><b>Gotowe znaczy sprawdzone</b><small>18 listopada 2026, Nowości</small></span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a class="gz g-pink"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i><span><span class="gpill">AGENCI</span></span><div class="row"><span><b>Poznaj zespół</b><small>Sześć ról, każda z własnym zadaniem</small></span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+<a class="gz g-blue"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i><span><span class="gpill">DLACZEGO MY</span></span><div class="row"><span><b>LumoBot i reszta</b><small>Porównanie ze źródłami</small></span><span class="ar"><svg><use href="#ar"/></svg></span></div></a>
+</div></div></section>
+
+<section class="sz" id="s17"><div class="w"><span class="tag">17 · Lista z gradientami</span><h2>Wszystko o LumoBocie</h2><p class="lead">Jak małe pozycje w menu, tylko większe.</p>
+<div class="b17">
+<a class="on"><span class="sq gz g-blue"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Funkcje</b><small>Co LumoBot robi za ciebie</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span class="sq gz g-pink"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Agenci</b><small>Lider i pięciu specjalistów</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span class="sq gz g-amber"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Porównanie</b><small>LumoBot obok innych agentów</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span class="sq gz g-teal"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Nowości</b><small>Wszystkie zmiany, od najnowszych</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span class="sq gz g-violet"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Świat AI</b><small>Jak myślimy o agentach</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<a><span class="sq gz g-blue"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Wypróbuj w przeglądarce</b><small>Prawdziwe okno aplikacji</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+</div></div></section>
+
+<section class="sz" id="s18"><div class="w"><span class="tag">18 · Duży baner i reszta</span><h2>Zanim pobierzesz</h2><p class="lead">Jeden duży gradient na najważniejszą podstronę, reszta pod nim.</p>
+<div class="b18"><a class="hero gz g-blue"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i><span><span class="gpill">WYPRÓBUJ</span><b style="margin-top:16px">Okno LumoBota w przeglądarce</b><small>Prawdziwa aplikacja na pokazowych danych</small></span><span class="ar"><svg><use href="#ar"/></svg></span></a>
+<div class="rows">
+<a><span class="sq gz g-pink"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Agenci</b><small>Sześć ról w zespole</small></span></a>
+<a><span class="sq gz g-amber"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Porównanie</b><small>Na tle innych</small></span></a>
+<a><span class="sq gz g-teal"><i class="zb zb1"></i><i class="zb zb2"></i><i class="zb zb3"></i></span><span><b>Nowości</b><small>Ostatnie zmiany</small></span></a>
+</div></div></div></section>
+
+<script>
+document.querySelectorAll('[data-f]').forEach(el => { const [n, c, s, e] = el.dataset.f.split(','); el.innerHTML = window.lumoFace({id: 'n' + n + Math.random(), name: n, color: c, shape: s, face: e}, +(el.dataset.px || 34)); });
+</script>
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body></html>

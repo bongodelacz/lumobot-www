@@ -1,0 +1,249 @@
+/* Sekcja 1: czyste hero w stylu Apple — wyśrodkowane duże mrugające logo, zwarta hierarchia, smuga ghost-cursor rysująca nagłówek i opis. */
+.hr{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:88px 0 40px;text-align:center;overflow-x:clip}
+.hr-copy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* Warstwa WebGL smugi Ghost Cursor (nad hero, nie przechwytuje kliknięć) */
+.ghost-cursor{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.ghost-cursor__canvas{position:absolute;inset:0;display:block;width:100%;height:100%;mix-blend-mode:screen}
+
+/* Duże animowane logo LumoBota (warstwy buźki z aplikacji, bez cienia pod spodem) */
+.hr-logo{display:grid;place-items:center;margin-bottom:var(--s5)}
+.hr-logo .face{width:152px;height:152px;cursor:pointer;will-change:transform;animation:hrFloat 5.4s ease-in-out infinite}
+.hr-logo .face:hover{transform:scale(1.04)}
+.hr-logo .face:active{transform:scale(.97)}
+.hr-logo .face .eyes{animation:hrEyes 5.8s ease-in-out infinite !important;will-change:translate,scale}
+
+@keyframes hrFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+@keyframes hrEyes{
+  0%,12%{translate:0 0;scale:1 1}
+  18%,30%{translate:6% -2%;scale:1 1}
+  33%{translate:6% -2%;scale:1 .08}
+  36%{translate:6% -2%;scale:1 1}
+  44%,58%{translate:-6% 2%;scale:1 1}
+  66%,82%{translate:0 0;scale:1 1}
+  85%{translate:0 0;scale:1 .08}
+  88%{translate:0 0;scale:1 1}
+  100%{translate:0 0;scale:1 1}
+}
+
+/* Nagłówek i opis w jednej zwartej grupie */
+.hr-head{display:flex;flex-direction:column;align-items:center;gap:var(--s2);max-width:100%}
+.hr-title{position:relative;z-index:1;max-width:780px;font-size:clamp(36px,3.8vw,54px);line-height:1.12;padding-bottom:.14em;font-weight:700;letter-spacing:-.022em;color:#fff;background:none;-webkit-text-fill-color:#fff}
+.hr-lede{max-width:580px;font-size:clamp(17px,1.5vw,19px);line-height:1.45}
+
+/* Dostawcy AI przy zdaniu o subskrypcjach */
+.hr-prov{display:flex;flex-direction:column;align-items:center;gap:var(--s4);margin-top:var(--s6);text-align:center}
+.hr-prov>p:first-child{max-width:560px;font-size:15px;line-height:1.5;color:var(--text-2)}
+.hr-prov ul{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:var(--s6);list-style:none;margin:0;padding:0}
+.hr-prov li{display:flex;align-items:center;gap:var(--s2);font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--text-2);transition:color .2s}
+.hr-prov li:hover{color:var(--text)}
+.hr-prov li img{width:20px;height:20px;flex-shrink:0}
+.hr-prov .hr-more{font-size:13px;color:var(--text-3)}
+
+/* Czysta pigułka wersji w stylu Apple */
+.hr-news{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;margin-top:var(--s6);border-radius:999px;background:rgba(255,255,255,.06);font-size:13.5px;line-height:1;white-space:nowrap;color:var(--text-2);transition:background .2s,color .2s,transform .15s}
+.hr-news:hover{background:rgba(255,255,255,.11);color:var(--text)}
+.hr-news:active{transform:scale(.98)}
+.hr-news:focus-visible{outline:2px solid #f5f5f7;outline-offset:3px;border-radius:999px}
+.hr-news-dot{width:6px;height:6px;border-radius:50%;background:var(--accent-hi);flex-shrink:0}
+.hr-news-new{color:#f5f5f7;font-weight:600}
+.hr-news-ver{color:var(--text);font-weight:500}
+.hr-news-sep{color:var(--text-3)}
+.hr-news-arr{color:var(--text-3);transition:transform .3s cubic-bezier(.32,.72,0,1)}
+.hr-news:hover .hr-news-arr{transform:translateX(3px);color:var(--text)}
+
+.hr-ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--s4);margin-top:var(--s5)}
+.hr-ctas .btn{height:50px;padding:0 26px;font-size:16px}
+.hr-meta{margin-top:var(--s3);font-size:13px;color:var(--text-3)}
+
+/* Wejście treści bez blur: wyłącznie transform i opacity, pełna widoczność <= 500 ms */
+.hr-in{opacity:0;transform:translateY(10px);animation:hrIn .32s cubic-bezier(.32,.72,0,1) forwards;animation-delay:calc(var(--d) * 35ms)}
+@keyframes hrIn{to{opacity:1;transform:none}}
+
+@media (max-width:640px){
+  .hr{padding:76px 0 var(--s7)}
+  .hr-logo{margin-bottom:var(--s4)}
+  .hr-logo .face{width:112px;height:112px}
+  .hr-head{gap:var(--s3)}
+  .hr-title{font-size:clamp(34px,9vw,38px)}
+  .hr-lede{font-size:17px}
+  .hr-prov{margin-top:var(--s5);gap:var(--s3)}
+  .hr-prov ul{display:grid;grid-template-columns:repeat(2,auto);justify-content:center;gap:var(--s3) var(--s6)}
+  .hr-prov li{font-size:15px}
+  .hr-prov li img{width:20px;height:20px}
+  .hr-news{margin-top:var(--s5);padding:0 12px;gap:6px;font-size:12.5px}
+  .hr-ctas{flex-direction:column;align-self:stretch;gap:var(--s3);margin-top:var(--s4)}
+  .hr-ctas .btn-primary,.hr-ctas .btn-ghost{width:100%}
+}
+
+html.static .hr-in,html.static .hr-logo .face,html.static .hr-logo .face .eyes{opacity:1;transform:none;animation:none !important}
+html.static .ghost-cursor{display:none !important}
+html.static .hr-title,html.static .hr-lede{-webkit-mask-image:none !important;mask-image:none !important}
+
+@media (prefers-reduced-motion:reduce){
+  .hr-in,.hr-logo .face,.hr-logo .face .eyes{opacity:1;transform:none;animation:none !important}
+  .ghost-cursor{display:none !important}
+  .hr-title,.hr-lede{-webkit-mask-image:none !important;mask-image:none !important}
+}
+
+/* przyciski w hero: biała pastylka z ikoną Windows i strzałką oraz ciemny przycisk ze strzałką (wartości jak na openbot.run) */
+.hr-ctas{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hr-split{display:inline-flex;align-items:stretch;height:48px;border-radius:999px;background:#f0f0f0;overflow:hidden;transition:background .2s,transform .15s}
+.hr-split:hover{background:#fff}
+.hr-dl{display:inline-flex;align-items:center;gap:9px;padding:0 18px 0 22px;font-size:15px;font-weight:500;color:#141414;text-decoration:none}
+.hr-dl-more{display:inline-flex;align-items:center;justify-content:center;width:44px;color:#141414;border-left:1px solid rgba(0,0,0,.12);text-decoration:none}
+.hr-dl-more:hover{background:rgba(0,0,0,.05)}
+.hr-try{display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 24px;border-radius:999px;font-size:15px;font-weight:500;color:#fff;text-decoration:none;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px -18px rgba(0,0,0,.28);transition:background .2s}
+.hr-try:hover{background:rgba(255,255,255,.12)}
+.hr-try svg{transition:transform .2s}.hr-try:hover svg{transform:translateX(2px)}
+.hr-split:active,.hr-try:active{transform:scale(.98)}
+.hr-try,.hr-try span,.hr-dl,.hr-dl span{font-weight:500!important;letter-spacing:-.005em}
+/* prawdziwe logo LumoBota w hero */
+.hr-logo-img{display:block;width:152px;height:152px;animation:hrFloat 5.4s ease-in-out infinite;will-change:transform}
+@media (prefers-reduced-motion:reduce){.hr-logo-img{animation:none}}
+/* logo w hero stoi w miejscu; po najechaniu podskakuje, a oczy rozglądają się i mrugają */
+.hr-lg{position:relative;display:block;width:152px;height:152px;cursor:pointer}
+.hr-lg img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hr-lg:hover{animation:hrHop .9s cubic-bezier(.3,.7,.3,1)}
+.hr-lg:hover .hr-lg-e{animation:hrLook 1.5s ease-in-out}
+@keyframes hrHop{0%{transform:none}18%{transform:translateY(4px) scale(1.05,.94)}45%{transform:translateY(-22px) scale(.97,1.05)}70%{transform:translateY(0) scale(1.04,.96)}85%{transform:translateY(-4px)}100%{transform:none}}
+@keyframes hrLook{0%{transform:none}20%{transform:translate(-6px,-1px)}42%{transform:translate(6px,-1px)}60%{transform:none}68%{transform:scaleY(.08)}76%{transform:none}100%{transform:none}}
+.hr-lg-e{transform-origin:50% 50%}
+@media (prefers-reduced-motion:reduce){.hr-lg:hover,.hr-lg:hover .hr-lg-e{animation:none}}
+/* hasło w jednej linijce na komputerze */
+@media (min-width:900px){.hr-title{max-width:none!important;white-space:nowrap}}
+
+/* dropdown z platformami przy "Pobierz na Windows" */
+.hr-dd{position:relative;display:inline-flex}
+.hr-dl-more{border:0;border-left:1px solid rgba(0,0,0,.12);background:none;cursor:pointer;font:inherit}
+.hr-dl-more svg{transition:transform .25s cubic-bezier(.3,.7,.3,1)}
+.hr-dl-more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.hr-dl-more:focus-visible{outline:2px solid #f5f5f7;outline-offset:-3px;border-radius:0 999px 999px 0}
+.hr-dd-menu{position:absolute;top:calc(100% + 10px);left:0;z-index:30;width:320px;padding:8px;border-radius:20px;text-align:left;
+  background:rgba(24,24,27,.92);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),inset 0 1px 0 rgba(255,255,255,.08),0 30px 70px -20px rgba(0,0,0,.7);
+  transform-origin:24px 0;animation:hrDdIn .22s cubic-bezier(.2,.9,.3,1.2)}
+.hr-dd-menu[hidden]{display:none}
+@keyframes hrDdIn{from{opacity:0;transform:translateY(-6px) scale(.96)}to{opacity:1;transform:none}}
+.hr-dd-h{margin:6px 10px 8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.5)}
+.hr-dd-i{display:flex;align-items:center;gap:12px;padding:10px;border-radius:13px;color:#f5f5f7;text-decoration:none;transition:background .15s}
+a.hr-dd-i:hover,a.hr-dd-i:focus-visible{background:rgba(255,255,255,.07);outline:none}
+a.hr-dd-i:focus-visible{box-shadow:inset 0 0 0 1.5px #f5f5f7}
+.hr-dd-ic{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:11px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.hr-dd-tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.hr-dd-tx b{font-size:15px;font-weight:600}
+.hr-dd-tx small{font-size:13px;color:rgba(255,255,255,.55)}
+.hr-dd-pill{flex:none;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.75)}
+.hr-dd-pill.ok{background:#f0f0f0;color:#141414}
+.hr-dd-i.off{opacity:.5;cursor:default}
+.hr-dd-sep{display:block;height:1px;margin:6px 10px;background:rgba(255,255,255,.08)}
+@media (prefers-reduced-motion:reduce){.hr-dd-menu{animation:none}.hr-dl-more svg{transition:none}}
+.hr-in:has(.hr-dd){position:relative;z-index:20}.hr-dd{z-index:20}
+section:has(.hr-dd-menu:not([hidden])){position:relative;z-index:6}
+
+/* v2: liquid glass jak otwarty highbar, bez cienia pod spodem, ikony bez kafelków */
+.hr-dd-menu{background:rgba(30,30,33,.94);-webkit-backdrop-filter:blur(26px) saturate(1.5);backdrop-filter:blur(26px) saturate(1.5);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.06) inset;border-radius:22px;width:300px}
+.hr-dd-ic{width:28px;height:28px;background:none;box-shadow:none;border-radius:0;color:#fff}
+.hr-dd-ic svg{width:22px;height:22px}
+.hr-dd-i{gap:14px;padding:11px 12px}
+.hr-dd-i.off{opacity:1}
+.hr-dd-i.off .hr-dd-tx b{color:rgba(255,255,255,.82)}
+.hr-dd-i.off .hr-dd-tx small{color:rgba(255,255,255,.42)}
+
+/* v3: prawdziwy liquid glass z highbaru (te same wartości), układ trzech kafli zamiast listy */
+.hr-dd-menu{width:372px;padding:10px;border-radius:24px;
+  background:rgba(255,255,255,.043);-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);
+  box-shadow:0 0 0 1px rgba(255,255,255,.18),inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px -18px rgba(0,0,0,.28)}
+.hr-dd-menu::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),transparent 38%),radial-gradient(120% 60% at 50% -10%,rgba(255,255,255,.08),transparent 60%)}
+.hr-pt-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hr-pt{display:flex;flex-direction:column;align-items:center;gap:3px;padding:18px 8px 12px;border-radius:16px;color:#f5f5f7;text-decoration:none;text-align:center;
+  background:rgba(255,255,255,.035);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);transition:background .18s,transform .18s cubic-bezier(.3,.7,.3,1),box-shadow .18s}
+.hr-pt-ic{display:grid;place-items:center;height:40px;margin-bottom:8px;color:#fff;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))}
+.hr-pt b{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.hr-pt small{font-size:12.5px;color:rgba(255,255,255,.55)}
+.hr-pt-st{margin-top:10px;padding:5px 12px;border-radius:999px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+.hr-pt.on{background:rgba(255,255,255,.09);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),inset 0 1px 0 rgba(255,255,255,.18)}
+.hr-pt.on .hr-pt-st{background:#f0f0f0;color:#141414}
+a.hr-pt:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+a.hr-pt:focus-visible{outline:none;box-shadow:inset 0 0 0 2px #f5f5f7}
+.hr-pt[aria-disabled="true"] .hr-pt-ic{opacity:.75}
+.hr-pt-note{position:relative;margin:10px 6px 4px;font-size:13px;line-height:1.4;color:rgba(255,255,255,.55);text-align:center}
+@media (max-width:420px){.hr-dd-menu{width:calc(100vw - 32px)}}
+@media (prefers-reduced-motion:reduce){.hr-pt{transition:none}a.hr-pt:hover{transform:none}}
+.hr-meta{transition:opacity .2s}section:has(.hr-dd-menu:not([hidden])) .hr-meta{opacity:0}
+section:has(.hr-dd-menu:not([hidden])) .hr-meta{visibility:hidden}
+
+/* v4: lista bez ramek w szkle z highbaru; Windows wyróżniony, reszta cicho */
+.hr-dd-menu{width:300px;padding:6px}
+.hr-pl{position:relative;display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;color:#f5f5f7;text-decoration:none;transition:background .18s}
+.hr-pl+.hr-pl::before{content:"";position:absolute;left:52px;right:14px;top:0;height:1px;background:rgba(255,255,255,.07)}
+.hr-pl-ic{display:grid;place-items:center;width:24px;height:24px;flex:none;color:#fff}
+.hr-pl-tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.hr-pl-tx b{font-size:15px;font-weight:600;letter-spacing:-.01em}
+.hr-pl-tx small{font-size:13px;color:rgba(255,255,255,.5)}
+.hr-pl-go{display:grid;place-items:center;width:32px;height:32px;flex:none;border-radius:50%;background:#f0f0f0;color:#141414;transition:transform .2s cubic-bezier(.3,.7,.3,1)}
+.hr-pl-soon{flex:none;font-size:13px;color:rgba(255,255,255,.4)}
+.hr-pl:not(.on) .hr-pl-ic,.hr-pl:not(.on) .hr-pl-tx b{opacity:.7}
+a.hr-pl:hover,a.hr-pl:focus-visible{background:rgba(255,255,255,.07);outline:none}
+a.hr-pl:hover+.hr-pl::before,a.hr-pl:hover::before{opacity:0}
+a.hr-pl:hover .hr-pl-go{transform:translateY(2px)}
+a.hr-pl:focus-visible{box-shadow:inset 0 0 0 2px #f5f5f7}
+
+/* v5: kompaktowy ciemny dropdown: małe ikony, krótkie wiersze, ptaszek przy dostępnym */
+.hr-dd-menu.hr-mi-menu{width:216px;padding:6px;border-radius:16px;background:#111113;-webkit-backdrop-filter:none;backdrop-filter:none;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1),0 16px 40px -16px rgba(0,0,0,.8);animation:hrDdIn .16s cubic-bezier(.2,.9,.3,1)}
+.hr-dd-menu.hr-mi-menu::before{display:none}
+.hr-mi{display:flex;align-items:center;gap:12px;height:38px;padding:0 12px;border-radius:10px;color:#ededf0;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .12s}
+.hr-mi-ic{display:grid;place-items:center;width:16px;height:16px;flex:none;color:#a1a1a6}
+.hr-mi-tx{flex:1}
+.hr-mi-ck{flex:none;color:#ededf0}
+.hr-mi-soon{flex:none;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.35)}
+.hr-mi[aria-disabled="true"]{color:rgba(255,255,255,.55);cursor:default}
+a.hr-mi:hover,a.hr-mi:focus-visible{background:rgba(255,255,255,.07);outline:none}
+a.hr-mi:hover .hr-mi-ic{color:#fff}
+a.hr-mi:focus-visible{box-shadow:inset 0 0 0 1.5px #f5f5f7}
+
+/* v6: białe menu, czarne napisy, szerokie jak przycisk, bez cienia; ikona pobierania, przekreślona gdy niedostępne */
+.hr-dd-menu.hr-mi-menu{left:0;right:0;width:auto;padding:6px;border-radius:20px;background:#f0f0f0;box-shadow:none}
+.hr-mi{height:42px;padding:0 6px 0 14px;color:#141414;font-size:15px;font-weight:600}
+.hr-mi-ic{color:#141414}
+.hr-mi[aria-disabled="true"]{color:rgba(0,0,0,.42)}
+.hr-mi[aria-disabled="true"] .hr-mi-ic{color:rgba(0,0,0,.35)}
+.hr-mi-soon{margin-right:2px;font-size:12.5px;font-weight:500;color:rgba(0,0,0,.4)}
+.hr-mi-dl{display:grid;place-items:center;width:30px;height:30px;flex:none;border-radius:50%;background:#141414;color:#fff;transition:transform .2s cubic-bezier(.3,.7,.3,1)}
+.hr-mi-dl.off{background:rgba(0,0,0,.06);color:rgba(0,0,0,.35)}
+a.hr-mi:hover,a.hr-mi:focus-visible{background:#fff}
+a.hr-mi:hover .hr-mi-ic{color:#000}
+a.hr-mi:hover .hr-mi-dl{transform:translateY(2px)}
+.hr-mi-menu .hr-mi{border-radius:999px}.hr-dd-menu.hr-mi-menu{border-radius:27px}
+/* hero niższe: treść wyżej, a pod nią już widać początek drugiej sekcji */
+.hr{min-height:0;padding:92px 0 0}
+
+/* przycisk pobierania v2: nasze logo w pigułce i okrągły ciemny przełącznik platform w środku (bez kreski podziału) */
+.hr-split{height:52px;padding:4px;gap:4px;background:#f0f0f0;box-shadow:none}
+.hr-dl{gap:10px;padding:0 18px 0 8px;font-size:15.5px;font-weight:600;color:#141414}
+.hr-dl-lg{position:relative;display:block;width:30px;height:30px;flex:none}
+.hr-dl-lg img{position:absolute;inset:0;width:100%;height:100%}
+.hr-dl-e{transform-origin:50% 50%}
+.hr-dl:hover .hr-dl-lg{animation:hrHop .8s cubic-bezier(.3,.7,.3,1)}
+.hr-dl:hover .hr-dl-e{animation:hrLook 1.3s ease-in-out}
+.hr-dl-more{width:auto;min-width:64px;height:44px;padding:0 12px;gap:6px;border:0!important;border-radius:999px;background:#141414;color:#f5f5f7;transition:background .2s}
+.hr-dl-more:hover{background:#2a2a2e}
+.hr-dl-more:focus-visible{outline:2px solid #f5f5f7;outline-offset:2px;border-radius:999px}
+.hr-dl-ch{opacity:.75}
+.hr-dl-more svg{transition:transform .25s cubic-bezier(.3,.7,.3,1)}
+.hr-dl-more[aria-expanded="true"] .hr-dl-ch{transform:rotate(180deg)}
+.hr-dl-more[aria-expanded="true"] svg:first-child{transform:none}
+.hr-dd-menu.hr-mi-menu{border-radius:26px}
+@media (prefers-reduced-motion:reduce){.hr-dl:hover .hr-dl-lg,.hr-dl:hover .hr-dl-e{animation:none}}
+/* v3: bez logo w przycisku; ikona Windows przy napisie, okrągły przełącznik tylko ze strzałką */
+.hr-dl{gap:9px;padding:0 18px 0 16px}
+.hr-dl-more{min-width:44px;width:44px;padding:0}
+.hr-dl-ch{opacity:1;width:12px;height:12px}

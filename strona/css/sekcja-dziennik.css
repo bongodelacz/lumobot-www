@@ -1,0 +1,41 @@
+/* ===== Dziennik: artykuły z gradientem jak w panelach paska ===== */
+.dz{padding:clamp(96px,11vw,150px) 0 clamp(64px,7vw,96px);font-family:"Inter",system-ui,sans-serif}
+.dz-h{margin:0 0 14px;font-weight:700;line-height:1.02;letter-spacing:-.045em;color:#fff}
+.dz-lead{max-width:640px;margin:0 0 40px;font-size:clamp(20px,2vw,26px);line-height:1.25;letter-spacing:-.03em;color:#a1a1a6;text-wrap:balance}
+
+.dz-hero{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:320px;padding:clamp(24px,3vw,36px);border-radius:28px;color:#fff;box-sizing:border-box;background:linear-gradient(105deg,#03111a 0%,#0e5f74 42%,#2dd4bf 78%,#cffafe 100%);transition:transform .2s cubic-bezier(.2,.7,.2,1)}
+.dz-hero .kf-grain{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);display:block;z-index:-1;pointer-events:none}
+.dz-hero:active{transform:scale(.992)}
+.dz-hero:focus-visible{outline:2px solid #3a6bfc;outline-offset:3px}
+
+.dz-pill{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:30px;padding:0 14px;border-radius:999px;background:rgba(0,0,0,.32);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:13px;font-weight:600;line-height:1;letter-spacing:.01em;color:#fff}
+
+.dz-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;min-width:0}
+.dz-txt{max-width:740px;min-width:0}
+.dz-hero b{display:block;font-size:clamp(34px,4.4vw,56px);letter-spacing:-.045em;line-height:1.02;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.25)}
+.dz-hero small{display:block;margin-top:12px;font-size:clamp(16px,1.4vw,19px);line-height:1.45;color:rgba(255,255,255,.92);text-shadow:0 1px 12px rgba(0,0,0,.25)}
+
+.dz-ar{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff;color:#111;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.dz-ar svg{width:20px;height:20px}
+.dz-hero:hover .dz-ar{transform:translateX(4px)}
+
+.dz-pj-grid{margin-top:12px}
+
+.dz-all{display:inline-block;margin-top:24px;font-size:17px;font-weight:500;color:#f5f5f7;transition:color .15s,opacity .15s}
+.dz-all:hover{color:#fff;text-decoration:underline}
+.dz-all:active{opacity:.7}
+.dz-all:focus-visible{outline:2px solid #3a6bfc;outline-offset:4px;border-radius:4px}
+
+@media (max-width:960px){
+  .dz-pj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px){
+  .dz-pj-grid{grid-template-columns:1fr}
+  .dz-hero{min-height:260px;gap:24px;border-radius:22px}
+  .dz-bottom{flex-direction:column;align-items:flex-start;gap:16px}
+  .dz-ar{width:44px;height:44px;align-self:flex-end}
+}
+@media (prefers-reduced-motion:reduce){
+  .gz .zb{animation:none}
+  .dz-hero,.dz-ar{transition:none}
+}

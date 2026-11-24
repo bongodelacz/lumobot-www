@@ -1,0 +1,180 @@
+<div class="shot-wrap wrap"><figure class="shot au a1 reveal"><img src="img/kadry/skutek.png" alt="Okno LumoBota: sprawdzenie nie przeszło, agent poprawia i kończy, gdy cel jest osiągnięty" loading="lazy"></figure><p class="shot-cap">Prawdziwe okno LumoBota: sprawdzający odrzuca, agent poprawia, cel osiągnięty w drugiej rundzie.</p></div>
+
+
+<div class="sf-features">
+  <article id="praca-do-skutku" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Sprawdzanie</p>
+      <h2 class="headline">Praca do skutku</h2>
+      <p>Agent nie wraca z półproduktem. Niezależny sprawdzający ocenia wynik, a agent poprawia go, dopóki sprawdzenie nie przejdzie.</p>
+      <ul class="sf-points">
+        <li>Wynik ma jasny werdykt.</li>
+        <li>Kolejna runda zaczyna się sama.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a1">
+      <div class="sf-demo sf-verdict" aria-label="Przykład sprawdzenia wyniku">
+        <div class="sf-demo-top"><span>LUMOBOT</span><span>SPRAWDZENIE</span></div>
+        <div class="sf-verdict-row"><i class="sf-dot"></i><span>Sprawdzenie nie przeszło</span><small>runda 1</small></div>
+        <div class="sf-verdict-note">Na telefonie tabela wychodzi poza ekran.</div>
+        <div class="sf-verdict-row is-done"><i class="sf-dot"></i><span>Sprawdzenie przeszło</span><small>runda 2</small></div>
+        <div class="sf-verdict-note">Siatka układa się w jedną kolumnę.</div>
+        <div class="sf-meter"><span style="width:100%"></span></div>
+        <div class="sf-demo-foot"><span>CEL OSIĄGNIĘTY</span><b>2 rundy</b></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="neuro" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Szacunek</p>
+      <h2 class="headline">Neuro</h2>
+      <p>Mała sieć uczy się na zakończonych zadaniach. Szacuje, czy cel jest w zasięgu, zanim agent ruszy z pracą.</p>
+      <ul class="sf-points">
+        <li>Szansa rośnie z każdym wynikiem.</li>
+        <li>Widzisz, skąd bierze się ocena.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a2">
+      <div class="sf-demo sf-neuro" aria-label="Pasek szansy Neuro">
+        <div class="sf-demo-top"><span>NEURO</span><span>CEL: STRONA GOTOWA</span></div>
+        <div class="sf-neuro-main"><span>Szansa na cel</span><strong>72%</strong></div>
+        <div class="sf-meter sf-meter-tall"><span style="width:72%"></span></div>
+        <div class="sf-neuro-meta"><span>niska</span><span>na podstawie 18 zadań</span><span>wysoka</span></div>
+        <div class="sf-history" aria-hidden="true"><i style="height:28%"></i><i style="height:43%"></i><i style="height:39%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:72%"></i><i style="height:72%"></i><i style="height:84%"></i></div>
+        <div class="sf-demo-foot"><span>OSTATNI WYNIK</span><b>przeszedł</b></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="zespol" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Współpraca</p>
+      <h2 class="headline">Zespół z Liderem</h2>
+      <p>Lider dzieli robotę na mniejsze zadania i zleca je właściwym agentom. Reszta pracuje równolegle, a ty czytasz jeden sprawdzony wynik.</p>
+      <ul class="sf-points">
+        <li>Każdy agent ma własną rolę.</li>
+        <li>Lider pilnuje kolejności i wyniku.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a3">
+      <div class="sf-demo sf-team" aria-label="Lista kroków zespołu agentów">
+        <div class="sf-demo-top"><span>ZESPÓŁ</span><span>PROJEKT / STRONA</span></div>
+        <div class="sf-team-row is-lead"><span data-face="Lider" data-px="42"></span><span><b>Lider</b><small>Dzieli pracę</small></span><em>prowadzi</em></div>
+        <div class="sf-team-row"><span data-face="Pióro" data-px="42"></span><span><b>Pióro</b><small>Układa tekst</small></span><em>gotowe</em></div>
+        <div class="sf-team-row"><span data-face="Kreska" data-px="42"></span><span><b>Kreska</b><small>Buduje widok</small></span><em>gotowe</em></div>
+        <div class="sf-team-row"><span data-face="Lupa" data-px="42"></span><span><b>Lupa</b><small>Sprawdza telefon</small></span><em>czeka</em></div>
+        <div class="sf-team-foot"><span>3 z 4 zadań</span><span class="sf-team-line"><i style="width:75%"></i></span></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="wyspa" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Pulpit</p>
+      <h2 class="headline">Wyspa i głos</h2>
+      <p>Mały panel zostaje na pulpicie, gdy główne okno jest schowane. Mówisz po polsku, widzisz pytanie i odpowiadasz bez przerywania pracy.</p>
+      <ul class="sf-points">
+        <li>Rozmowa głosowa działa z wyspy.</li>
+        <li>Panel możesz schować do krawędzi.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a4">
+      <div class="sf-demo sf-island" aria-label="Podgląd wyspy LumoBota">
+        <div class="sf-island-top"><span data-face="Lider" data-px="48"></span><span><b>Lider</b><small>pracuje · runda 2</small></span><i class="sf-wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i></div>
+        <div class="sf-island-message">Czy sprawdzić jeszcze widok na telefonie?</div>
+        <div class="sf-island-actions"><span>Odpowiedz głosem</span><span class="sf-link-mark">lumo powiedz</span></div>
+        <div class="sf-island-input"><span>Powiedz odpowiedź...</span><b>↗</b></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="przegladarka" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Internet</p>
+      <h2 class="headline">Własna przeglądarka</h2>
+      <p>Agent ma własne karty, logowania i historię. Sam szuka, czyta strony, klika po numerach elementów i pobiera pliki do projektu.</p>
+      <ul class="sf-points">
+        <li>Twoja przeglądarka zostaje nietknięta.</li>
+        <li>Zrzut tego, co widzi agent, trafia do rozmowy.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a5">
+      <div class="sf-demo sf-browser" aria-label="Polecenia lumo web w przeglądarce agenta">
+        <div class="sf-browser-bar"><span class="sf-browser-dots"><i></i><i></i><i></i></span><span class="sf-address">własna karta agenta</span></div>
+        <div class="sf-browser-body">
+          <p><span class="sf-prompt">lumo web</span> szukaj "cennik API"</p>
+          <p class="sf-muted">Znalazłem 8 wyników.</p>
+          <p><span class="sf-prompt">lumo web</span> otwórz @2</p>
+          <p><span class="sf-prompt">lumo web</span> czytaj</p>
+          <div class="sf-browser-result"><b>Dokumentacja API</b><span>Strona producenta · przeczytano</span></div>
+          <p class="sf-muted">Plik zapisany w projekcie: źródła/cennik.md</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article id="komputer" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Sterowanie</p>
+      <h2 class="headline">Ręce na komputerze</h2>
+      <p>Jeśli włączysz tę opcję, agent może kliknąć i napisać w dowolnym programie. Domyślnie jest wyłączona, a kursor w lewym górnym rogu zatrzymuje pracę.</p>
+      <ul class="sf-points">
+        <li>Pełna kontrola zostaje po twojej stronie.</li>
+        <li>Każdy krok widać w dzienniku.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a6">
+      <div class="sf-demo sf-terminal" aria-label="Przykład polecenia lumo pc">
+        <div class="sf-demo-top"><span>LUMO PC</span><span>TRYB BEZPIECZNY</span></div>
+        <div class="sf-terminal-line"><span class="sf-terminal-mark">$</span> lumo pc ekran</div>
+        <div class="sf-terminal-shot"><span class="sf-crosshair"></span><span>okno aplikacji</span><i></i><i></i><i></i></div>
+        <div class="sf-terminal-line"><span class="sf-terminal-mark">$</span> lumo pc okno "Edytor" klik 640 380</div>
+        <div class="sf-terminal-line"><span class="sf-terminal-mark">$</span> lumo pc pisz "Gotowe"</div>
+        <div class="sf-terminal-state"><i></i><span>kursor bezpieczeństwa aktywny</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="obrazy" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Grafika</p>
+      <h2 class="headline">Agent od obrazów</h2>
+      <p>Paleta tworzy prawdziwe obrazy przez podłączone AI do generowania grafiki. Gotowy plik trafia do folderu obrazy i pojawia się w rozmowie.</p>
+      <ul class="sf-points">
+        <li>Ikony, logo i plakaty w jednym zadaniu.</li>
+        <li>Obraz ma własne proporcje i rozmiar.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a7">
+      <div class="sf-demo sf-canvas" aria-label="Płótno agenta od obrazów">
+        <div class="sf-canvas-top"><span>PALETA / PŁÓTNO</span><span>1024 × 1024 PNG</span></div>
+        <div class="sf-art" aria-hidden="true"><i class="sf-art-ring"></i><i class="sf-art-square"></i><i class="sf-art-line"></i><i class="sf-art-dot"></i></div>
+        <div class="sf-canvas-caption"><b>logo-lumobot.png</b><span>gotowy obraz · zapisano w obrazy/</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article id="punkty-powrotu" class="sf-feature wrap reveal">
+    <div class="sf-copy">
+      <p class="sf-kicker">Historia zmian</p>
+      <h2 class="headline">Punkty powrotu</h2>
+      <p>Każda zmiana może trafić do git jako osobny punkt powrotu. Gdy kierunek ci nie pasuje, wracasz do wcześniejszego wyniku jednym ruchem.</p>
+      <ul class="sf-points">
+        <li>Widzisz, co zmienił agent.</li>
+        <li>Nie tracisz poprzedniej wersji.</li>
+      </ul>
+    </div>
+    <div class="sf-visual au a1">
+      <div class="sf-demo sf-git" aria-label="Punkty powrotu w git">
+        <div class="sf-demo-top"><span>GIT / HISTORIA</span><span>BRANCH: LUMO</span></div>
+        <div class="sf-git-line">
+          <div class="sf-commit"><i></i><span><b>Start projektu</b><small>9a31c0 · 10:42</small></span></div>
+          <div class="sf-commit is-current"><i></i><span><b>Poprawa widoku telefonu</b><small>c412fe · teraz</small></span><em>bieżący</em></div>
+          <div class="sf-commit"><i></i><span><b>Wersja przed sprawdzeniem</b><small>1f0d88 · 10:58</small></span></div>
+        </div>
+        <div class="sf-git-foot"><span>3 punkty powrotu</span><span class="sf-link-mark">pokaż zmiany</span></div>
+      </div>
+    </div>
+  </article>
+</div>

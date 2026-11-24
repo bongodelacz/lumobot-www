@@ -1,0 +1,4 @@
+Windows: https://github.com/twbs/icons/blob/main/icons/windows.svg (MIT)
+Linux, Apple, iOS, Android: https://github.com/simple-icons/simple-icons/tree/develop/icons (CC0; znaki marek podlegają prawom właścicieli)
+Pobrano 20.11.2026.
+Linux: własny rysunek pingwina (oczy, dziób, brzuszek, łapki) w stylu pozostałych ikon, #f5f5f7, 20.11.2026.

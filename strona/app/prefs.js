@@ -1,0 +1,1 @@
+(function(){var P={"lumobot-theme": "dark", "lumobot-lang": "pl", "lumobot-agent": "a1794854587064", "lumobot-island": "0", "lumobot-usep": "openai", "lumobot-colors": "[\"#493093\",\"#3a6bfc\",\"#d6409f\",\"#0a703f\",\"#bd1922\",\"#12a594\"]"};window.LUMOPREFS=P;try{for(var k in P)localStorage.setItem(k,P[k]);}catch(e){}})();

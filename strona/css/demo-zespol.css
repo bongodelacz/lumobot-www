@@ -1,0 +1,162 @@
+.dm-zespol{
+  width:100%;
+  height:240px;
+  font-family:var(--font,"Inter",system-ui,sans-serif);
+  color:#e8e8ed;
+  user-select:none;
+}
+.dm-zespol-panel{
+  box-sizing:border-box;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:#222222;
+}
+.dm-zespol-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:46px;
+  padding:0 14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:#262626;
+}
+.dm-zespol-heading{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  min-width:0;
+}
+.dm-zespol-kicker{
+  color:#86868b;
+  font-family:var(--mono,ui-monospace,Consolas,monospace);
+  font-size:10px;
+  letter-spacing:.08em;
+}
+.dm-zespol-heading strong{
+  color:#e8e8ed;
+  font-size:15px;
+  font-weight:650;
+  letter-spacing:-.02em;
+}
+.dm-zespol-count{
+  flex:none;
+  padding:5px 8px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:8px;
+  color:#f5f5f7;
+  font-family:var(--mono,ui-monospace,Consolas,monospace);
+  font-size:10px;
+  line-height:1;
+  white-space:nowrap;
+  transition:opacity .35s cubic-bezier(.2,.7,.2,1),transform .35s cubic-bezier(.2,.7,.2,1),color .35s cubic-bezier(.2,.7,.2,1);
+}
+.dm-zespol-count.is-done{
+  color:#30d158;
+  border-color:rgba(48,209,88,.35);
+  transform:translateY(-1px);
+}
+.dm-zespol-list{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  justify-content:center;
+  padding:5px 14px 4px;
+}
+.dm-zespol-row{
+  display:grid;
+  grid-template-columns:30px minmax(0,1fr) auto;
+  align-items:center;
+  gap:9px;
+  min-height:43px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  opacity:.62;
+  transform:translateX(0);
+  transition:opacity .45s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.dm-zespol-row:last-child{border-bottom:0}
+.dm-zespol-row.is-busy{
+  opacity:1;
+  transform:translateX(2px);
+}
+.dm-zespol-row.is-done{opacity:.88}
+.dm-zespol-face{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+}
+.dm-zespol-face [data-face]{display:block;width:28px;height:28px}
+.dm-zespol-copy{min-width:0;line-height:1.2}
+.dm-zespol-copy b,
+.dm-zespol-copy small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dm-zespol-copy b{color:#e8e8ed;font-size:12px;font-weight:600}
+.dm-zespol-copy small{
+  margin-top:3px;
+  color:#86868b;
+  font-family:var(--mono,ui-monospace,Consolas,monospace);
+  font-size:10px;
+}
+.dm-zespol-status{
+  min-width:74px;
+  color:#86868b;
+  font-family:var(--mono,ui-monospace,Consolas,monospace);
+  font-size:10px;
+  line-height:1.2;
+  text-align:right;
+  white-space:nowrap;
+  transition:color .35s cubic-bezier(.2,.7,.2,1),opacity .35s cubic-bezier(.2,.7,.2,1);
+}
+.dm-zespol-row.is-busy .dm-zespol-status{color:#f5f5f7}
+.dm-zespol-row.is-done .dm-zespol-status{color:#30d158}
+.dm-zespol-foot{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:31px;
+  padding:0 14px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:#86868b;
+  font-size:10px;
+}
+.dm-zespol-progress{
+  display:block;
+  flex:1;
+  height:3px;
+  overflow:hidden;
+  border-radius:2px;
+  background:rgba(255,255,255,.1);
+}
+.dm-zespol-progress i{
+  display:block;
+  width:100%;
+  height:100%;
+  background:var(--accent);
+  transform:scaleX(.02);
+  transform-origin:left center;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),background-color .35s cubic-bezier(.2,.7,.2,1);
+}
+.dm-zespol-progress.is-one i{transform:scaleX(.34)}
+.dm-zespol-progress.is-two i{transform:scaleX(.67);background:#30d158}
+.dm-zespol-progress.is-three i{transform:scaleX(1);background:#30d158}
+
+html.static .dm-zespol-row{transition:none}
+html.static .dm-zespol-count,
+html.static .dm-zespol-status,
+html.static .dm-zespol-progress i{transition:none}
+@media (max-width:440px){
+  .dm-zespol-head{padding-left:12px;padding-right:12px}
+  .dm-zespol-list{padding-left:12px;padding-right:12px}
+  .dm-zespol-foot{padding-left:12px;padding-right:12px}
+  .dm-zespol-status{min-width:68px;font-size:9px}
+  .dm-zespol-copy small{font-size:9px}
+}
+@media (prefers-reduced-motion:reduce){
+  .dm-zespol-row,.dm-zespol-count,.dm-zespol-status,.dm-zespol-progress i{transition:none}
+}

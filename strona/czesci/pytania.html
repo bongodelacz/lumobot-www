@@ -1,0 +1,50 @@
+<section id="pytania" class="light">
+  <div class="wrap fq-grid">
+    <div class="fq-head">
+      <h2 class="title fq-title">Pytania</h2>
+      <p class="fq-lead">Zlecasz cel, a LumoBot pracuje, aż sprawdzenie przejdzie. Twoje pliki zostają na twoim komputerze, a aplikacja kosztuje 0 zł.</p>
+    </div>
+    <div class="fq-list">
+      <details class="fq-item">
+        <summary class="fq-q"><span>Dlaczego LumoBot nie mówi "gotowe", dopóki nie sprawdzi?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Zadanie kończy polecenie sprawdzające, na przykład test, albo osobny agent sprawdzający. Samo zdanie agenta nie wystarcza. Dostajesz wynik, który już przeszedł kontrolę.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Ile naprawdę kosztuje LumoBot?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Aplikacja kosztuje 0 zł. Płacisz tylko za plan AI lub klucz, który już masz, a przy modelach lokalnych (Ollama, LM Studio) nie płacisz wcale. Nie płacisz drugi raz za to samo.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Co się stanie, gdy agent coś zepsuje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Każde zadanie pracuje na osobnej gałęzi git z punktami powrotu, więc wracasz do dobrego stanu. LumoBot niczego nie publikuje sam. Sterowanie komputerem jest domyślnie wyłączone.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Gdzie zostają moje pliki i hasła?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Na twoim komputerze. Projekt leży w lokalnym folderze, a hasła są szyfrowane lokalnie i nie trafiają do modelu. Przy modelu lokalnym treść zadania nie opuszcza komputera.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Z jakimi modelami działa LumoBot?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Z 14 dostawcami i 158 modelami: Claude, ChatGPT i Codex, Gemini, Mistral, OpenRouter, Cursor, OpenCode i innymi. Lokalnie z Ollamą i LM Studio, bez klucza. Wybierasz sam.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Jak LumoBot pracuje jako zespół?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Lider dzieli zadanie na części i przydziela je specjalistom. Autor i sprawdzający mogą być osobnymi agentami. Całą rozmowę widzisz na kanale zespołu i możesz się wtrącić.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czy mogę mówić do LumoBota po polsku?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Tak. Rozmawiasz głosem prosto z wyspy, małego panelu na pulpicie, i wybierasz jeden z pięciu głosów. Na wyspie widzisz też pytania i wyniki.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Co robi Neuro?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>To mała sieć, która uczy się na twoich zakończonych zadaniach i szacuje szansę dojścia do celu. Po dwóch niskich ocenach, gdy ma co najmniej 60 przykładów, może zahamować agenta, zanim spali tokeny.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czym LumoBot różni się od Grok Bota i Claude Cowork?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>W LumoBocie sam wybierasz dostawcę i model, możesz pracować na modelu lokalnym, a aplikacja kosztuje 0 zł. Grok Bot sam wybiera model, pracuje na wspólnym komputerze w chmurze i jest w planach X od 30 USD miesięcznie. Cowork działa na modelach Claude w chmurze Anthropic i wymaga płatnego planu Claude od 20 USD miesięcznie. Oba za to pracują dalej po zamknięciu laptopa, czego LumoBot na twoim komputerze nie robi.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czym LumoBot różni się od OpenBota, Manusa i Devina?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>OpenBot jest najbliżej LumoBota: też działa na twoim komputerze, korzysta z planów, które już masz, i ma lead agenta. Jest darmowy do użytku osobistego, a do pracy potrzebuje licencji od 10 EUR miesięcznie (bezpłatnie do 1 grudnia 2026). Manus planuje każdy krok w swojej chmurze i liczy pracę w kredytach: Free daje 300 kredytów dziennie, Pro kosztuje 20 USD. Devin to narzędzie do programowania z aplikacją na komputer i pracą w chmurze: ma darmowy plan z małym limitem, a Pro kosztuje 20 USD miesięcznie. Z Manusem i Devinem nie użyjesz modelu lokalnego jako agenta w zwykłych planach, a w LumoBocie tak.</p></div>
+      </details>
+    </div>
+  </div>
+</section>

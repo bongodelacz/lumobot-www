@@ -1,0 +1,41 @@
+/* Gradientowe grafiki LumoBota (.au i kafle paska .wy-art): dwie warstwy plam koloru, które płyną niezależnie
+   w przeciwnych kierunkach i mieszają się światłem (screen), plus mały jasny połysk. Bez obrotów i skoków.
+   Palety a1..a8. Warstwa A w ::before, warstwa B w ::after. */
+.au,.wy-art{position:relative;overflow:hidden;isolation:isolate;background:#09090f}
+.au::before,.au::after,.wy-art::before,.wy-art::after{content:"";position:absolute;inset:-35%;z-index:-1;pointer-events:none;will-change:transform}
+.au::before,.wy-art::before{filter:blur(34px) saturate(1.35);animation:auA 17s ease-in-out infinite alternate}
+.au::after,.wy-art::after{filter:blur(42px) saturate(1.25);mix-blend-mode:screen;opacity:.85;animation:auB 23s ease-in-out infinite alternate}
+.wy-art::before{filter:blur(16px) saturate(1.4)}
+.wy-art::after{filter:blur(20px) saturate(1.3)}
+.wy-tile .wy-art::before,.wy-tile .wy-art::after{transition:opacity .6s ease}
+.wy-tile:hover .wy-art::after{opacity:1}
+@keyframes auA{0%{transform:translate3d(-5%,-4%,0) scale(1)}50%{transform:translate3d(3%,2%,0) scale(1.08)}100%{transform:translate3d(6%,-2%,0) scale(1.02)}}
+@keyframes auB{0%{transform:translate3d(5%,4%,0) scale(1.05)}50%{transform:translate3d(-4%,-1%,0) scale(1)}100%{transform:translate3d(-6%,3%,0) scale(1.1)}}
+
+.a1::before{background:radial-gradient(42% 52% at 22% 28%,#2f6bff,transparent 70%),radial-gradient(40% 46% at 78% 30%,#8a5cff,transparent 70%)}
+.a1::after{background:radial-gradient(48% 46% at 50% 86%,#10c4e0,transparent 70%),radial-gradient(14% 12% at 32% 24%,rgba(255,255,255,.55),transparent 70%)}
+.a2::before{background:radial-gradient(44% 46% at 28% 32%,#8a5cff,transparent 70%),radial-gradient(40% 50% at 76% 62%,#ff4fa0,transparent 70%)}
+.a2::after{background:radial-gradient(46% 44% at 36% 88%,#2f6bff,transparent 70%),radial-gradient(14% 12% at 70% 22%,rgba(255,255,255,.5),transparent 70%)}
+.a3::before{background:radial-gradient(44% 50% at 20% 50%,#ff4fa0,transparent 70%),radial-gradient(42% 44% at 82% 28%,#ffa21a,transparent 70%)}
+.a3::after{background:radial-gradient(50% 48% at 60% 92%,#8a5cff,transparent 70%),radial-gradient(14% 12% at 40% 26%,rgba(255,255,255,.45),transparent 70%)}
+.a4::before{background:radial-gradient(36% 46% at 18% 40%,#2f6bff,transparent 70%),radial-gradient(36% 44% at 52% 74%,#ff4fa0,transparent 70%)}
+.a4::after{background:radial-gradient(36% 46% at 82% 32%,#10c4e0,transparent 70%),radial-gradient(40% 40% at 60% 8%,#8a5cff,transparent 70%),radial-gradient(12% 10% at 30% 22%,rgba(255,255,255,.45),transparent 70%)}
+.a5::before{background:radial-gradient(44% 50% at 28% 30%,#10c4e0,transparent 70%),radial-gradient(44% 46% at 76% 70%,#2f6bff,transparent 70%)}
+.a5::after{background:radial-gradient(40% 38% at 26% 86%,#2ee59d,transparent 70%),radial-gradient(14% 12% at 66% 22%,rgba(255,255,255,.45),transparent 70%)}
+.a6::before{background:radial-gradient(44% 50% at 70% 28%,#ffa21a,transparent 70%),radial-gradient(44% 46% at 28% 76%,#ff4fa0,transparent 70%)}
+.a6::after{background:radial-gradient(36% 36% at 40% 32%,#ff6a3d,transparent 70%),radial-gradient(14% 12% at 74% 70%,rgba(255,255,255,.4),transparent 70%)}
+.a7::before{background:radial-gradient(40% 50% at 24% 40%,#8a5cff,transparent 70%),radial-gradient(40% 46% at 76% 44%,#2f6bff,transparent 70%)}
+.a7::after{background:radial-gradient(46% 44% at 50% 96%,#ff4fa0,transparent 70%),radial-gradient(14% 12% at 30% 20%,rgba(255,255,255,.5),transparent 70%)}
+/* a8: duża scena pod oknem aplikacji */
+.a8::before{background:radial-gradient(34% 40% at 16% 30%,#2f6bff,transparent 70%),radial-gradient(30% 36% at 84% 24%,#8a5cff,transparent 70%),radial-gradient(30% 34% at 60% 92%,#ff4fa0,transparent 70%)}
+.a8::after{background:radial-gradient(32% 38% at 30% 86%,#10c4e0,transparent 70%),radial-gradient(28% 30% at 78% 74%,#ffa21a,transparent 72%),radial-gradient(12% 10% at 50% 8%,rgba(255,255,255,.4),transparent 70%)}
+
+/* kadr aplikacji na gradiencie: prawdziwy zrzut programu jak w sklepie z aplikacjami */
+.shot{display:grid;place-items:center;margin:0 auto;padding:clamp(28px,6vw,80px) clamp(16px,5vw,72px);border-radius:32px;max-width:1180px}
+.shot img{display:block;width:100%;max-width:880px;height:auto;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 40px 90px -30px rgba(0,0,0,.85);transition:transform .8s cubic-bezier(.32,.72,0,1)}
+.shot:hover img{transform:translateY(-4px)}
+.shot.shot-sm img{max-width:640px}
+.shot-cap{margin-top:var(--s4);text-align:center;font-size:14px;color:var(--text-3)}
+.shot-wrap{padding:var(--s6) var(--s5) var(--s8)}
+@media (max-width:600px){.shot{border-radius:22px}.shot-wrap{padding:var(--s4) var(--s3) var(--s7)}}
+@media (prefers-reduced-motion:reduce){.au::before,.au::after,.wy-art::before,.wy-art::after{animation:none}}

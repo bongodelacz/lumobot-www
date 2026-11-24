@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" fill="none">
+  <circle cx="110" cy="60" r="40" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2.5"/>
+  <circle cx="110" cy="60" r="40" stroke="#3a6bfc" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="230 252" transform="rotate(-90 110 60)"/>
+  <text x="110" y="67" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff" fill-opacity="0.85" letter-spacing="-0.5">92<tspan fill="#3a6bfc">%</tspan></text>
+</svg>

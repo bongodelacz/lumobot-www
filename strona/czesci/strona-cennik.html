@@ -1,0 +1,191 @@
+<section class="sc-plans wrap" aria-labelledby="sc-plans-title">
+  <div class="sc-top-bar">
+    <div class="sc-tabs" role="tablist" aria-label="Tryb użycia LumoBota">
+      <button type="button" class="sc-tab" role="tab" id="tab-prywatnie" aria-selected="true" aria-controls="panel-prywatnie" tabindex="0">Prywatnie</button>
+      <button type="button" class="sc-tab" role="tab" id="tab-firma" aria-selected="false" aria-controls="panel-firma" tabindex="-1">Firma</button>
+    </div>
+  </div>
+
+  <div id="panel-prywatnie" class="sc-panel" role="tabpanel" aria-labelledby="tab-prywatnie">
+    <h2 class="sr-only" id="sc-plans-title">Plany prywatne</h2>
+    <div class="sc-plan-grid">
+      <article class="sc-plan">
+        <p class="sc-plan-label">LumoBot</p>
+        <p class="sc-price">0 zł</p>
+        <p class="sc-plan-lede">Aplikacja na Windows 10 i 11, cały zespół agentów i wszystkie wtyczki.</p>
+        <ul>
+          <li>Cały zespół agentów z Liderem</li>
+          <li>Wszystkie wtyczki i połączenia</li>
+          <li>Rozmowa głosowa po polsku</li>
+          <li>Własna przeglądarka agenta</li>
+          <li>Punkty powrotu w git i Neuro</li>
+        </ul>
+      </article>
+      <article class="sc-plan">
+        <p class="sc-plan-label">Twój plan AI</p>
+        <p class="sc-price sc-price-long">Płacisz dostawcy, którego już masz</p>
+        <p class="sc-plan-lede">LumoBot nic nie dolicza. Podłączasz własny plan albo klucz API.</p>
+        <ul>
+          <li>14 dostawców i 158 modeli</li>
+          <li>Claude, ChatGPT, Gemini, Mistral i inne</li>
+          <li>Licznik użycia i szacowanego kosztu</li>
+          <li>Oszczędzanie tokenów w długich rozmowach</li>
+          <li>Bez drugiej opłaty za to samo</li>
+        </ul>
+      </article>
+      <article class="sc-plan">
+        <p class="sc-plan-label">Model lokalny</p>
+        <p class="sc-price">0 zł</p>
+        <p class="sc-plan-lede">Ollama albo LM Studio działają na twoim komputerze, bez klucza i bez opłat.</p>
+        <ul>
+          <li>Treść zadania zostaje na komputerze</li>
+          <li>Bez klucza API i bez limitów sieciowych</li>
+          <li>Bez opłat za tokeny</li>
+          <li>Wybierasz model pod swój sprzęt</li>
+          <li>Te same punkty powrotu i sprawdzanie</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <div id="panel-firma" class="sc-panel" role="tabpanel" aria-labelledby="tab-firma" hidden>
+    <h2 class="sr-only">Plany dla firm</h2>
+    <div class="sc-plan-grid">
+      <article class="sc-plan">
+        <p class="sc-plan-label">Do 30 grudnia 2026</p>
+        <p class="sc-price">0 zł</p>
+        <p class="sc-plan-lede">Także w firmie korzystasz z LumoBota bez opłat za program.</p>
+        <ul>
+          <li>Pełny zespół agentów i wszystkie wtyczki</li>
+          <li>Praca na komputerach w firmie</li>
+          <li>Modele z API albo lokalne</li>
+          <li>Brak opłat za licencję do końca roku</li>
+        </ul>
+      </article>
+      <article class="sc-plan">
+        <p class="sc-plan-label">Od 31 grudnia 2026</p>
+        <p class="sc-price sc-price-long">Licencja komercyjna</p>
+        <p class="sc-plan-lede">Do pracy w firmie potrzebna będzie licencja. Cenę ogłosimy przed tą datą.</p>
+        <ul>
+          <li>Prywatnie, do nauki i open source nadal 0 zł</li>
+          <li>Jasne zasady przed 31 grudnia 2026</li>
+          <li>Podłączasz własnych dostawców AI</li>
+          <li>Dane i kod zostają u ciebie</li>
+        </ul>
+        <div class="sc-plan-actions">
+          <a class="btn btn-primary" href="firmy.html">Zobacz zasady dla firm</a>
+        </div>
+      </article>
+      <article class="sc-plan">
+        <p class="sc-plan-label">Serwer zespołowy</p>
+        <p class="sc-price sc-price-long">W planach</p>
+        <p class="sc-plan-lede">Opcjonalny serwer dla zespołów. Cenę podamy razem z licencją komercyjną.</p>
+        <ul>
+          <li>Wspólna praca zespołu w jednym miejscu</li>
+          <li>LumoBot na komputerze nadal bez serwera</li>
+          <li>Szczegóły ogłosimy przed 31 grudnia 2026</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sc-matrix wrap" aria-labelledby="sc-matrix-title">
+  <div class="sc-section-head">
+    <h2 class="headline" id="sc-matrix-title">Porównanie funkcji</h2>
+  </div>
+  <table class="sc-table">
+    <thead>
+      <tr>
+        <th scope="col">Funkcja</th>
+        <th scope="col">Prywatnie</th>
+        <th scope="col">Firma</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Zespół agentów</th>
+        <td data-label="Prywatnie">tak</td>
+        <td data-label="Firma">tak</td>
+      </tr>
+      <tr>
+        <th scope="row">Wtyczki i połączenia</th>
+        <td data-label="Prywatnie">tak</td>
+        <td data-label="Firma">tak</td>
+      </tr>
+      <tr>
+        <th scope="row">Modele lokalne</th>
+        <td data-label="Prywatnie">tak</td>
+        <td data-label="Firma">tak</td>
+      </tr>
+      <tr>
+        <th scope="row">Praca w firmie</th>
+        <td data-label="Prywatnie">nie</td>
+        <td data-label="Firma">tak</td>
+      </tr>
+      <tr>
+        <th scope="row">Licencja</th>
+        <td data-label="Prywatnie">nie</td>
+        <td data-label="Firma">od 31 grudnia 2026</td>
+      </tr>
+      <tr>
+        <th scope="row">Serwer zespołowy</th>
+        <td data-label="Prywatnie">nie</td>
+        <td data-label="Firma">w planach</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="wrap wt-doc">
+  <section class="wt-sec" aria-labelledby="sc-serwery-title">
+    <h2 id="sc-serwery-title">Serwery</h2>
+    <p>LumoBot działa na twoim komputerze i nie wymaga serwera. Wszystkie pliki i zadania zostają u ciebie. Serwer zespołowy jest w planach, a jego cenę podamy razem z licencją komercyjną.</p>
+  </section>
+
+  <section class="wt-sec" aria-labelledby="sc-licencja-title">
+    <h2 id="sc-licencja-title">Licencja</h2>
+    <p>Prywatnie, do nauki i w projektach open source LumoBot zostaje za 0 zł. Do 30 grudnia 2026 korzystasz za darmo także w firmie. Od 31 grudnia 2026 do pracy komercyjnej potrzebna będzie licencja. Cenę ogłosimy przed tą datą. <a class="sc-link" href="firmy.html">Zobacz zasady dla firm</a>.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.sc-tab[role="tab"]'));
+  if (!tabs.length) return;
+
+  function activate(tab, moveFocus) {
+    tabs.forEach(function (t) {
+      var selected = t === tab;
+      t.setAttribute('aria-selected', selected ? 'true' : 'false');
+      t.tabIndex = selected ? 0 : -1;
+      var panelId = t.getAttribute('aria-controls');
+      var panel = panelId ? document.getElementById(panelId) : null;
+      if (panel) panel.hidden = !selected;
+    });
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      activate(tab, false);
+    });
+    tab.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        next = tabs[(index + 1) % tabs.length];
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        next = tabs[(index - 1 + tabs.length) % tabs.length];
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activate(tab, false);
+        return;
+      }
+      if (next) {
+        e.preventDefault();
+        activate(next, true);
+      }
+    });
+  });
+})();
+</script>

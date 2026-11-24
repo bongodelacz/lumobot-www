@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="css/strona-porownanie.css">
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.pj-art').forEach(box => {
+      if(box.querySelector('.kf-grain')) return;
+      let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      if(window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal)) box.classList.add('pj-grain');
+    });
+  };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

@@ -1,0 +1,70 @@
+<section class="zt wrap" aria-label="Porównania jeden na jeden">
+  <h2 class="zt-h">Porównania jeden na jeden</h2>
+  <div class="pj-grid">
+      <a class="pj-card" href="vs-openbot.html">
+        <span class="pj-art" data-pal="lagoon" data-seed="0">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openbot.svg" alt="OpenBot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenBot</b><small>Lokalny zespół agentów i serwer dla firm</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-grok-bot.html">
+        <span class="pj-art" data-pal="rose" data-seed="5">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/grok.svg" alt="Grok Bot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Grok Bot</b><small>Lokalny folder LumoBota, komputer w chmurze Grok Bota</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-claude-cowork.html">
+        <span class="pj-art" data-pal="forest" data-seed="10">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/claude.svg" alt="Claude Cowork"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Claude Cowork</b><small>Wielu dostawców AI kontra modele Claude</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-manus.html">
+        <span class="pj-art" data-pal="ember" data-seed="15">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/manus.svg" alt="Manus"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Manus</b><small>Twój plan AI kontra kredyty w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-openclaw.html">
+        <span class="pj-art" data-pal="ocean" data-seed="20">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openclaw.svg" alt="OpenClaw"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenClaw</b><small>Gotowa aplikacja kontra asystent, którego stawiasz sam</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-devin.html">
+        <span class="pj-art" data-pal="violet" data-seed="25">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/devin.svg" alt="Devin"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Devin</b><small>Twój komputer kontra programista w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+  </div>
+</section>
+<style>
+/* kafle z gradientem (zt-): gradient z tytułem w środku, pod spodem opis i tytuł; bez ramek */
+.zt{padding-top:96px}
+.zt-h{margin:0 0 32px;font-size:clamp(32px,3.4vw,44px);line-height:1.1;letter-spacing:-.03em;color:#f5f5f7}
+.zt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.zt-card{display:flex;flex-direction:column;gap:12px;color:#f5f5f7;text-decoration:none;border-radius:20px}
+.zt-art{position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;aspect-ratio:16/9;border-radius:20px;background:#1e3a8a;padding:24px;text-align:center}
+.zt-art .kf-grain{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.zt-art b{position:relative;z-index:1;max-width:16ch;font-size:clamp(20px,1.9vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.zt-meta{font-size:13px;color:#86868b}
+.zt-t{font-size:17px;font-weight:600;line-height:1.35;color:#f5f5f7}
+.zt-card:hover .zt-art b{transform:scale(1.04)}
+.zt-card:hover .zt-t{text-decoration:underline;text-underline-offset:3px}
+.zt-card:active{opacity:.75}
+.zt-card:focus-visible{outline:2px solid #f5f5f7;outline-offset:4px}
+.zt .pj-grid{margin-top:0}
+@media (max-width:900px){.zt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.zt{padding-top:64px}.zt-grid{grid-template-columns:1fr;gap:24px}}
+@media (prefers-reduced-motion:reduce){.zt-art b{transition:none}}
+</style>
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.zt-art').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

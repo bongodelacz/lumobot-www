@@ -1,0 +1,56 @@
+/* ===== Pojedynki: LumoBot obok innych narzędzi ===== */
+.pj{padding:clamp(96px,11vw,150px) 0 0;font-family:"Inter",system-ui,sans-serif}
+.pj-h{margin:0 0 14px;font-weight:700;line-height:1.02;letter-spacing:-.045em;color:#fff}
+.pj-lead{max-width:640px;margin:0 0 40px;font-size:clamp(20px,2vw,26px);line-height:1.25;letter-spacing:-.03em;color:#a1a1a6;text-wrap:balance}
+.g-violet{--z0:#1a0a3a;--z1:#6a35d8;--z2:#e3d4ff;--z3:#a37cff}
+.pj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pj-card{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;border-radius:26px;background:#232326;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);color:#fff;overflow:hidden;transition:background .25s}
+.pj-card:hover{background:#2a2a2e}
+.pj-art{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,34px);height:clamp(170px,17vw,220px)}
+.pj-art{position:relative;isolation:isolate;overflow:hidden;background:#0e1420}
+.pj-art .kf-grain{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1;pointer-events:none}
+.pj-me img{width:58%;height:auto;display:block}
+.pj-rv img{width:50%;height:auto;display:block}
+.pj-art em{font-style:normal;font-size:15px;font-weight:600;color:rgba(255,255,255,.75)}
+.pj-me,.pj-rv{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:rgba(0,0,0,.42);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+
+.pj-card:hover .pj-me{transform:translateX(12px) rotate(-6deg)}
+.pj-card:hover .pj-rv{transform:translateX(-12px) rotate(6deg)}
+.pj-txt{padding:20px 0 22px 24px}
+.pj-txt b{display:block;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.03em;line-height:1.2}
+.pj-txt small{display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#a1a1a6}
+.pj-ar{align-self:center;display:grid;place-items:center;width:44px;height:44px;margin-right:22px;border-radius:50%;background:#fff;color:#111;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.pj-ar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pj-card:hover .pj-ar{transform:translateX(4px)}
+.pj-all{display:inline-block;margin-top:22px;font-size:17px;font-weight:500;color:#f5f5f7}
+.pj-all:hover{color:#fff;text-decoration:underline}
+@media (max-width:760px){.pj-grid{grid-template-columns:1fr}.pj-art{height:150px}.pj-me,.pj-rv{width:80px;height:80px}}
+@media (prefers-reduced-motion:reduce){.pj-me,.pj-rv,.pj-ar{transition:none}}
+.pj-rv img.pj-full{width:62%;border-radius:22%}
+.pj-art .kf-grain{border-radius:0}
+/* mniejsze karty: 3 w rzędzie */
+.pj-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+.pj-card{border-radius:20px}
+.pj-art{height:clamp(120px,10vw,140px);gap:16px}
+.pj-art em{font-size:13px}
+.pj-me,.pj-rv{width:64px;height:64px}
+.pj-txt{padding:14px 0 16px 18px}
+.pj-txt b{font-size:17px}
+.pj-txt small{font-size:13.5px;margin-top:4px}
+.pj-ar{width:36px;height:36px;margin-right:16px}
+.pj-ar svg{width:15px;height:15px}
+.pj-card:hover .pj-me{transform:translateX(8px) rotate(-6deg)}
+.pj-card:hover .pj-rv{transform:translateX(-8px) rotate(6deg)}
+@media (max-width:1000px){.pj-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.pj-grid{grid-template-columns:1fr}.pj-art{height:120px}.pj-me,.pj-rv{width:60px;height:60px}}
+.pj-txt{padding-right:12px}
+/* dół karty jak w kartach porównań: neutralna szarość, cienka ramka, sama nazwa i szara strzałka */
+.pj-card{background:#212121;box-shadow:inset 0 0 0 1px #323232}
+.pj-card:hover{background:#262626}
+.pj-card:focus-visible{outline:2px solid #3a6bfc;outline-offset:3px}
+.pj-txt small{display:none}
+.pj-txt{padding:18px 0 18px 20px;align-self:center}
+.pj-txt b{font-size:17px;font-weight:600}
+.pj-ar{width:auto;height:auto;margin-right:20px;background:transparent;color:#707070}
+.pj-ar svg{width:18px;height:18px;stroke-width:1.8}
+.pj-card:hover .pj-ar{color:#a1a1a6}

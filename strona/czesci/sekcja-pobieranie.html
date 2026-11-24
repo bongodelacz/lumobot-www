@@ -1,0 +1,42 @@
+<section id="pobierz" class="dl-section" aria-labelledby="downloadHeading">
+  <div class="wrap dl-wrap">
+    <header class="dl-head"><h2 class="headline" id="downloadHeading">Wybierz swój system</h2><p>Sprawdź dostępność instalatora dla swojego urządzenia.</p></header>
+    <div class="dl-platforms">
+    <article class="dl-card" data-platform="windows">
+      <img class="dl-os" src="img/systemy/windows.svg" alt="" width="48" height="48">
+      <h3>Windows</h3>
+      <p class="dl-status">Windows 10 i 11, 64-bit</p>
+      <button type="button" class="dl-button" data-download="windows" aria-label="Pobierz: Windows">Pobierz</button>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="mac">
+      <img class="dl-os" src="img/systemy/apple.svg" alt="" width="48" height="48">
+      <h3>macOS</h3>
+      <p class="dl-status">Apple Silicon i Intel</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="linux">
+      <img class="dl-os" src="img/systemy/linux.svg" alt="" width="48" height="48">
+      <h3>Linux</h3>
+      <p class="dl-status">.deb i AppImage</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="ios">
+      <img class="dl-os" src="img/systemy/apple.svg" alt="" width="48" height="48">
+      <h3>iOS</h3>
+      <p class="dl-status">iPhone i iPad</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="android">
+      <img class="dl-os" src="img/systemy/android.svg" alt="" width="48" height="48">
+      <h3>Android</h3>
+      <p class="dl-status">Telefony z Androidem</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    </div>
+  </div>
+</section>
+<dialog id="downloadDialog" class="dl-dialog" aria-labelledby="downloadTitle" aria-describedby="downloadMessage">
+  <h2 id="downloadTitle">Dostępność instalatora</h2>
+  <p id="downloadMessage">Sprawdź dostępność instalatora dla wybranego systemu.</p>
+  <button type="button" class="dl-dialog-close" data-download-close>Zamknij</button>
+</dialog>

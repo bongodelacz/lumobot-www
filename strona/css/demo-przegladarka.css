@@ -1,0 +1,290 @@
+/* Scenka: przegladarka (Zwiad). Czysty styl Apple, zero gradientów i poświat. */
+.dm-przegladarka {
+  width: 100%;
+  height: 240px;
+  background: #262626;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #e8e8ed;
+  user-select: none;
+  position: relative;
+}
+
+.dm-przegladarka-bar {
+  height: 36px;
+  padding: 0 12px;
+  background: #2a2a2a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dm-przegladarka-agent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dm-przegladarka-face {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dm-przegladarka-ico {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
+}
+
+.dm-przegladarka-url {
+  flex: 1;
+  min-width: 0;
+  height: 24px;
+  padding: 0 10px;
+  background: #262626;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  color: #a1a1a6;
+}
+
+.dm-przegladarka-adres {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e8e8ed;
+  transition: opacity 320ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.dm-przegladarka-tryb {
+  color: #f5f5f7;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.dm-przegladarka-body {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dm-przegladarka-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: #222222;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.dm-przegladarka-cmd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 420ms cubic-bezier(.2, .7, .2, 1), transform 420ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.dm-przegladarka-prompt {
+  color: #f5f5f7;
+  font-weight: 700;
+}
+
+.dm-przegladarka-kod {
+  color: #e8e8ed;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-przegladarka-wyniki {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dm-przegladarka-wiersz {
+  height: 30px;
+  padding: 0 10px;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 420ms cubic-bezier(.2, .7, .2, 1), transform 420ms cubic-bezier(.2, .7, .2, 1), border-color 320ms cubic-bezier(.2, .7, .2, 1), background-color 320ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.dm-przegladarka-w2 {
+  transition-delay: 80ms;
+}
+
+.dm-przegladarka-ref {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #262626;
+  color: #a1a1a6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  transition: background-color 320ms cubic-bezier(.2, .7, .2, 1), color 320ms cubic-bezier(.2, .7, .2, 1), border-color 320ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.dm-przegladarka-link {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e8e8ed;
+  font-weight: 500;
+}
+
+.dm-przegladarka-meta {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  color: #86868b;
+  flex-shrink: 0;
+}
+
+.dm-przegladarka-akcja {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f5f5f7;
+  opacity: 0;
+  transform: translateX(4px);
+  transition: opacity 320ms cubic-bezier(.2, .7, .2, 1), transform 320ms cubic-bezier(.2, .7, .2, 1);
+  flex-shrink: 0;
+}
+
+.dm-przegladarka-pobrano {
+  height: 30px;
+  padding: 0 10px;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 420ms cubic-bezier(.2, .7, .2, 1), transform 420ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.dm-przegladarka-pobrano-lewo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.dm-przegladarka-ok {
+  color: #30d158;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.dm-przegladarka-plik {
+  color: #e8e8ed;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dm-przegladarka-rozmiar {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  color: #a1a1a6;
+  flex-shrink: 0;
+}
+
+/* Stany kroków pętli */
+.dm-przegladarka.is-step-1 .dm-przegladarka-c1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-przegladarka.is-step-2 .dm-przegladarka-c2,
+.dm-przegladarka.is-step-2 .dm-przegladarka-w1,
+.dm-przegladarka.is-step-2 .dm-przegladarka-w2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dm-przegladarka.is-step-3 .dm-przegladarka-w2 {
+  border-color: var(--accent);
+  background: #262626;
+  transform: translateY(0) scale(1.01);
+}
+
+.dm-przegladarka.is-step-3 .dm-przegladarka-w2 .dm-przegladarka-ref {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #e8e8ed;
+}
+
+.dm-przegladarka.is-step-3 .dm-przegladarka-akcja {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dm-przegladarka.is-step-4 .dm-przegladarka-pobrano {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tryb statyczny i dostępność */
+html.static .dm-przegladarka .dm-przegladarka-cmd,
+html.static .dm-przegladarka .dm-przegladarka-wiersz,
+html.static .dm-przegladarka .dm-przegladarka-pobrano,
+html.static .dm-przegladarka .dm-przegladarka-akcja {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-przegladarka .dm-przegladarka-cmd,
+  .dm-przegladarka .dm-przegladarka-wiersz,
+  .dm-przegladarka .dm-przegladarka-pobrano,
+  .dm-przegladarka .dm-przegladarka-akcja {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

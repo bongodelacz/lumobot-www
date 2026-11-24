@@ -1,0 +1,116 @@
+/* Stopniowe rozmycie krawędzi ekranu (wzorzec React Bits Gradual Blur):
+   10 warstw backdrop-filter blur (0.5 px -> 28 px) z maskami linear-gradient
+   oraz lekkim przyciemnieniem ku krawędzi.
+   Ważne: rodzic .gb nie może tworzyć Backdrop Root (brak opacity/will-change/filter na .gb),
+   żeby warstwy .gb-l rozmywały treść strony pod spodem. */
+.gb{
+  position:fixed;
+  left:0;
+  right:0;
+  height:96px;
+  z-index:28;
+  pointer-events:none;
+  user-select:none;
+}
+.gb-top{
+  top:0;
+  --gb-dir:to top;
+}
+.gb-bottom{
+  bottom:0;
+  --gb-dir:to bottom;
+}
+
+.gb-l,
+.gb::after{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .18s ease-out;
+}
+.gb::after{
+  content:"";
+  background:linear-gradient(var(--gb-dir),rgba(26,26,26,0) 0%,rgba(26,26,26,.18) 45%,rgba(26,26,26,.6) 100%);
+}
+.gb.is-on .gb-l,
+.gb.is-on::after{
+  opacity:1;
+}
+.gb-l:nth-child(1){
+  -webkit-backdrop-filter:blur(0.4px);
+  backdrop-filter:blur(0.4px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 0%,#000 12%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 0%,#000 12%);
+}
+.gb-l:nth-child(2){
+  -webkit-backdrop-filter:blur(1px);
+  backdrop-filter:blur(1px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 10%,#000 22%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 10%,#000 22%);
+}
+.gb-l:nth-child(3){
+  -webkit-backdrop-filter:blur(1.8px);
+  backdrop-filter:blur(1.8px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 20%,#000 32%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 20%,#000 32%);
+}
+.gb-l:nth-child(4){
+  -webkit-backdrop-filter:blur(2.8px);
+  backdrop-filter:blur(2.8px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 30%,#000 42%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 30%,#000 42%);
+}
+.gb-l:nth-child(5){
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 40%,#000 52%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 40%,#000 52%);
+}
+.gb-l:nth-child(6){
+  -webkit-backdrop-filter:blur(5.4px);
+  backdrop-filter:blur(5.4px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 50%,#000 62%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 50%,#000 62%);
+}
+.gb-l:nth-child(7){
+  -webkit-backdrop-filter:blur(6.8px);
+  backdrop-filter:blur(6.8px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 60%,#000 72%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 60%,#000 72%);
+}
+.gb-l:nth-child(8){
+  -webkit-backdrop-filter:blur(8.2px);
+  backdrop-filter:blur(8.2px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 70%,#000 82%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 70%,#000 82%);
+}
+.gb-l:nth-child(9){
+  -webkit-backdrop-filter:blur(9.6px);
+  backdrop-filter:blur(9.6px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 80%,#000 92%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 80%,#000 92%);
+}
+.gb-l:nth-child(10){
+  -webkit-backdrop-filter:blur(11.2px);
+  backdrop-filter:blur(11.2px);
+  -webkit-mask-image:linear-gradient(var(--gb-dir),transparent 88%,#000 100%);
+  mask-image:linear-gradient(var(--gb-dir),transparent 88%,#000 100%);
+}
+
+@media (max-width:600px){
+  .gb{height:72px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gb-l,.gb::after{transition:none!important}
+  .gb-top{display:none!important}
+}
+
+html.static .gb-l,
+html.static .gb::after{
+  transition:none!important;
+}
+html.static .gb-top{
+  display:none!important;
+}

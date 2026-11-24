@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<script>if(/^https?:$/.test(location.protocol)&&/\/index\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/index\.html$/,"")+location.search+location.hash)</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LumoBot: agent AI, który kończy zadania</title>
+<meta name="description" content="LumoBot pracuje w twoim folderze, aż ktoś inny sprawdzi wynik i powie: gotowe. Aplikacja na Windows.">
+<meta property="og:title" content="LumoBot: agent AI, który kończy zadania">
+<meta property="og:description" content="Agent AI pracuje w twoim folderze, aż niezależny sprawdzający powie: gotowe.">
+<meta property="og:image" content="img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141418">
+<link rel="icon" href="img/app.png">
+<script>if(location.protocol!=="file:")document.write('<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>')</script>
+<link rel="stylesheet" href="css/baza.css?v=1795096443">
+<link rel="stylesheet" href="css/tlo.css?v=1794866470">
+<link rel="stylesheet" href="faces.css">
+<script>if(location.protocol==="file:")document.write('<script src="js/maski.js?v=1795383163"><\/script><link rel="stylesheet" href="css/font-plik.css?v=1795383163">')</script>
+<link rel="stylesheet" href="css/aurora.css?v=1794869123">
+<link rel="stylesheet" href="css/pasek.css?v=1795274019">
+<link rel="stylesheet" href="css/dol.css?v=1795383163">
+<link rel="stylesheet" href="css/zorza.css?v=1794956394">
+<link rel="stylesheet" href="css/sekcje.css?v=1795096598">
+<link rel="stylesheet" href="css/sekcja-hero.css?v=1795273152">
+<link rel="stylesheet" href="css/sekcja-okno.css?v=1795035726">
+<link rel="stylesheet" href="css/sekcja-kursory.css?v=1795200759">
+<link rel="stylesheet" href="css/sekcja-kolo.css?v=1795096703">
+<link rel="stylesheet" href="css/bento.css?v=1795096680">
+<link rel="stylesheet" href="css/sekcje-nowe.css?v=1795096710">
+<link rel="stylesheet" href="css/pytania.css?v=1795107123">
+<link rel="stylesheet" href="css/sekcja-cena.css?v=1795036489">
+<link rel="stylesheet" href="css/sekcja-pobieranie.css?v=1795201514">
+<link rel="stylesheet" href="css/rozmycie.css?v=1794955139">
+<link rel="stylesheet" href="css/zabawa.css?v=1794866811">
+<link rel="stylesheet" href="css/sekcja-dziennik.css?v=1795200584">
+<link rel="stylesheet" href="css/sekcja-pojedynki.css?v=1795122968">
+<link rel="stylesheet" href="css/naglowki.css?v=1795041237">
+<script>if(/[?&]statycznie/.test(location.search)) document.documentElement.classList.add('static');</script>
+</head>
+<body class="home">
+
+<header class="landing-header" id="pk" data-enter="header">
+  <a class="landing-brand" href="./" aria-label="LumoBot, strona główna">
+    <span class="landing-brand-logo" aria-hidden="true">
+      <img src="img/logo-cialo.png" width="28" height="28" alt="">
+      <img class="landing-brand-eyes" src="img/logo-oczy.png" width="28" height="28" alt="">
+    </span>
+    <span>LumoBot</span>
+  </a>
+
+  <nav class="site-nav" id="siteNav" aria-label="Główne menu" data-state="closed">
+    <div class="site-nav-track">
+      <span class="site-nav-pill" aria-hidden="true"></span>
+      <ul class="site-nav-list">
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="ai/" data-page="ai" aria-expanded="false" aria-controls="panel-ai">Świat AI<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-ai" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="articles">
+              <div class="site-panel-intro" data-intro="articles">
+                <span class="site-panel-intro-art" data-grain-pal="violet" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">Świat AI</span>
+                <span class="site-panel-intro-title">Jak myślimy o&nbsp;AI</span>
+                <span class="site-panel-intro-text">Krótkie teksty o zasadach, na których stoi LumoBot.</span>
+                <a class="site-panel-intro-cta" href="ai/">Wszystkie teksty<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="nowosc-gotowe-znaczy-sprawdzone/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gotowe znaczy sprawdzone</span>
+                      <span class="site-panel-meta">18 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-haslo-zostaje-u-ciebie/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Agent nie musi znać twojego hasła</span>
+                      <span class="site-panel-meta">17 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-zespol-nie-solista/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 5.8"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Jeden agent to za mało</span>
+                      <span class="site-panel-meta">16 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosc-twoj-plan-nasz-program/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Płacisz za AI raz, nie dwa razy</span>
+                      <span class="site-panel-meta">15 listopada 2026</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ai/#wierzymy" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">W co wierzymy</span>
+                      <span class="site-panel-meta">Zasady LumoBota</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="ai/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Wszystkie teksty</span>
+                      <span class="site-panel-meta">Artykuły o pracy z AI</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">W co wierzymy i jak to wygląda w LumoBocie.</span>
+                <a href="ai/" class="site-panel-index">Wszystkie teksty<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="wtyczki/" data-page="wtyczki" aria-expanded="false" aria-controls="panel-wtyczki">Wtyczki<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-wtyczki" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="plugins">
+              <div class="site-panel-intro" data-intro="plugins">
+                <span class="site-panel-intro-art" data-grain-pal="ocean" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">Wtyczki</span>
+                <span class="site-panel-intro-title">64 połączenia z&nbsp;twoimi kontami</span>
+                <span class="site-panel-intro-text">Logujesz się sam, a agent nie zna hasła.</span>
+                <a class="site-panel-intro-cta" href="wtyczki/">Wszystkie wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="wtyczka-google/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/gmail.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gmail i Kalendarz Google</span>
+                      <span class="site-panel-meta">Poczta i plan dnia</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-slack-discord/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/slack.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Slack i Discord</span>
+                      <span class="site-panel-meta">Kanały i wiadomości</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-notion-dysk/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/notion.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Notion i Dysk Google</span>
+                      <span class="site-panel-meta">Notatki i wspólne pliki</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-github-figma/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/github.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">GitHub i Figma</span>
+                      <span class="site-panel-meta">Repozytoria i projekty</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-przegladarka/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/polaczenia/playwright.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Przeglądarka Playwright</span>
+                      <span class="site-panel-meta">Przeglądarka agenta</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="wtyczka-wzory/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><img class="site-panel-plugin-icon" src="img/pasek/wzory.svg" alt="" width="20" height="20"></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title" dir="auto">Gotowe wzory planu</span>
+                      <span class="site-panel-meta">Poranny przegląd za zgodą</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">64 połączenia. Logujesz się sam, agent nie zna hasła.</span>
+                <a href="wtyczki/" class="site-panel-index">Wszystkie wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item">
+          <a class="site-nav-trigger" href="o-nas/" data-page="o-nas" aria-expanded="false" aria-controls="panel-o-nas">O nas<svg class="site-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div id="panel-o-nas" class="site-nav-panel" data-state="closed" inert>
+            <div class="site-panel" data-kind="resources">
+              <div class="site-panel-intro" data-intro="resources">
+                <span class="site-panel-intro-art" data-grain-pal="forest" aria-hidden="true"><img src="img/logo.png" alt="" width="40" height="40"></span>
+                <span class="site-panel-intro-kicker">O nas</span>
+                <span class="site-panel-intro-title">Wszystko o&nbsp;LumoBocie w&nbsp;jednym miejscu</span>
+                <span class="site-panel-intro-text">Co budujemy, jak działamy i gdzie nas sprawdzić.</span>
+                <a class="site-panel-intro-cta" href="o-nas/">Poznaj LumoBota<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg></a>
+              </div>
+              <ul class="site-panel-body site-panel-plugins">
+                <li>
+                  <a href="dokumentacja/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ocean" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Dokumentacja</span>
+                      <span class="site-panel-meta">Instrukcje i opis funkcji</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="nowosci/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="ember" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Aktualizacje</span>
+                      <span class="site-panel-meta">Zmiany w każdej wersji</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="porownanie/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="violet" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Porównania</span>
+                      <span class="site-panel-meta">LumoBot i inni agenci</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="status/" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="lagoon" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Status</span>
+                      <span class="site-panel-meta">Czy wszystko działa</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="./#bezpieczenstwo" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="forest" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.5v6c0 4.5-3.2 8-7 9.5-3.8-1.5-7-5-7-9.5v-6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Bezpieczeństwo</span>
+                      <span class="site-panel-meta">Hasła i praca lokalna</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/bongodelacz/lumobot/issues" target="_blank" rel="noopener noreferrer" class="site-panel-plugin">
+                    <span class="site-panel-plugin-mark" data-grain-pal="rose" aria-hidden="true"><svg class="site-panel-resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg></span>
+                    <span class="site-panel-row-copy">
+                      <span class="site-panel-row-title">Zgłoś pomysł</span>
+                      <span class="site-panel-meta">Napisz na GitHubie</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="site-panel-footer">
+                <span class="site-panel-summary">Co budujemy, jak działamy i gdzie nas sprawdzić.</span>
+                <a class="site-panel-index" href="https://github.com/bongodelacz/lumobot" target="_blank" rel="noopener noreferrer">Kod źródłowy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav-item"><a href="firmy/" data-page="firmy" class="site-nav-trigger site-nav-link">Firmy</a></li>
+        <li class="site-nav-item"><a href="cennik/" data-page="cennik" class="site-nav-trigger site-nav-link">Cennik</a></li>
+      </ul>
+    </div>
+    <div class="site-nav-surface" aria-hidden="true"></div>
+  </nav>
+
+  <div class="site-header-actions">
+    <button type="button" class="landing-button landing-button-secondary landing-button-sm landing-button-glass site-lang-btn" id="pkLang" aria-haspopup="true" aria-controls="wyPop" aria-expanded="false" aria-label="Wybierz język">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.35"/><ellipse cx="8" cy="8" rx="2.8" ry="6.25" stroke="currentColor" stroke-width="1.25"/><path d="M2.1 6H13.9M2.1 10H13.9" stroke="currentColor" stroke-width="1.25"/></svg>
+      <span data-jezyk-kod>PL</span>
+    </button>
+    <a class="landing-button landing-button-primary landing-button-sm" data-icon="download" href="./#pobierz">Pobierz</a>
+    <button class="site-menu-button" type="button" id="pkBurger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="pkMobile">
+      <span class="site-menu-button-line" aria-hidden="true"></span>
+      <span class="site-menu-button-line" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="wy-pop" id="wyPop" role="menu" aria-label="Język strony" hidden>
+    <div class="wy-chan">
+      <button type="button" role="menuitemradio" translate="no" data-lang="pl" class="is-active" aria-current="true"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="7" fill="#fff"/><rect y="7" width="20" height="7" fill="#dc143c"/></svg><span class="wy-nm">Polski</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="en"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.2"/></svg><span class="wy-nm">English</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="es"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="wy-nm">Español</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" role="menuitemradio" translate="no" data-lang="ru"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg><span class="wy-nm">Русский</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+
+  <div id="pkMobile" class="site-sheet" data-state="closed" inert>
+    <button type="button" class="site-sheet-close" id="pkMobileClose" aria-label="Zamknij menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <nav class="site-sheet-content" aria-label="Menu mobilne">
+      <section class="site-sheet-section" style="--site-sheet-index:0">
+        <p class="site-sheet-heading">Nawigacja</p>
+        <div class="site-sheet-links">
+          <a class="site-sheet-link" href="./">Przegląd<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="ai/">Świat AI<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="wtyczki/">Wtyczki<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="o-nas/">O nas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="dokumentacja/">Dokumentacja<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="firmy/">Firmy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="site-sheet-link" href="cennik/">Cennik<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </section>
+      <section class="site-sheet-section" style="--site-sheet-index:1">
+        <p class="site-sheet-heading">Język</p>
+        <div class="wy-chan wy-chan-m" role="group" aria-label="Język strony">
+          <button type="button" translate="no" data-lang="pl" class="is-active" aria-current="true"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="7" fill="#fff"/><rect y="7" width="20" height="7" fill="#dc143c"/></svg><span class="wy-nm">Polski</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" translate="no" data-lang="en"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0l20 14M20 0L0 14" stroke="#c8102e" stroke-width="1"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4"/><path d="M10 0v14M0 7h20" stroke="#c8102e" stroke-width="2.2"/></svg><span class="wy-nm">English</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" role="menuitemradio" translate="no" data-lang="es"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="wy-nm">Español</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" translate="no" data-lang="ru"><svg class="wy-flag" viewBox="0 0 20 14" width="20" height="14" aria-hidden="true"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg><span class="wy-nm">Русский</span><svg class="wy-ck" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m3.5 8.4 2.9 2.9 6.1-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </section>
+      <div class="site-sheet-actions" style="--site-sheet-index:2">
+        <a class="landing-button landing-button-primary landing-button-md" data-icon="download" href="./#pobierz">Pobierz</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="tresc">
+
+<!-- ================= HERO ================= -->
+<section class="hr" id="top">
+  <div class="wrap hr-copy">
+    <div class="hr-logo" aria-hidden="true"><span class="hr-lg"><img class="hr-lg-b" src="img/logo-cialo.png" width="152" height="152" alt=""><img class="hr-lg-e" src="img/logo-oczy.png" width="152" height="152" alt=""></span></div>
+
+    <div class="hr-head">
+      <h1 class="display hr-title">Zespół AI, który kończy robotę</h1>
+      <p class="lede hr-lede">Agent oddaje wynik dopiero po przejściu sprawdzenia. Bez nowych opłat, na twoim planie AI.</p>
+    </div>
+
+    <div class="hr-prov hr-in" style="--d:1">
+      <p>Podłącz Claude, ChatGPT, Antigravity albo OpenCode, które już opłacasz, lub użyj modeli lokalnych za darmo.</p>
+      <ul>
+        <li><img src="img/ai-claude.svg" width="20" height="20" alt=""><span>Claude</span></li>
+        <li><img src="img/ai-openai.svg" width="20" height="20" alt=""><span>ChatGPT</span></li>
+        <li><img src="img/ai-antigravity.svg" width="20" height="20" alt=""><span>Antigravity</span></li>
+        <li><img src="img/ai-opencode.svg" width="20" height="20" alt=""><span>OpenCode</span></li>
+      </ul>
+      <p class="hr-more">oraz Gemini, Mistral, OpenRouter, Ollama i LM Studio</p>
+    </div>
+
+    <div class="hr-ctas hr-in" style="--d:3">
+      <div class="hr-dd">
+        <div class="hr-split">
+          <a class="hr-dl" href="#pobierz" rel="noopener"><svg viewBox="0 0 448 512" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg><span>Pobierz na Windows</span></a>
+          <button class="hr-dl-more" type="button" aria-label="Wybierz platformę" aria-haspopup="menu" aria-expanded="false" aria-controls="hrDdMenu"><svg class="hr-dl-ch" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="hr-dd-menu hr-mi-menu" id="hrDdMenu" role="menu" aria-label="Platformy" hidden>
+          <a class="hr-mi on" role="menuitem" href="#pobierz" rel="noopener"><span class="hr-mi-ic"><svg viewBox="0 0 448 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span><span class="hr-mi-tx">Windows</span><span class="hr-mi-dl" aria-hidden="true"><svg viewBox="0 0 16 16" width="15" height="15"><path d="M8 2.5v7.5m0 0L5 7M8 10l3-3M3.5 13h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <span class="hr-mi" role="menuitem" aria-disabled="true"><span class="hr-mi-ic"><svg viewBox="0 0 384 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span><span class="hr-mi-tx">macOS</span><span class="hr-mi-soon">Wkrótce</span><span class="hr-mi-dl off" aria-hidden="true"><svg viewBox="0 0 16 16" width="15" height="15"><path d="M8 2.5v7.5m0 0L5 7M8 10l3-3M3.5 13h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 2.5l11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></span>
+          <span class="hr-mi" role="menuitem" aria-disabled="true"><span class="hr-mi-ic"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 1.5c-3 0-4.6 2.4-4.6 5.4 0 1.6.4 2.6.4 3.6 0 1.6-3.3 4.2-3.3 8 0 2 1.4 3 3 3h9c1.6 0 3-1 3-3 0-3.8-3.3-6.4-3.3-8 0-1 .4-2 .4-3.6 0-3-1.6-5.4-4.6-5.4zM12 11.2c-2.2 0-3.6 2.7-3.6 5.4 0 2.2 1.4 3.4 3.6 3.4s3.6-1.2 3.6-3.4c0-2.7-1.4-5.4-3.6-5.4zM10.3 5.6a1 1.1 0 1 0 0 2.2 1 1.1 0 1 0 0-2.2zM13.7 5.6a1 1.1 0 1 0 0 2.2 1 1.1 0 1 0 0-2.2z"/><path fill="currentColor" opacity=".55" d="M10.6 8.9c.4-.4.9-.6 1.4-.6s1 .2 1.4.6c-.3.6-.8 1-1.4 1s-1.1-.4-1.4-1zM5.6 20.4c.4-1.2 1.6-1.8 2.8-1.4l1.6.6c.4.6.2 1.8-.6 2.2H6.4c-.8 0-1.1-.6-.8-1.4zM18.4 20.4c-.4-1.2-1.6-1.8-2.8-1.4l-1.6.6c-.4.6-.2 1.8.6 2.2h3c.8 0 1.1-.6.8-1.4z"/></svg></span><span class="hr-mi-tx">Linux</span><span class="hr-mi-soon">Wkrótce</span><span class="hr-mi-dl off" aria-hidden="true"><svg viewBox="0 0 16 16" width="15" height="15"><path d="M8 2.5v7.5m0 0L5 7M8 10l3-3M3.5 13h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 2.5l11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></span>
+        </div>
+      </div>
+      <a class="hr-try" href="cennik/"><span>Zobacz cennik: 0 zł</span><svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <p class="hr-meta hr-in" style="--d:4">Windows 10 i 11 · aktualizuje się sam</p>
+  </div>
+</section>
+
+<!-- ================= PRAWDZIWE OKNO LUMOBOTA, zakładka Plan (sekcja-okno) ================= -->
+<section class="ok" id="okno" aria-label="Okno aplikacji LumoBot">
+  <div class="ok-laser" id="okLaser" aria-hidden="true"><canvas></canvas></div>
+  <div class="ok-stage">
+    <div class="ok-win" id="okWin">
+      <iframe class="ok-frame" id="okFrame" title="Okno aplikacji LumoBot, czat zespołu" loading="lazy" tabindex="-1" data-src="app/index.html#team"></iframe>
+      <button class="ok-cover" type="button" id="okCover" aria-label="Włącz sterowanie oknem aplikacji"></button>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="ok-notes">
+      <li><b>Czat zespołu.</b> Widzisz, jak agenci dzielą pracę i rozmawiają ze sobą.</li>
+      <li><b>Lider prowadzi.</b> Zleca zadania, zbiera odpowiedzi i pilnuje wyniku.</li>
+      <li><b>Sprawdzone przed oddaniem.</b> Usterka wraca do poprawki, zanim zobaczysz wynik.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Okno aplikacji pozostaje poza stroną marketingową. -->
+
+<!-- ================= FUNKCJE ================= -->
+
+<!-- ================= MOŻLIWOŚCI: siatka bento (sekcja-kolo) ================= -->
+<section class="bn" id="kolo" aria-labelledby="kwTitle">
+  <div class="wrap">
+    <h2 class="display bn-h" id="kwTitle">Co potrafi LumoBot</h2>
+    <p class="bn-lead">Sześć rzeczy, które robi za ciebie, od pierwszej wiadomości do sprawdzonego wyniku.</p>
+    <div class="bn-grid">
+      <article class="bn-card kk-o w7 tall">
+        <span class="bn-tag">Do skutku</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="60" cy="60" r="46"/><path d="M38 61l15 15 30-32"/></svg>
+        <h3 class="bn-t">Pracuje do końca. Nie kończy, dopóki sprawdzenie nie przejdzie.</h3>
+      </article>
+      <article class="bn-card kk-r w5 tall">
+        <span class="bn-tag">Zespół</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="60" cy="40" r="15"/><circle cx="26" cy="52" r="11"/><circle cx="94" cy="52" r="11"/><path d="M34 100c2-17 13-27 26-27s24 10 26 27M8 96c1-11 8-18 18-18M112 96c-1-11-8-18-18-18"/></svg>
+        <h3 class="bn-t">Lider i specjaliści. Lider dzieli zadanie, agenci robią je naraz.</h3>
+      </article>
+      <article class="bn-card kk-v w4">
+        <span class="bn-tag">Neuro</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 84a46 46 0 1 1 84 0"/><path d="M60 80l20-26"/><circle cx="60" cy="82" r="6"/></svg>
+        <h3 class="bn-t">Sprawdza, zanim powie. Ocenia wynik w procentach.</h3>
+      </article>
+      <article class="bn-card kk-b w4">
+        <span class="bn-tag">Głos</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 60h8M32 44v32M48 28v64M64 40v40M80 20v80M96 46v28M106 60h2"/></svg>
+        <h3 class="bn-t">Mów, on działa. Rozmawiasz po polsku.</h3>
+      </article>
+      <article class="bn-card kk-g w4">
+        <span class="bn-tag">Twoje AI</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="28" y="28" width="64" height="64" rx="14"/><rect x="46" y="46" width="28" height="28" rx="5"/><path d="M48 10v18M72 10v18M48 92v18M72 92v18M10 48h18M10 72h18M92 48h18M92 72h18"/></svg>
+        <h3 class="bn-t">Własny model. 14 dostawców, 158 modeli.</h3>
+      </article>
+      <article class="bn-card kk-t w12">
+        <span class="bn-tag">Cofanie</span>
+        <svg class="bn-art" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 28L18 50l22 22"/><path d="M20 50h52a30 30 0 0 1 0 60H52"/></svg>
+        <h3 class="bn-t">Zawsze możesz wrócić. Każda zmiana ma punkt powrotu, cofasz jednym ruchem.</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KURSORY: agenci razem budują stronę (sekcja-kursory) ================= -->
+<section class="ku" id="kursory" aria-labelledby="kuTitle">
+  <div class="wrap">
+    <h2 class="display ku-h" id="kuTitle">Jedno kliknięcie, cały zespół do roboty</h2>
+    <p class="ku-lead">Każdy kursor to inny agent. Biorą zadania z listy i składają z nich stronę jednocześnie, a Lupa na końcu sprawdza każdy element.</p>
+  </div>
+
+  <div class="ku-stage" id="kuStage">
+    <!-- lista zadań -->
+    <div class="ku-tasks">
+      <div class="ku-th">Zadania <small id="kuCount">0 z 9</small></div>
+      <div class="ku-task" data-t="nav" data-a="Kreska"><span data-face="Kreska" data-px="20"></span>Menu strony</div>
+      <div class="ku-task" data-t="head" data-a="Pióro"><span data-face="Pióro" data-px="20"></span>Nagłówek i opis</div>
+      <div class="ku-task" data-t="img" data-a="Paleta"><span data-face="Paleta" data-px="20"></span>Zdjęcie produktów</div>
+      <div class="ku-task" data-t="stats" data-a="Radar"><span data-face="Radar" data-px="20"></span>Filtry kategorii</div>
+      <div class="ku-task" data-t="cards" data-a="Kreska"><span data-face="Kreska" data-px="20"></span>Karty produktów</div>
+      <div class="ku-task" data-t="review" data-a="Pióro"><span data-face="Pióro" data-px="20"></span>Opinia klientki</div>
+      <div class="ku-task" data-t="work" data-a="Paleta"><span data-face="Paleta" data-px="20"></span>Baner warsztatów</div>
+      <div class="ku-task" data-t="news" data-a="Lider"><span data-face="Lider" data-px="20"></span>Zapis do newslettera</div>
+      <div class="ku-task" data-t="foot" data-a="Radar"><span data-face="Radar" data-px="20"></span>Stopka i kontakt</div>
+    </div>
+
+    <!-- budowana strona -->
+    <div class="ku-page">
+      <div class="ku-chrome"><i></i><i></i><i></i><span>glina-pracownia.pl</span><em>Przykład</em></div>
+      <div class="ku-site">
+        <div class="ku-slot" data-s="nav">
+          <div class="kx-nav">
+            <b><i></i>Glina</b>
+            <span class="on">Sklep</span>
+            <span>Warsztaty</span>
+            <span>O pracowni</span>
+            <span>Kontakt</span>
+            <span class="kx-search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Szukaj</span>
+            <span class="kx-cart">Koszyk<em>2</em></span>
+          </div>
+        </div>
+
+        <div class="ku-row r-hero">
+          <div class="ku-slot" data-s="head">
+            <div class="kx-head">
+              <small><i></i>Nowa kolekcja: Bałtyk</small>
+              <h3>Ręcznie toczone naczynia na co dzień</h3>
+              <p>Kubki, misy i talerze z kamionki. Każda sztuka powstaje na kole w Krakowie i jest trochę inna.</p>
+              <div class="kx-btns">
+                <span class="kx-btn">Zobacz kolekcję</span>
+                <span class="kx-btn ghost">Warsztaty z koła</span>
+              </div>
+              <div class="kx-trust">
+                <span class="kx-av"><i style="background:#c89d7c"></i><i style="background:#6f86a6"></i><i style="background:#3a6bfc"></i></span>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <span>4,9 z 1 200 opinii</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ku-slot" data-s="img">
+            <div class="kx-show">
+              <div class="kx-ph kx-ph-hero">
+                <img src="img/kursory/dzbanek.png" alt="Dzbanek Bałtyk z kamionki">
+              </div>
+              <span class="kx-new">Nowość</span>
+              <div class="kx-tag">
+                <div>
+                  <small>Dzbanek Bałtyk</small>
+                  <b>189 zł</b>
+                </div>
+                <span class="kx-sw"><i style="background:#3a6bfc"></i><i style="background:#c89d7c"></i><i style="background:#d8d8dc"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ku-slot" data-s="stats">
+          <div class="kx-chips">
+            <span class="on">Wszystko</span>
+            <span>Kubki</span>
+            <span>Misy</span>
+            <span>Talerze</span>
+            <span>Dzbanki</span>
+            <span class="kx-sort">Sortuj: najnowsze</span>
+          </div>
+        </div>
+
+        <div class="ku-slot" data-s="cards">
+          <div class="kx-cards">
+            <div class="kx-card">
+              <div class="kx-ph kx-ph-kubek">
+                <img src="img/kursory/kubek.png" alt="Kubek Wisła">
+              </div>
+              <em>Nowość</em>
+              <b>Kubek Wisła</b>
+              <small>89 zł</small>
+              <span>+</span>
+            </div>
+            <div class="kx-card">
+              <div class="kx-ph kx-ph-misa">
+                <img src="img/kursory/misa.png" alt="Misa Tatry">
+              </div>
+              <b>Misa Tatry</b>
+              <small>140 zł</small>
+              <span>+</span>
+            </div>
+            <div class="kx-card">
+              <div class="kx-ph kx-ph-dzbanek">
+                <img src="img/kursory/dzbanek.png" alt="Dzbanek Rano">
+              </div>
+              <b>Dzbanek Rano</b>
+              <small>165 zł</small>
+              <span>+</span>
+            </div>
+            <div class="kx-card">
+              <div class="kx-ph kx-ph-talerz">
+                <img src="img/kursory/talerz.png" alt="Talerz Len">
+              </div>
+              <em>Nowość</em>
+              <b>Talerz Len</b>
+              <small>110 zł</small>
+              <span>+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ku-row r-three">
+          <div class="ku-slot" data-s="review">
+            <div class="kx-review">
+              <div class="kx-stars" aria-label="5 na 5 gwiazdek">
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.6 3.4 3.6.4-2.7 2.5.8 3.6L6 8.9 2.7 10.7l.8-3.6L.8 4.6l3.6-.4z" fill="#f0b44c"/></svg>
+              </div>
+              <p>„Kubek długo trzyma ciepło, a szkliwo ma piękną fakturę.”</p>
+              <small><i></i><span><b>Ola K.</b>, Gdańsk</span></small>
+            </div>
+          </div>
+
+          <div class="ku-slot" data-s="work">
+            <div class="kx-work">
+              <img class="kx-work-bg" src="img/kursory/warsztaty.png" alt="" aria-hidden="true">
+              <div class="kx-work-top">
+                <small>Warsztaty z koła</small>
+                <b>Listopad w pracowni</b>
+              </div>
+              <div class="kx-cal"><i>3</i><i>6</i><i class="free">8</i><i>9</i><i>10</i><i>13</i><i class="free">15</i><i>16</i><i>17</i><i>20</i><i class="on">22</i><i>23</i><i>24</i><i>27</i><i class="free">29</i><i>30</i></div>
+              <span class="kx-work-cta">Zapisz się na 22.11</span>
+            </div>
+          </div>
+
+          <div class="ku-slot" data-s="news">
+            <div class="kx-news">
+              <div>
+                <b>Nowe wzory co miesiąc</b>
+                <small>Jeden list w miesiącu o nowych wypałach i warsztatach.</small>
+              </div>
+              <div class="kx-news-form"><span>twoj@adres.pl</span><em>Zapisz</em></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ku-slot" data-s="foot">
+          <div class="kx-foot">
+            <b><i></i>Glina</b>
+            <span>ul. Garncarska 4, Kraków</span>
+            <span>hej@glina-pracownia.pl</span>
+            <span class="kx-pay"><i>BLIK</i><i>Visa</i><i>Przelewy24</i></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="ku-go" type="button" id="kuGo"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg>Zbuduj stronę</button>
+    </div>
+
+    <div class="ku-swarm" aria-hidden="true"></div>
+    <div class="ku-cursors" aria-hidden="true"></div>
+    <button class="ku-replay" type="button" id="kuReplay"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Odtwórz</button>
+  </div>
+  <div class="wrap"><p class="ku-foot">Pokazowa animacja na przykładowej stronie.</p></div>
+</section>
+
+<!-- ================= NOC Z LUMOBOTEM (sekcja-noc) ================= -->
+<section class="nt" id="noc" aria-labelledby="ntTitle">
+  <div class="wrap">
+    <h2 class="display nt-h" id="ntTitle">Noc z LumoBotem</h2>
+    <p class="nt-lead">Zlecasz wieczorem, rano odbierasz gotowe. Tak wygląda jedna noc pracy zespołu agentów.</p>
+    <ol class="nt-line">
+      <li class="nt-step nt-o" style="--i:0">
+        <span class="nt-time">23:00</span>
+        <span class="nt-dot" aria-hidden="true"></span>
+        <p class="nt-t"><b>Zlecasz zadanie.</b> Piszesz, co ma być gotowe rano, i idziesz spać.</p>
+      </li>
+      <li class="nt-step nt-r" style="--i:1">
+        <span class="nt-time">23:04</span>
+        <span class="nt-dot" aria-hidden="true"></span>
+        <p class="nt-t"><b>Lider dzieli pracę.</b> Trzech agentów bierze tekst, wygląd i testy naraz.</p>
+      </li>
+      <li class="nt-step nt-v" style="--i:2">
+        <span class="nt-time">02:14</span>
+        <span class="nt-dot" aria-hidden="true"></span>
+        <p class="nt-t"><b>Test nie przechodzi.</b> Menu wychodzi poza ekran telefonu. Agent wraca do poprawki.</p>
+      </li>
+      <li class="nt-step nt-g" style="--i:3">
+        <span class="nt-time">02:31</span>
+        <span class="nt-dot" aria-hidden="true"></span>
+        <p class="nt-t"><b>Poprawione.</b> Drugie sprawdzenie przechodzi. Neuro ocenia wynik na 94%.</p>
+      </li>
+      <li class="nt-step nt-b" style="--i:4">
+        <span class="nt-time">07:00</span>
+        <span class="nt-dot" aria-hidden="true"></span>
+        <p class="nt-t"><b>Raport na rano.</b> Budzisz się z gotowym wynikiem i listą tego, co zrobiono.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<!-- ================= POJEDYNKI: LumoBot obok innych narzędzi, linki do porównań (sekcja-pojedynki) ================= -->
+<section class="pj" id="pojedynki" aria-labelledby="pjTitle">
+  <div class="wrap">
+    <h2 class="display pj-h" id="pjTitle">LumoBot obok innych</h2>
+    <p class="pj-lead">Uczciwe porównania z narzędziami, o które pytacie najczęściej. Piszemy też, gdzie inni są lepsi.</p>
+    <div class="pj-grid">
+      <a class="pj-card" href="vs-openbot/">
+        <span class="pj-art" data-pal="lagoon" data-seed="0">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openbot.svg" alt="OpenBot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenBot</b><small>LumoBot ma punkty powrotu, OpenBot ma więcej platform i serwer dla zespołów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-grok-bot/">
+        <span class="pj-art" data-pal="rose" data-seed="5">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/grok.svg" alt="Grok Bot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Grok Bot</b><small>Lokalny folder LumoBota, komputer w chmurze Grok Bota</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-claude-cowork/">
+        <span class="pj-art" data-pal="forest" data-seed="10">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/claude.svg" alt="Claude"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Claude Cowork</b><small>LumoBot łączy dostawców, Cowork działa w ekosystemie Claude</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-manus/">
+        <span class="pj-art" data-pal="ember" data-seed="15">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/manus.svg" alt="Manus"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Manus</b><small>Lokalny model bez klucza, Manus planuje w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-openclaw/">
+        <span class="pj-art" data-pal="ocean" data-seed="20">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openclaw.svg" alt="OpenClaw"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenClaw</b><small>Oba bez abonamentu, OpenClaw ma ponad 20 komunikatorów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-devin/">
+        <span class="pj-art" data-pal="violet" data-seed="25">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/devin.svg" alt="Devin"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Devin</b><small>Lokalny model bez klucza, Devin ma Quick Review i testy</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="pj-all" href="porownanie/">Gdzie inni są lepsi ›</a>
+  </div>
+</section>
+<script>
+/* gradient kart: ten sam Grainient co w menu paska, rusza się tylko gdy karta jest na ekranie */
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.pj-art').forEach((box, i) => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      if(window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal)) box.classList.add('pj-grain'); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>
+<section class="bz wrap" id="bezpieczenstwo" aria-labelledby="bz-title">
+  <h2 class="title bz-title" id="bz-title">Twoje dane zostają u ciebie</h2>
+  <p class="bz-lead">LumoBot działa na twoim komputerze. Nie ma własnej chmury i nie przesyła nam twoich danych.</p>
+  <div class="bz-grid">
+    <div class="bz-item">
+      <h3>Hasła</h3>
+      <p>Hasła, które podajesz w LumoBocie, są zaszyfrowane na twoim komputerze. Nie trafiają do chmury ani do modelu AI. Do kont logujesz się sam, a agent pracuje na gotowej sesji.</p>
+    </div>
+    <div class="bz-item">
+      <h3>Projekty i pliki</h3>
+      <p>Wszystkie projekty, pliki i ustawienia zostają w folderach na twoim dysku. Nic nie trafia do chmury LumoBota, bo jej nie ma.</p>
+    </div>
+    <div class="bz-item">
+      <h3>Model AI</h3>
+      <p>Do dostawcy AI, którego sam wybierzesz, trafia tylko treść zadania. Z modelem lokalnym, na przykład Ollama albo LM Studio, nic nie opuszcza komputera.</p>
+    </div>
+  </div>
+</section>
+<style>
+.bz{padding-top:96px;padding-bottom:32px;text-align:center}
+.bz-title{margin:0 auto;max-width:760px}
+.bz-lead{margin:16px auto 0;max-width:640px;font-size:19px;line-height:1.55;color:#c7c7cc}
+.bz-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px;text-align:left}
+.bz-item h3{margin:0 0 8px;font-size:19px;line-height:1.3;font-weight:600;color:#f5f5f7}
+.bz-item p{margin:0;font-size:16px;line-height:1.65;color:#d1d1d6}
+@media (max-width:760px){.bz{padding-top:64px}.bz-lead{font-size:17px}.bz-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}}
+</style>
+<section id="pytania" class="light">
+  <div class="wrap fq-grid">
+    <div class="fq-head">
+      <h2 class="title fq-title">Pytania</h2>
+      <p class="fq-lead">Zlecasz cel, a LumoBot pracuje, aż sprawdzenie przejdzie. Twoje pliki zostają na twoim komputerze, a aplikacja kosztuje 0 zł.</p>
+    </div>
+    <div class="fq-list">
+      <details class="fq-item">
+        <summary class="fq-q"><span>Dlaczego LumoBot nie mówi "gotowe", dopóki nie sprawdzi?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Zadanie kończy polecenie sprawdzające, na przykład test, albo osobny agent sprawdzający. Samo zdanie agenta nie wystarcza. Dostajesz wynik, który już przeszedł kontrolę.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Ile naprawdę kosztuje LumoBot?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Aplikacja kosztuje 0 zł. Płacisz tylko za plan AI lub klucz, który już masz, a przy modelach lokalnych (Ollama, LM Studio) nie płacisz wcale. Nie płacisz drugi raz za to samo.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Co się stanie, gdy agent coś zepsuje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Każde zadanie pracuje na osobnej gałęzi git z punktami powrotu, więc wracasz do dobrego stanu. LumoBot niczego nie publikuje sam. Sterowanie komputerem jest domyślnie wyłączone.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Gdzie zostają moje pliki i hasła?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Na twoim komputerze. Projekt leży w lokalnym folderze, a hasła są szyfrowane lokalnie i nie trafiają do modelu. Przy modelu lokalnym treść zadania nie opuszcza komputera.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Z jakimi modelami działa LumoBot?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Z 14 dostawcami i 158 modelami: Claude, ChatGPT i Codex, Gemini, Mistral, OpenRouter, Cursor, OpenCode i innymi. Lokalnie z Ollamą i LM Studio, bez klucza. Wybierasz sam.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Jak LumoBot pracuje jako zespół?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Lider dzieli zadanie na części i przydziela je specjalistom. Autor i sprawdzający mogą być osobnymi agentami. Całą rozmowę widzisz na kanale zespołu i możesz się wtrącić.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czy mogę mówić do LumoBota po polsku?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>Tak. Rozmawiasz głosem prosto z wyspy, małego panelu na pulpicie, i wybierasz jeden z pięciu głosów. Na wyspie widzisz też pytania i wyniki.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Co robi Neuro?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>To mała sieć, która uczy się na twoich zakończonych zadaniach i szacuje szansę dojścia do celu. Po dwóch niskich ocenach, gdy ma co najmniej 60 przykładów, może zahamować agenta, zanim spali tokeny.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czym LumoBot różni się od Grok Bota i Claude Cowork?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>W LumoBocie sam wybierasz dostawcę i model, możesz pracować na modelu lokalnym, a aplikacja kosztuje 0 zł. Grok Bot sam wybiera model, pracuje na wspólnym komputerze w chmurze i jest w planach X od 30 USD miesięcznie. Cowork działa na modelach Claude w chmurze Anthropic i wymaga płatnego planu Claude od 20 USD miesięcznie. Oba za to pracują dalej po zamknięciu laptopa, czego LumoBot na twoim komputerze nie robi.</p></div>
+      </details>
+      <details class="fq-item">
+        <summary class="fq-q"><span>Czym LumoBot różni się od OpenBota, Manusa i Devina?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="fq-a"><p>OpenBot jest najbliżej LumoBota: też działa na twoim komputerze, korzysta z planów, które już masz, i ma lead agenta. Jest darmowy do użytku osobistego, a do pracy potrzebuje licencji od 10 EUR miesięcznie (bezpłatnie do 1 grudnia 2026). Manus planuje każdy krok w swojej chmurze i liczy pracę w kredytach: Free daje 300 kredytów dziennie, Pro kosztuje 20 USD. Devin to narzędzie do programowania z aplikacją na komputer i pracą w chmurze: ma darmowy plan z małym limitem, a Pro kosztuje 20 USD miesięcznie. Z Manusem i Devinem nie użyjesz modelu lokalnego jako agenta w zwykłych planach, a w LumoBocie tak.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DZIENNIK: najnowsze artykuły, gradient jak w menu (sekcja-dziennik) ================= -->
+<section class="dz" id="dziennik" aria-labelledby="dzTitle">
+  <div class="wrap">
+    <h2 class="display dz-h" id="dzTitle">Z dziennika LumoBota</h2>
+    <p class="dz-lead">Dlaczego LumoBot działa tak, a nie inaczej. Krótkie teksty o tym, jak budujemy zespół agentów.</p>
+    <a class="dz-hero" href="nowosc-gotowe-znaczy-sprawdzone/" data-pal="lagoon" data-seed="0">
+      <span class="dz-pill">Najnowsze · 18 listopada 2026</span>
+      <span class="dz-bottom">
+        <span class="dz-txt">
+          <b>Gotowe znaczy sprawdzone</b>
+          <small>Zadanie kończy test albo osobny sprawdzający, a nie samo zdanie agenta.</small>
+        </span>
+        <span class="dz-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </span>
+    </a>
+    <div class="pj-grid dz-pj-grid">
+      <a class="pj-card" href="nowosc-haslo-zostaje-u-ciebie/">
+        <span class="pj-art" data-pal="ocean" data-seed="20"></span>
+        <span class="pj-txt"><b>Agent nie musi znać twojego hasła</b><small>Hasła są szyfrowane i nie trafiają do modelu.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-zespol-nie-solista/">
+        <span class="pj-art" data-pal="rose" data-seed="5"></span>
+        <span class="pj-txt"><b>Jeden agent to za mało</b><small>Lider dzieli zadanie, a specjaliści robią części.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-twoj-plan-nasz-program/">
+        <span class="pj-art" data-pal="ember" data-seed="15"></span>
+        <span class="pj-txt"><b>Płacisz za AI raz, nie dwa razy</b><small>Podłączasz plan, który już masz, a LumoBot nic nie dolicza.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="dz-all" href="nowosci/">Wszystkie nowości ›</a>
+  </div>
+</section>
+<script>
+/* gradient dziennika: ten sam Grainient co w menu paska i pojedynkach, rusza się tylko na ekranie */
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('#dziennik [data-pal]').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>
+
+<!-- ================= CENA: Metallic Paint ================= -->
+<section class="cena" id="cena" aria-labelledby="cenaTitle">
+  <div class="wrap cena-wrap">
+    <div class="cena-paint" data-metallic-paint aria-label="LumoBot kosztuje 0 zł">
+      <canvas class="cena-canvas" aria-hidden="true"></canvas>
+      <span class="cena-value sr-only">0 zł</span>
+    </div>
+
+    <div class="cena-copy">
+      <p class="eyebrow">Cena</p>
+      <h2 class="headline" id="cenaTitle">LumoBot nic nie kosztuje</h2>
+      <p class="cena-lede">Płacisz tylko za plan AI, który już masz, a przy modelach lokalnych nie płacisz wcale.</p>
+      <a class="btn btn-primary cena-cta" href="#pobierz">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m0 0 3.5-3.5M8 10 4.5 6.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Pobierz za darmo
+      </a>
+    </div>
+  </div>
+</section>
+<section id="pobierz" class="dl-section" aria-labelledby="downloadHeading">
+  <div class="wrap dl-wrap">
+    <header class="dl-head"><h2 class="headline" id="downloadHeading">Wybierz swój system</h2><p>Sprawdź dostępność instalatora dla swojego urządzenia.</p></header>
+    <div class="dl-platforms">
+    <article class="dl-card" data-platform="windows">
+      <img class="dl-os" src="img/systemy/windows.svg" alt="" width="48" height="48">
+      <h3>Windows</h3>
+      <p class="dl-status">Windows 10 i 11, 64-bit</p>
+      <button type="button" class="dl-button" data-download="windows" aria-label="Pobierz: Windows">Pobierz</button>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="mac">
+      <img class="dl-os" src="img/systemy/apple.svg" alt="" width="48" height="48">
+      <h3>macOS</h3>
+      <p class="dl-status">Apple Silicon i Intel</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="linux">
+      <img class="dl-os" src="img/systemy/linux.svg" alt="" width="48" height="48">
+      <h3>Linux</h3>
+      <p class="dl-status">.deb i AppImage</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="ios">
+      <img class="dl-os" src="img/systemy/apple.svg" alt="" width="48" height="48">
+      <h3>iOS</h3>
+      <p class="dl-status">iPhone i iPad</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    <article class="dl-card dl-card--soon" data-platform="android">
+      <img class="dl-os" src="img/systemy/android.svg" alt="" width="48" height="48">
+      <h3>Android</h3>
+      <p class="dl-status">Telefony z Androidem</p>
+      <span class="dl-soon" aria-disabled="true">Wkrótce</span>
+    </article>
+    </div>
+  </div>
+</section>
+<dialog id="downloadDialog" class="dl-dialog" aria-labelledby="downloadTitle" aria-describedby="downloadMessage">
+  <h2 id="downloadTitle">Dostępność instalatora</h2>
+  <p id="downloadMessage">Sprawdź dostępność instalatora dla wybranego systemu.</p>
+  <button type="button" class="dl-dialog-close" data-download-close>Zamknij</button>
+</dialog>
+</main>
+
+<footer class="dl" id="stopka">
+  <section class="dl-waves dl-shift" data-text="LUMO" aria-label="LumoBot"><canvas aria-hidden="true"></canvas></section>
+
+  <div class="wrap dl-wrap dl-shift">
+    <div class="dl-main">
+      <div class="dl-brand">
+        <a class="dl-logo" href="./" aria-label="LumoBot, strona główna">
+          <span class="dl-lg" aria-hidden="true"><img class="dl-lg-b" src="img/logo-cialo.png" alt="" width="48" height="48"><img class="dl-lg-e" src="img/logo-oczy.png" alt="" width="48" height="48"></span>
+          <span class="dl-logo-text"><span class="dl-logo-name">LumoBot</span></span>
+        </a>
+
+        <p class="dl-claim">Zespół agentów AI na twoim komputerze. Podłącz plan, za który już płacisz, i pozwól im pracować, aż sprawdzenie przejdzie.</p>
+      </div>
+
+      <nav class="dl-cols" aria-label="Linki w stopce">
+        <div class="dl-col">
+          <h2>Zacznij</h2>
+          <a href="./">Pobierz LumoBota</a>
+          <a href="wtyczki/">Wtyczki</a>
+          <a href="cennik/">Cennik</a>
+          <a href="./#pytania">Pytania</a>
+          <a href="nowosci/">Co nowego</a>
+        </div>
+        <div class="dl-col">
+          <h2>Możliwości</h2>
+          <a href="funkcje/">Wszystkie funkcje</a>
+          <a href="funkcje/#praca-do-skutku">Praca do skutku</a>
+          <a href="funkcje/#neuro">Neuro</a>
+          <a href="funkcje/#wyspa">Wyspa i głos</a>
+          <a href="funkcje/#przegladarka">Własna przeglądarka</a>
+          <a href="funkcje/#punkty-powrotu">Punkty powrotu</a>
+        </div>
+        <div class="dl-col">
+          <h2>Porównaj</h2>
+           <a href="porownanie/">Gdzie inni są lepsi</a>
+          <a href="vs-openbot/">z OpenBotem</a>
+          <a href="vs-grok-bot/">z Grok Botem</a>
+          <a href="vs-claude-cowork/">z Claude Cowork</a>
+          <a href="vs-manus/">z Manusem</a>
+          <a href="vs-openclaw/">z OpenClawem</a>
+          <a href="vs-devin/">z Devinem</a>
+        </div>
+        <div class="dl-col">
+          <h2>Poczytaj</h2>
+          <a href="ai/">Świat AI</a>
+          <a href="nowosc-gotowe-znaczy-sprawdzone/">Gotowe znaczy sprawdzone</a>
+          <a href="nowosc-haslo-zostaje-u-ciebie/">Agent nie zna twojego hasła</a>
+          <a href="nowosc-zespol-nie-solista/">Jeden agent to za mało</a>
+          <a href="nowosc-twoj-plan-nasz-program/">Płacisz za AI raz</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="dl-legal">
+      <div class="dl-row">
+        <span class="dl-copy">© 2026 LumoBot</span>
+        <a class="dl-mail" href="mailto:kontakt@lumobot.eu">kontakt@lumobot.eu</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/agenci.js?v=1795208622"></script>
+<script src="js/pobieranie.js?v=1795362729" defer></script>
+<script src="js/jezyki.js?v=1794873919" defer></script>
+<script src="js/ruch.js?v=1794859973" defer></script>
+<script src="js/grain.js?v=1795214312" defer></script>
+<script src="js/pasek.js?v=1795273694" defer></script>
+<script src="js/wspolne.js?v=1794858668" defer></script>
+<script src="js/strona.js?v=1794871350" defer></script>
+<script src="js/sekcja-hero.js?v=1795016890" defer></script>
+<script src="js/zabawa-teksty.js?v=1794866427" defer></script>
+<script src="js/zabawa.js?v=1794874818" defer></script>
+<script src="js/kolo-karty.js?v=1795020369" defer></script>
+<script src="js/hero-dropdown.js?v=1795036489" defer></script>
+<script src="js/sekcja-okno.js?v=1795035726" defer></script>
+<script src="js/sekcja-kursory.js?v=1795122445" defer></script>
+<script src="js/laser-okno.js?v=1795035879" defer></script>
+<script src="js/sekcja-cena.js?v=1795022640" defer></script>
+<script src="js/rozmycie.js?v=1795213082" defer></script>
+<script src="js/fale.js?v=1795201770" defer></script>
+<script src="js/waz.js?v=1795203449" defer></script>
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body>
+</html>

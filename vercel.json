@@ -1,0 +1,14 @@
+{
+  "buildCommand": "",
+  "outputDirectory": "strona",
+  "redirects": [
+    {
+      "source": "/pobierz",
+      "destination": "https://github.com/bongodelacz/lumobot-releases/releases/latest/download/LumoBot-Setup.exe",
+      "permanent": false
+    },
+    { "source": "/agenci", "destination": "/", "permanent": true },
+    { "source": "/agenci/", "destination": "/", "permanent": true },
+    { "source": "/agenci.html", "destination": "/", "permanent": true }
+  ]
+}

@@ -1,0 +1,54 @@
+/* Możliwości: siatka bento, jeden przekaz na kafelek */
+.bn{padding:clamp(80px,10vw,140px) 0}
+.bn-h{margin:0 0 40px;font-size:clamp(36px,4.4vw,60px);letter-spacing:-.035em;color:#f5f5f7}
+.bn-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.bn-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:240px;padding:32px;border-radius:24px;color:#fff;
+  background:radial-gradient(60% 70% at 18% 20%,var(--c) 0%,transparent 60%),radial-gradient(70% 80% at 85% 85%,var(--b) 0%,transparent 70%),radial-gradient(80% 90% at 70% 25%,var(--a) 0%,transparent 75%),var(--b);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transition:transform .25s cubic-bezier(.3,.7,.3,1)}
+.bn-card::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+.bn-card:hover{transform:translateY(-4px)}
+.w7{grid-column:span 7}.w5{grid-column:span 5}.w4{grid-column:span 4}.w12{grid-column:span 12;min-height:200px}
+.tall{min-height:400px}
+.bn-tag{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.bn-tag i{font-size:20px}
+.bn-t{position:relative;margin:auto 0 10px;font-size:clamp(28px,2.6vw,40px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
+.tall .bn-t{font-size:clamp(40px,4.4vw,68px);line-height:.96;letter-spacing:-.045em}
+.bn-d{position:relative;margin:0;max-width:460px;font-size:17px;line-height:1.45;color:rgba(255,255,255,.88)}
+.w12{flex-direction:row;align-items:flex-end;gap:32px}.w12 .bn-tag{position:absolute;top:32px;left:32px}.w12 .bn-t{margin:0;flex:1}.w12 .bn-d{max-width:380px}
+@media (max-width:900px){.w7,.w5,.w4,.w12{grid-column:span 12}.tall{min-height:320px}.w12{flex-direction:column;align-items:flex-start}.w12 .bn-tag{position:relative;top:auto;left:auto;margin-bottom:auto}.w12 .bn-t{margin:60px 0 10px}}
+@media (prefers-reduced-motion:reduce){.bn-card{transition:none}.bn-card:hover{transform:none}}
+
+/* v2: płaskie kolory, ciemny tekst, duża gruba ikona-ilustracja */
+.bn .kk-o{--f:#f2b65e}.bn .kk-r{--f:#f4a3c0}.bn .kk-v{--f:#bba8f7}.bn .kk-b{--f:#93b8ff}.bn .kk-g{--f:#93ddb6}.bn .kk-t{--f:#86d4e2}
+.bn-card{background:var(--f);color:#151515;box-shadow:none;padding:28px 30px}
+.bn-card::before{display:none}
+.bn-tag{align-self:flex-start;padding:7px 14px;border-radius:999px;border:1.5px solid rgba(0,0,0,.22);font-size:14px;font-weight:600;color:#151515}
+.bn-t{color:#121212;z-index:1}
+.bn-d{color:rgba(0,0,0,.66);z-index:1}
+.bn-art{position:absolute;top:28px;right:30px;width:120px;height:120px;color:#1b1b1b;transition:transform .4s cubic-bezier(.3,.7,.3,1)}
+.tall .bn-art{width:190px;height:190px;top:40px;right:40px}
+.w4 .bn-art{width:84px;height:84px;top:24px;right:24px}
+.w12 .bn-art{top:50%;right:auto;left:50%;transform:translate(-50%,-50%);width:110px;height:110px}
+.bn-card:hover .bn-art{transform:rotate(-6deg) scale(1.04)}
+.w12:hover .bn-art{transform:translate(-50%,-50%) rotate(-6deg)}
+.bn-card:focus-within{outline:2px solid #fff;outline-offset:3px}
+@media (max-width:900px){.w12 .bn-art{left:auto;right:24px;top:24px;transform:none;width:84px;height:84px}.tall .bn-art{width:130px;height:130px;top:24px;right:24px}}
+@media (prefers-reduced-motion:reduce){.bn-art{transition:none}}
+.bn .w12{flex-direction:column;align-items:stretch;gap:0}
+.bn .w12 .bn-tag{position:relative;top:auto;left:auto}
+.bn .w12 .bn-t{margin:auto 0 10px;flex:none}
+.bn .w12 .bn-art{top:40px;right:40px;left:auto;transform:none;width:120px;height:120px}
+.bn .w12:hover .bn-art{transform:rotate(-6deg) scale(1.04)}
+.bn .bn-tag{border:0;background:#161616;color:#f5f5f7;padding:8px 14px;font-size:13.5px;font-weight:600;letter-spacing:.005em}
+/* nagłówek i opis jednym akapitem: ta sama czcionka, wielkość i kolor (jak opis w stopce) */
+.bn .bn-h{max-width:760px;margin:0 0 40px;font-family:"Inter",system-ui,sans-serif;font-size:clamp(24px,3vw,34px);font-weight:400;line-height:1.18;letter-spacing:-.04em;color:#fff;text-wrap:balance}
+.bn .bn-t{margin:auto 0 0;max-width:520px;font-family:"Inter",system-ui,sans-serif;font-size:clamp(22px,2.2vw,28px);font-weight:400;line-height:1.18;letter-spacing:-.035em;color:#121212;text-wrap:balance}
+.bn .tall .bn-t{font-size:clamp(26px,3vw,34px);letter-spacing:-.04em}
+.bn .w4 .bn-t{padding-right:0}
+.bn .w12{min-height:250px}.bn .w12 .bn-t{margin:auto 0 0;max-width:620px}
+/* nagłówek sekcji duży, pod nim opis w stylu opisu ze stopki */
+.bn .bn-h{max-width:none;margin:0 0 14px;font-size:clamp(40px,5vw,64px);font-weight:700;line-height:1.02;letter-spacing:-.045em}
+.bn-lead{max-width:640px;margin:0 0 44px;font-family:"Inter",system-ui,sans-serif;font-size:clamp(20px,2vw,26px);font-weight:400;line-height:1.25;letter-spacing:-.03em;color:#a1a1a6;text-wrap:balance}
+.bn{padding-top:clamp(56px,6vw,84px)}
+.bn{padding-top:clamp(80px,10vw,140px)}

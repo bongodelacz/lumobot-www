@@ -1,0 +1,45 @@
+<!-- ================= DZIENNIK: najnowsze artykuły, gradient jak w menu (sekcja-dziennik) ================= -->
+<section class="dz" id="dziennik" aria-labelledby="dzTitle">
+  <div class="wrap">
+    <h2 class="display dz-h" id="dzTitle">Z dziennika LumoBota</h2>
+    <p class="dz-lead">Dlaczego LumoBot działa tak, a nie inaczej. Krótkie teksty o tym, jak budujemy zespół agentów.</p>
+    <a class="dz-hero" href="nowosc-gotowe-znaczy-sprawdzone.html" data-pal="lagoon" data-seed="0">
+      <span class="dz-pill">Najnowsze · 18 listopada 2026</span>
+      <span class="dz-bottom">
+        <span class="dz-txt">
+          <b>Gotowe znaczy sprawdzone</b>
+          <small>Zadanie kończy test albo osobny sprawdzający, a nie samo zdanie agenta.</small>
+        </span>
+        <span class="dz-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </span>
+    </a>
+    <div class="pj-grid dz-pj-grid">
+      <a class="pj-card" href="nowosc-haslo-zostaje-u-ciebie.html">
+        <span class="pj-art" data-pal="ocean" data-seed="20"></span>
+        <span class="pj-txt"><b>Agent nie musi znać twojego hasła</b><small>Hasła są szyfrowane i nie trafiają do modelu.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-zespol-nie-solista.html">
+        <span class="pj-art" data-pal="rose" data-seed="5"></span>
+        <span class="pj-txt"><b>Jeden agent to za mało</b><small>Lider dzieli zadanie, a specjaliści robią części.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-twoj-plan-nasz-program.html">
+        <span class="pj-art" data-pal="ember" data-seed="15"></span>
+        <span class="pj-txt"><b>Płacisz za AI raz, nie dwa razy</b><small>Podłączasz plan, który już masz, a LumoBot nic nie dolicza.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="dz-all" href="nowosci.html">Wszystkie nowości ›</a>
+  </div>
+</section>
+<script>
+/* gradient dziennika: ten sam Grainient co w menu paska i pojedynkach, rusza się tylko na ekranie */
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('#dziennik [data-pal]').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

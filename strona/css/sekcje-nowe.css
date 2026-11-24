@@ -1,0 +1,81 @@
+/* ===== Czat kontra LumoBot ===== */
+.vs{padding:clamp(80px,10vw,140px) 0 0}
+.vs-h,.nt-h{margin:0 0 14px;font-size:clamp(40px,5vw,64px);font-weight:700;line-height:1.02;letter-spacing:-.045em;color:#fff;text-wrap:balance}
+.vs-lead,.nt-lead{max-width:640px;margin:0 0 44px;font-family:"Inter",system-ui,sans-serif;font-size:clamp(20px,2vw,26px);font-weight:400;line-height:1.25;letter-spacing:-.03em;color:#a1a1a6;text-wrap:balance}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vs-card{display:flex;flex-direction:column;gap:22px;padding:34px 34px 30px;border-radius:24px}
+.vs-chat{background:#26262a;color:#d4d4d8;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.vs-lumo{background:#232326;color:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.vs-tag{align-self:flex-start;padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:600}
+.vs-chat .vs-tag{background:rgba(255,255,255,.08);color:#d4d4d8}
+.vs-lumo .vs-tag{background:rgba(255,255,255,.12);color:#f5f5f7}
+.vs-say{margin:0;font-family:"Inter",system-ui,sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.18;letter-spacing:-.035em}
+.vs-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.vs-list li{display:flex;align-items:flex-start;gap:12px;font-size:17px;line-height:1.4}
+.vs-ic{display:grid;place-items:center;width:26px;height:26px;flex:none;border-radius:50%}
+.vs-chat .vs-ic{background:rgba(255,255,255,.07);color:#8e8e93}
+.vs-lumo .vs-ic{background:rgba(255,255,255,.12);color:#f5f5f7}
+.vs-end{margin:auto 0 0;padding-top:18px;font-size:17px;line-height:1.4;border-top:1px solid currentColor;border-color:rgba(127,127,127,.25)}
+.vs-chat .vs-end{color:#a1a1a6}
+@media (max-width:860px){.vs-grid{grid-template-columns:1fr}}
+
+/* ===== Noc z LumoBotem ===== */
+.nt{padding:clamp(80px,10vw,140px) 0 0}
+.nt .nt-o{--c:#f2b65e}.nt .nt-r{--c:#f4a3c0}.nt .nt-v{--c:#bba8f7}.nt .nt-g{--c:#93ddb6}.nt .nt-b{--c:#93b8ff}
+.nt-line{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.nt-line::before{content:"";position:absolute;left:0;right:0;top:63px;height:2px;background:linear-gradient(90deg,#f2b65e,#f4a3c0,#bba8f7,#93ddb6,#93b8ff);opacity:.6}
+.nt-step{position:relative;display:flex;flex-direction:column;gap:14px}
+.nt-time{font-family:"Inter",system-ui,sans-serif;font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-.04em;line-height:1;color:#f5f5f7;font-variant-numeric:tabular-nums}
+.nt-dot{position:relative;width:18px;height:18px;border-radius:50%;background:var(--c);box-shadow:0 0 0 5px #1c1c1e}
+.nt-t{margin:0;padding:20px;border-radius:20px;background:var(--c);color:#121212;font-family:"Inter",system-ui,sans-serif;font-size:17px;line-height:1.3;letter-spacing:-.015em;min-height:150px}
+.nt-t b{font-weight:600}
+@media (max-width:960px){
+  .nt-line{grid-template-columns:1fr;gap:12px;padding-left:34px}
+  .nt-line::before{left:8px;right:auto;top:6px;bottom:6px;width:2px;height:auto;background:linear-gradient(180deg,#f2b65e,#f4a3c0,#bba8f7,#93ddb6,#93b8ff)}
+  .nt-step{display:grid;grid-template-columns:auto 1fr;align-items:start;gap:4px 14px}
+  .nt-dot{position:absolute;left:-34px;top:8px}
+  .nt-time{font-size:26px;grid-column:1/-1}
+  .nt-t{grid-column:1/-1;min-height:0}
+}
+@media (min-width:961px){.nt-t{flex:1}}.nt{padding-bottom:clamp(40px,6vw,90px)}
+
+/* ===== Neuro 94%: chrom po prawej, tekst po lewej ===== */
+.nr .nr-copy{order:0}.nr .nr-paint{order:1}
+.nr-h{margin:0 0 16px;font-size:clamp(40px,5vw,64px);font-weight:700;line-height:1.02;letter-spacing:-.045em;color:#fff;text-wrap:balance}
+.nr-lede{font-family:"Inter",system-ui,sans-serif;font-size:clamp(20px,2vw,24px);line-height:1.3;letter-spacing:-.025em;color:#a1a1a6}
+.nr-stats{list-style:none;display:flex;gap:40px;margin:32px 0 0;padding:28px 0 0;border-top:1px solid rgba(255,255,255,.1)}
+.nr-stats li{display:flex;flex-direction:column;gap:4px}
+.nr-stats b{font-size:28px;font-weight:700;letter-spacing:-.03em;color:#fff}
+.nr-stats span{font-size:15px;color:#a1a1a6;max-width:200px}
+.nr-stats b{line-height:1.1}@media (max-width:700px){.nr-stats{gap:24px}.nr-stats b{font-size:22px}}
+
+/* Neuro v2: pod chromem tor ocen z kolejnych rund; po wjechaniu sekcji rundy wskakują po kolei, a pasek dobija do 94% */
+.nr-paint{display:flex;flex-direction:column;justify-content:center}
+.nr-track{position:relative;width:min(460px,100%);margin:6px auto 0;padding-top:30px}
+.nr-bar{position:relative;height:10px;border-radius:999px;background:rgba(255,255,255,.08)}
+.nr-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:inherit;background:linear-gradient(90deg,#ff6159,#ffb04a 55%,#2fd9a0);transition:width 2.4s cubic-bezier(.3,.7,.3,1)}
+.nr-gate{position:absolute;left:calc(var(--v) * 1%);top:-26px;bottom:-6px;width:2px;background:#fff;border-radius:2px}
+.nr-gate em{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);padding-bottom:4px;font-style:normal;font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap}
+.nr-rounds{position:relative;list-style:none;margin:0;padding:0;height:64px}
+.nr-r{position:absolute;left:calc(var(--v) * 1%);top:-17px;transform:translateX(-50%) scale(.6);opacity:0;display:flex;flex-direction:column;align-items:center;gap:2px;
+  transition:opacity .35s,transform .45s cubic-bezier(.3,.7,.3,1.4);transition-delay:calc(var(--i) * .8s)}
+.nr-r::before{content:"";width:22px;height:22px;border-radius:50%;margin-bottom:8px;box-shadow:0 0 0 4px #1c1c1e}
+.nr-r.bad::before{background:#ff6159}
+.nr-r.ok::before{background:#2fd9a0;box-shadow:0 0 0 4px #1c1c1e,0 0 18px rgba(47,217,160,.7)}
+.nr-r b{font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em}
+.nr-r small{font-size:12.5px;color:#a1a1a6}
+.nr.go .nr-fill{width:94%}
+.nr.go .nr-r{opacity:1;transform:translateX(-50%) scale(1)}
+@media (prefers-reduced-motion:reduce){.nr-fill,.nr-r{transition:none}}
+.nr-side{order:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.nr-side .nr-paint{order:0}
+.nr-track{margin:24px auto 0;padding-top:34px}
+.nr-r small{white-space:nowrap}
+/* 158 modeli: podpis pod chromem i przesuwający się pasek dostawców */
+.nr-track{display:none}
+.nr-cap{margin:4px 0 0;text-align:center;font-size:clamp(18px,1.8vw,22px);letter-spacing:-.02em;color:#a1a1a6}
+.nr-mq{margin-top:28px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.nr-mq-row{display:flex;gap:10px;width:max-content;animation:nrMq 26s linear infinite}
+.nr-mq-row span{flex:none;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);font-size:15px;font-weight:600;color:#ededf0}
+@keyframes nrMq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.nr-mq-row{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}

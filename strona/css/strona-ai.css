@@ -1,0 +1,282 @@
+/* Świat AI: wyróżniony tekst na całą szerokość, siatka 3 kart z gradientem lub okładką i sekcja W co wierzymy (.wt-doc .wt-sec) */
+
+.bn-page + .ai-page{
+  margin-top:64px;
+  padding-bottom:96px;
+}
+
+/* Ukrycie zduplikowanego modułu karty-artykuly na dole /ai/, dopóki jest w szablonie */
+.sub-ai .st-main > .zt{
+  display:none;
+}
+
+/* 1) Wyróżniony tekst na całą szerokość */
+.ai-feat.pj-art{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  width:100%;
+  min-height:360px;
+  height:auto;
+  padding:48px;
+  border-radius:24px;
+  color:#f5f5f7;
+  text-decoration:none;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transition:transform .3s cubic-bezier(.22,1,.36,1);
+}
+
+.ai-feat.pj-art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,12,20,.1) 0%,rgba(8,12,20,.38) 48%,rgba(8,12,20,.82) 100%);
+}
+
+.ai-feat-body{
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.ai-feat-meta{
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.4;
+  color:#e5e5ea;
+}
+
+.ai-feat-title{
+  margin:0;
+  font-size:clamp(32px,4.2vw,48px);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:700;
+  color:#f5f5f7;
+  text-wrap:balance;
+  transition:transform .3s cubic-bezier(.22,1,.36,1);
+}
+
+.ai-feat-lead{
+  margin:0;
+  max-width:58ch;
+  font-size:clamp(17px,1.5vw,19px);
+  line-height:1.55;
+  color:#e5e5ea;
+}
+
+.ai-feat-btn{
+  position:relative;
+  z-index:1;
+  flex:none;
+  height:44px;
+  padding:0 24px;
+  border-radius:999px;
+  background:#2f62e8;
+  color:#ffffff;
+  font-size:16px;
+  font-weight:600;
+  transition:background .2s ease,transform .2s cubic-bezier(.22,1,.36,1);
+}
+
+.ai-feat:hover .ai-feat-title{
+  transform:translateY(-2px);
+}
+
+.ai-feat:hover .ai-feat-btn{
+  background:#2550c4;
+  transform:translateY(-2px);
+}
+
+.ai-feat:active{
+  transform:scale(.995);
+  opacity:.9;
+}
+
+.ai-feat:focus-visible{
+  outline:2px solid #f5f5f7;
+  outline-offset:4px;
+}
+
+/* 2) Siatka pozostałych 3 tekstów (.zt-card) */
+.ai-grid3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:32px 24px;
+  margin-top:32px;
+}
+
+.ai-grid3 .zt-card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  color:#f5f5f7;
+  text-decoration:none;
+  border-radius:20px;
+}
+
+.ai-grid3 .zt-art{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  aspect-ratio:16/9;
+  height:auto;
+  border-radius:20px;
+  background-color:#0e1420;
+  background-size:cover;
+  background-position:center;
+  padding:24px;
+  text-align:center;
+}
+
+.ai-grid3 .zt-art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(circle,rgba(8,12,20,.38) 0%,rgba(8,12,20,.22) 100%);
+}
+
+.ai-grid3 .zt-art .kf-grain{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.ai-grid3 .zt-art b{
+  position:relative;
+  z-index:1;
+  max-width:16ch;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  font-weight:700;
+  color:#ffffff;
+  text-shadow:0 2px 16px rgba(0,0,0,.45);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.ai-grid3 .zt-meta{
+  font-size:14px;
+  line-height:1.4;
+  color:#a1a1a6;
+}
+
+.ai-grid3 .zt-t{
+  font-size:18px;
+  font-weight:600;
+  line-height:1.35;
+  color:#f5f5f7;
+}
+
+.ai-grid3 .zt-card:hover .zt-art b{
+  transform:scale(1.04);
+}
+
+.ai-grid3 .zt-card:hover .zt-t{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.ai-grid3 .zt-card:active{
+  opacity:.75;
+}
+
+.ai-grid3 .zt-card:focus-visible{
+  outline:2px solid #f5f5f7;
+  outline-offset:4px;
+}
+
+/* Okładki z strona/img/ai/ jako tła kart (wyższa szczegółowość niż .pj-art w sekcja-pojedynki.css) */
+.ai-page .pj-art.ai-cov-gotowe{background:#0e1420 url("../img/ai/gotowe-znaczy-sprawdzone.png") center 38%/cover no-repeat}
+.ai-page .pj-art.ai-cov-haslo{background:#0e1420 url("../img/ai/haslo-zostaje-u-ciebie.png") center/cover no-repeat}
+.ai-page .pj-art.ai-cov-zespol{background:#0e1420 url("../img/ai/zespol-nie-solista.png") center/cover no-repeat}
+.ai-page .pj-art.ai-cov-plan{background:#0e1420 url("../img/ai/twoj-plan-nasz-program.png") center/cover no-repeat}
+
+.ai-page .pj-art > .kf-grain{
+  opacity:.12;
+  mix-blend-mode:screen;
+}
+
+/* 3) Sekcja W co wierzymy (.wt-doc .wt-sec) */
+.ai-doc.wt-doc{
+  margin-top:96px;
+}
+
+.ai-doc.wt-doc .wt-sec:first-child{
+  margin-top:0;
+}
+
+.ai-doc.wt-doc .wt-sec h3{
+  margin:32px 0 8px;
+  font-size:20px;
+  line-height:1.3;
+  font-weight:600;
+  color:#f5f5f7;
+}
+
+.ai-doc.wt-doc .wt-sec > h3:first-of-type{
+  margin-top:0;
+}
+
+.ai-doc.wt-doc .wt-sec p{
+  font-size:17px;
+  line-height:1.65;
+  color:#d1d1d6;
+}
+
+@media (max-width:760px){
+  .bn-page + .ai-page{
+    margin-top:48px;
+    padding-bottom:64px;
+  }
+  .ai-feat.pj-art{
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-end;
+    gap:24px;
+    min-height:260px;
+    padding:24px;
+    border-radius:20px;
+  }
+  .ai-grid3{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:24px;
+  }
+  .ai-doc.wt-doc{
+    margin-top:64px;
+  }
+  .ai-doc.wt-doc .wt-sec h3{
+    margin-top:24px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ai-feat.pj-art,
+  .ai-feat-title,
+  .ai-feat-btn,
+  .ai-grid3 .zt-art b{
+    transition:none;
+  }
+  .ai-feat:hover .ai-feat-title,
+  .ai-feat:hover .ai-feat-btn,
+  .ai-grid3 .zt-card:hover .zt-art b{
+    transform:none;
+  }
+}

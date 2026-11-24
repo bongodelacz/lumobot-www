@@ -1,0 +1,120 @@
+/* Star Border, układ zgodny z komponentem React Bits. */
+.star-border-container{
+  display:inline-flex;
+  position:relative;
+  border-radius:999px;
+  overflow:hidden;
+  padding:1px 0;
+  vertical-align:middle;
+  isolation:isolate;
+}
+
+.star-border-container .border-gradient-bottom{
+  position:absolute;
+  width:300%;
+  height:50%;
+  opacity:.7;
+  bottom:-12px;
+  right:-250%;
+  border-radius:50%;
+  animation:star-movement-bottom linear infinite alternate;
+  z-index:0;
+  pointer-events:none;
+}
+
+.star-border-container .border-gradient-top{
+  position:absolute;
+  opacity:.7;
+  width:300%;
+  height:50%;
+  top:-12px;
+  left:-250%;
+  border-radius:50%;
+  animation:star-movement-top linear infinite alternate;
+  z-index:0;
+  pointer-events:none;
+}
+
+.star-border-container .inner-content{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:inherit;
+  min-height:100%;
+  border:1px solid #222;
+  border-radius:999px;
+  background:var(--accent);
+  color:#fff;
+  font-size:inherit;
+  font-weight:inherit;
+  text-align:center;
+  padding:0 22px;
+  white-space:nowrap;
+}
+
+/* Oryginalne kolory przycisków zostają w jednolitym wnętrzu. */
+.star-border-container.btn-primary{
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+}
+.star-border-container.btn-primary:hover{background:transparent;box-shadow:none}
+.star-border-container.btn-primary .inner-content{background:var(--accent);color:#fff}
+.star-border-container.btn-primary:hover .inner-content{background:var(--accent-hi)}
+
+.star-border-container.btn-ghost{
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+}
+.star-border-container.btn-ghost:hover{background:transparent;box-shadow:none}
+.star-border-container.btn-ghost .inner-content{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.15);
+  color:#e8e8ed;
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+}
+.star-border-container.btn-ghost:hover .inner-content{
+  background:rgba(255,255,255,.11);
+  border-color:rgba(255,255,255,.26);
+  color:#fff;
+}
+
+.star-border-container.wy-get{
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+}
+.star-border-container.wy-get:hover{background:transparent;box-shadow:none}
+.star-border-container.wy-get .inner-content{
+  min-height:100%;
+  background:var(--accent);
+  color:#fff;
+  padding:0 16px;
+}
+.star-border-container.wy-get:hover .inner-content{background:var(--accent-down)}
+
+.star-border-container.btn-lg .inner-content{padding-left:28px;padding-right:28px}
+.star-border-container.btn-sm .inner-content{padding-left:16px;padding-right:16px}
+.star-border-container.dl-btn .inner-content{padding-left:18px;padding-right:18px}
+
+@keyframes star-movement-bottom{
+  0%{transform:translate(0%,0%);opacity:1}
+  100%{transform:translate(-100%,0%);opacity:0}
+}
+
+@keyframes star-movement-top{
+  0%{transform:translate(0%,0%);opacity:1}
+  100%{transform:translate(100%,0%);opacity:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .star-border-container .border-gradient-bottom,
+  .star-border-container .border-gradient-top{animation:none}
+}
+
+html.static .star-border-container .border-gradient-bottom,
+html.static .star-border-container .border-gradient-top{animation:none}

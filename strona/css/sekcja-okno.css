@@ -1,0 +1,112 @@
+/* ===== Prawdziwe okno LumoBota ===== */
+.ok{padding:clamp(56px,6vw,84px) 0 0}
+.ok-h{margin:0 0 14px;font-size:clamp(40px,5vw,64px);font-weight:700;line-height:1.02;letter-spacing:-.045em;color:#fff}
+.ok-lead{max-width:680px;margin:0 0 40px;font-family:"Inter",system-ui,sans-serif;font-size:clamp(20px,2vw,26px);line-height:1.25;letter-spacing:-.03em;color:#a1a1a6;text-wrap:balance}
+.ok-stage{position:relative;width:min(1240px,calc(100% - 32px));margin:0 auto}
+.ok-glow{position:absolute;inset:8% 6% -4%;z-index:0;border-radius:40px;pointer-events:none;
+  background:radial-gradient(50% 60% at 30% 40%,rgba(58,107,252,.45),transparent 70%),radial-gradient(45% 55% at 75% 60%,rgba(124,77,255,.32),transparent 70%);filter:blur(60px)}
+.ok-win{--k:1;position:relative;z-index:1;width:100%;aspect-ratio:1360/860;border-radius:16px;overflow:hidden;background:#141414;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 1px 0 rgba(255,255,255,.08) inset,0 50px 120px -40px rgba(0,0,0,.9)}
+.ok-frame{position:absolute;left:0;top:0;width:1360px;height:860px;border:0;transform-origin:0 0;transform:scale(var(--k));background:#141414}
+.ok-cover{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:22px;border:0;background:transparent;cursor:pointer;color:#fff}
+.ok-cover span{padding:10px 16px;border-radius:999px;background:rgba(20,20,22,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font:600 14px/1 "Inter",system-ui,sans-serif;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+.ok-cover:hover span,.ok-cover:focus-visible span{opacity:1;transform:none}
+.ok-win.live .ok-cover{display:none}
+.ok-notes{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ok-notes li{font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.4;color:#a1a1a6}
+.ok-notes b{color:#fff;font-weight:600}
+@media (max-width:760px){.ok-notes{grid-template-columns:1fr}.ok-win{border-radius:12px}}
+/* bez napisu nad oknem, bez poświaty i cieni; okno rysowane w prawdziwym rozmiarze */
+.ok{padding-top:clamp(40px,5vw,64px)}
+.ok-win{aspect-ratio:auto;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.ok-frame{width:1360px;height:860px}
+
+/* ===== Laser Flow 1:1 na oknie: płótno za oknem, okno jest powierzchnią, na którą spada wiązka ===== */
+.ok{position:relative;isolation:isolate}
+.ok-stage{margin-top:clamp(160px,18vw,260px)}
+.ok-laser{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0;pointer-events:none}
+.ok-laser canvas{display:block;width:100%;height:100%}
+.ok-stage,.ok .wrap{position:relative;z-index:1}
+/* bez wiązki z góry i bez prostokąta: światło pojawia się tuż nad oknem, a brzegi płótna miękko gasną */
+.ok-stage{margin-top:clamp(70px,8vw,110px)}
+.ok-laser{--wt:260px;
+  -webkit-mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 70px),#000 calc(var(--wt) + 6px),#000 calc(100% - 140px),transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 70px),#000 calc(var(--wt) + 6px),#000 calc(100% - 140px),transparent),linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  mask-composite:intersect}
+/* v3: bez obręczy. Mała jasna wysepka na środku górnej krawędzi, światło spływa bokami i gaśnie przy dole okna, nic nie zawija się pod spód */
+.ok{padding-top:clamp(16px,2vw,28px)}
+.ok-stage{margin-top:clamp(56px,6vw,84px)}
+.ok-laser{--wb:900px;
+  -webkit-mask-image:radial-gradient(260px 70px at 50% var(--wt),#000 35%,transparent 100%),linear-gradient(180deg,transparent calc(var(--wt) - 4px),#000 calc(var(--wt) + 26px),#000 calc(var(--wb) - 160px),transparent calc(var(--wb) - 10px));
+  -webkit-mask-composite:source-over;
+  mask-image:radial-gradient(260px 70px at 50% var(--wt),#000 35%,transparent 100%),linear-gradient(180deg,transparent calc(var(--wt) - 4px),#000 calc(var(--wt) + 26px),#000 calc(var(--wb) - 160px),transparent calc(var(--wb) - 10px));
+  mask-composite:add}
+/* v4: wysepka delikatniejsza, a boki bez twardego ucięcia przy górnych rogach */
+.ok-laser{
+  -webkit-mask-image:radial-gradient(200px 46px at 50% var(--wt),rgba(0,0,0,.6) 20%,rgba(0,0,0,.25) 60%,transparent 100%),linear-gradient(180deg,transparent calc(var(--wt) - 40px),#000 calc(var(--wt) + 40px),#000 calc(var(--wb) - 180px),transparent calc(var(--wb) - 20px));
+  mask-image:radial-gradient(200px 46px at 50% var(--wt),rgba(0,0,0,.6) 20%,rgba(0,0,0,.25) 60%,transparent 100%),linear-gradient(180deg,transparent calc(var(--wt) - 40px),#000 calc(var(--wt) + 40px),#000 calc(var(--wb) - 180px),transparent calc(var(--wb) - 20px))}
+/* v5: bez stożka. Światło trzyma się blisko boków okna (wąski, miękki pas) i gaśnie stopniowo już od góry do dołu */
+.ok-laser{--wl:100px;--wr:1340px;
+  -webkit-mask-image:radial-gradient(200px 46px at 50% var(--wt),rgba(0,0,0,.6) 20%,rgba(0,0,0,.25) 60%,transparent 100%),
+    linear-gradient(180deg,transparent calc(var(--wt) - 40px),#000 calc(var(--wt) + 30px),rgba(0,0,0,.55) calc(var(--wt) + (var(--wb) - var(--wt)) * .45),transparent calc(var(--wb) - 60px)),
+    linear-gradient(90deg,transparent calc(var(--wl) - 130px),rgba(0,0,0,.5) calc(var(--wl) - 60px),#000 calc(var(--wl) - 14px),#000 calc(var(--wr) + 14px),rgba(0,0,0,.5) calc(var(--wr) + 60px),transparent calc(var(--wr) + 130px));
+  -webkit-mask-composite:source-over,source-in;
+  mask-image:radial-gradient(200px 46px at 50% var(--wt),rgba(0,0,0,.6) 20%,rgba(0,0,0,.25) 60%,transparent 100%),
+    linear-gradient(180deg,transparent calc(var(--wt) - 40px),#000 calc(var(--wt) + 30px),rgba(0,0,0,.55) calc(var(--wt) + (var(--wb) - var(--wt)) * .45),transparent calc(var(--wb) - 60px)),
+    linear-gradient(90deg,transparent calc(var(--wl) - 130px),rgba(0,0,0,.5) calc(var(--wl) - 60px),#000 calc(var(--wl) - 14px),#000 calc(var(--wr) + 14px),rgba(0,0,0,.5) calc(var(--wr) + 60px),transparent calc(var(--wr) + 130px));
+  mask-composite:add,intersect}
+/* v6: normalny Laser Flow. Wiązka wychodzi spod napisu "Windows 10 i 11", spada na środek okna i rozlewa się w obie strony.
+   Maska tylko wygasza brzegi płótna, żeby nie było widać prostokąta. */
+.ok-stage{margin-top:clamp(150px,17vw,240px)}
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(100% - 160px),transparent),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(100% - 160px),transparent),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-composite:intersect}
+/* v7: spływ jasny na całej wysokości okna; gaśnie dopiero tuż pod jego dolną krawędzią, bez zawijania pod spód */
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(var(--wb) - 30px),transparent calc(var(--wb) + 40px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(var(--wb) - 30px),transparent calc(var(--wb) + 40px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+/* v8: światło kończy się na dolnych rogach okna i nie zawija pod spód */
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 60px,#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+/* v9: źródło lasera ucięte nisko nad oknem, okno bliżej hero */
+.ok-stage{margin-top:clamp(84px,8vw,110px)}
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 84px),#000 calc(var(--wt) - 30px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 84px),#000 calc(var(--wt) - 30px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+/* v10: źródło lasera zaokrąglone jak kopuła, bez płaskiego ucięcia */
+.ok-laser{
+  -webkit-mask-image:radial-gradient(170px 92px at 50% calc(var(--wt) - 4px),#000 0%,rgba(0,0,0,.85) 35%,rgba(0,0,0,.35) 68%,transparent 100%),
+    linear-gradient(180deg,transparent calc(var(--wt) - 30px),#000 calc(var(--wt) - 6px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),
+    linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-composite:source-over,source-in;
+  mask-image:radial-gradient(170px 92px at 50% calc(var(--wt) - 4px),#000 0%,rgba(0,0,0,.85) 35%,rgba(0,0,0,.35) 68%,transparent 100%),
+    linear-gradient(180deg,transparent calc(var(--wt) - 30px),#000 calc(var(--wt) - 6px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),
+    linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-composite:add,intersect}
+/* v11: poświata jak wcześniej (v9), tylko górne wygaszanie wyżej, bo źródło zaokrągla teraz sam shader */
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 96px),#000 calc(var(--wt) - 62px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent calc(var(--wt) - 96px),#000 calc(var(--wt) - 62px),#000 calc(var(--wb) - 120px),transparent calc(var(--wb) - 10px)),linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-composite:intersect}
+/* v12: Laser Flow 1:1 z ustawieniami z linka; płótno ma tylko miękko wygaszone brzegi */
+.ok-laser{
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 50px,#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent,#000 50px,#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-composite:intersect}
+/* v13: wiązka od samej góry strony. Płótno leży za treścią hero (hero wyżej w warstwach), okno nad płótnem */
+.ok{isolation:auto}
+.hr{position:relative;z-index:3}
+.ok-laser{z-index:1;
+  -webkit-mask-image:linear-gradient(180deg,#000,#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(180deg,#000,#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ok-stage,.ok .wrap{z-index:4}
+/* v14: za tekstem hero wiązka przygaszona, żeby nagłówek był czytelny; od napisu "Windows 10 i 11" w dół pełna moc */
+.ok-laser{--mb:650px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.32) calc(var(--mb) - 160px),#000 calc(var(--mb) + 20px),#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.32) calc(var(--mb) - 160px),#000 calc(var(--mb) + 20px),#000 calc(100% - 120px),transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}

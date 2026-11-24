@@ -1,0 +1,29 @@
+/* Sekcja ceny: płynny chrom Metallic Paint, bez dodatkowego podpisu na napisie. */
+.cena{padding:var(--s10) 0 var(--s9);border-top:1px solid var(--line)}
+.cena-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);align-items:center;gap:var(--s8)}
+.cena-paint{position:relative;display:block;min-width:0;min-height:304px;isolation:isolate;overflow:hidden}
+.cena-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;overflow:visible;z-index:0}
+.cena-value{display:block}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.cena-copy{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s4);min-width:0}
+.cena-copy .headline{max-width:520px}
+.cena-lede{max-width:520px;font-size:clamp(18px,2vw,22px);line-height:1.45;color:var(--text-2)}
+.cena-cta{margin-top:var(--s2)}
+
+@media (max-width:800px){
+  .cena-wrap{grid-template-columns:1fr;gap:var(--s7)}
+  .cena-paint{min-height:240px}
+  .cena-copy{align-items:flex-start}
+}
+@media (max-width:600px){
+  .cena{padding:var(--s9) 0 var(--s8)}
+  .cena-wrap{gap:var(--s6)}
+  .cena-paint{min-height:220px}
+  .cena-copy{gap:var(--s3)}
+  .cena-copy .headline{font-size:clamp(34px,10vw,48px)}
+  .cena-lede{font-size:17px}
+  .cena-cta{margin-top:var(--s2);width:100%}
+}
+/* przycisk w sekcji 0 zł: biały jak główne przyciski, płaski, bez cienia */
+.cena .cena-cta{background:#f0f0f0!important;color:#141414!important;box-shadow:none!important;border:0!important}
+.cena .cena-cta:hover{background:#fff!important}

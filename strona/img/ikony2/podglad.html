@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ikony LumoBota 2</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: #0a0a0a;
+    color: #c7c7cc;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  h1 {
+    margin: 0 0 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #c7c7cc;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    background: #141416;
+    border: 1px solid #232328;
+    border-radius: 12px;
+  }
+  .sizes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sizes img.s32 { width: 32px; height: 32px; display: block; }
+  .sizes img.s64 { width: 48px; height: 48px; display: block; }
+  .cell span {
+    font-size: 13px;
+    color: #98989f;
+  }
+</style>
+</head>
+<body>
+  <h1>Ikony LumoBota (duotone #c7c7cc + #3a6bfc)</h1>
+  <div class="grid" id="siatka"></div>
+  <script>
+    const nazwy = [
+      'sprawdzenie',
+      'neuro',
+      'zespol',
+      'wyspa',
+      'glos',
+      'przegladarka',
+      'komputer',
+      'obrazy',
+      'git',
+      'tokeny',
+      'modele',
+      'aktualizacja',
+      'pobierz',
+      'zlecenia'
+    ];
+    const siatka = document.getElementById('siatka');
+    for (const nazwa of nazwy) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.innerHTML =
+        '<div class="sizes">' +
+          '<img class="s32" src="' + nazwa + '.svg" alt="' + nazwa + '">' +
+          '<img class="s64" src="' + nazwa + '.svg" alt="' + nazwa + '">' +
+        '</div>' +
+        '<span>' + nazwa + '</span>';
+      siatka.appendChild(cell);
+    }
+  </script>
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body>
+</html>

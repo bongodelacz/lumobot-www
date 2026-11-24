@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" fill="none">
+  <rect x="28" y="48" width="24" height="24" rx="6" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <circle cx="36" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <circle cx="44" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <path d="M36 63 Q40 66 44 63" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="60" y="48" width="24" height="24" rx="6" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <circle cx="68" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <circle cx="76" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <line x1="68" y1="64" x2="76" y2="64" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="92" y="48" width="24" height="24" rx="6" stroke="#2f62e8" stroke-width="1.5" fill="rgba(47,98,232,.16)"/>
+  <circle cx="100" cy="57" r="1.2" fill="rgba(255,255,255,.9)"/>
+  <circle cx="108" cy="57" r="1.2" fill="rgba(255,255,255,.9)"/>
+  <path d="M100 63 Q104 66 108 63" stroke="#2f62e8" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="124" y="48" width="24" height="24" rx="6" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <circle cx="132" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <circle cx="140" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <path d="M132 63 Q136 66 140 63" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="156" y="48" width="24" height="24" rx="6" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <circle cx="164" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <circle cx="172" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <line x1="164" y1="64" x2="172" y2="64" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="188" y="48" width="24" height="24" rx="6" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <circle cx="196" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <circle cx="204" cy="57" r="1.2" fill="rgba(255,255,255,.85)"/>
+  <path d="M196 63 Q200 66 204 63" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

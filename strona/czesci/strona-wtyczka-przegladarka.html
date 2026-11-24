@@ -1,0 +1,112 @@
+<section class="dark spo-section vs-page wt-page">
+  <div class="wrap spo-wrap">
+    <div class="vs-hero-art pj-art" data-pal="lagoon" data-seed="33">
+      <span class="pj-me"><img src="img/polaczenia/playwright.svg" alt="Przeglądarka Playwright"></span>
+      <span class="pj-me"><img src="img/polaczenia/context7.svg" alt="Dokumentacja Context7"></span>
+    </div>
+    <div class="vs-top">
+      <a class="vs-crumb" href="wtyczki.html"><span aria-hidden="true">‹ </span>Wszystkie wtyczki</a>
+      <div class="pg-head">
+        <h1 class="display vs-title">Przeglądarka i dokumentacja</h1>
+      </div>
+      <p class="vs-lead">Agent ma własną przeglądarkę. Wchodzi na strony, wypełnia formularze i porównuje treści, a przy kodzie sprawdza aktualną dokumentację zamiast pisać z pamięci.</p>
+    </div>
+    <article class="wt-doc">
+
+      <section class="wt-sec">
+        <h2>Co potrafi</h2>
+        <h3>Przeglądarka Playwright</h3>
+        <p>Pełne sterowanie prawdziwą przeglądarką: logowanie, formularze, wiele kart naraz. Działa osobno od twojej przeglądarki, więc agent nie zabiera ci ekranu. Przy pierwszym użyciu pobiera się sama.</p>
+        <h3>Dokumentacja Context7</h3>
+        <p>Aktualna dokumentacja bibliotek i frameworków. Agent czyta ją przed pisaniem kodu, więc rzadziej podaje przestarzałe funkcje i przykłady.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2>Przykładowe zadania</h2>
+        <p>Piszesz zwykłym zdaniem w czacie LumoBota, na przykład:</p>
+        <ul class="wt-dash">
+          <li>„Sprawdź status mojego zamówienia na stronie sklepu i zapisz go w notatce.”</li>
+          <li>„Wypełnij formularz zgłoszenia według mojego opisu, ale nie wysyłaj go bez mojej zgody.”</li>
+          <li>„Otwórz trzy strony z ofertami i porównaj ceny w jednej tabeli.”</li>
+          <li>„Sprawdź w aktualnej dokumentacji, jak działa ta funkcja biblioteki, i napisz przykład.”</li>
+        </ul>
+      </section>
+
+      <section class="wt-sec">
+        <h2>Działa razem: Pilnowanie ceny</h2>
+        <p>Gotowy wzór planu codziennie o 09:00 sprawdza cenę produktu, zapisuje ją z datą w pliku ceny.md i porównuje z poprzednimi wpisami.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2>Bezpieczeństwo</h2>
+        <h3>Hasła zostają u ciebie</h3>
+        <p>Hasła, które podajesz w LumoBocie, są zaszyfrowane na twoim komputerze. Nie trafiają do chmury ani do modelu AI. Do kont logujesz się sam w przeglądarce agenta, a agent pracuje na gotowej sesji i nie zna hasła.</p>
+        <h3>Projekty i dane na twoim dysku</h3>
+        <p>Wszystkie projekty, pliki i ustawienia zostają w folderach na twoim komputerze. LumoBot nie ma własnej chmury i nie przesyła nam twoich danych.</p>
+        <h3>Ty decydujesz, co wychodzi</h3>
+        <p>Do dostawcy AI, którego sam wybierzesz, trafia tylko treść zadania. Z modelem lokalnym, na przykład Ollama albo LM Studio, nic nie opuszcza komputera. Zanim agent coś wyśle albo opublikuje, pokazuje gotową treść i czeka na twoje „tak”.</p>
+      </section>
+
+      <section class="wt-sec">
+        <h2>Jak zacząć</h2>
+        <ol class="wt-num">
+          <li>Włącz w LumoBocie narzędzie Przeglądarka Playwright, a przy pracy z kodem także Dokumentację Context7.</li>
+          <li>Gdy strona wymaga logowania, zaloguj się sam w przeglądarce agenta.</li>
+          <li>Napisz zadanie w czacie, na przykład: „Porównaj ceny tego produktu w trzech sklepach”.</li>
+        </ol>
+      </section>
+
+      <section class="wt-sec">
+        <h2>Linki</h2>
+        <ul class="wt-links">
+          <li><a href="wtyczka-github-figma.html">GitHub i Figma</a></li>
+          <li><a href="wtyczka-wzory.html">Gotowe wzory planu</a></li>
+          <li><a href="wtyczki.html">Wszystkie 64 połączenia</a></li>
+          <li><a href="https://playwright.dev" target="_blank" rel="noopener noreferrer">Playwright</a><span> strona usługi</span></li>
+          <li><a href="https://context7.com" target="_blank" rel="noopener noreferrer">Context7</a><span> strona usługi</span></li>
+        </ul>
+      </section>
+    </article>
+
+    <section class="wt-faq" id="pytania">
+      <div class="fq-grid">
+        <div class="fq-head">
+          <h2 class="title fq-title">Pytania</h2>
+          <p class="fq-lead">Logujesz się sam, agent nie zna hasła i pyta o zgodę, zanim cokolwiek wyśle.</p>
+          <a class="fq-all" href="wtyczki.html">Wszystkie wtyczki ›</a>
+        </div>
+        <div class="fq-list">
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy agent zna hasła do stron, na których się loguje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie. Logujesz się sam, a agent korzysta z gotowej sesji. Hasła nie zna i nie prosi o nie w czacie.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy agent kliknie Zapłać bez pytania?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie. Przed płatnością, wysyłką albo publikacją pokazuje, co zrobi, i czeka na twoją zgodę.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Czy przeglądarka agenta przeszkadza mi w pracy?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Nie. Działa w tle, osobno od twojej przeglądarki. Ty dalej pracujesz na swoim ekranie.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Po co agentowi dokumentacja?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>Modele uczą się na starszych danych. Context7 daje agentowi aktualną dokumentację, więc kod pasuje do wersji biblioteki, której używasz.</p></div>
+          </details>
+          <details class="fq-item">
+            <summary class="fq-q"><span>Ile to kosztuje?</span><span class="fq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+            <div class="fq-a"><p>LumoBot kosztuje 0 zł, a narzędzia są w cenie. Przeglądarka pobiera się sama przy pierwszym użyciu.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<script>
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.pj-art').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

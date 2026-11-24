@@ -1,0 +1,56 @@
+<!-- ================= POJEDYNKI: LumoBot obok innych narzędzi, linki do porównań (sekcja-pojedynki) ================= -->
+<section class="pj" id="pojedynki" aria-labelledby="pjTitle">
+  <div class="wrap">
+    <h2 class="display pj-h" id="pjTitle">LumoBot obok innych</h2>
+    <p class="pj-lead">Uczciwe porównania z narzędziami, o które pytacie najczęściej. Piszemy też, gdzie inni są lepsi.</p>
+    <div class="pj-grid">
+      <a class="pj-card" href="vs-openbot.html">
+        <span class="pj-art" data-pal="lagoon" data-seed="0">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openbot.svg" alt="OpenBot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenBot</b><small>LumoBot ma punkty powrotu, OpenBot ma więcej platform i serwer dla zespołów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-grok-bot.html">
+        <span class="pj-art" data-pal="rose" data-seed="5">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/grok.svg" alt="Grok Bot"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Grok Bot</b><small>Lokalny folder LumoBota, komputer w chmurze Grok Bota</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-claude-cowork.html">
+        <span class="pj-art" data-pal="forest" data-seed="10">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/claude.svg" alt="Claude"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Claude Cowork</b><small>LumoBot łączy dostawców, Cowork działa w ekosystemie Claude</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-manus.html">
+        <span class="pj-art" data-pal="ember" data-seed="15">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/manus.svg" alt="Manus"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Manus</b><small>Lokalny model bez klucza, Manus planuje w chmurze</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-openclaw.html">
+        <span class="pj-art" data-pal="ocean" data-seed="20">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/openclaw.svg" alt="OpenClaw"></span></span>
+        <span class="pj-txt"><b>LumoBot vs OpenClaw</b><small>Oba bez abonamentu, OpenClaw ma ponad 20 komunikatorów</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="vs-devin.html">
+        <span class="pj-art" data-pal="violet" data-seed="25">
+          <span class="pj-me"><img src="img/logo.png" alt="LumoBot"></span><em>vs</em><span class="pj-rv"><img src="img/rywale/devin.svg" alt="Devin"></span></span>
+        <span class="pj-txt"><b>LumoBot vs Devin</b><small>Lokalny model bez klucza, Devin ma Quick Review i testy</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="pj-all" href="porownanie.html">Gdzie inni są lepsi ›</a>
+  </div>
+</section>
+<script>
+/* gradient kart: ten sam Grainient co w menu paska, rusza się tylko gdy karta jest na ekranie */
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('.pj-art').forEach((box, i) => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      if(window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal)) box.classList.add('pj-grain'); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>

@@ -1,0 +1,105 @@
+/* Sekcja pytań (przedrostek fq-). Zmienne i klasy bazowe z baza.css.
+   Jeden ciemny kolor tła, zero bieli, cienkie linie rgba(255,255,255,.1), jeden akcent (linki). */
+
+:root{--fq-line:rgba(255,255,255,.1)}
+
+/* układ: tytuł w 1/3, lista w 2/3 */
+.fq-grid,.fq-group{display:grid;grid-template-columns:1fr 2fr;gap:var(--s7);align-items:start}
+.fq-head{position:sticky;top:calc(var(--nav-h) + var(--s5))}
+.fq-title{font-size:clamp(40px,4.6vw,56px);line-height:1.05;letter-spacing:-.035em}
+.fq-all{display:inline-block;margin-top:var(--s5);font-size:17px;font-weight:500;color:#f5f5f7;border-radius:4px;transition:color .2s,opacity .15s}
+.fq-all:hover{color:#fff;text-decoration:underline}
+.fq-all:active{opacity:.6}
+
+/* lista pytań */
+.fq-list{interpolate-size:allow-keywords;border-bottom:1px solid var(--fq-line)}
+.fq-item{border-top:1px solid var(--fq-line)}
+
+.fq-q{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);padding:var(--s5) 0;font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.01em;color:#e8e8ed;cursor:pointer;list-style:none;transition:color .2s,opacity .15s}
+.fq-q::-webkit-details-marker{display:none}
+.fq-q:hover{color:#fff}
+.fq-q:active{opacity:.6}
+
+/* plus: cienki szary znak 16 px, pionowa kreska obraca się w kreskę */
+.fq-plus{position:relative;flex:0 0 16px;width:16px;height:16px;perspective:200px;color:var(--text-2)}
+.fq-plus::before,.fq-plus::after{content:"";position:absolute;background:currentColor;border-radius:1px}
+.fq-plus::before{left:0;right:0;top:50%;height:1.5px;margin-top:-.75px}
+.fq-plus::after{top:0;bottom:0;left:50%;width:1.5px;margin-left:-.75px;transition:transform .45s var(--ease)}
+.fq-item[open] .fq-plus::after{transform:rotateX(90deg)}
+.fq-q:hover .fq-plus{color:#fff}
+
+/* odpowiedź: wysokość animowana przez CSS (interpolate-size) */
+.fq-item::details-content{block-size:0;overflow:hidden;transition:block-size .4s var(--ease),content-visibility .4s allow-discrete}
+.fq-item[open]::details-content{block-size:auto}
+
+.fq-a{padding:0 var(--s6) var(--s5) 0}
+.fq-a p{font-size:17px;line-height:1.55;color:var(--text-2)}
+
+/* podstrona z pełną listą */
+.fq-page{padding:var(--s9) 0 var(--s10)}
+.fq-top{margin-bottom:var(--s8)}
+.fq-top .headline{margin-top:var(--s2)}
+.fq-top .lede{margin-top:var(--s4);max-width:620px}
+.fq-groups{display:grid;gap:0}
+.fq-group{padding:var(--s7) 0;border-top:1px solid var(--fq-line)}
+.fq-group:first-child{border-top:0;padding-top:0}
+.fq-group-h{font-size:28px;line-height:1.15;letter-spacing:-.025em;font-weight:700;position:sticky;top:calc(var(--nav-h) + var(--s5))}
+.fq-group .fq-list{border-bottom:0}
+
+@media (max-width:700px){
+  .fq-grid,.fq-group{grid-template-columns:1fr;gap:var(--s5)}
+  .fq-head,.fq-group-h{position:static}
+  .fq-title{font-size:40px}
+  .fq-group{padding:var(--s6) 0}
+  .fq-group-h{font-size:24px}
+  .fq-page{padding:var(--s7) 0 var(--s9)}
+  .fq-top{margin-bottom:var(--s6)}
+}
+@media (max-width:600px){
+  .fq-q{font-size:18px}
+  .fq-a{padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .fq-plus::after{transition:none}
+}
+
+/* na stronie głównej oddech nad pytaniami, jak nad innymi sekcjami */
+.home #pytania{padding-top:clamp(96px,11vw,150px)}
+
+/* nowy wygląd: spokojniejsze linie, strzałka w dół zamiast plusa, lead pod tytułem */
+.fq-lead{margin:var(--s3) 0 0;max-width:320px;font-size:clamp(19px,1.7vw,22px);line-height:1.3;letter-spacing:-.02em;color:var(--text-2)}
+.fq-head .fq-all{margin-top:var(--s5)}
+.fq-list{border-bottom:0;display:flex;flex-direction:column;gap:4px}
+.fq-item{position:relative;border-top:0;border-radius:16px;transition:background .25s}
+.fq-item+.fq-item::before{content:"";position:absolute;left:20px;right:20px;top:-2.5px;height:1px;background:rgba(255,255,255,.07);transition:opacity .25s}
+.fq-item:hover,.fq-item[open]{background:rgba(255,255,255,.035)}
+.fq-item:hover+.fq-item::before,.fq-item[open]+.fq-item::before,.fq-item:hover::before,.fq-item[open]::before{opacity:0}
+.fq-q{padding:22px 20px;font-size:clamp(19px,1.6vw,21px);letter-spacing:-.02em}
+.fq-q:hover{color:#fff}
+.fq-a{padding:0 20px}
+.fq-chev{flex:none;display:grid;place-items:center;width:28px;height:28px;color:#a1a1a6;transition:transform .35s var(--ease),color .25s}
+.fq-item[open] .fq-chev{transform:rotate(180deg);color:#fff}
+.fq-q:hover .fq-chev{color:#fff}
+/* otwarta odpowiedź: pod tekstem tyle miejsca, ile nad pytaniem */
+.fq-a{padding-bottom:22px}
+
+/* v13: wygląd jak na wzorze użytkownika (wklejony-861747.png): wiersze rozdzielone cienką linią
+   na całą szerokość, bez pudełek i tła; pytanie białe pogrubione, mała strzałka z prawej,
+   odpowiedź szarym tekstem pod spodem, wąska kolumna do czytania. */
+.fq-list{display:block;gap:0;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
+.fq-item{border-radius:0;background:none!important;border-top:1px solid rgba(255,255,255,.09)}
+.fq-item:first-child{border-top:0}
+.fq-item+.fq-item::before{content:none}
+.fq-q{padding:22px 0;gap:24px;font-size:17px;font-weight:600;line-height:1.4;letter-spacing:-.01em;color:#f5f5f7}
+.fq-q span:first-child{text-wrap:pretty}
+.fq-q:focus-visible{outline:2px solid #2f62e8;outline-offset:4px;border-radius:6px}
+.fq-chev{width:20px;height:20px;color:#86868b}
+.fq-chev svg{width:16px;height:16px;stroke-width:1.75}
+.fq-q:hover .fq-chev,.fq-item[open] .fq-chev{color:#f5f5f7}
+.fq-a{padding:0 0 24px;margin-top:-6px}
+.fq-a p{max-width:680px;font-size:16px;line-height:1.65;color:#a1a1a6}
+.fq-a p+p{margin-top:10px}
+@media (max-width:600px){
+  .fq-q{padding:18px 0;font-size:16px;gap:16px}
+  .fq-a p{font-size:15px}
+}

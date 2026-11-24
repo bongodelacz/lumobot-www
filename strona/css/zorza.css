@@ -1,0 +1,9 @@
+/* Zorza pod stopką (Lider): shader jak reactbits Aurora, odwrócony, wyrasta od dołu ekranu.
+   Pokazuje się, gdy dociągasz stronę w dół na samym końcu (zmienna --reveal z js/stopka.js). */
+.dl-aurora{position:fixed;left:0;right:0;bottom:0;height:62vh;z-index:0;pointer-events:none;opacity:var(--reveal,0);
+  transform:translateY(calc((1 - var(--reveal,0)) * 12vh))}
+.dl-aurora canvas{display:block;width:100%;height:100%}
+html.dl-anim .dl-aurora{transition:opacity .7s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}
+.dl .dl-wrap{position:relative;z-index:1}
+html.static .dl-aurora{display:none}
+@media (prefers-reduced-motion:reduce){.dl-aurora{display:none}}

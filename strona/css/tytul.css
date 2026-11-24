@@ -1,0 +1,11 @@
+/* Komponent .pg-head: wyrównanie tytułów podstron bez gradientowych ikon. */
+.pg-head{display:flex;align-items:flex-start;text-align:left}
+.pg-head h1,.pg-head .display,.pg-head .headline,.pg-head .ar-title,.pg-head .spo-title{margin:0;min-width:0;flex:0 1 auto;text-wrap:balance}
+.pg-head .display,.pg-head .spo-title{font-size:clamp(36px,5.2vw,72px);line-height:1.08;max-width:none}
+.st-head .pg-head,.cl-hero .pg-head{justify-content:center}
+.ar .pg-head,.ai-index .pg-head{margin-bottom:18px}
+
+@media (max-width:600px){
+  .pg-head{flex-direction:column;align-items:flex-start}
+  .st-head .pg-head,.cl-hero .pg-head{align-items:center;text-align:center}
+}

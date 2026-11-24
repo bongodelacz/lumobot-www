@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ikony LumoBota</title>
+<style>
+  body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .panel { padding: 32px; }
+  .light { background: #f5f5f7; color: #1d1d1f; }
+  .dark { background: #0b0b0f; color: #f5f5f7; }
+  h2 { margin: 0 0 16px; font-size: 16px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 8px; border-radius: 12px; }
+  .cell svg { width: 32px; height: 32px; }
+  .cell span { font-size: 13px; color: inherit; }
+</style>
+</head>
+<body>
+<div class="panel light"><h2>Na jasnym tle</h2><div class="grid" id="jasne"></div></div>
+<div class="panel dark"><h2>Na ciemnym tle</h2><div class="grid" id="ciemne"></div></div>
+<script>
+  const ikony = {
+    sprawdzenie: '<path d="M12 3l7 2.5v6c0 4.5-3.2 8-7 9.5-3.8-1.5-7-5-7-9.5v-6z"/><path d="M9 12l2 2 4-4"/>',
+    neuro: '<path d="M8.5 6h7M7.1 8.2l3.8 7.6M16.9 8.2l-3.8 7.6"/><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/>',
+    zespol: '<rect x="3.5" y="5" width="8" height="12" rx="4"/><rect x="12.5" y="7" width="8" height="12" rx="4"/><path d="M6.5 10.5h.01M8.5 10.5h.01M6 13.5q1.5 1.5 3 0M15.5 12.5h.01M17.5 12.5h.01M15 15.5q1.5 1.5 3 0"/>',
+    wyspa: '<rect x="4.5" y="2.5" width="15" height="19" rx="4.5"/><rect x="8" y="5.5" width="8" height="3.5" rx="1.75"/>',
+    glos: '<path d="M4 9.5v5M8 6v12M12 3v18M16 6v12M20 9.5v5"/>',
+    przegladarka: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M5.5 6.5h.01M7.5 6.5h.01"/><circle cx="12" cy="14.5" r="3.5"/><ellipse cx="12" cy="14.5" rx="1.6" ry="3.5"/><path d="M8.5 14.5h7"/>',
+    komputer: '<rect x="3" y="4" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16v4"/><path d="M10 7.5v5l1.6-1.5 1.5 2.8 1.2-.6-1.5-2.7h2z"/>',
+    obrazy: '<rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M4 18l5.5-5.5L13 16l2.5-2.5L20 18"/>',
+    git: '<circle cx="6" cy="5.5" r="2.25"/><circle cx="18" cy="18.5" r="2.25"/><path d="M6 7.75V12c0 4 12 1 12 4.25"/>',
+    tokeny: '<ellipse cx="12" cy="7" rx="7" ry="2.5"/><path d="M5 7v4a7 2.5 0 0 0 14 0V7M5 11v4a7 2.5 0 0 0 14 0v-4M5 15v4a7 2.5 0 0 0 14 0v-4"/>',
+    modele: '<rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="4"/>',
+    aktualizacja: '<path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M14.5 6.34h3.16V9.5"/>',
+    pobierz: '<path d="M12 4v11M7.5 10.5L12 15l4.5-4.5"/><path d="M4 14.5V18a2.5 2.5 0 0 0 2.5 2.5h11a2.5 2.5 0 0 0 2.5-2.5v-3.5"/>',
+    zlecenia: '<path d="M3 13l2.5-7.5h13L21 13v4.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 13h5l1.5 2h5l1.5-2h5"/>'
+  };
+  for (const [id, the] of [['jasne', 'jasne'], ['ciemne', 'ciemne']]) {
+    const grid = document.getElementById(id);
+    for (const [nazwa, inner] of Object.entries(ikony)) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' + inner + '</svg><span>' + nazwa + '</span>';
+      grid.appendChild(cell);
+    }
+  }
+</script>
+<script src="/js/licznik.js" data-serwer="https://api.lumobot.eu" defer></script>
+</body>
+</html>

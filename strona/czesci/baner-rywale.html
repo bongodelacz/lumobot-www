@@ -1,0 +1,53 @@
+<section class="dark spo-section vs-page bn-page" aria-labelledby="bn-rywale-h1">
+  <div class="wrap spo-wrap">
+    <div class="vs-hero-art pj-art bn-orbit-box" data-pal="ocean" data-seed="0">
+      <div class="bn-orbit" role="group" aria-label="Porównania LumoBota z innymi narzędziami">
+        <span class="bn-center"><img src="img/logo.png" alt="LumoBot"></span>
+        <a class="bn-rival bn-r1" href="vs-openbot.html" aria-label="LumoBot vs OpenBot" title="OpenBot"><img src="img/rywale/openbot.svg" alt=""></a>
+        <a class="bn-rival bn-r2" href="vs-grok-bot.html" aria-label="LumoBot vs Grok Bot" title="Grok Bot"><img src="img/rywale/grok.svg" alt=""></a>
+        <a class="bn-rival bn-r3" href="vs-claude-cowork.html" aria-label="LumoBot vs Claude Cowork" title="Claude Cowork"><img src="img/rywale/claude.svg" alt=""></a>
+        <a class="bn-rival bn-r4" href="vs-manus.html" aria-label="LumoBot vs Manus" title="Manus"><img src="img/rywale/manus.svg" alt=""></a>
+        <a class="bn-rival bn-r5" href="vs-openclaw.html" aria-label="LumoBot vs OpenClaw" title="OpenClaw"><img src="img/rywale/openclaw.svg" alt=""></a>
+        <a class="bn-rival bn-r6" href="vs-devin.html" aria-label="LumoBot vs Devin" title="Devin"><img src="img/rywale/devin.svg" alt=""></a>
+      </div>
+    </div>
+    <div class="vs-top">
+      <a class="vs-crumb" href="index.html"><span aria-hidden="true">‹ </span>Strona główna</a>
+      <div class="pg-head">
+        <h1 class="display vs-title" id="bn-rywale-h1">Czego LumoBot jeszcze nie ma</h1>
+      </div>
+      <p class="vs-lead">Widzimy, gdzie inni są dziś lepsi. Piszemy to wprost i naprawiamy po kolei. Kliknij logo, żeby zobaczyć porównanie.</p>
+    </div>
+  </div>
+</section>
+<style>
+/* Baner jak na stronach vs (.vs-hero-art): ten sam rozmiar i miejsce. Loga nie ruszają się. */
+.bn-orbit{position:relative;z-index:2;width:288px;height:288px;display:grid;place-items:center}
+.bn-center{display:grid;place-items:center;width:84px;height:84px;border-radius:22px;background:rgba(20,20,24,.72);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.bn-center img{width:56px;height:56px;object-fit:contain;display:block}
+.bn-rival{--ang:0deg;--rad:112px;position:absolute;top:50%;left:50%;display:grid;place-items:center;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:16px;background:rgba(20,20,24,.78);transform:rotate(var(--ang)) translateY(calc(-1 * var(--rad))) rotate(calc(-1 * var(--ang)));transition:background .2s}
+.bn-rival img{width:32px;height:32px;object-fit:contain;display:block}
+.bn-r1{--ang:0deg}.bn-r2{--ang:60deg}.bn-r3{--ang:120deg}.bn-r4{--ang:180deg}.bn-r5{--ang:240deg}.bn-r6{--ang:300deg}
+.bn-rival:hover{background:rgba(44,44,52,.95)}
+.bn-rival:active{background:rgba(64,64,72,.95)}
+.bn-rival:focus-visible{outline:2px solid #f5f5f7;outline-offset:2px}
+@media (max-width:1391px) and (min-width:761px){.bn-orbit{transform:scale(.82)}}
+@media (max-width:1100px) and (min-width:761px){.bn-orbit{transform:scale(.72)}}
+@media (max-width:760px){
+  .bn-orbit{width:184px;height:184px}
+  .bn-center{width:56px;height:56px;border-radius:16px}
+  .bn-center img{width:36px;height:36px}
+  .bn-rival{--rad:72px;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:12px}
+  .bn-rival img{width:22px;height:22px}
+}
+</style>
+<script>
+/* Porównanie zawsze otwiera się na górze, także ze starych adresów z kotwicą (np. #pytania-vs). */
+(function(){
+  if(!location.hash) return;
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const top = () => window.scrollTo(0, 0);
+  top(); addEventListener('DOMContentLoaded', top); addEventListener('load', () => { top(); setTimeout(top, 50); });
+})();
+</script>
