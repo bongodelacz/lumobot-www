@@ -11,3 +11,12 @@ __pycache__/
 
 # panel admina ma własne repo (lumobot-panel)
 /panel/
+
+# przypadkowe pliki z ucietych polecen (zostaja tylko na dysku)
+/({t
+/[[]a.name
+/a.name
+/e.innerText))
+/innerWidth})
+/x.innerText*
+/x.textContent*
