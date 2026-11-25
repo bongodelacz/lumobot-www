@@ -136,7 +136,7 @@
   transform:translateX(var(--site-nav-surface-x,0)) translateY(-6px) scale(.96);
   transform-origin:var(--site-nav-surface-origin,50%) top;
   transition:opacity .2s ease, transform .24s var(--site-nav-ease), width var(--site-nav-duration) var(--site-nav-ease), height var(--site-nav-duration) var(--site-nav-ease);
-  background:#161616cc;
+  background:#0a0a0acc;
   position:absolute;
   left:0;
   z-index:40;
@@ -360,7 +360,7 @@
   min-width:176px;
   padding:6px;
   border-radius:16px;
-  background:#161616eb;
+  background:#0a0a0aeb;
   border:1px solid #ffffff16;
   -webkit-backdrop-filter:blur(32px) saturate(180%);
   backdrop-filter:blur(32px) saturate(180%);
@@ -447,7 +447,7 @@
     visibility:hidden;
     -webkit-backdrop-filter:blur(32px) saturate(160%);
     backdrop-filter:blur(32px) saturate(160%);
-    background:#141414e0;
+    background:#0a0a0ae0;
     padding:84px 16px 32px;
     transition:opacity .22s,visibility 0s linear .22s;
     display:block;
@@ -638,11 +638,11 @@
 .landing-header[data-scrolled]{
   height:56px;
   min-height:56px;
-  background:rgba(20,20,22,.6);
-  -webkit-backdrop-filter:blur(24px) saturate(160%);
-  backdrop-filter:blur(24px) saturate(160%);
   border-bottom-color:rgba(255,255,255,.08);
 }
+/* szkło paska na osobnej warstwie: gdy pasek sam ma backdrop-filter, rozwijane panele w środku nie widzą strony pod sobą i nie da się ich rozmyć */
+.landing-header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);opacity:0;transition:opacity .3s ease}
+.landing-header[data-scrolled]::before{opacity:1}
 @keyframes pkHeaderIn{
   0%{opacity:0;transform:translateY(-12px);filter:blur(8px)}
   100%{opacity:1;transform:none;filter:none}
@@ -714,10 +714,10 @@
   .site-nav-surface{
     z-index:1;
     border-radius:16px;
-    background:rgba(22,22,24,.92);
+    background:rgba(5,5,5,.94);
     box-shadow:0 0 0 1px rgba(255,255,255,.08),0 16px 40px -8px rgba(0,0,0,.65);
-    -webkit-backdrop-filter:blur(24px) saturate(160%);
-    backdrop-filter:blur(24px) saturate(160%);
+    -webkit-backdrop-filter:blur(40px) saturate(150%);
+    backdrop-filter:blur(40px) saturate(150%);
     transform:translateX(var(--site-nav-surface-x,0)) translateY(-8px) scale(.96);
     transition:opacity .22s ease,transform .22s cubic-bezier(.2,.8,.2,1),width .28s cubic-bezier(.2,.8,.2,1),height .28s cubic-bezier(.2,.8,.2,1);
   }
@@ -729,7 +729,7 @@
     width:10px;
     height:10px;
     margin-left:-5px;
-    background:rgba(20,20,22,.85);
+    background:rgba(10,10,10,.92);
     border-top:1px solid rgba(255,255,255,.1);
     border-left:1px solid rgba(255,255,255,.1);
     transform:rotate(45deg);

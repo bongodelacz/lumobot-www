@@ -28,7 +28,7 @@ Wielostronicowa strona LumoBota w strona/ (28 podstron): index, funkcje, wtyczki
 - Dziennik: lewa kolumna (szukaj, filtry 2x2, wersje z datą), plakietka NAJNOWSZA jasnoniebieska, baner w fiolecie karty Aktualizacje.
 - Wiązka Laser Flow (js/waz.js) na każdej stronie, wodospad 330 px nad LUMO wszędzie; nie wyłączać.
 - Ikona Linuksa: własny rysunek pingwina. Pytania wszędzie 1:1 jak na głównej (css/pytania.css).
-- Styl Apple: tło #1a1a1a, napisy #f5f5f7, niebieski #2f62e8 tylko na głównych przyciskach, bez ramek. Sekcja 0 zł na głównej i stopka: nie ruszać.
+- Styl Apple: tło #0a0a0a, napisy #f5f5f7, niebieski #2f62e8 tylko na głównych przyciskach, bez ramek. Sekcja 0 zł na głównej i stopka: nie ruszać.
 - Zespół: Lupa i Pion na Claude Haiku 5.5 (wysiłku nie da się ustawić poleceniem lumo agent); Paleta, Zwiad, Forma, Kreska na Gemini; Pióro, Radar, Weryfikator na GPT-5.6 Luna.
 
 - Przekierowania na Vercelu tylko w vercel.json (redirects): /pobierz na najnowszy instalator z GitHuba, /agenci na główną. Plik strona/_redirects (Netlify) Vercel ignoruje.
