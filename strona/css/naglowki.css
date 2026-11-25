@@ -1,12 +1,12 @@
 /* Nagłówki i akapity sekcji na stronie głównej: jeden rozmiar w każdej sekcji,
-   nieco większy tylko w hero i w ostatniej sekcji z pobieraniem (CTA).
+   nieco większy tylko w hero.
    Tylko h1/h2 i akapity wstępne. Treści kart, kolumn i list zostają bez zmian.
-   Sekcji Cena ("0 zł") nie ruszamy (ustalenie projektu w LUMOBOT.md). */
+   Sekcje Cena i Wybierz swój system mają taki sam rozmiar jak pozostałe sekcje. */
 
 /* sekcje: nagłówek */
-.pv-h,.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
+.pv-h,.dl-head h2,#cenaTitle,.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
 /* sekcje: akapit pod nagłówkiem */
-.pv-lead,.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(17px,1.5vw,20px)!important;line-height:1.4!important;letter-spacing:-.015em!important}
+.pv-lead,.dl-head p,.cena-lede,.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(17px,1.5vw,20px)!important;line-height:1.4!important;letter-spacing:-.015em!important}
 
 /* hero: więcej miejsca od góry, żeby treść nie dotykała paska nawigacji */
 .hr{padding-top:clamp(132px,12vw,180px)!important}
@@ -14,10 +14,6 @@
 /* hero: lekko większe */
 .hr-title{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.08!important;letter-spacing:-.03em!important;max-width:960px!important}
 .hr-lede{font-size:clamp(18px,1.6vw,22px)!important;line-height:1.4!important}
-
-/* ostatnia sekcja (CTA, pobieranie): tak samo jak hero */
-.dl-head h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
-.dl-head p{font-size:clamp(18px,1.6vw,22px)!important;line-height:1.4!important}
 
 /* odstępy między sekcjami: jeden wspólny, nad każdą sekcją (pod nią 0), żeby nic się nie sumowało.
    Dotąd odstęp zależał od dołu jednej i góry drugiej sekcji, stąd nierówne przerwy (np. Co potrafi i Jedno kliknięcie). */
@@ -43,4 +39,5 @@
 .bn-h,.bn-lead,.ku-h,.ku-lead,.dz-h,.dz-lead,.pj-h,.pj-lead,.nt-h,.nt-lead{text-align:center}
 .bn-lead,.ku-lead,.dz-lead,.pj-lead,.nt-lead{margin-left:auto;margin-right:auto}
 
-#cenaTitle{font-size:clamp(44px,4.6vw,68px)!important;line-height:1.02!important;letter-spacing:-.045em!important}
+/* Pytania: nagłówek z akapitem stoi w miejscu (bez przyklejania i jazdy w dół podczas przewijania), tylko strona główna */
+.home .fq-head{position:static}
