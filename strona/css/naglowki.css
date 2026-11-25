@@ -39,4 +39,8 @@
 .home .bz-item h3{color:#151515}
 .home .bz-item p{color:rgba(0,0,0,.72)}
 
+/* wyśrodkowany nagłówek i akapit: Co potrafi, Jedno kliknięcie, Noc, LumoBot obok innych, Z dziennika */
+.bn-h,.bn-lead,.ku-h,.ku-lead,.dz-h,.dz-lead,.pj-h,.pj-lead,.nt-h,.nt-lead{text-align:center}
+.bn-lead,.ku-lead,.dz-lead,.pj-lead,.nt-lead{margin-left:auto;margin-right:auto}
+
 #cenaTitle{font-size:clamp(44px,4.6vw,68px)!important;line-height:1.02!important;letter-spacing:-.045em!important}
