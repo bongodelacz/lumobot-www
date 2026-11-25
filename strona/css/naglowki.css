@@ -39,5 +39,8 @@
 .bn-h,.bn-lead,.ku-h,.ku-lead,.dz-h,.dz-lead,.pj-h,.pj-lead,.nt-h,.nt-lead{text-align:center}
 .bn-lead,.ku-lead,.dz-lead,.pj-lead,.nt-lead{margin-left:auto;margin-right:auto}
 
+/* bez linii na całą szerokość między Pytaniami a sekcją Cena */
+.home .cena{border-top:0}
+
 /* Pytania: nagłówek z akapitem stoi w miejscu (bez przyklejania i jazdy w dół podczas przewijania), tylko strona główna */
 .home .fq-head{position:static}

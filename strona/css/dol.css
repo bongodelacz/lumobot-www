@@ -218,3 +218,12 @@ html.static .dl-peek,html.static .dl-pull-hint{display:none}
 .dl-mail:hover{color:#f5f5f7;text-decoration:underline}
 .dl-mail:active{opacity:.7}
 .dl-mail:focus-visible{outline:2px solid #3a6bfc;outline-offset:2px}
+
+/* mniejszy tekst pod logo w stopce */
+.dl .dl-claim{max-width:440px;margin-top:20px;font-size:clamp(17px,1.7vw,20px);line-height:1.3;letter-spacing:-.015em}
+
+/* drobny druk pod linią w stopce */
+.dl-legal,.dl-legal .dl-row,.dl-copy,.dl-mail{font-size:12px;line-height:1.5}
+
+/* trochę więcej miejsca nad treścią stopki (logo, tekst i kolumny linków) */
+.dl .dl-main{padding-top:var(--s6)}
