@@ -28,3 +28,8 @@
 .dl-card h3{margin:16px 0 6px;font-size:18px}
 .dl-status{margin:0 0 16px;font-size:13px}
 .dl-button,.dl-soon{min-height:40px;padding:8px 14px;font-size:14px}
+
+/* przycisk Pobierz w karcie Windows: dokładnie ten sam co w pasku nawigacji (niebieski, z ikoną pobierania) */
+.dl-button.landing-button{width:auto;min-width:0;min-height:0;height:38px;padding:0 17px;gap:7px;border:1px solid transparent;background:var(--accent);color:#fff;font:500 13px/1 var(--font);letter-spacing:normal}
+.dl-button.landing-button:hover{background:var(--accent-down)}
+.dl-button.landing-button:active{background:var(--accent-down);transform:scale(.97)}

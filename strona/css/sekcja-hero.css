@@ -265,3 +265,7 @@ a.hr-mi:hover .hr-mi-dl{transform:translateY(2px)}
 .hr-ctas-sec{position:relative;z-index:20;margin-top:var(--s6)}
 .cena .hr-ctas-sec{justify-content:flex-start;margin-top:var(--s5)}
 @media (max-width:640px){.cena .hr-ctas-sec{justify-content:stretch}}
+
+/* Cena: przyciski obok siebie (zawijają się dopiero, gdy naprawdę brakuje miejsca) */
+.cena .hr-ctas-sec{flex-direction:row;flex-wrap:wrap;align-self:auto;justify-content:flex-start;gap:var(--s3)}
+@media (max-width:640px){.cena .hr-ctas-sec{flex-direction:row;justify-content:center;gap:var(--s2)}.cena .hr-split,.cena .hr-try{height:44px}.cena .hr-dl-more{height:40px}.cena .hr-dl{font-size:14px;padding:0 12px 0 14px}.cena .hr-try{padding:0 16px;font-size:14px}}
