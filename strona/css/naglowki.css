@@ -25,4 +25,10 @@
 .home .pv,.home .bn,.home .ku,.home .nt,.home .pj,.home .bz,.home #pytania,.home .dz,.home .cena{padding-top:var(--sec-gap);padding-bottom:0}
 .home .dl-section{padding-top:var(--sec-gap)}
 
+/* Co potrafi LumoBot: sześć kart tej samej wielkości, trzy w rzędzie (Cofanie stoi w pierwszym rzędzie) */
+@media (min-width:901px){.bn .bn-card{grid-column:span 4}}
+.bn .bn-card{min-height:240px}
+.bn .bn-card .bn-art{width:84px;height:84px;top:24px;right:24px;left:auto;transform:none}
+.bn .bn-card .bn-t{margin:auto 0 0;max-width:520px;font-size:clamp(22px,2.2vw,28px);line-height:1.18;letter-spacing:-.035em}
+
 #cenaTitle{font-size:clamp(44px,4.6vw,68px)!important;line-height:1.02!important;letter-spacing:-.045em!important}
