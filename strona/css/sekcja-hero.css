@@ -247,3 +247,16 @@ a.hr-mi:hover .hr-mi-dl{transform:translateY(2px)}
 .hr-dl{gap:9px;padding:0 18px 0 16px}
 .hr-dl-more{min-width:44px;width:44px;padding:0}
 .hr-dl-ch{opacity:1;width:12px;height:12px}
+
+/* przyciski w hero: pobieranie w akcentowym niebieskim, cennik w jednolitej bieli */
+.hr-split{background:var(--accent)}
+.hr-split:hover{background:var(--accent-down)}
+.hr-dl{color:#fff}
+.hr-dl-more{background:rgba(0,0,0,.22);color:#fff}
+.hr-dl-more:hover{background:rgba(0,0,0,.34)}
+.hr-dl-more:focus-visible{outline-color:#fff}
+.hr-try{background:#f0f0f0;border:0;box-shadow:none;color:#141414}
+.hr-try:hover{background:#fff}
+/* oba przyciski w hero mają tę samą wysokość 48 px */
+.hr-split{height:48px;padding:2px}
+.hr-dl-more{height:44px}
