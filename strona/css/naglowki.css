@@ -4,9 +4,9 @@
    Sekcji Cena ("0 zł") nie ruszamy (ustalenie projektu w LUMOBOT.md). */
 
 /* sekcje: nagłówek */
-.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
+.pv-h,.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
 /* sekcje: akapit pod nagłówkiem */
-.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(17px,1.5vw,20px)!important;line-height:1.4!important;letter-spacing:-.015em!important}
+.pv-lead,.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(17px,1.5vw,20px)!important;line-height:1.4!important;letter-spacing:-.015em!important}
 
 /* hero: lekko większe */
 .hr-title{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.08!important;letter-spacing:-.03em!important;max-width:960px!important}
@@ -19,7 +19,7 @@
 /* odstępy między sekcjami: jeden wspólny, nad każdą sekcją (pod nią 0), żeby nic się nie sumowało.
    Dotąd odstęp zależał od dołu jednej i góry drugiej sekcji, stąd nierówne przerwy (np. Co potrafi i Jedno kliknięcie). */
 .home{--sec-gap:clamp(112px,13vw,184px)}
-.home .bn,.home .ku,.home .nt,.home .pj,.home .bz,.home #pytania,.home .dz,.home .cena{padding-top:var(--sec-gap);padding-bottom:0}
+.home .pv,.home .bn,.home .ku,.home .nt,.home .pj,.home .bz,.home #pytania,.home .dz,.home .cena{padding-top:var(--sec-gap);padding-bottom:0}
 .home .dl-section{padding-top:var(--sec-gap)}
 
 #cenaTitle{font-size:clamp(44px,4.6vw,68px)!important;line-height:1.02!important;letter-spacing:-.045em!important}
