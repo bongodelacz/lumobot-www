@@ -8,3 +8,8 @@
 .pv-list img{width:24px;height:24px;flex-shrink:0}
 .pv-more{margin:20px 0 0;font-size:15px;line-height:1.5;color:#86868b}
 @media (max-width:600px){.pv-list{gap:8px}.pv-list li{padding:10px 16px 10px 12px;font-size:15px}}
+
+/* lekkie podniesienie po najechaniu */
+.pv-list li{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .25s ease;cursor:default}
+.pv-list li:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+@media (prefers-reduced-motion:reduce){.pv-list li{transition:none}.pv-list li:hover{transform:none}}
