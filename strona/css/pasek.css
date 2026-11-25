@@ -640,8 +640,8 @@
   min-height:56px;
   border-bottom-color:rgba(255,255,255,.08);
 }
-/* szkło paska na osobnej warstwie: gdy pasek sam ma backdrop-filter, rozwijane panele w środku nie widzą strony pod sobą i nie da się ich rozmyć */
-.landing-header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);opacity:0;transition:opacity .3s ease}
+/* tło paska po przewinięciu: jednolite #0a0a0a, bez efektu szkła (osobna warstwa, żeby pasek nie był warstwą z backdrop-filter dla paneli w środku) */
+.landing-header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:#0a0a0a;opacity:0;transition:opacity .3s ease}
 .landing-header[data-scrolled]::before{opacity:1}
 @keyframes pkHeaderIn{
   0%{opacity:0;transform:translateY(-12px);filter:blur(8px)}
@@ -833,3 +833,14 @@
 .site-nav-panel{z-index:1}
 /* kapsuła ma backdrop-filter, więc tworzy własną warstwę: musi leżeć nad tłem karty */
 .site-nav-track{z-index:1}
+
+/* ===== Nawigacja bez szkła i bez podświetlenia: sam tekst, po najechaniu biały ===== */
+.site-nav-track{background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.site-nav-pill{display:none}
+.site-nav-trigger:hover,.site-nav-trigger:focus-visible{color:#fff}
+
+/* przyciski w pasku: dawniej białe (Pobierz) są niebieskie akcentowe, dawniej szklany (język) jest klasycznym białym */
+.landing-header .landing-button-primary,.site-sheet .landing-button-primary{background:var(--accent);color:#fff}
+.landing-header .landing-button-primary:hover,.site-sheet .landing-button-primary:hover{background:var(--accent-down)}
+.landing-header .landing-button-glass,.site-sheet .landing-button-glass{background:#f0f0f0;border-color:transparent;color:#141414;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+.landing-header .landing-button-glass:hover,.site-sheet .landing-button-glass:hover{background:#fff;border-color:transparent}
