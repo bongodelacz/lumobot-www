@@ -1,9 +1,9 @@
 /* Sekcja Narzędzia AI (pod oknem aplikacji): prosta informacja, z czym można połączyć LumoBota.
    Rozmiary nagłówka i akapitu ustawia naglowki.css, odstęp nad sekcją tez. */
-.pv{font-family:"Inter",system-ui,sans-serif}
+.pv{font-family:"Inter",system-ui,sans-serif;text-align:center}
 .pv-h{margin:0 0 14px;font-weight:700;color:#fff;text-wrap:balance}
-.pv-lead{max-width:640px;margin:0 0 32px;color:#a1a1a6;text-wrap:balance}
-.pv-list{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}
+.pv-lead{max-width:640px;margin:0 auto 32px;color:#a1a1a6;text-wrap:balance}
+.pv-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;list-style:none;margin:0;padding:0}
 .pv-list li{display:flex;align-items:center;gap:10px;padding:12px 20px 12px 16px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);font-size:16px;font-weight:500;letter-spacing:-.01em;color:#f5f5f7}
 .pv-list img{width:24px;height:24px;flex-shrink:0}
 .pv-more{margin:20px 0 0;font-size:15px;line-height:1.5;color:#86868b}
