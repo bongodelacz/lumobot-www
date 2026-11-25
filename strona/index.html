@@ -662,6 +662,33 @@
 </section>
 
 
+<section class="bz wrap" id="bezpieczenstwo" aria-labelledby="bz-title">
+  <h2 class="title bz-title" id="bz-title">Twoje dane zostają u ciebie</h2>
+  <p class="bz-lead">LumoBot działa na twoim komputerze. Nie ma własnej chmury i nie przesyła nam twoich danych.</p>
+  <div class="bz-grid">
+    <div class="bz-item">
+      <h3>Hasła</h3>
+      <p>Hasła, które podajesz w LumoBocie, są zaszyfrowane na twoim komputerze. Nie trafiają do chmury ani do modelu AI. Do kont logujesz się sam, a agent pracuje na gotowej sesji.</p>
+    </div>
+    <div class="bz-item">
+      <h3>Projekty i pliki</h3>
+      <p>Wszystkie projekty, pliki i ustawienia zostają w folderach na twoim dysku. Nic nie trafia do chmury LumoBota, bo jej nie ma.</p>
+    </div>
+    <div class="bz-item">
+      <h3>Model AI</h3>
+      <p>Do dostawcy AI, którego sam wybierzesz, trafia tylko treść zadania. Z modelem lokalnym, na przykład Ollama albo LM Studio, nic nie opuszcza komputera.</p>
+    </div>
+  </div>
+</section>
+<style>
+.bz{padding-top:96px;padding-bottom:32px;text-align:center}
+.bz-title{margin:0 auto;max-width:760px}
+.bz-lead{margin:16px auto 0;max-width:640px;font-size:19px;line-height:1.55;color:#c7c7cc}
+.bz-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px;text-align:left}
+.bz-item h3{margin:0 0 8px;font-size:19px;line-height:1.3;font-weight:600;color:#f5f5f7}
+.bz-item p{margin:0;font-size:16px;line-height:1.65;color:#d1d1d6}
+@media (max-width:760px){.bz{padding-top:64px}.bz-lead{font-size:17px}.bz-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}}
+</style>
 <!-- ================= POJEDYNKI: LumoBot obok innych narzędzi, linki do porównań (sekcja-pojedynki) ================= -->
 <section class="pj" id="pojedynki" aria-labelledby="pjTitle">
   <div class="wrap">
@@ -718,33 +745,52 @@
   document.readyState === 'complete' ? run() : addEventListener('load', run);
 })();
 </script>
-<section class="bz wrap" id="bezpieczenstwo" aria-labelledby="bz-title">
-  <h2 class="title bz-title" id="bz-title">Twoje dane zostają u ciebie</h2>
-  <p class="bz-lead">LumoBot działa na twoim komputerze. Nie ma własnej chmury i nie przesyła nam twoich danych.</p>
-  <div class="bz-grid">
-    <div class="bz-item">
-      <h3>Hasła</h3>
-      <p>Hasła, które podajesz w LumoBocie, są zaszyfrowane na twoim komputerze. Nie trafiają do chmury ani do modelu AI. Do kont logujesz się sam, a agent pracuje na gotowej sesji.</p>
+<!-- ================= DZIENNIK: najnowsze artykuły, gradient jak w menu (sekcja-dziennik) ================= -->
+<section class="dz" id="dziennik" aria-labelledby="dzTitle">
+  <div class="wrap">
+    <h2 class="display dz-h" id="dzTitle">Z dziennika LumoBota</h2>
+    <p class="dz-lead">Dlaczego LumoBot działa tak, a nie inaczej. Krótkie teksty o tym, jak budujemy zespół agentów.</p>
+    <a class="dz-hero" href="nowosc-gotowe-znaczy-sprawdzone/" data-pal="lagoon" data-seed="0">
+      <span class="dz-pill">Najnowsze · 18 listopada 2026</span>
+      <span class="dz-bottom">
+        <span class="dz-txt">
+          <b>Gotowe znaczy sprawdzone</b>
+          <small>Zadanie kończy test albo osobny sprawdzający, a nie samo zdanie agenta.</small>
+        </span>
+        <span class="dz-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </span>
+    </a>
+    <div class="pj-grid dz-pj-grid">
+      <a class="pj-card" href="nowosc-haslo-zostaje-u-ciebie/">
+        <span class="pj-art" data-pal="ocean" data-seed="20"></span>
+        <span class="pj-txt"><b>Agent nie musi znać twojego hasła</b><small>Hasła są szyfrowane i nie trafiają do modelu.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-zespol-nie-solista/">
+        <span class="pj-art" data-pal="rose" data-seed="5"></span>
+        <span class="pj-txt"><b>Jeden agent to za mało</b><small>Lider dzieli zadanie, a specjaliści robią części.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="pj-card" href="nowosc-twoj-plan-nasz-program/">
+        <span class="pj-art" data-pal="ember" data-seed="15"></span>
+        <span class="pj-txt"><b>Płacisz za AI raz, nie dwa razy</b><small>Podłączasz plan, który już masz, a LumoBot nic nie dolicza.</small></span>
+        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
-    <div class="bz-item">
-      <h3>Projekty i pliki</h3>
-      <p>Wszystkie projekty, pliki i ustawienia zostają w folderach na twoim dysku. Nic nie trafia do chmury LumoBota, bo jej nie ma.</p>
-    </div>
-    <div class="bz-item">
-      <h3>Model AI</h3>
-      <p>Do dostawcy AI, którego sam wybierzesz, trafia tylko treść zadania. Z modelem lokalnym, na przykład Ollama albo LM Studio, nic nie opuszcza komputera.</p>
-    </div>
+    <a class="dz-all" href="nowosci/">Wszystkie nowości ›</a>
   </div>
 </section>
-<style>
-.bz{padding-top:96px;padding-bottom:32px;text-align:center}
-.bz-title{margin:0 auto;max-width:760px}
-.bz-lead{margin:16px auto 0;max-width:640px;font-size:19px;line-height:1.55;color:#c7c7cc}
-.bz-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px;text-align:left}
-.bz-item h3{margin:0 0 8px;font-size:19px;line-height:1.3;font-weight:600;color:#f5f5f7}
-.bz-item p{margin:0;font-size:16px;line-height:1.65;color:#d1d1d6}
-@media (max-width:760px){.bz{padding-top:64px}.bz-lead{font-size:17px}.bz-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}}
-</style>
+<script>
+/* gradient dziennika: ten sam Grainient co w menu paska i pojedynkach, rusza się tylko na ekranie */
+(function(){
+  const run = () => { if(!window.lumoGrain) return;
+    document.querySelectorAll('#dziennik [data-pal]').forEach(box => { let seen = false;
+      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
+      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
+  document.readyState === 'complete' ? run() : addEventListener('load', run);
+})();
+</script>
+
 <section id="pytania" class="light">
   <div class="wrap fq-grid">
     <div class="fq-head">
@@ -795,52 +841,6 @@
     </div>
   </div>
 </section>
-
-<!-- ================= DZIENNIK: najnowsze artykuły, gradient jak w menu (sekcja-dziennik) ================= -->
-<section class="dz" id="dziennik" aria-labelledby="dzTitle">
-  <div class="wrap">
-    <h2 class="display dz-h" id="dzTitle">Z dziennika LumoBota</h2>
-    <p class="dz-lead">Dlaczego LumoBot działa tak, a nie inaczej. Krótkie teksty o tym, jak budujemy zespół agentów.</p>
-    <a class="dz-hero" href="nowosc-gotowe-znaczy-sprawdzone/" data-pal="lagoon" data-seed="0">
-      <span class="dz-pill">Najnowsze · 18 listopada 2026</span>
-      <span class="dz-bottom">
-        <span class="dz-txt">
-          <b>Gotowe znaczy sprawdzone</b>
-          <small>Zadanie kończy test albo osobny sprawdzający, a nie samo zdanie agenta.</small>
-        </span>
-        <span class="dz-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </span>
-    </a>
-    <div class="pj-grid dz-pj-grid">
-      <a class="pj-card" href="nowosc-haslo-zostaje-u-ciebie/">
-        <span class="pj-art" data-pal="ocean" data-seed="20"></span>
-        <span class="pj-txt"><b>Agent nie musi znać twojego hasła</b><small>Hasła są szyfrowane i nie trafiają do modelu.</small></span>
-        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="pj-card" href="nowosc-zespol-nie-solista/">
-        <span class="pj-art" data-pal="rose" data-seed="5"></span>
-        <span class="pj-txt"><b>Jeden agent to za mało</b><small>Lider dzieli zadanie, a specjaliści robią części.</small></span>
-        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="pj-card" href="nowosc-twoj-plan-nasz-program/">
-        <span class="pj-art" data-pal="ember" data-seed="15"></span>
-        <span class="pj-txt"><b>Płacisz za AI raz, nie dwa razy</b><small>Podłączasz plan, który już masz, a LumoBot nic nie dolicza.</small></span>
-        <span class="pj-ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-    </div>
-    <a class="dz-all" href="nowosci/">Wszystkie nowości ›</a>
-  </div>
-</section>
-<script>
-/* gradient dziennika: ten sam Grainient co w menu paska i pojedynkach, rusza się tylko na ekranie */
-(function(){
-  const run = () => { if(!window.lumoGrain) return;
-    document.querySelectorAll('#dziennik [data-pal]').forEach(box => { let seen = false;
-      new IntersectionObserver(es => { seen = es[0].isIntersecting; if(seen) window.lumoGrain.wake(); }).observe(box);
-      window.lumoGrain.add(box, () => seen, +box.dataset.seed, box.dataset.pal); }); };
-  document.readyState === 'complete' ? run() : addEventListener('load', run);
-})();
-</script>
 
 <!-- ================= CENA: Metallic Paint ================= -->
 <section class="cena" id="cena" aria-labelledby="cenaTitle">
