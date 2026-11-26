@@ -53,6 +53,26 @@
 .bn-h,.bn-lead,.ku-h,.ku-lead,.dz-h,.dz-lead,.pj-h,.pj-lead,.nt-h,.nt-lead{text-align:center}
 .bn-lead,.ku-lead,.dz-lead,.pj-lead,.nt-lead{margin-left:auto;margin-right:auto}
 
+/* logotyp przy nagłówkach, lekko pod kątem: z prawej w Co potrafi i Pytaniach, z lewej w Nocy (tylko strona główna).
+   Rozmiar w em, więc rośnie razem z nagłówkiem. Ujemny margines góra i dół nie rozpycha wiersza.
+   Po najechaniu na logotyp lekko się unosi. */
+.home .h-logo{display:inline-block;width:1.65em;height:1.65em;margin-top:-.5em;margin-bottom:-.4em;vertical-align:middle;background:url(../img/logo.png) center/contain no-repeat;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.home .bn-h .h-logo,.home .fq-title .h-logo{margin-left:.65em;--kat:12deg}
+.home .nt-h .h-logo{margin-right:.65em;--kat:-12deg}
+.home .h-logo{transform:rotate(var(--kat))}
+@media (hover:hover){.home .h-logo:hover{transform:translateY(-5px) rotate(var(--kat))}}
+@media (prefers-reduced-motion:reduce){.home .h-logo{transition:none}.home .h-logo:hover{transform:rotate(var(--kat))}}
+
+/* wyśrodkowane nagłówki (Co potrafi, Noc): logotyp wyjęty z układu, więc na środku stoi sam tekst.
+   --miejsce to logotyp razem z odstępem; max-width zostawia tyle po obu stronach, żeby dłuższe tłumaczenia nie wypchnęły logo za ekran. */
+.home main :is(.bn-h,.nt-h){--bok:1.65em;--przerwa:.65em;--miejsce:calc(var(--bok) + var(--przerwa));position:relative;width:fit-content;max-width:calc(100% - 2 * var(--miejsce));margin-left:auto;margin-right:auto}
+.home :is(.bn-h,.nt-h) .h-logo{position:absolute;top:calc(50% - var(--bok) / 2);width:var(--bok);height:var(--bok);margin:0}
+.home .bn-h .h-logo{left:calc(100% + var(--przerwa))}
+.home .nt-h .h-logo{right:calc(100% + var(--przerwa))}
+/* telefon: mniej miejsca po bokach, więc logo i odstęp są mniejsze i mogą wejść w margines strony */
+@media (max-width:600px){.home main :is(.bn-h,.nt-h){--bok:1.3em;--przerwa:.3em;max-width:calc(100vw - 2 * var(--miejsce) - 8px)}}
+@media (max-width:350px){.home main :is(.bn-h,.nt-h){--bok:1.15em;--przerwa:.2em;font-size:25px!important}}
+
 /* bez linii na całą szerokość między Pytaniami a sekcją Cena */
 .home .cena{border-top:0}
 
