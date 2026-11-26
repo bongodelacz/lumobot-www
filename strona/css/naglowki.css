@@ -18,7 +18,7 @@
 
 /* odstępy między sekcjami: jeden wspólny, nad każdą sekcją (pod nią 0), żeby nic się nie sumowało.
    Dotąd odstęp zależał od dołu jednej i góry drugiej sekcji, stąd nierówne przerwy (np. Co potrafi i Jedno kliknięcie). */
-.home{--sec-gap:clamp(112px,13vw,184px)}
+.home{--sec-gap:clamp(144px,17vw,240px)}
 .home .pv,.home .bn,.home .ku,.home .nt,.home .pj,.home .bz,.home #pytania,.home .dz,.home .cena{padding-top:var(--sec-gap);padding-bottom:0}
 .home .dl-section{padding-top:var(--sec-gap)}
 
@@ -44,10 +44,10 @@
 /* Twoje dane zostają u ciebie: przezroczyste kolumny rozdzielone cienkimi szarymi liniami,
    które wychodzą poza siatkę i znikają w gradiencie (tylko strona główna).
    --wx: wystawanie poziomych linii na boki, --wg i --wd: wystawanie pionowych w górę i w dół. */
-.home .bz-item{padding:28px 30px;color:#151515}
+.home .bz-item{padding:44px 30px;color:#151515}
 .home .bz-item h3{color:#151515}
 .home .bz-item p{color:rgba(0,0,0,.72)}
-.home .bz-grid{--linia:rgba(0,0,0,.12);--wx:clamp(16px,calc(50vw - 524px),120px);--wg:150px;--wd:150px;position:relative;isolation:auto;gap:0}
+.home .bz-grid{--linia:rgba(0,0,0,.12);--wx:clamp(16px,calc(50vw - 524px),120px);--wg:150px;--wd:150px;position:relative;isolation:auto;gap:0;margin-top:146px}
 .home .bz{position:relative;z-index:0}
 .home .bz-grid::before,.home .bz-grid::after{content:"";position:absolute;z-index:-1;pointer-events:none;background-repeat:no-repeat}
 /* poziome: nad i pod kolumnami */
@@ -60,7 +60,8 @@
   background-image:var(--pion),var(--pion),var(--pion),var(--pion);background-size:1px 100%;background-position:0 0,33.333% 0,66.667% 0,100% 0}
 /* telefon: kolumny jedna pod drugą, więc dwie linie pionowe i poziome między nimi */
 @media (max-width:760px){
-  .home .bz-grid{--wg:48px;--wd:64px}
+  .home .bz-grid{--wg:48px;--wd:64px;margin-top:80px}
+  .home .bz-item{padding-top:36px;padding-bottom:36px}
   .home .bz-grid::after{background-image:var(--pion),var(--pion);background-position:0 0,100% 0}
   .home .bz-item+.bz-item{border-top:1px solid var(--linia)}
 }
@@ -94,6 +95,8 @@
 
 /* Pytania: nagłówek z akapitem stoi w miejscu (bez przyklejania i jazdy w dół podczas przewijania), tylko strona główna */
 .home .fq-head{position:static}
+/* Pytania: większy odstęp między logotypem przy nagłówku a akapitem */
+.home .fq-head .fq-lead{margin-top:32px}
 
 /* ===== Mniejsze i lżejsze teksty w treści sekcji (tylko strona główna, bez paska nawigacji) ===== */
 .home .eyebrow{font-size:14px;font-weight:500}
@@ -104,8 +107,8 @@
 .home .nt-time{font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.03em}
 .home .nt-t{font-size:15px;line-height:1.4}
 .home .nt-t b{font-weight:600}
-.home .bz-item h3{font-size:16.5px;font-weight:600}
-.home .bz-item p{font-size:14.5px;line-height:1.6}
+.home .bz-item h3{font-size:18px;font-weight:600}
+.home .bz-item p{font-size:16px;line-height:1.6}
 .home .pj-txt b{font-size:clamp(17px,1.4vw,19px);font-weight:600;letter-spacing:-.02em}
 .home .pj-txt small{font-size:13.5px}
 .home .pj-art em{font-size:13px;font-weight:500}
