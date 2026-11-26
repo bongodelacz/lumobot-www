@@ -41,13 +41,29 @@
 .bn .kk-b{--f:#5482ff;--rgb:47,98,232;background:var(--card,#232326)}
 .bn .kk-g{--f:#5482ff;--rgb:47,98,232;background:var(--card,#232326)}
 
-/* Twoje dane zostają u ciebie: trzy kolorowe kolumny, kolory z kart sekcji Co potrafi LumoBot (tylko strona główna) */
-.home .bz-item{padding:28px 30px;border-radius:24px;background:var(--f);color:#151515}
-.home .bz-item:nth-child(1){--f:#bba8f7}
-.home .bz-item:nth-child(2){--f:#93b8ff}
-.home .bz-item:nth-child(3){--f:#93ddb6}
+/* Twoje dane zostają u ciebie: przezroczyste kolumny rozdzielone cienkimi szarymi liniami,
+   które wychodzą poza siatkę i znikają w gradiencie (tylko strona główna).
+   --wx: wystawanie poziomych linii na boki, --wg i --wd: wystawanie pionowych w górę i w dół. */
+.home .bz-item{padding:28px 30px;color:#151515}
 .home .bz-item h3{color:#151515}
 .home .bz-item p{color:rgba(0,0,0,.72)}
+.home .bz-grid{--linia:rgba(0,0,0,.12);--wx:clamp(16px,calc(50vw - 524px),120px);--wg:150px;--wd:150px;position:relative;isolation:auto;gap:0}
+.home .bz{position:relative;z-index:0}
+.home .bz-grid::before,.home .bz-grid::after{content:"";position:absolute;z-index:-1;pointer-events:none;background-repeat:no-repeat}
+/* poziome: nad i pod kolumnami */
+.home .bz-grid::before{top:0;bottom:0;left:calc(-1 * var(--wx));right:calc(-1 * var(--wx));
+  --poziom:linear-gradient(90deg,transparent,var(--linia) var(--wx),var(--linia) calc(100% - var(--wx)),transparent);
+  background-image:var(--poziom),var(--poziom);background-size:100% 1px;background-position:0 0,0 100%}
+/* pionowe: cztery, na brzegach i między kolumnami */
+.home .bz-grid::after{left:0;right:-1px;top:calc(-1 * var(--wg));bottom:calc(-1 * var(--wd));
+  --pion:linear-gradient(180deg,transparent,var(--linia) var(--wg),var(--linia) calc(100% - var(--wd)),transparent);
+  background-image:var(--pion),var(--pion),var(--pion),var(--pion);background-size:1px 100%;background-position:0 0,33.333% 0,66.667% 0,100% 0}
+/* telefon: kolumny jedna pod drugą, więc dwie linie pionowe i poziome między nimi */
+@media (max-width:760px){
+  .home .bz-grid{--wg:48px;--wd:64px}
+  .home .bz-grid::after{background-image:var(--pion),var(--pion);background-position:0 0,100% 0}
+  .home .bz-item+.bz-item{border-top:1px solid var(--linia)}
+}
 
 /* wyśrodkowany nagłówek i akapit: Co potrafi, Jedno kliknięcie, Noc, LumoBot obok innych, Z dziennika */
 .bn-h,.bn-lead,.ku-h,.ku-lead,.dz-h,.dz-lead,.pj-h,.pj-lead,.nt-h,.nt-lead{text-align:center}
