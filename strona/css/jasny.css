@@ -29,10 +29,10 @@ html:has(body.home){background:#fff}
 /* ---------- Co potrafi LumoBot ---------- */
 .home main .bn{--card:#f5f5f7}
 .home main .bn .bn-card{box-shadow:inset 0 0 0 1px rgba(0,0,0,.07);color:#1d1d1f}
-.home main .bn .bn-card:hover{box-shadow:inset 0 0 0 1px rgba(47,98,232,.5)}
+.home main .bn .bn-card:hover{box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}
 .home main .bn .bn-card .bn-t{color:#1d1d1f}
 .home main .bn .bn-card .bn-art{color:#2f62e8}
-.home main .bn .bn-card .bn-tag{background:rgba(47,98,232,.12);color:#2550c4}
+.home main .bn .bn-card .bn-tag{background:#2f62e8;color:#fff}
 
 /* ---------- Jedno kliknięcie (animacja) ---------- */
 .home main .ku{--g0:#f5f5f7;--g1:#fff;--hl:rgba(0,0,0,.08);--hl2:rgba(0,0,0,.12);
