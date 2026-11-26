@@ -1,12 +1,9 @@
-/* PRÓBNY JASNY MOTYW: tylko strona główna, bez paska nawigacji.
+/* PRÓBNY JASNY MOTYW: tylko strona główna (razem z paskiem nawigacji).
    Żeby wrócić do ciemnego, usuń linię z css/jasny.css w szablony/index.html i w index.html. */
 
 /* ---------- podstawa ---------- */
 html:has(body.home){background:#fff}
 .home main,.home .dl{--bg:#fff;--text:#1d1d1f;--text-2:#51515a;--text-3:#6e6e73;--line:rgba(0,0,0,.1);--link:#1d1d1f;color:var(--text)}
-
-/* pasek zostaje ciemny także na samej górze, inaczej jego białe napisy znikłyby na białym tle */
-.home .landing-header::before{opacity:1}
 
 /* przyciemnienie krawędzi ekranu przy przewijaniu zmienia się w rozjaśnienie */
 .home .gb::after{background:linear-gradient(var(--gb-dir),rgba(255,255,255,0) 0%,rgba(255,255,255,.18) 45%,rgba(255,255,255,.65) 100%)}
@@ -110,3 +107,48 @@ html:has(body.home){background:#fff}
 .home .dl .dl-col a:hover,.home .dl .dl-col a:focus-visible,.home .dl .dl-mail:hover{color:#000}
 .home .dl .dl-col a:focus-visible{outline-color:#1d1d1f}
 .home .dl .dl-waves.no-gl,.home .dl .dl-waves.static{background:#fff}
+
+/* ---------- pasek nawigacji ---------- */
+.home .landing-header,.home .site-sheet,.home .wy-pop{
+  --openbot-text-primary:#1d1d1f;--openbot-text-secondary:#3a3a3f;--openbot-text-muted:#6e6e73;--openbot-text-dim:#8a8a90}
+.home .landing-header{color:#1d1d1f}
+.home .landing-header::before{background:#fff}
+.home .landing-header[data-scrolled]{border-bottom-color:rgba(0,0,0,.08)}
+.home .landing-header .site-nav{--site-nav-hairline:#00000014;--site-nav-hover:#0000000d}
+.home .landing-header .site-nav-trigger{color:#51515a}
+.home .landing-header .site-nav-trigger:hover,.home .landing-header .site-nav-trigger:focus-visible,
+.home .landing-header .site-nav-trigger[aria-expanded=true],.home .landing-header .site-nav-trigger[aria-current=page]{color:#000}
+/* biały przycisk języka potrzebuje ramki, żeby nie zlał się z białym paskiem */
+.home .landing-header .landing-button-glass,.home .site-sheet .landing-button-glass{background:#fff;color:#141414;border-color:rgba(0,0,0,.16)}
+.home .landing-header .landing-button-glass:hover,.home .site-sheet .landing-button-glass:hover{background:#f5f5f7;border-color:rgba(0,0,0,.22)}
+
+/* rozwijane panele: jasne, z rozmytym tłem */
+.home .landing-header .site-nav-surface{background:rgba(255,255,255,.94);box-shadow:0 0 0 1px rgba(0,0,0,.08),0 20px 48px -14px rgba(0,0,0,.22)}
+.home .landing-header .site-nav-surface::before{background:#fff;border-top-color:rgba(0,0,0,.09);border-left-color:rgba(0,0,0,.09)}
+.home .landing-header .site-panel-row:hover,.home .landing-header .site-panel-plugin:hover{background:rgba(0,0,0,.05)}
+.home .landing-header .site-panel-plugin:active{background:rgba(0,0,0,.08)}
+.home .landing-header .site-panel-plugin .site-panel-row-title,.home .landing-header .site-panel-intro-title{color:#1d1d1f}
+.home .landing-header .site-panel-plugin:hover .site-panel-row-title{color:#000}
+.home .landing-header .site-panel-plugin .site-panel-meta,.home .landing-header .site-panel-intro-text{color:#6e6e73}
+.home .landing-header .site-panel-intro{background:#f5f5f7}
+.home .landing-header .site-panel-intro-kicker{color:color-mix(in srgb,var(--tint,#60a5fa) 65%,#000)}
+.home .landing-header .site-panel-intro-cta{background:rgba(0,0,0,.07);color:#1d1d1f}
+.home .landing-header .site-panel-intro-cta:hover{background:rgba(0,0,0,.12)}
+.home .landing-header .site-panel-intro-cta:active{background:rgba(0,0,0,.16)}
+.home .landing-header .site-panel-footer{background:rgba(0,0,0,.02)}
+.home .landing-header .site-panel-feature{--openbot-text-primary:#fff}
+
+/* lista języków */
+.home .wy-pop{background:rgba(255,255,255,.96);border-color:rgba(0,0,0,.09);box-shadow:0 16px 40px -12px rgba(0,0,0,.22)}
+.home .wy-chan button{color:#3a3a3f}
+.home .wy-chan button:hover{background:rgba(0,0,0,.05);color:#000}
+.home .wy-chan button.is-active{background:rgba(0,0,0,.08);color:#000}
+.home .wy-ck{color:#1d1d1f}
+
+/* menu mobilne */
+.home .landing-header .site-menu-button{color:#1d1d1f;background:rgba(0,0,0,.04);box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.home .site-sheet{background:#fff;color:#1d1d1f}
+.home .site-sheet-heading{color:#8a8a90}
+.home .site-sheet .site-sheet-link{background:#f5f5f7;box-shadow:0 0 0 1px rgba(0,0,0,.07);color:#1d1d1f}
+.home .site-sheet-link svg{color:#6e6e73}
+.home .site-sheet-close{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.12);color:#1d1d1f}
