@@ -2,6 +2,8 @@
 
 To repo to tylko strona lumobot.eu: HTML, CSS, JS, obrazy i narzędzia do składania stron. Panel admina i aplikacja LumoBot są w osobnych repozytoriach i tu ich nie ma.
 
+Wszystko o aplikacji LumoBot (funkcje, cennik, plany, czego nie pisać) jest w `docs/LUMOBOT-O-APCE.md`. Przeczytaj go, zanim napiszesz cokolwiek o aplikacji na stronie.
+
 ## Publikacja
 - Push na `main` od razu publikuje stronę: Vercel sam ją wdraża w minutę, a lumobot.eu pokazuje nową wersję.
 - Większą zmianę rób na własnej gałęzi (np. `elo/nowy-cennik`). Vercel zrobi dla niej osobny podgląd pod własnym adresem, a na `main` wchodzi dopiero gotowa rzecz.
