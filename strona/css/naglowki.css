@@ -4,16 +4,17 @@
    Sekcje Cena i Wybierz swój system mają taki sam rozmiar jak pozostałe sekcje. */
 
 /* sekcje: nagłówek */
-.pv-h,.dl-head h2,#cenaTitle,.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(32px,3.6vw,48px)!important;line-height:1.08!important;letter-spacing:-.03em!important}
+.pv-h,.dl-head h2,#cenaTitle,.bn-h,.ku-h,.nt-h,.pj-h,.bz-title,.fq-title,.dz-h{font-size:clamp(28px,3vw,40px)!important;font-weight:600!important;line-height:1.12!important;letter-spacing:-.025em!important}
 /* sekcje: akapit pod nagłówkiem */
-.pv-lead,.dl-head p,.cena-lede,.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(17px,1.5vw,20px)!important;line-height:1.4!important;letter-spacing:-.015em!important}
+.pv-lead,.dl-head p,.cena-lede,.bn-lead,.ku-lead,.nt-lead,.pj-lead,.bz-lead,.fq-lead,.dz-lead{font-size:clamp(15.5px,1.25vw,17px)!important;font-weight:400!important;line-height:1.5!important;letter-spacing:-.01em!important}
 
 /* hero: więcej miejsca od góry, żeby treść nie dotykała paska nawigacji */
 .hr{padding-top:clamp(132px,12vw,180px)!important}
 
 /* hero: lekko większe */
-.hr-title{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.08!important;letter-spacing:-.03em!important;max-width:960px!important}
-.hr-lede{font-size:clamp(18px,1.6vw,22px)!important;line-height:1.4!important}
+.hr-title,.hr-title *{font-weight:600!important}
+.hr-title{font-size:clamp(32px,3.8vw,52px)!important;line-height:1.1!important;letter-spacing:-.028em!important;max-width:960px!important}
+.hr-lede{font-size:clamp(16px,1.35vw,18px)!important;font-weight:400!important;line-height:1.5!important}
 
 /* odstępy między sekcjami: jeden wspólny, nad każdą sekcją (pod nią 0), żeby nic się nie sumowało.
    Dotąd odstęp zależał od dołu jednej i góry drugiej sekcji, stąd nierówne przerwy (np. Co potrafi i Jedno kliknięcie). */
@@ -57,3 +58,30 @@
 
 /* Pytania: nagłówek z akapitem stoi w miejscu (bez przyklejania i jazdy w dół podczas przewijania), tylko strona główna */
 .home .fq-head{position:static}
+
+/* ===== Mniejsze i lżejsze teksty w treści sekcji (tylko strona główna, bez paska nawigacji) ===== */
+.home .eyebrow{font-size:14px;font-weight:500}
+.home .pv-list li{font-size:14.5px;font-weight:500}
+.home .pv-more{font-size:13.5px}
+.home .bn .bn-card .bn-t{font-size:clamp(16px,1.4vw,18px);font-weight:400;line-height:1.35;letter-spacing:-.015em}
+.home .bn .bn-card .bn-tag{font-size:12px;font-weight:500}
+.home .nt-time{font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.03em}
+.home .nt-t{font-size:15px;line-height:1.4}
+.home .nt-t b{font-weight:600}
+.home .bz-item h3{font-size:16.5px;font-weight:600}
+.home .bz-item p{font-size:14.5px;line-height:1.6}
+.home .pj-txt b{font-size:clamp(17px,1.4vw,19px);font-weight:600;letter-spacing:-.02em}
+.home .pj-txt small{font-size:13.5px}
+.home .pj-art em{font-size:13px;font-weight:500}
+.home .pj-all,.home .dz-all{font-size:15px;font-weight:500}
+.home .dz-hero b{font-size:clamp(26px,3.2vw,40px);font-weight:600;line-height:1.1;letter-spacing:-.03em}
+.home .dz-hero small{font-size:clamp(14.5px,1.15vw,16px)}
+.home .fq-q{font-size:15.5px;font-weight:500}
+.home .fq-a p{font-size:14.5px}
+.home .fq-all{font-size:15px}
+.home .dl-card h3{font-size:16px;font-weight:600}
+.home .dl-status{font-size:12px}
+.home .dl .dl-claim{font-size:clamp(15.5px,1.35vw,17px);line-height:1.45}
+.home .dl .dl-logo{font-size:20px;font-weight:600}
+.home .dl .dl-col h2{font-size:14px;font-weight:600}
+.home .dl .dl-col a,.home .dl .dl-col>span{font-size:13px}
