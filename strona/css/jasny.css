@@ -1,0 +1,112 @@
+/* PRÓBNY JASNY MOTYW: tylko strona główna, bez paska nawigacji.
+   Żeby wrócić do ciemnego, usuń linię z css/jasny.css w szablony/index.html i w index.html. */
+
+/* ---------- podstawa ---------- */
+html:has(body.home){background:#fff}
+.home main,.home .dl{--bg:#fff;--text:#1d1d1f;--text-2:#51515a;--text-3:#6e6e73;--line:rgba(0,0,0,.1);--link:#1d1d1f;color:var(--text)}
+
+/* pasek zostaje ciemny także na samej górze, inaczej jego białe napisy znikłyby na białym tle */
+.home .landing-header::before{opacity:1}
+
+/* przyciemnienie krawędzi ekranu przy przewijaniu zmienia się w rozjaśnienie */
+.home .gb::after{background:linear-gradient(var(--gb-dir),rgba(255,255,255,0) 0%,rgba(255,255,255,.18) 45%,rgba(255,255,255,.65) 100%)}
+
+/* ---------- nagłówki i akapity sekcji ---------- */
+.home main :is(.hr-title,.pv-h,.bn-h,.ku-h,.nt-h,.bz-title,.pj-h,.dz-h,.fq-title,#cenaTitle,.dl-head h2){color:#1d1d1f;-webkit-text-fill-color:#1d1d1f}
+.home main :is(.hr-lede,.pv-lead,.bn .bn-lead,.ku-lead,.nt-lead,.bz-lead,.pj-lead,.dz-lead,.fq-lead,.cena-lede,.dl-head p){color:#51515a}
+
+/* ---------- przyciski z hero (także w Cenie) ---------- */
+.home main .hr-try{background:#fff;color:#141414;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.home main .hr-try:hover{background:#f5f5f7}
+.home main .hr-dd-menu.hr-mi-menu{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 18px 40px -12px rgba(0,0,0,.22)}
+
+/* ---------- okno aplikacji (samo okno zostaje ciemne, jak w programie) ---------- */
+.home main .ok-win{box-shadow:0 0 0 1px rgba(0,0,0,.1),0 30px 70px -30px rgba(0,0,0,.35)}
+
+/* ---------- narzędzia AI ---------- */
+.home main .pv-list li{background:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07);color:#1d1d1f}
+.home main .pv-list li:hover{background:#ececf0}
+.home main .pv-more{color:#6e6e73}
+.home main .pv-list img[src*="openai"],.home main .pv-list img[src*="opencode"]{filter:brightness(0)}
+
+/* ---------- Co potrafi LumoBot ---------- */
+.home main .bn{--card:#f5f5f7}
+.home main .bn .bn-card{box-shadow:inset 0 0 0 1px rgba(0,0,0,.07);color:#1d1d1f}
+.home main .bn .bn-card:hover{box-shadow:inset 0 0 0 1px rgba(47,98,232,.5)}
+.home main .bn .bn-card .bn-t{color:#1d1d1f}
+.home main .bn .bn-card .bn-art{color:#2f62e8}
+.home main .bn .bn-card .bn-tag{background:rgba(47,98,232,.12);color:#2550c4}
+
+/* ---------- Jedno kliknięcie (animacja) ---------- */
+.home main .ku{--g0:#f5f5f7;--g1:#fff;--hl:rgba(0,0,0,.08);--hl2:rgba(0,0,0,.12);
+  --mk-bg:#fff;--mk-card:#f2f2f4;--mk-card2:#f7f7f9;--mk-line:rgba(0,0,0,.08);--mk-txt:#1d1d1f;--mk-mut:#5f6068}
+.home main .ku-th{color:#1d1d1f}
+.home main .ku-task{color:#1d1d1f}
+.home main .ku-task.done{color:#8a8a90}
+.home main .ku-chrome{background:#ececef}
+.home main .ku-chrome span{background:#fff}
+.home main .ku-chrome em{background:rgba(0,0,0,.07)}
+.home main .ku-stage.open .ku-slot:not(.on){outline-color:rgba(0,0,0,.18);background:rgba(0,0,0,.02)}
+.home main .kx-ph{background:radial-gradient(circle at 50% 36%,rgba(58,107,252,.16),transparent 65%),linear-gradient(160deg,#f1f2f5,#e3e4e9)}
+.home main .kx-ph-misa{background:radial-gradient(circle at 50% 35%,rgba(199,158,124,.26),transparent 65%),linear-gradient(160deg,#f4f1ee,#e8e3de)}
+.home main .kx-ph-dzbanek{background:radial-gradient(circle at 50% 35%,rgba(139,154,178,.26),transparent 65%),linear-gradient(160deg,#eff1f5,#e1e4ea)}
+.home main .kx-ph-talerz{background:radial-gradient(circle at 50% 35%,rgba(111,147,128,.26),transparent 65%),linear-gradient(160deg,#eef3f0,#e0e7e3)}
+.home main .kx-tag,.home main .kx-card em{background:rgba(255,255,255,.9)}
+.home main .kx-sw i{box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.home main .kx-chips span.on,.home main .kx-work-cta{color:#fff}
+.home main .kx-chips .kx-sort{color:var(--mk-mut)}
+.home main .kx-work{background:linear-gradient(155deg,#eef1f8,#e6e8ee)}
+.home main .kx-work::after{background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(245,246,250,.8))}
+.home main .kx-cal i.free{background:rgba(0,0,0,.07)}
+.home main .ks-sk{background:rgba(0,0,0,.12)}
+.home main .kd{box-shadow:0 0 0 1px rgba(0,0,0,.1),0 12px 28px -10px rgba(0,0,0,.28)}
+.home main .kd.fit{box-shadow:inset 0 0 0 1.5px var(--blue)}
+.home main .kc.me .kc-lb{background:#1d1d1f;color:#fff}
+.home main .ku-replay{box-shadow:0 0 0 1px rgba(0,0,0,.12),0 8px 20px -10px rgba(0,0,0,.3)}
+
+/* ---------- Noc z LumoBotem ---------- */
+.home main .nt-time{color:#1d1d1f}
+.home main .nt-dot{box-shadow:0 0 0 5px #fff}
+
+/* ---------- LumoBot obok innych ---------- */
+.home main .pj-card{background:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);color:#1d1d1f}
+.home main .pj-card:hover{background:#ececf0}
+.home main .pj-txt small{color:#5f6068}
+.home main .pj-ar{color:#8a8a90}
+.home main .pj-card:hover .pj-ar{color:#1d1d1f}
+.home main .pj-all,.home main .dz-all{color:#1d1d1f}
+.home main .pj-all:hover,.home main .dz-all:hover{color:#000}
+
+/* ---------- Pytania ---------- */
+.home main .fq-list{border-color:rgba(0,0,0,.1)}
+.home main .fq-item{border-top-color:rgba(0,0,0,.1)}
+.home main .fq-item:first-child{border-top-color:transparent}
+.home main .fq-item+.fq-item::before{background:rgba(0,0,0,.08)}
+.home main .fq-q,.home main .fq-q:hover{color:#1d1d1f}
+.home main .fq-chev{color:#8a8a90}
+.home main .fq-q:hover .fq-chev,.home main .fq-item[open] .fq-chev{color:#1d1d1f}
+.home main .fq-a p{color:#51515a}
+.home main .fq-all,.home main .fq-all:hover{color:#1d1d1f}
+
+/* ---------- Cena: chromowy napis 0 zł przyciemniony, żeby był widoczny na białym ---------- */
+.home main .cena-canvas{filter:brightness(.45) contrast(1.25)}
+
+/* ---------- Wybierz swój system ---------- */
+.home main .dl-card,.home main .dl-card h3{color:#1d1d1f}
+.home main .dl-status{color:#6e6e73}
+.home main .dl-soon{background:rgba(0,0,0,.05);color:#6e6e73}
+.home main .dl-os[src*="windows"],.home main .dl-os[src*="apple"],.home main .dl-os[src*="android"]{filter:brightness(0) opacity(.85)}
+.home main .dl-os[src*="linux"]{filter:invert(1)}
+.home .dl-button:focus-visible{outline-color:#1d1d1f}
+.home .dl-dialog{background:#fff;color:#1d1d1f;box-shadow:0 30px 80px -20px rgba(0,0,0,.35)}
+.home .dl-dialog p{color:#51515a}
+.home .dl-dialog-close{background:#1d1d1f;color:#fff}
+.home .dl-dialog-close:hover{background:#000}
+
+/* ---------- stopka ---------- */
+.home .dl .dl-claim,.home .dl .dl-claim-sub,.home .dl .dl-logo,.home .dl .dl-logo:hover{color:#1d1d1f}
+.home .dl .dl-col h2{color:#1d1d1f}
+.home .dl .dl-col a,.home .dl .dl-col>span,.home .dl .dl-copy,.home .dl .dl-mail{color:#5f6068}
+.home .dl .dl-col a:hover,.home .dl .dl-col a:focus-visible,.home .dl .dl-mail:hover{color:#000}
+.home .dl .dl-col a:focus-visible{outline-color:#1d1d1f}
+.home .dl .dl-waves.no-gl,.home .dl .dl-waves.static{background:#fff}
