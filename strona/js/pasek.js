@@ -197,7 +197,18 @@
     const open = pop.hidden;
     pop.hidden = !open;
     btn.setAttribute('aria-expanded', String(open));
+    if(open) place();
   });
+  /* strona główna: lista języków wysuwa się równo pod przyciskiem, na środku, i nie wychodzi za ekran */
+  function place(){
+    if(!document.body.classList.contains('home')) return;
+    const host = pop.offsetParent;
+    if(!host) return;
+    const b = btn.getBoundingClientRect(), h = host.getBoundingClientRect();
+    const x = Math.max(12, Math.min(b.left + b.width / 2 - pop.offsetWidth / 2, document.documentElement.clientWidth - pop.offsetWidth - 12));
+    pop.style.setProperty('--wy-x', Math.round(x - h.left) + 'px');
+  }
+  window.addEventListener('resize', () => { if(!pop.hidden) place(); });
   document.addEventListener('click', e => {
     if(!pop.hidden && !pop.contains(e.target) && e.target !== btn){
       pop.hidden = true;
@@ -247,4 +258,37 @@
       btn.focus();
     }
   });
+})();
+
+/* Strona główna: pasek widać tylko w hero. Niżej chowa się i wraca po najechaniu kursorem na górę ekranu
+   (na dotyku po stuknięciu w to miejsce). Zostaje widoczny, gdy kursor jest na nim lub na rozwiniętym panelu,
+   gdy otwarte jest menu albo lista języków i gdy ktoś obsługuje go klawiaturą. */
+(function(){
+  const header = document.getElementById('pk');
+  const hero = document.getElementById('top');
+  if(!header || !hero || !document.body.classList.contains('home')) return;
+  const ZONE = 56;                                   /* wysokość miejsca, w którym stoi pasek */
+  const pop = document.getElementById('wyPop');
+  const burger = document.getElementById('pkBurger');
+  let hover = false;
+  const inHero = () => hero.getBoundingClientRect().bottom > ZONE;
+  const busy = () => (pop && !pop.hidden) ||
+    (burger && burger.getAttribute('aria-expanded') === 'true') ||
+    !!header.querySelector(':focus-visible');
+  const update = () => header.toggleAttribute('data-hidden', !(inHero() || hover || busy()));
+  const point = e => {
+    const t = e.target;
+    const over = e.clientY <= ZONE || header.contains(t) || !!(pop && !pop.hidden && pop.contains(t));
+    if(over !== hover){ hover = over; update(); }
+  };
+  document.addEventListener('pointermove', e => { if(e.pointerType !== 'touch') point(e); }, {passive: true});
+  document.addEventListener('pointerdown', point, {passive: true});
+  document.documentElement.addEventListener('mouseleave', e => { if(e.clientY > ZONE){ hover = false; update(); } });
+  window.addEventListener('scroll', () => { if(!inHero() && !header.matches(':hover')) hover = false; update(); }, {passive: true});
+  window.addEventListener('resize', update);
+  document.addEventListener('focusin', update);
+  document.addEventListener('focusout', () => setTimeout(update, 0));
+  document.addEventListener('click', () => setTimeout(update, 0));
+  document.addEventListener('keyup', () => setTimeout(update, 0));
+  update();
 })();

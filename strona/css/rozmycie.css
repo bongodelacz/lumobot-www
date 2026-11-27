@@ -21,8 +21,9 @@
   --gb-dir:to bottom;
 }
 
-/* dolny pas rozmycia wyłączony na wszystkich stronach */
-.gb-bottom{
+/* dolny pas rozmycia wyłączony na wszystkich stronach, górny (przy przewijaniu w górę) na stronie głównej */
+.gb-bottom,
+.home .gb-top{
   display:none;
 }
 
