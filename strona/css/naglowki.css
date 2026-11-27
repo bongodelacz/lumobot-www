@@ -175,3 +175,24 @@
   .home .nt .nt-grid .nt-cell p,.home .bz .bz-grid .bz-item p{font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){.home .nt .nt-grid .nt-cell,.home .bz .bz-grid .bz-item{transition:none}}
+
+/* Wszystko zostaje u Ciebie: logotyp z prawej strony, wyśrodkowany zostaje sam tekst (jak w "Co potrafi" i "Własnej przeglądarce") */
+.home main .bz-title{--bok:1.65em;--przerwa:.65em;--miejsce:calc(var(--bok) + var(--przerwa));position:relative;width:fit-content;max-width:calc(100% - 2 * var(--miejsce));margin-left:auto;margin-right:auto}
+.home .bz-title .h-logo{--kat:12deg;position:absolute;top:calc(50% - var(--bok) / 2);left:calc(100% + var(--przerwa));width:var(--bok);height:var(--bok);margin:0}
+@media (max-width:600px){.home main .bz-title{--bok:1.2em;--przerwa:.2em;max-width:calc(100vw - 2 * var(--miejsce))}}
+/* telefon: nagłówek trochę mniejszy, żeby został w jednej linii obok logo */
+@media (max-width:430px){.home main .bz-title{--bok:1.1em;--przerwa:.15em;font-size:clamp(19px,5.6vw,23px)!important}}
+
+/* ---------- telefon: logotyp nad nagłówkiem, na środku (wszystkie sekcje z logotypem) ----------
+   Nagłówek ma wtedy całą szerokość i zwykły rozmiar. Musi zostać na końcu pliku, bo nadpisuje wcześniejsze reguły. */
+@media (max-width:760px){
+  .home main :is(.bn-h,.nt-h,.bz-title){display:flex;flex-direction:column;align-items:center;width:auto;max-width:100%;margin-left:auto;margin-right:auto;text-align:center;font-size:clamp(28px,3vw,40px)!important}
+  .home main :is(.bn-h,.nt-h,.bz-title) .h-logo{order:-1;position:static;flex:none;width:68px;height:68px;margin:0 0 18px}
+}
+/* Pytania układają się w jedną kolumnę od 700 px: wtedy logotyp nad nagłówkiem, a nagłówek i akapit też na środku */
+@media (max-width:700px){
+  .home .fq-head{text-align:center}
+  .home main .fq-title{display:flex;flex-direction:column;align-items:center}
+  .home main .fq-title .h-logo{order:-1;flex:none;width:68px;height:68px;margin:0 0 18px}
+  .home .fq-head .fq-lead{max-width:420px;margin:16px auto 0}
+}
