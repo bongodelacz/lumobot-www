@@ -129,3 +129,49 @@
 .home .dl .dl-logo{font-size:20px;font-weight:600}
 .home .dl .dl-col h2{font-size:14px;font-weight:600}
 .home .dl .dl-col a,.home .dl .dl-col>span{font-size:13px}
+
+/* Własna przeglądarka: pięć pól zygzakiem (1 z prawej, 2 niżej z lewej i dalej) w stylu sekcji "Twoje dane zostają u ciebie".
+   Cienkie szare linie wychodzą poza siatkę i znikają w gradiencie (tylko strona główna). */
+.home .nt{position:relative;z-index:0}
+.home .nt-grid{--linia:rgba(0,0,0,.12);--wx:clamp(16px,calc(50vw - 524px),120px);--wg:150px;--wd:150px;position:relative;list-style:none;margin:146px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.home .nt-cell{position:relative;grid-column:2;padding:44px 30px;text-align:left}
+.home .nt-cell:nth-child(even){grid-column:1}
+.home .nt-cell:nth-child(1){grid-row:1}.home .nt-cell:nth-child(2){grid-row:2}.home .nt-cell:nth-child(3){grid-row:3}.home .nt-cell:nth-child(4){grid-row:4}.home .nt-cell:nth-child(5){grid-row:5}
+.home .nt-cell h3{margin:0 0 8px;font-size:18px;font-weight:600;line-height:1.3;color:#151515}
+.home .nt-cell p{margin:0;font-size:16px;line-height:1.6;color:rgba(0,0,0,.72)}
+/* poziome: nad każdym polem i pod ostatnim, przez całą szerokość siatki */
+.home .nt-cell::before,.home .nt-cell:last-child::after{content:"";position:absolute;z-index:-1;pointer-events:none;height:1px;left:calc(-100% - var(--wx));right:calc(-1 * var(--wx));
+  background:linear-gradient(90deg,transparent,var(--linia) var(--wx),var(--linia) calc(100% - var(--wx)),transparent)}
+.home .nt-cell:nth-child(even)::before{left:calc(-1 * var(--wx));right:calc(-100% - var(--wx))}
+.home .nt-cell::before{top:0}
+.home .nt-cell:last-child::after{bottom:-1px}
+/* pionowe: na brzegach i na środku */
+.home .nt-grid::after{content:"";position:absolute;z-index:-1;pointer-events:none;left:0;right:-1px;top:calc(-1 * var(--wg));bottom:calc(-1 * var(--wd));background-repeat:no-repeat;
+  --pion:linear-gradient(180deg,transparent,var(--linia) var(--wg),var(--linia) calc(100% - var(--wd)),transparent);
+  background-image:var(--pion),var(--pion),var(--pion);background-size:1px 100%;background-position:0 0,50% 0,100% 0}
+/* telefon: pola jedno pod drugim, dwie linie pionowe i poziome między nimi */
+@media (max-width:760px){
+  .home .nt-grid{--wg:48px;--wd:64px;grid-template-columns:minmax(0,1fr);margin-top:80px}
+  .home .nt-cell:nth-child(n){grid-column:1;padding-top:36px;padding-bottom:36px}
+  .home .nt-cell:nth-child(n)::before,.home .nt-cell:last-child:nth-child(n)::after{left:calc(-1 * var(--wx));right:calc(-1 * var(--wx))}
+  .home .nt-grid::after{background-image:var(--pion),var(--pion);background-position:0 0,100% 0}
+}
+/* telefon: "Własna przeglądarka" jest dłuższa, więc nagłówek i logo trochę mniejsze, żeby zostały w jednej linii */
+@media (min-width:351px) and (max-width:430px){.home main .nt-h{--bok:1.2em;--przerwa:.2em;font-size:26px!important}}
+
+/* ---------- kolumny w "Własna przeglądarka" i "Twoje dane zostają u ciebie": większy tekst i marginesy, numerki, podświetlenie ---------- */
+.home .nt .nt-grid .nt-cell,.home .bz .bz-grid .bz-item{padding:56px 40px;transition:background-color .25s ease}
+.home .nt .nt-grid .nt-cell h3,.home .bz .bz-grid .bz-item h3{margin:0 0 12px;font-size:21px;line-height:1.3}
+.home .nt .nt-grid .nt-cell p,.home .bz .bz-grid .bz-item p{font-size:17.5px;line-height:1.65}
+/* numerki 01, 02... nad nagłówkami, liczone osobno w każdej sekcji */
+.home .nt-grid,.home .bz-grid{counter-reset:kolumna}
+.home .nt-cell,.home .bz-item{counter-increment:kolumna}
+.home .nt .nt-grid .nt-cell h3::before,.home .bz .bz-grid .bz-item h3::before{content:counter(kolumna,decimal-leading-zero) / "";display:block;margin-bottom:14px;font-size:15px;font-weight:600;line-height:1;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#2f62e8}
+/* tło półprzezroczyste, żeby cienkie linie pod spodem zostały widoczne */
+@media (hover:hover){.home .nt .nt-grid .nt-cell:hover,.home .bz .bz-grid .bz-item:hover{background-color:rgba(15,23,42,.032)}}
+@media (max-width:760px){
+  .home .nt .nt-grid .nt-cell,.home .bz .bz-grid .bz-item{padding:44px 28px}
+  .home .nt .nt-grid .nt-cell h3,.home .bz .bz-grid .bz-item h3{font-size:20px}
+  .home .nt .nt-grid .nt-cell p,.home .bz .bz-grid .bz-item p{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){.home .nt .nt-grid .nt-cell,.home .bz .bz-grid .bz-item{transition:none}}
