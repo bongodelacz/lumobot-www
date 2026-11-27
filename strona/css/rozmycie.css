@@ -21,6 +21,11 @@
   --gb-dir:to bottom;
 }
 
+/* dolny pas rozmycia wyłączony na wszystkich stronach */
+.gb-bottom{
+  display:none;
+}
+
 .gb-l,
 .gb::after{
   position:absolute;
